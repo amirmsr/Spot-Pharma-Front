@@ -37,18 +37,18 @@ function Navbar() {
     <div className="navbar">
       <ul style={{ listStyle: "none" }}>
         <li>
-          <a href="http://localhost:5173/"> Accueil</a>
-          <a href="http://localhost:5173/sessions"> Sessions</a>
-          {/* <a href="http://localhost:5173/addsessions"> Ajouter sessions</a> */}
-          <a href="http://localhost:5173/intervenants"> Intervenants</a>
-          <a href="http://localhost:5173/add"> Stand 3D</a>
-          <a href="http://localhost:5173/add" style={{ marginRight: "10px" }}>
+          <a href="https://spot-pharma-front.vercel.app/"> Accueil</a>
+          <a href="https://spot-pharma-front.vercel.app/sessions"> Sessions</a>
+          {/* <a href="https://spot-pharma-front.vercel.app/addsessions"> Ajouter sessions</a> */}
+          <a href="https://spot-pharma-front.vercel.app/intervenants"> Intervenants</a>
+          <a href="https://spot-pharma-front.vercel.app/add"> Stand 3D</a>
+          <a href="https://spot-pharma-front.vercel.app/add" style={{ marginRight: "10px" }}>
             {" "}
             Replays
           </a>
           {isConnected ? (
             <a
-              href="http://localhost:5173/home"
+              href="https://spot-pharma-front.vercel.app/home"
               style={{
                 border: "1.5px solid white",
                 padding: "5px 10px 5px 10px",
@@ -61,7 +61,7 @@ function Navbar() {
             </a>
           ) : (
             <a
-              href="http://localhost:5173/connexion"
+              href="https://spot-pharma-front.vercel.app/connexion"
               style={{
                 border: "1.5px solid white",
                 padding: "5px 10px 5px 10px",
