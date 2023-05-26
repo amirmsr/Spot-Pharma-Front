@@ -29,7 +29,7 @@ const router = createBrowserRouter([
               element: <Accueil />
             },
             {
-              path: "https://spot-pharma-front.vercel.app/sessions",
+              path: "/sessions",
               element: <Session />
             },
             {
@@ -56,7 +56,7 @@ const router = createBrowserRouter([
         },      
       ],
     },
-  ]);
+  ],{basename:'https://spot-pharma-front.vercel.app'});
   
   const queryClient = new QueryClient();
   
