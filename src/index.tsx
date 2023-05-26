@@ -25,7 +25,7 @@ const router = createBrowserRouter([
           element: <Root />,
           children: [
             {
-              path: "/",
+              path: "https://spot-pharma-front.vercel.app/",
               element: <Accueil />
             },
             {
