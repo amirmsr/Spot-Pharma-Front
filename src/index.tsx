@@ -56,7 +56,7 @@ const router = createBrowserRouter([
         },      
       ],
     },
-  ],{basename:'https://spot-pharma-front.vercel.app'});
+  ]);
   
   const queryClient = new QueryClient();
   
