@@ -25,11 +25,11 @@ const router = createBrowserRouter([
           element: <Root />,
           children: [
             {
-              path: "https://spot-pharma-front.vercel.app/",
+              path: "/",
               element: <Accueil />
             },
             {
-              path: "/sessions",
+              path: "https://spot-pharma-front.vercel.app/sessions",
               element: <Session />
             },
             {
