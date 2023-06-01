@@ -1,11 +1,21 @@
-import React, { useState } from "react";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useQuery } from "react-query";
+import React, { useState } from 'react';
+import {
+  MDBContainer,
+  MDBNavbar,
+  MDBNavbarBrand,
+  MDBNavbarToggler,
+  MDBNavbarNav,
+  MDBNavbarItem,
+  MDBNavbarLink,
+  MDBCollapse,
+  MDBIcon
+} from 'mdb-react-ui-kit';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faUser } from '@fortawesome/free-solid-svg-icons';
+import { useQuery } from 'react-query';
 
-
-
-function Navbar() {
+export default function App() {
+  const [showNav, setShowNav] = useState(false);
 
   const [isConnected, setIsconnected] = useState(false);
 
@@ -27,56 +37,76 @@ function Navbar() {
   setIsconnected(true)
   const data = await response.json();
   return data
-    
-    
-    
+  
   })
 
 
   return (
-    <div className="navbar">
-      <ul style={{ listStyle: "none" }}>
-        <li>
-          <a href="https://spot-pharma-front.vercel.app/"> Accueil</a>
-          <a href="https://spot-pharma-front.vercel.app/sessions"> Sessions</a>
-          {/* <a href="https://spot-pharma-front.vercel.app/addsessions"> Ajouter sessions</a> */}
-          <a href="https://spot-pharma-front.vercel.app/intervenants"> Intervenants</a>
-          <a href="https://spot-pharma-front.vercel.app/add"> Stand 3D</a>
-          <a href="https://spot-pharma-front.vercel.app/add" style={{ marginRight: "10px" }}>
-            {" "}
-            Replays
-          </a>
-          {isConnected ? (
-            <a
-              href="https://spot-pharma-front.vercel.app/home"
-              style={{
-                border: "1.5px solid white",
-                padding: "5px 10px 5px 10px",
-                borderRadius: "15px",
-              }}
-            >
-              {" "}
-              Mon compte <span style={{ opacity: 0 }}>.</span>{" "}
-              <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>{" "}
-            </a>
-          ) : (
-            <a
-              href="https://spot-pharma-front.vercel.app/connexion"
-              style={{
-                border: "1.5px solid white",
-                padding: "5px 10px 5px 10px",
-                borderRadius: "15px",
-              }}
-            >
-              {" "}
-              Se connecter <span style={{ opacity: 0 }}>.</span>{" "}
-              <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>{" "}
-            </a>
-          )}
-        </li>
-      </ul>
-    </div>
+    <MDBNavbar expand='lg' style={{backgroundColor:'#23A082'}}>
+      <MDBContainer fluid>       
+        <MDBNavbarToggler
+          type='button'
+          aria-expanded='false'
+          aria-label='Toggle navigation'
+          onClick={() => setShowNav(!showNav)}          
+        >
+          <FontAwesomeIcon icon={faBars} style={{color: "white",}} />
+        </MDBNavbarToggler>
+        <MDBCollapse navbar show={showNav} style={{backgroundColor:'#23A082'}}>
+          <MDBNavbarNav >
+            <MDBNavbarItem>
+              <MDBNavbarLink><a href="https://spot-pharma-front.vercel.app/">Accueil</a></MDBNavbarLink>
+            </MDBNavbarItem>
+            <MDBNavbarItem>
+              <MDBNavbarLink><a href="https://spot-pharma-front.vercel.app/sessions"> Sessions</a></MDBNavbarLink>
+            </MDBNavbarItem>           
+            <MDBNavbarItem>
+              <MDBNavbarLink><a href="https://spot-pharma-front.vercel.app/intervenants"> Intervenants</a></MDBNavbarLink>
+            </MDBNavbarItem>           
+            <MDBNavbarItem>
+              <MDBNavbarLink> <a href="https://spot-pharma-front.vercel.app/add"> Stand 3D</a></MDBNavbarLink>
+            </MDBNavbarItem>           
+            <MDBNavbarItem>
+              <MDBNavbarLink> <a href="https://spot-pharma-front.vercel.app/add"> Replay</a></MDBNavbarLink>
+            </MDBNavbarItem>      
+            {isConnected ? (
+                  <MDBNavbarItem>
+                  <MDBNavbarLink>
+                     <a
+                      href="https://spot-pharma-front.vercel.app/home"
+                      style={{
+                        border: "1.5px solid white",
+                        padding: "5px 10px 5px 10px",
+                        borderRadius: "15px",
+                      }}
+                      >
+                      {" "}
+                      Mon compte <span style={{ opacity: 0 }}>.</span>{" "}
+                      <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>{" "}
+                      </a>
+                  </MDBNavbarLink>
+                  </MDBNavbarItem>  
+            ):(
+                  <MDBNavbarItem>
+                  <MDBNavbarLink>
+                    <a
+                    href="https://spot-pharma-front.vercel.app/connexion"
+                    style={{
+                      border: "1.5px solid white",
+                      padding: "5px 10px 5px 10px",
+                      borderRadius: "15px",
+                    }}
+                    >
+                    {" "}
+                    Se connecter <span style={{ opacity: 0 }}>.</span>{" "}
+                    <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>{" "}
+                   </a>
+                  </MDBNavbarLink>
+                  </MDBNavbarItem>  
+            )}     
+          </MDBNavbarNav>
+        </MDBCollapse>
+      </MDBContainer>
+    </MDBNavbar>
   );
 }
-
-export default Navbar;
