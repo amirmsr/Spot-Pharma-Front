@@ -15,7 +15,7 @@ export default function Connexion() {
 
   const {mutate : loginMutation } = useMutation(
     async () => {
-      const response = await fetch("http://localhost:8800/connexion", {
+      const response = await fetch("http://162.19.64.70:8800/connexion", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -42,10 +42,11 @@ export default function Connexion() {
 
 
   return (
-    <div>
-      <form className="addSessionForm" onSubmit={handleSubmit}>
-        <div className="add">
-          <h1>Connexion</h1>
+    <div >
+      <form className="addSessionForm" onSubmit={handleSubmit} >
+        <div className="add" >
+          <br /><br /><br />
+          <h1 >Connexion</h1>
           <br />
           <br />
           <div className="container">
@@ -76,7 +77,7 @@ export default function Connexion() {
 
           <br />
           <br />
-          <button type="submit" className="btnAddSession">
+          <button type="submit" className="btnMain2" style={{marginBottom:'300px'}}>
             {" "}
             Se connecter{" "}
           </button>

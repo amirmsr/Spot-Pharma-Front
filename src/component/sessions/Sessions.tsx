@@ -32,7 +32,7 @@ function Session() {
     if (!token){
       throw new Error("token missing");
     }
-    const response = await fetch ("http://localhost:8800/home",{
+    const response = await fetch ("http://162.19.64.70:8800/home",{
       headers: {
         token: `${token}`,
       }
@@ -80,7 +80,7 @@ function Session() {
   const { mutate: inscriptionMutation } = useMutation(async (inscription: { id_user: string; id_session: string; }) => {
     const token = localStorage.getItem("token");
     const headers = { token: `${token}` };
-    const response = await fetch("http://localhost:8800/session_inscrit", {
+    const response = await fetch("http://162.19.64.70:8800/session_inscrit", {
       method: 'POST',
       headers: {
         ...headers,
@@ -100,7 +100,7 @@ function Session() {
   // fetch les sessions
   const {data: elements, isLoading}= useQuery("Sessions", async ()=>{
 
-    const response = await fetch ("http://localhost:8800/sessions")
+    const response = await fetch ("http://162.19.64.70:8800/sessions")
     if (!response.ok){
       throw new Error("failed to fetch sessions")
     }

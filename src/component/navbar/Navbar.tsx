@@ -26,7 +26,7 @@ export default function App() {
     throw new Error("token missing");
   }
 
-  const response = await fetch ("http://localhost:8800/home",{
+  const response = await fetch ("http://162.19.64.70:8800/home",{
     headers: {
       token: `${token}`,
     }
