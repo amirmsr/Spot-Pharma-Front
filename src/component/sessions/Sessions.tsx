@@ -100,7 +100,7 @@ function Session() {
   // fetch les sessions
   const {data: elements, isLoading}= useQuery("Sessions", async ()=>{
 
-    const response = await fetch ("https://spotpharma.link:8800/sessions",{
+    const response = await fetch ("http://spotpharma.link:8800/sessions",{
       
     })
     if (!response.ok){
