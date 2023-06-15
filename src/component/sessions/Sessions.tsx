@@ -100,7 +100,7 @@ function Session() {
   // fetch les sessions
   const {data: elements, isLoading}= useQuery("Sessions", async ()=>{
 
-    const response = await fetch ("http://spotpharma.link:8800/sessions",{
+    const response = await fetch ("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sessions",{
       
     })
     if (!response.ok){
