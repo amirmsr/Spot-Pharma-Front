@@ -15,7 +15,7 @@ export default function Connexion() {
 
   const {mutate : loginMutation } = useMutation(
     async () => {
-      const response = await fetch("http://162.19.64.70:8800/connexion", {
+      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/connexion", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -30,7 +30,7 @@ export default function UserHome(){
      if (!token){
        throw new Error("token missing");
      }
-     const response = await fetch ("http://162.19.64.70:8800/home",{
+     const response = await fetch ("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/home",{
        headers: {
          token: `${token}`,
        }
@@ -50,7 +50,7 @@ export default function UserHome(){
         const userId = user.id;
     
         const response = await fetch(
-          `http://162.19.64.70:8800/inscrit_session/${userId}`,
+          `https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/inscrit_session/${userId}`,
           {
             headers: {
               token: `${token}`,
@@ -74,7 +74,7 @@ export default function UserHome(){
     //get all sessions
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const { data: allSession } = useQuery("AllSessions", async () => {
-      const response = await fetch("http://162.19.64.70:8800/sessions");
+      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sessions");
       if (!response.ok) {
         throw new Error("failed to fetch sessions");
       }

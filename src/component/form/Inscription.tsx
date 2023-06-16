@@ -25,7 +25,7 @@ export default function Inscription(){
   const handleSubmit = async (e:React.FormEvent<HTMLFormElement>)=>{
     e.preventDefault();
     try{
-      const response = await axios.post('http://162.19.64.70:8800/inscription', data);
+      const response = await axios.post('https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/inscription', data);
       console.log(response.data)
       navigate('/')
     }catch(error){
