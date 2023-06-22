@@ -221,9 +221,11 @@ function Session() {
             )}
             <br />
           <center>
+            <a href="https://cp.sync.com/mfs-60:0f8ece58ae8ab3f1a014cbed2f01a0b0=============================/u/7(cut).mp4?cachekey=60:0f8ece58ae8ab3f1a014cbed2f01a0b0=============================&datakey=gMCLC12UtF24Bj4lPCzgCOgwQ5A2Djha3HXzPEQ/kNlg683A3d7XFsN6tKfEMTALQjvpRuR/FQQY1cXoJt4TAYlJwWj2ve4EoQoajnXEGTtXnW9AxWsTyiYHtyS2WowpNJHxsfrQ3I8PBIv+x29EPkJw+Jt1jyG2KrGPkkC0VfzoOVp+BU7T07uQBtUe8v1+A7Q3EjdBnUYPxszl/1EYknvC6dQahljw/zK2dQuK3itIuQioYeAI/bzbBulFPe33up3q3B1h7RPsHy4fa28OV+Dw8nmt/jsQruQIRiTj3J0KdHzvvnT//xHJ0bYsWpdukHCjNvF5UCSjv87UtKB+pA&mode=101&api_version=1&header1=Q29udGVudC1UeXBlOiB2aWRlby9tcDQ&header2=Q29udGVudC1EaXNwb3NpdGlvbjogaW5saW5lOyBmaWxlbmFtZT0iNyhjdXQpLm1wNCI7ZmlsZW5hbWUqPVVURi04Jyc3KGN1dCkubXA0Ow&servtime=1687446704015&engine=cp-3.1.38&userid=766260000&deviceid=1839060000&devicetypeid=3&access_token=67797f819d242f4431587ce729e8f7bbbddd1abb6e5aff172b6f4bdd29c26911">
             <button className="btnMain2">
               Voir le Replay
             </button>
+            </a>
           </center>
         </div>
            
