@@ -23,7 +23,7 @@ export default function Connexion() {
         body: JSON.stringify(data),
       });
       const json = await response.json();
-      return json;
+      return json
     },
     {
       onSuccess: (data) => {
@@ -32,6 +32,11 @@ export default function Connexion() {
         localStorage.setItem("token", token);
         window.location.href = "/home";
       },
+      onError: () => {
+          alert('mauvais mot de passe ou mauvais mail où compte non valide');
+          
+      }
+      
     }
   );
 
@@ -77,12 +82,18 @@ export default function Connexion() {
 
           <br />
           <br />
-          <button type="submit" className="btnMain2" style={{marginBottom:'300px'}}>
-            {" "}
-            Se connecter{" "}
+          <button type="submit" className="btnMain2" >
+            Se connecter
           </button>
+          <br /> <br />
+          <p>ou</p>                    
         </div>
       </form>
+      <a href="/inscription">
+            <button className="btnMain2" style={{marginBottom:'300px'}}>          
+              S'inscrire 
+            </button>
+      </a>
     </div>
   );
 }

@@ -44,6 +44,7 @@ export default function Inscription(){
         <form className='addSessionForm' onSubmit={handleSubmit}>
 
             <div className="add">
+              <br /><br /><br />
                 <h1>Inscription</h1>
                 <br /><br />
                 <div className="container">
@@ -68,7 +69,7 @@ export default function Inscription(){
 
                 
                 <br /><br />
-                <button type="submit" className='btnAddSession'> S inscrire </button>
+                <button type="submit" className='btnMain2'> S inscrire </button>
        
             </div>
       </form>
