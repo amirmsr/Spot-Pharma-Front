@@ -221,7 +221,7 @@ function Session() {
             )}
             <br />
           <center>
-            <a href="https://m118.syncusercontent.com/mfs-60:0f8ece58ae8ab3f1a014cbed2f01a0b0=============================/p/7(cut).mp4?allowdd=0&datakey=Gtm9ko5VkjhzKsGRDN30uvwSI/d2nnPDfUYpVFLT496GF0T9AOGtGaSMQZa3I+r3s/Wq1HWHZjzA5WuuwgXElzv9xdUL3cT6UK4yRibnpEesQrPg2fH2zloq4W2k+Sl2NsSRwamuX5u+Xk7bCUGfPc4vFkaEJMmPpcx18Mbl7EjrLY4tVgQSuGj/O+4ptF7vYVGapEdu5v6+BEc6VJ950phgjU5/GPgRfFLuG60s+wETyNQgRkNQddqP/tfwj+3lJzp/zhDlQN9fH6ciZsoeVI2OLd5TRA/U+49li78IPtaT1YAdm6zMg2foTbCdDjJQdtV3sdkKirEyXja9GNLraw&engine=ln-3.1.38&errurl=kRfzAK9JkhLTBRqHwVnMgJjgx76BNCV292+b1lDN5Ek7WjB3PSz0PUCpeJ1o6ITzRVFzfa5KmoU0QY6pHYjdVlZ8E1ftl2Ehp/P5Y29mvmLo8KRzboBS9PFxHnO8hcT+uT2z48CMKFcMuB88bJZBVLjrA2+W78wpGItofnvsMXCV6Yxh/B6BdrLwyDgFwFFX4hT6H7k2Xf391cJIatjaHl/SsC4hzRhdi274Y/Z5EDBFReOuNxYhlNwH48/UAMwaR58/HlRMrKqjt7q4gvUE0G4brVYk5lq1lEbRFP/e4A7xzJXABqMpW8V08pBIgLt8kfgX3kpOuDepe3JFVtH0rA==&header1=Q29udGVudC1UeXBlOiB2aWRlby9tcDQ&header2=Q29udGVudC1EaXNwb3NpdGlvbjogaW5saW5lOyBmaWxlbmFtZT0iNyhjdXQpLm1wNCI7ZmlsZW5hbWUqPVVURi04Jyc3KGN1dCkubXA0Ow&ipaddress=1457144620&linkcachekey=c8857f3b0&linkoid=766260000&mode=101&sharelink_id=9175921960000&timestamp=1687506031723&uagent=8ce2ac0889d881e6b69dfc50d026374b84fe6254&signature=3ed7fab6fee78d9d0cb7f491a2c0d317ccadc0ec&cachekey=60:0f8ece58ae8ab3f1a014cbed2f01a0b0=============================">
+            <a href="https://bcombrun.com/spot-pharma/video/Film_Dermatologie.mp4">
               
             <button className="btnMain2">
               Voir le Replay
