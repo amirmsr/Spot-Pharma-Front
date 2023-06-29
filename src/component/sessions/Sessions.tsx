@@ -112,6 +112,9 @@ function Session() {
   if (isLoading) {
     return <div>Chargement...</div>;
   }
+  if(isError){
+    return <div>Erreur de chargement</div>;
+  }
 
 
   
