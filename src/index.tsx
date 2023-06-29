@@ -8,7 +8,6 @@ import './style.css';
 
 import Accueil from "./component/accueil/Accueil";
 /* import UserHome from "./component/accueil/UserHome"; */
-import AddSessions from "./component/form/AddSession";
 import Connexion from "./component/form/Connexion";
 import Inscription from "./component/form/Inscription";
 import Intervenants from "./component/intervenants/Intervenants";
@@ -31,11 +30,7 @@ const router = createBrowserRouter([
             {
               path: "/sessions",
               element: <Session />
-            },
-            {
-              path: "/addSessions",
-              element: <AddSessions />
-            },         
+            },       
             {
               path: "/intervenants",
               element: <Intervenants />
