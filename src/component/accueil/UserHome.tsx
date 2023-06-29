@@ -1,4 +1,4 @@
-import { useQuery } from "react-query";
+import { useMutation, useQuery } from "react-query";
 
 
 interface Sessions {
@@ -71,7 +71,7 @@ export default function UserHome(){
         
   
 
-    //get all sessions
+    //get user sessions
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const { data: allSession } = useQuery("AllSessions", async () => {
       const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sessions");
@@ -90,6 +90,55 @@ export default function UserHome(){
 
 
 
+
+
+
+
+
+  //desinscription
+
+  const { mutate: desinscriptionMutation } = useMutation(async (desinscription: { id_user: string; id_session: string; }) => {
+    try {
+      const token = localStorage.getItem("token");
+      const headers = { token: `${token}` };
+      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_inscrit", {
+        method: 'DELETE',
+        headers: {
+          ...headers,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(desinscription),
+      });
+  
+      if (response.ok) {
+        const json = await response.json();
+        console.log(json);
+        alert("Votre désinscription est bien prise en compte")
+        return json;
+      } else {
+        // Gérer l'erreur de duplication ici
+        alert("Vous vous êtes déjà inscrit")
+      }
+    } catch (error) {
+      // Gérer d'autres erreurs ici
+      console.error(error);
+      throw error;
+    }
+  });
+
+  
+  const handleDesinscription=(sessionId : number)=>{
+    const userId = user?.id as number;
+    if (userId) {
+      const desinscription = {
+        id_user: userId.toString(),
+        id_session: sessionId.toString(),
+      };
+      desinscriptionMutation(desinscription)        
+    } else {
+      console.log("userId n'est pas défini.");
+    }
+  }
 
 
     
@@ -171,15 +220,13 @@ export default function UserHome(){
               </div>
             </div>
 
-
-
-
-
-
             <br /><br />
             
             <button className="btnMain2">
               Voir le Replay
+            </button>
+            <button onClick={()=>handleDesinscription(element.id)} className="btnMain2">
+              Se désinscrire
             </button>
 
         </div>
@@ -198,7 +245,7 @@ export default function UserHome(){
           
         </div>
       </div>
-        <button onClick={handleLogout}>Déconnexion</button>
+        <button className="btnMain2" onClick={handleLogout}>Déconnexion</button>
       </div>
     </div>
      

@@ -59,33 +59,33 @@ function Session() {
  
  
 
-  const { mutate: inscriptionMutation } = useMutation(async (inscription: { id_user: string; id_session: string; }) => {
-    try {
-      const token = localStorage.getItem("token");
-      const headers = { token: `${token}` };
-      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_inscrit", {
-        method: 'POST',
-        headers: {
-          ...headers,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(inscription),
-      });
-  
-      if (response.ok) {
-        const json = await response.json();
-        console.log(json);
-        alert("Votre inscription est bien prise en compte")
-        return json;
-      } else {
-        // Gérer l'erreur de duplication ici
-        alert("Vous vous êtes déjà inscrit")
+    const { mutate: inscriptionMutation } = useMutation(async (inscription: { id_user: string; id_session: string; }) => {
+      try {
+        const token = localStorage.getItem("token");
+        const headers = { token: `${token}` };
+        const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_inscrit", {
+          method: 'POST',
+          headers: {
+            ...headers,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(inscription),
+        });
+    
+        if (response.ok) {
+          const json = await response.json();
+          console.log(json);
+          alert("Votre inscription est bien prise en compte")
+          return json;
+        } else {
+          // Gérer l'erreur de duplication ici
+          alert("Vous vous êtes déjà inscrit")
+        }
+      } catch (error) {
+        // Gérer d'autres erreurs ici
+        console.error(error);
+        throw error;
       }
-    } catch (error) {
-      // Gérer d'autres erreurs ici
-      console.error(error);
-      throw error;
-    }
     });
   
 
