@@ -75,10 +75,11 @@ function Session() {
       if (response.ok) {
         const json = await response.json();
         console.log(json);
+        alert("Votre inscription est bien prise en compte")
         return json;
       } else {
         // Gérer l'erreur de duplication ici
-        throw new Error('Une erreur de duplication s\'est produite');
+        alert("Vous vous êtes déjà inscrit")
       }
     } catch (error) {
       // Gérer d'autres erreurs ici
@@ -97,10 +98,7 @@ function Session() {
           id_user: userId.toString(),
           id_session: elementId.toString(),
         };
-        inscriptionMutation(inscription)
-        alert("Votre inscription est bien prise en compte")
-        
-        
+        inscriptionMutation(inscription)        
       } else {
         console.log("userId n'est pas défini.");
       }
