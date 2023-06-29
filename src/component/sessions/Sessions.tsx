@@ -138,7 +138,7 @@ function Session() {
         
         <div className="row ">
           
-          {elements.slice(0.3).map((element:Sessions)=>(
+          {elements?.slice(0.3).map((element:Sessions)=>(
           <div key={element.id} className="col-md-4 ">
             <div className="session">
             <div className="sessionHeader">
