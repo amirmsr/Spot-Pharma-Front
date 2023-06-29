@@ -225,6 +225,7 @@ export default function UserHome(){
             <button className="btnMain2">
               Voir le Replay
             </button>
+            <br />
             <button onClick={()=>handleDesinscription(element.id)} className="btnMain2">
               Se désinscrire
             </button>
