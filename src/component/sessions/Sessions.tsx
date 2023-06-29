@@ -97,23 +97,25 @@ function Session() {
 
 
   // fetch les sessions
-  const {data: elements, isLoading, isError}= useQuery("Sessions", async ()=>{
-
-    const response = await fetch ("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sessions",{
-      
-    })
-    if (!response.ok){
-      throw new Error("failed to fetch sessions")
+  const { data: elements, isLoading, isError } = useQuery("Sessions", async () => {
+    try {
+      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sessions", {});
+      if (!response.ok) {
+        throw new Error("Failed to fetch sessions");
+      }
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      throw new Error("An error occurred while fetching sessions");
     }
-    const data = await response.json();
-    return data
-  })
-
+  });
+  
   if (isLoading) {
     return <div>Chargement...</div>;
   }
-  if(isError){
-    return <div>Erreur de chargement</div>;
+  
+  if (isError) {
+    return <div>Erreur de chargement : {isError}</div>;
   }
 
 
