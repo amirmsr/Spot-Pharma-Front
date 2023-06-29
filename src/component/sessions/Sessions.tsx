@@ -117,6 +117,11 @@ function Session() {
     if (isError) {
       console.log('erreuuuur')
     }
+    console.log(elements)
+    if (!elements || elements.length === 0) {
+      return <div>Aucune session disponible</div>;
+    }
+    
 
 
   
