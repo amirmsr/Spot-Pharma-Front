@@ -139,7 +139,7 @@ function Session() {
       <h1 style={{ margin: "0", color: "#7DBA33" }}>Toutes les</h1>
       <p style={{ fontSize: "2rem", margin: "0" }}>Sessions</p>
 <br></br>
-      <div className="container ">
+      {/* <div className="container ">
         
         <div className="row ">
           
@@ -158,8 +158,6 @@ function Session() {
             <h2>{element.titre}</h2>
                 <br /><br />
 
-
-             {/*  image invité */}
 
             <div className="container">
               <div className="row">
@@ -204,7 +202,6 @@ function Session() {
 
 
             <br /><br />
-            {/* les button */}
             {isConnected ? (
               <center>
                 <button
@@ -248,7 +245,7 @@ function Session() {
           ))}
           
         </div>
-      </div>
+      </div> */}
 
     
     </div>
