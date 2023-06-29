@@ -74,7 +74,7 @@ export default function Inscription(){
             </div>
       </form>
      
-  
+    <br /><br /><br /><br />
     </div>
   )
 }
