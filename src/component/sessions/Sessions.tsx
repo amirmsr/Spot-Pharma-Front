@@ -105,18 +105,18 @@ function Session() {
       }
       const data = await response.json();
       return data;
-    } catch (error) {
+    } catch (err) {
       throw new Error("An error occurred while fetching sessions");
     }
   });
   
-  if (isLoading) {
-    return <div>Chargement...</div>;
-  }
-  
-  if (isError) {
-    return <div>Erreur de chargement : {isError}</div>;
-  }
+    if (isLoading) {
+      return <div>Chargement...</div>;
+    }
+    
+    if (isError) {
+      console.log('erreuuuur')
+    }
 
 
   
