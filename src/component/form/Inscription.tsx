@@ -41,7 +41,7 @@ export default function Inscription(){
   return (
     
       <div>
-        <form className='addSessionForm' onSubmit={handleSubmit}>
+        <form style={{paddingBottom:'400px',paddingTop:'100px'}} onSubmit={handleSubmit}>
 
             <div className="add">
               <br /><br /><br />
@@ -74,7 +74,6 @@ export default function Inscription(){
             </div>
       </form>
      
-    <br /><br /><br /><br />
     </div>
   )
 }
