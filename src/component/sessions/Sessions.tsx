@@ -58,40 +58,53 @@ function Session() {
   //inscrire a une session   
  
  
-  const HandleInscription = async (elementId: number, elementTitre: string) => {
-    const userId = user?.id as number;
-    console.log(userId);
-  
-    if (userId) {
-      const inscription = {
-        id_user: userId.toString(),
-        id_session: elementId.toString(),
-      };
-      inscriptionMutation(inscription)
-      alert("Votre inscription est bien prise en compte")
-      
-      
-    } else {
-      console.log("userId n'est pas défini.");
-    }
-  };
 
   const { mutate: inscriptionMutation } = useMutation(async (inscription: { id_user: string; id_session: string; }) => {
-    const token = localStorage.getItem("token");
-    const headers = { token: `${token}` };
-    const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_inscrit", {
-      method: 'POST',
-      headers: {
-        ...headers,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(inscription),
+    try {
+      const token = localStorage.getItem("token");
+      const headers = { token: `${token}` };
+      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_inscrit", {
+        method: 'POST',
+        headers: {
+          ...headers,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(inscription),
+      });
+  
+      if (response.ok) {
+        const json = await response.json();
+        console.log(json);
+        return json;
+      } else {
+        // Gérer l'erreur de duplication ici
+        throw new Error('Une erreur de duplication s\'est produite');
+      }
+    } catch (error) {
+      // Gérer d'autres erreurs ici
+      console.error(error);
+      throw error;
+    }
     });
-    const json = await response.json();
-    console.log(json);
-    return json;
-  });
- 
+  
+
+    const HandleInscription = async (elementId: number, elementTitre: string) => {
+      const userId = user?.id as number;
+      console.log(userId);
+    
+      if (userId) {
+        const inscription = {
+          id_user: userId.toString(),
+          id_session: elementId.toString(),
+        };
+        inscriptionMutation(inscription)
+        alert("Votre inscription est bien prise en compte")
+        
+        
+      } else {
+        console.log("userId n'est pas défini.");
+      }
+    };
 
 
 
@@ -229,7 +242,6 @@ function Session() {
             <br />
           <center>
             <a href="https://bcombrun.com/spot-pharma/video/Film_Dermatologie.mp4">
-              
             <button className="btnMain2">
               Voir le Replay
             </button>
