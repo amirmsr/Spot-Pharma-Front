@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useMutation, useQuery } from "react-query";
+import { useNavigate} from "react-router-dom";
 
 
 
@@ -23,7 +24,8 @@ interface Sessions {
 
 
 function Session() {
-
+  const navigate = useNavigate()
+  
    //get user data
   const [isConnected, setIsconnected] = useState(false);
 
@@ -89,7 +91,7 @@ function Session() {
     });
   
 
-    const HandleInscription = async (elementId: number, elementTitre: string) => {
+    const handleInscription = async (elementId: number, elementTitre: string) => {
       const userId = user?.id as number;
       console.log(userId);
     
@@ -134,6 +136,10 @@ function Session() {
     }
     
 
+
+    const handleSession = async (sessionId: number) => {
+        navigate(`SessionsDetails/${sessionId}`)
+    };
 
   
 
@@ -222,7 +228,7 @@ function Session() {
               <center>
                 <button
                   className="btnMain2"
-                  onClick={() => HandleInscription(element.id, element.titre)}
+                  onClick={() => handleInscription(element.id, element.titre)}
                 >
                   S`inscrire à la session
                 </button>
@@ -244,6 +250,11 @@ function Session() {
               Voir le Replay
             </button>
             </a>
+             <br /><br />
+             <button onClick={() => handleSession(element.id)} className="btnMain2">
+              Voir les inscrits
+            </button>
+
           </center>
         </div>
            
