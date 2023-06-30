@@ -9,8 +9,8 @@ export default function Inscription(){
     name: "",
     email: "",
     password: "",
-    validation:"valide",
-    role:"admin"
+    validation:1,
+    role:0
     
   });
   
