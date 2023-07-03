@@ -77,8 +77,10 @@ function Session() {
 
 
     // filtrer users 
+    let filteredUsers:Users[] = []
+    
     if(users){
-        var filteredUsers = users?.filter((user: { id: any; }) => {
+        filteredUsers = users?.filter((user: { id: any; }) => {
             const exists = inscrits?.some((inscrit: { id_user: any; }) => inscrit?.id_user === user?.id);
             return exists;
         });
