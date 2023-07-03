@@ -90,6 +90,9 @@ function Session() {
                             <h3>{filteredUser.name}</h3>
                             <p>{filteredUser.email}</p>
                         </div>
+                        <button className="btnMain2" style={{backgroundColor:'red'}}>
+                            Supprimer
+                        </button>
                     </div>
                 </div>
             ))}
