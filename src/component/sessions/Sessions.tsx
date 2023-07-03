@@ -53,11 +53,11 @@ function Session() {
     }
   }, [user]);
   console.log(user)
- /*  useEffect(() => {
-    if (user?.role === true) {
+  useEffect(() => {
+    if (user?.role === 1) {
       setIsadmin(true);
     }
-  }, [user]); */
+  }, [user]);
   
 
 
