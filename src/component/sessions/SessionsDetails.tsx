@@ -73,7 +73,7 @@ function Session() {
     throw new Error("An error occurred while fetching sessions");
     }
     });
-    console.log(inscrits)
+    console.log(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_inscrit/${sessionId}`)
 
 
     // filtrer users 
