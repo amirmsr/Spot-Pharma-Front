@@ -6,7 +6,7 @@ export default function Footer(){
          <img src="./logo.png" width="10%" alt="" />
          <br /><br />
          <p>Un congrès organisé par la SFSPO</p>
-         <p>Conditions d`utilisation</p>
+         <p>Conditions d'utilisation</p>
          <br /><br />
          <div className="container">
             <div className="row">

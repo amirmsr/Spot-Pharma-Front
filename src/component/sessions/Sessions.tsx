@@ -230,7 +230,7 @@ function Session() {
                   className="btnMain2"
                   onClick={() => handleInscription(element.id, element.titre)}
                 >
-                  S`inscrire à la session
+                  S'inscrire à la session
                 </button>
               </center>
             ) : (
@@ -239,7 +239,7 @@ function Session() {
                   className="btnMain2"
                   onClick={() => handleNotconnected()}
                 >
-                  S`inscrire à la session
+                  S'inscrire à la session
                 </button>
               </center>
             )}
