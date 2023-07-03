@@ -33,12 +33,16 @@ interface Users {
 const token = localStorage.getItem("token");
 function Session() {
 
-    const { sessionId } = useParams<{ sessionId: string }>();
-    console.log(sessionId)
+    const { sessionId } = useParams<{ sessionId: any }>();
+
     //fetch les inscrits
     const { data: users } = useQuery("Users", async () => {
     try {
-    const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/users`, {});
+    const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/users`, {
+        headers: {
+            token: `${token}`,
+        }
+    });
     if (!response.ok) {
         throw new Error("Failed to fetch sessions");
     }
