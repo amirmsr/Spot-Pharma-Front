@@ -67,14 +67,16 @@ function Session() {
 
     // filtrer users 
 
-    const filterUsers = users.filter((user:Users)=>{
-        const exists = inscrits.some((inscrit:number) => inscrit === user.id)
-        return exists
-    })
-
-    filterUsers.map((filterUser: null)=>{
-        console.log(filterUser)
-    })
+    if (users) {
+        const filteredUsers = users.filter((user: { id: number; }) => {
+          const exists = inscrits.some((inscrit: { id_user: number; }) => inscrit.id_user === user.id);
+          return exists;
+        });
+      
+        filteredUsers.map((user: any) => {
+          console.log(user);
+        });
+    }
    
 
 
