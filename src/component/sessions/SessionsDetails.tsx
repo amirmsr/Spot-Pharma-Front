@@ -80,17 +80,17 @@ function Session() {
 
 
   return (
-    <div className="container">
+    <div className="container" style={{marginTop:'200px'}}>
         <div className="row">
             {filteredUsers.map((filteredUser:Users)=>(
                 <div key={filteredUser.id} className="col-md-4">
                     <div className="session">
                         <div>
-                            <FontAwesomeIcon icon={faUser} style={{color:'#28A082'}}/>
+                            <FontAwesomeIcon icon={faUser} style={{color:'#28A082', fontSize:'2rem'}}/>
                             <h3>{filteredUser.name}</h3>
                             <p>{filteredUser.email}</p>
                         </div>
-                        <button className="btnMain2" style={{backgroundColor:'red'}}>
+                        <button className="btnMain2" style={{backgroundColor:'red', color:'white', border:'none'}}>
                             Supprimer
                         </button>
                     </div>
