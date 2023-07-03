@@ -78,15 +78,14 @@ function Session() {
 
     // filtrer users 
     if(users){
-        const filteredUsers = users?.filter((user: { id: any; }) => {
+        var filteredUsers = users?.filter((user: { id: any; }) => {
             const exists = inscrits?.some((inscrit: { id_user: any; }) => inscrit?.id_user === user?.id);
             return exists;
         });
         filteredUsers.map((filteredUser: Users) => {
             console.log(filteredUser);
-        });
+        });      
     }
-   
    
 
 
@@ -95,7 +94,13 @@ function Session() {
 
   return (
     <div className="container">
-     
+        <div className="row">
+            {filteredUsers.map((filteredUser:Users)=>(
+                <div key={filteredUser.id} className="col-md-4">
+                    <h2>{filteredUser.name}</h2>
+                </div>
+            ))}
+        </div>
     
     </div>
   );
