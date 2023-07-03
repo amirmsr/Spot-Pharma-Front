@@ -28,6 +28,7 @@ function Session() {
   
    //get user data
   const [isConnected, setIsconnected] = useState(false);
+  const [isAdmin, setIsadmin] = useState(false);
 
   const {data: user}= useQuery("userProfile", async ()=>{
     const token = localStorage.getItem("token");
@@ -49,6 +50,12 @@ function Session() {
   useEffect(() => {
     if (user) {
       setIsconnected(true);
+    }
+  }, [user]);
+
+  useEffect(() => {
+    if (user.role === true) {
+      setIsadmin(true);
     }
   }, [user]);
   
@@ -152,7 +159,7 @@ function Session() {
   };
 
 
-
+  console.log(user)
 
 
   return (
@@ -251,9 +258,12 @@ function Session() {
             </button>
             </a>
              <br /><br />
-             <button onClick={() => handleSession(element.id)} className="btnMain2">
+             {isAdmin ?(
+              <button onClick={() => handleSession(element.id)} className="btnMain2">
               Voir les inscrits
-            </button>
+              </button>
+             ):null}
+             
 
           </center>
         </div>
