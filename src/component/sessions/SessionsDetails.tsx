@@ -30,11 +30,11 @@ interface Users {
   role:boolean
 }
 
-
+const token = localStorage.getItem("token");
 function Session() {
 
     const { sessionId } = useParams<{ sessionId: string }>();
-    
+    console.log(sessionId)
     //fetch les inscrits
     const { data: users } = useQuery("Users", async () => {
     try {
@@ -53,7 +53,11 @@ function Session() {
     // fetch les inscrit au sessions
     const { data: inscrits } = useQuery("Inscrits", async () => {
     try {
-    const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_inscrit/${sessionId}`, {});
+    const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_inscrit/${sessionId}`, {
+        headers: {
+            token: `${token}`,
+        }
+    });
     if (!response.ok) {
         throw new Error("Failed to fetch sessions");
     }
