@@ -81,22 +81,25 @@ function Session() {
 
   return (
     <div>
-        <h1>Listes des inscrits</h1>
-        <div className="container" style={{paddingTop:'100px', paddingBottom:'200px'}}>
-            <div className="row">
-                {filteredUsers.map((filteredUser:Users)=>(
-                    <div key={filteredUser.id} className="col-md-4">
-                        <div className="session" style={{paddingTop:'50px'}}>
-                            <div>
-                                <FontAwesomeIcon icon={faUser} style={{color:'#28A082', fontSize:'2rem'}}/>
-                                <h3>{filteredUser.name}</h3>
-                                <p>{filteredUser.email}</p>
-                            </div>                        
+        <div style={{paddingTop:'100px'}}>
+            <h1>Listes des inscrits</h1>
+            <div className="container" style={{paddingTop:'100px', paddingBottom:'200px'}}>
+                <div className="row">
+                    {filteredUsers.map((filteredUser:Users)=>(
+                        <div key={filteredUser.id} className="col-md-4">
+                            <div className="session" style={{paddingTop:'50px'}}>
+                                <div>
+                                    <FontAwesomeIcon icon={faUser} style={{color:'#28A082', fontSize:'2rem'}}/>
+                                    <h3>{filteredUser.name}</h3>
+                                    <p>{filteredUser.email}</p>
+                                </div>                        
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
         </div>
+        
     </div>
     
   );
