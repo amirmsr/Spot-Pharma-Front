@@ -35,7 +35,8 @@ function Session() {
 
     const { sessionId } = useParams<{ sessionId: any }>();
     console.log(sessionId)
-    //fetch les inscrits
+
+    //fetch les user
     const { data: users } = useQuery("Users", async () => {
     try {
     const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/users`, {
@@ -55,7 +56,7 @@ function Session() {
     console.log(users)
 
 
-    // fetch les inscrit au sessions
+    // fetch les user inscrit au sessions
     const { data: inscrits } = useQuery("Inscrits", async () => {
     try {
     const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_inscrit/${sessionId}`, {
