@@ -1,26 +1,11 @@
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { useMutation, useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 
 
 
-interface Sessions {
-  id: number;
-  titre: "";
-  session_date: "";
-  type: "";
-  invites: "";
-  invites_descriptions: "";
-  invites_images: "";
-  invites2: "";
-  invites_descriptions2: "";
-  invites_images2: "";
-  sponsors: "";
-  sponsors_descriptions: "";
-  sponsors_images: "";
-  video_titre: "";
-  video: "";
-}
 interface Users {
   id: number;  
   name : string;
@@ -77,7 +62,7 @@ function Session() {
 
 
     // filtrer users 
-    let filteredUsers:Users[] = []
+    var filteredUsers:Users[] = []
     
     if(users){
         filteredUsers = users?.filter((user: { id: any; }) => {
@@ -99,7 +84,13 @@ function Session() {
         <div className="row">
             {filteredUsers.map((filteredUser:Users)=>(
                 <div key={filteredUser.id} className="col-md-4">
-                    <h2>{filteredUser.name}</h2>
+                    <div className="session">
+                        <div>
+                            <FontAwesomeIcon icon={faUser} style={{color:'#28A082'}}/>
+                            <h3>{filteredUser.name}</h3>
+                            <p>{filteredUser.email}</p>
+                        </div>
+                    </div>
                 </div>
             ))}
         </div>
