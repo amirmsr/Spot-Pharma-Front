@@ -21,6 +21,14 @@ interface Sessions {
   video_titre: "";
   video: "";
 }
+interface Users {
+  id: number;  
+  name : string;
+  email: string;
+  password: string;
+  validation:boolean;
+  role:boolean
+}
 
 
 function Session() {
@@ -42,7 +50,7 @@ function Session() {
     });
 
 
-    // fetch les sessions
+    // fetch les inscrit au sessions
     const { data: inscrits } = useQuery("Inscrits", async () => {
     try {
     const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_inscrit/${sessionId}`, {});
@@ -59,12 +67,12 @@ function Session() {
 
     // filtrer users 
 
-    const filterUsers = users?.filter((user: { id: any; })=>{
-        const exists = inscrits.some((inscrit: { id_user: any; }) => inscrit.id_user === user.id)
+    const filterUsers = users.filter((user:Users)=>{
+        const exists = inscrits.some((inscrit:number) => inscrit === user.id)
         return exists
     })
 
-    filterUsers.map((filterUser: any)=>{
+    filterUsers.map((filterUser: null)=>{
         console.log(filterUser)
     })
    
