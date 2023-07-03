@@ -52,7 +52,7 @@ function Session() {
       setIsconnected(true);
     }
   }, [user]);
-
+  console.log(user)
  /*  useEffect(() => {
     if (user?.role === true) {
       setIsadmin(true);
@@ -159,7 +159,7 @@ function Session() {
   };
 
 
-  console.log(user)
+
 
 
   return (
