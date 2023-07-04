@@ -15,7 +15,10 @@ function Accueil(){
                     <h1>SPOT PHARMA 7 <br></br>Conférences 2023</h1>                               
                     <p>20 Septembre au 1er Octobre</p>
                     <br></br><br></br>
-                    <button className='btnMain'>Visionnez les replays</button> 
+                    <a href="https://spot-pharma-front.vercel.app/sessions">
+                    <button className='btnMain'>S'inscire aux sessions</button> 
+                    </a>
+                    
                 </div>
                
             </div>
@@ -39,8 +42,8 @@ function Accueil(){
                             </div>
 
                             <br />
-                            <p>texte</p>
-                            <p>txte</p>
+                            <p>Sanofi</p>
+                            <p>Société mondiale de santé innovante, animée par une vocation : poursuivre les miracles de la science pour améliorer la vie des gens.</p>
                             </div>  
                         </div>
 
@@ -50,8 +53,8 @@ function Accueil(){
                             <img src="../uploads/LogoSponsors/Pfizer_logo.png" alt="" />
                             </div>
                             <br />
-                            <p>texte</p>
-                            <p>txte</p>
+                            <p>Pfizer</p>
+                            <p>Présent dans plus de 150 pays, le groupe est, en 2013, le leader mondial dans son secteur.</p>
                         </div>
                         </div>
 
@@ -61,8 +64,8 @@ function Accueil(){
                             <img src="../uploads/LogoSponsors/AbbVie-Logo-removebg-preview.png" alt="" />
                             </div>
                             <br />
-                            <p>texte</p>
-                            <p>txte</p>
+                            <p>Abbvie</p>
+                            <p>Entreprise américaine spécialisée dans la recherche pharmaceutique. AbbVie recherche et développe des médicaments thérapeutiques.</p>
                             </div>
                         </div>
 
@@ -72,8 +75,10 @@ function Accueil(){
 
                 </div>
                 <br></br>  <br></br>
-
-                <button className='btnMain2'>Voir tous les Partenaires</button>
+                <a href="/">
+                    <button className='btnMain2'>Voir toutes les sessions</button>
+                </a>
+                
    
             </div>
 
@@ -100,22 +105,22 @@ function Accueil(){
                         <div className="col-md-4">
                             <div className="sponsor">
                             <div className="invite">
-                            <img src="../uploads/intervenant/intervenant1.jpg" alt="" />
+                            <img src="../uploads/intervenant/Laure.jpeg" alt="" />
                             </div>
                             <br />
-                            <p>texte</p>
-                            <p>txte</p>
+                            <p>Laure Guéroult Accolas</p>
+                            <p>Fondatrice, Directrice générale chez Patients en Réseau</p>
                         </div>
                         </div>
 
                         <div className="col-md-4">
                             <div className="sponsor">
                             <div className="invite">
-                            <img src="../uploads/intervenant/intervenant1.jpg"  alt="" />
+                            <img src="../uploads/intervenant/intervenant2.jpg"  alt="" />
                             </div>
                             <br />
-                            <p>texte</p>
-                            <p>txte</p>
+                            <p>Dr Béatrice Clairaz</p>
+                            <p>Pharmacienne titulaire, spécialisée en soins de support en oncologie. Co-présidente SFSPO</p>
                             </div>
                         </div>
 
@@ -129,8 +134,10 @@ function Accueil(){
                        
            
             <br></br>  <br /><br />
-
-            <button className='btnMain2'>Voir tous les Partenaires</button>
+            <a href="https://spot-pharma-front.vercel.app/intervenants">
+            <button className='btnMain2'>Voir tous les invités</button>
+            </a>
+            
 
 
             <br></br><br></br>  <br></br><br></br>  <br></br><br></br>  <br></br>
