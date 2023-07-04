@@ -185,7 +185,7 @@ function Session() {
                 ></img>
               )}
             </div>
-            <h3>{element.titre}</h3>   
+            <h3>{element.titre} <span style={{opacity:'0'}}>oo</span></h3>   
             <br /> 
             <p style={{fontSize:'1.3rem',color:'#7DBA33' }}>{element.type} :</p>    
             <p>{element.description}</p>
