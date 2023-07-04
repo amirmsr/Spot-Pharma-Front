@@ -75,7 +75,7 @@ function Accueil(){
 
                 </div>
                 <br></br>  <br></br>
-                <a href="/">
+                <a href="/sessions">
                     <button className='btnMain2'>Voir toutes les sessions</button>
                 </a>
                 

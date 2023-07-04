@@ -192,9 +192,9 @@ function Session() {
 
             <br /> 
 
-            <p style={{fontSize:'1.3rem',color:'#7DBA33' }}>{element.type} :</p>    
-            <p>{element.description}</p>
-            <p style={{color:'#7DBA33',fontSize:'1.3rem'}}>{element.session_date}</p>   
+            <p style={{fontSize:'1.3rem',color:'#23A082' }}>{element.type} :</p>    
+            <p style={{fontSize:'1.3rem'}}>{element.description}</p>
+            <p style={{color:'#23A082',fontSize:'1.3rem'}}>{element.session_date}</p>   
 
             <br /><br />     
 
@@ -210,6 +210,7 @@ function Session() {
                       alt=""
                     ></img>
                     )}
+                    <br />
                   <p>{element.invites}</p>
                   <p>{element.invites_descriptions}</p>
                   </div>    
@@ -224,6 +225,7 @@ function Session() {
                       alt=""
                     ></img>
                     )}
+                    <br />
                   <p>{element.invites2}</p>
                   <p>{element.invites_descriptions2}</p>
                   </div>    
