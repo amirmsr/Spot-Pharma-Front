@@ -189,8 +189,7 @@ function Session() {
             <br /> 
             <p style={{fontSize:'1.3rem',color:'#7DBA33' }}>{element.type} :</p>    
             <p>{element.description}</p>
-            <br />
-            <p style={{color:'#7DBA33'}}>{element.session_date}</p>   
+            <p style={{color:'#7DBA33',fontSize:'1.3rem'}}>{element.session_date}</p>   
             <br /><br />     
             <div className="container">
               <div className="row">
