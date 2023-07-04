@@ -210,7 +210,7 @@ function Session() {
                       alt=""
                     ></img>
                     )}
-                    <br />
+                    <br /><br />
                   <p>{element.invites}</p>
                   <p>{element.invites_descriptions}</p>
                   </div>    
@@ -225,7 +225,7 @@ function Session() {
                       alt=""
                     ></img>
                     )}
-                    <br />
+                    <br /><br />
                   <p>{element.invites2}</p>
                   <p>{element.invites_descriptions2}</p>
                   </div>    

@@ -135,7 +135,7 @@ function Accueil(){
            
             <br></br>  <br /><br />
             <a href="https://spot-pharma-front.vercel.app/intervenants">
-            <button className='btnMain2'>Voir tous les invités</button>
+            <button className='btnMain2'>Voir tous les intervenants</button>
             </a>
             
 
