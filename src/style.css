@@ -242,6 +242,8 @@ input{
     border-radius: 15px;
     margin-bottom: 50px;
     height: 90%;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 .session2{  
     background-color: rgb(255, 255, 255);
