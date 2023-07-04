@@ -185,12 +185,19 @@ function Session() {
                 ></img>
               )}
             </div>
-            <h3>{element.titre} <br /> <span style={{opacity:'0'}}>oo</span></h3>   
+
+            <div style={{height:'30px',backgroundColor:'red'}}>
+              <h3>{element.titre}</h3>   
+            </div>  
+
             <br /> 
+
             <p style={{fontSize:'1.3rem',color:'#7DBA33' }}>{element.type} :</p>    
             <p>{element.description}</p>
             <p style={{color:'#7DBA33',fontSize:'1.3rem'}}>{element.session_date}</p>   
+
             <br /><br />     
+
             <div className="container">
               <div className="row">
 
