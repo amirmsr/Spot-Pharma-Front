@@ -42,7 +42,7 @@ function Accueil(){
                             </div>
 
                             <br />
-                            <p>Sanofi</p>
+                            <p style={{ fontSize:'1.4rem'}}>Sanofi</p>
                             <p>Société mondiale de santé innovante, animée par une vocation : poursuivre les miracles de la science pour améliorer la vie des gens.</p>
                             </div>  
                         </div>
@@ -53,7 +53,7 @@ function Accueil(){
                             <img src="../uploads/LogoSponsors/Pfizer_logo.png" alt="" />
                             </div>
                             <br />
-                            <p>Pfizer</p>
+                            <p style={{ fontSize:'1.4rem'}}>Pfizer</p>
                             <p>Présent dans plus de 150 pays, le groupe est, en 2013, le leader mondial dans son secteur.</p>
                         </div>
                         </div>
@@ -64,7 +64,7 @@ function Accueil(){
                             <img src="../uploads/LogoSponsors/AbbVie-Logo-removebg-preview.png" alt="" />
                             </div>
                             <br />
-                            <p>Abbvie</p>
+                            <p style={{ fontSize:'1.4rem'}}>Abbvie</p>
                             <p>Entreprise américaine spécialisée dans la recherche pharmaceutique. AbbVie recherche et développe des médicaments thérapeutiques.</p>
                             </div>
                         </div>
