@@ -186,7 +186,7 @@ function Session() {
               )}
             </div>
 
-            <div style={{height:'30px',backgroundColor:'red'}}>
+            <div style={{height:'60px',backgroundColor:'red'}}>
               <h3>{element.titre}</h3>   
             </div>  
 
