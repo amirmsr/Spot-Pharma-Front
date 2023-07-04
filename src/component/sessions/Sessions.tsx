@@ -167,7 +167,7 @@ function Session() {
       <br></br> <br></br> <br></br> <br></br>
       <h1 style={{ margin: "0", color: "#7DBA33" }}>Toutes les</h1>
       <p style={{ fontSize: "2rem", margin: "0" }}>Sessions</p>
-<br></br>
+<br></br><br /><br />
       <div className="container ">
         
         <div className="row ">
@@ -178,15 +178,14 @@ function Session() {
             <div className="sessionHeader">
             {element.sponsors_images && (
                 <img
-                  style={{ width: "100%", height: "200px" }}
+                  style={{ width: "100%", paddingTop:"40px", paddingBottom:"30px"  }}
                   src={"../uploads/LogoSponsors/" + element.sponsors_images}
                   alt=""
                 ></img>
               )}
             </div>
             <h2>{element.titre}</h2>
-                <br /><br />
-
+                <br /><br />                
 
             <div className="container">
               <div className="row">
