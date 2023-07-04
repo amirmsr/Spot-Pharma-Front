@@ -87,7 +87,7 @@ function Accueil(){
 
                         <div className="col-md-4">
                             <div className="sponsor">
-                            <div className="sponsor_img" >
+                            <div className="invite" >
                                 <img src="../uploads/intervenant/intervenant1.jpg" alt="" />
                             </div>
 
@@ -99,7 +99,7 @@ function Accueil(){
 
                         <div className="col-md-4">
                             <div className="sponsor">
-                            <div className="sponsor_img">
+                            <div className="invite">
                             <img src="../uploads/intervenant/intervenant1.jpg" alt="" />
                             </div>
                             <br />
@@ -110,7 +110,7 @@ function Accueil(){
 
                         <div className="col-md-4">
                             <div className="sponsor">
-                            <div className="sponsor_img">
+                            <div className="invite">
                             <img src="../uploads/intervenant/intervenant1.jpg"  alt="" />
                             </div>
                             <br />
