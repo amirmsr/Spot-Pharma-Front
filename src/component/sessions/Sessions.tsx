@@ -185,6 +185,7 @@ function Session() {
               )}
             </div>
             <h3>{element.titre}</h3>        
+            <br />
             <p style={{color:'#7DBA33'}}>{element.session_date}</p>   
             <br /><br />     
             <div className="container">
