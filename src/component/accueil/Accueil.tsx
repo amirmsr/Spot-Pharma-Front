@@ -97,7 +97,7 @@ function Accueil(){
                             </div>
 
                             <br />
-                            <p>texte</p>
+                            <p style={{ fontSize:'1.4rem'}}>texte</p>
                             <p>txte</p>
                             </div>  
                         </div>
@@ -108,7 +108,7 @@ function Accueil(){
                             <img src="../uploads/intervenant/Laure.jpeg" alt="" />
                             </div>
                             <br />
-                            <p>Laure Guéroult Accolas</p>
+                            <p style={{ fontSize:'1.4rem'}}>Laure Guéroult Accolas</p>
                             <p>Fondatrice, Directrice générale chez Patients en Réseau</p>
                         </div>
                         </div>
@@ -119,7 +119,7 @@ function Accueil(){
                             <img src="../uploads/intervenant/intervenant2.jpg"  alt="" />
                             </div>
                             <br />
-                            <p>Dr Béatrice Clairaz</p>
+                            <p style={{ fontSize:'1.4rem'}}>Dr Béatrice Clairaz</p>
                             <p>Pharmacienne titulaire, spécialisée en soins de support en oncologie. Co-présidente SFSPO</p>
                             </div>
                         </div>
