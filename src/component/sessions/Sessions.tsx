@@ -9,6 +9,7 @@ interface Sessions {
   titre: "";
   session_date: "";
   type: "";
+  description:"";
   invites: "";
   invites_descriptions: "";
   invites_images: "";
@@ -184,7 +185,9 @@ function Session() {
                 ></img>
               )}
             </div>
-            <h3>{element.titre}</h3>        
+            <h3>{element.titre}</h3>    
+            <p>{element.type}</p>    
+            <p>{element.description}</p>
             <br />
             <p style={{color:'#7DBA33'}}>{element.session_date}</p>   
             <br /><br />     
