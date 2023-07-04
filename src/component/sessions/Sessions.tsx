@@ -184,10 +184,9 @@ function Session() {
                 ></img>
               )}
             </div>
-            <h3>{element.titre}</h3>
-                <br /><br />             
+            <h3>{element.titre}</h3>        
             <p style={{color:'#7DBA33'}}>{element.session_date}</p>   
-
+            <br /><br />     
             <div className="container">
               <div className="row">
 
