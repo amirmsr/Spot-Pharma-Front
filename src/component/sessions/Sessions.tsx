@@ -305,7 +305,7 @@ function Session() {
               Voir le Replay
             </button>
             </a> */}
-            <br /><br />
+            <br />
              {isAdmin ?(
               <button onClick={() => handleSession(element.id)} className="btnMain2">
               Voir les inscrits

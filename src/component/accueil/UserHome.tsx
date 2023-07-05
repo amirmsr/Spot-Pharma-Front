@@ -228,7 +228,7 @@ export default function UserHome(){
 
                 </div>
               </div>
-              
+              <br /><br />
               <button className="btnMain2">
                 Accédez au live <span><FontAwesomeIcon icon={faCirclePlay} style={{color:'#23A082'}} /></span>
               </button>
