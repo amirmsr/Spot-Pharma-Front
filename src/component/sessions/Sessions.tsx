@@ -13,13 +13,9 @@ interface Sessions {
   type: "";
   description:"";
   invites: "";
-  invites_descriptions: "";
   invites_images: "";
   invites2: "";
-  invites_descriptions2: "";
   invites_images2: "";
-  sponsors: "";
-  sponsors_descriptions: "";
   sponsors_images: "";
   video_titre: "";
   video: "";
@@ -30,7 +26,6 @@ function Session() {
   const navigate = useNavigate()
   const [isConnected, setIsconnected] = useState(false);
   const [isAdmin, setIsadmin] = useState(false);
-  const [isInscrit, setIsinsctit] = useState(false);
   const token = localStorage.getItem("token");
 
 
@@ -261,7 +256,6 @@ function Session() {
                     )}
                     <br /><br />
                   <p>{element.invites}</p>
-                  <p>{element.invites_descriptions}</p>
                   </div>    
                 </div>
 
@@ -275,7 +269,6 @@ function Session() {
                     )}
                     <br /><br />
                   <p>{element.invites2}</p>
-                  <p>{element.invites_descriptions2}</p>
                   </div>    
                 </div>
 

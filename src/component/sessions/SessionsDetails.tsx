@@ -87,7 +87,7 @@ function Session() {
                 <div className="row">
                     {filteredUsers.map((filteredUser:Users)=>(
                         <div key={filteredUser.id} className="col-md-4">
-                            <div className="session" style={{paddingTop:'50px'}}>
+                            <div className="session" style={{paddingTop:'50px',marginBottom: '40px',}}>
                                 <div>
                                     <FontAwesomeIcon icon={faUser} style={{color:'#28A082', fontSize:'2rem'}}/>
                                     <h3>{filteredUser.name}</h3>

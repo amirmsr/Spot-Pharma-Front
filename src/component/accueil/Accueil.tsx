@@ -97,8 +97,8 @@ function Accueil(){
                             </div>
 
                             <br />
-                            <p style={{ fontSize:'1.4rem'}}>texte</p>
-                            <p>txte</p>
+                            <p style={{ fontSize:'1.4rem'}}>Martine Costedoat</p>
+                            <p>Pharmacien Directeur Général PHSQ Coordinatrice Nationale projet PHSQ certification qualité des officines de pharmacie</p>
                             </div>  
                         </div>
 
