@@ -168,12 +168,9 @@ function Session() {
   console.log(userSessionId)
 
   userSessionId?.map((id: number) => {
-    if (!isInscrit) {
-      const foundSession = elements.find((element: any) => element.id === id);
-      if (foundSession) {
-        setIsinsctit(true);
-        console.log(`User session with id ${id} found.`);
-      }
+    const foundSession = elements.find((element: any) => element.id === id);
+    if (foundSession) {
+      console.log(`User session with id ${id} found.`);
     }
     return userSessionId
   });
@@ -286,12 +283,11 @@ function Session() {
             <br /><br />
             {isConnected ? (
               <center>
-                <button
-                  className="btnMain2"
-                  onClick={() => handleInscription(element.id, element.titre)}
-                >
-                  S'inscrire à la session
-                </button>
+               {element.id === 89 ?(
+                <button className="btnMain2"> Deja inscrit </button>
+               ):(
+                  <button className="btnMain2" onClick={() => handleInscription(element.id, element.titre)}> S'inscrire à la session </button>
+               )}                 
               </center>
             ) : (
               <center>
