@@ -126,33 +126,8 @@ function Session() {
     }
   });
   
-  if (isLoading) {
-    return <div>Chargement...</div>;
-  }
-  
-  if (isError) {
-    console.log('erreuuuur')
-  }
-  console.log(elements)
-  if (!elements || elements.length === 0) {
-    return <div>Aucune session disponible</div>;
-  }
-    
-
-
-  const handleSession = async (sessionId: number) => {
-      navigate(`SessionsDetails/${sessionId}`)
-  };
-
-  const handleNotconnected = () => {
-    alert("Vous devez vous connecter pour vous inscrire à la session  ");
-  };
-
-
-
 
   //get user sessions
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   const { data: userSessions } = useQuery(
     "UserSessions",
     async () => {
@@ -182,6 +157,29 @@ function Session() {
   console.log(userSessions)
 
 
+
+  
+  if (isLoading) {
+    return <div>Chargement...</div>;
+  }
+  
+  if (isError) {
+    console.log('erreuuuur')
+  }
+  console.log(elements)
+  if (!elements || elements.length === 0) {
+    return <div>Aucune session disponible</div>;
+  }
+    
+
+
+  const handleSession = async (sessionId: number) => {
+      navigate(`SessionsDetails/${sessionId}`)
+  };
+
+  const handleNotconnected = () => {
+    alert("Vous devez vous connecter pour vous inscrire à la session  ");
+  };
 
 
 
