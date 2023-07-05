@@ -26,15 +26,14 @@ interface Sessions {
 
 function Session() {
   const navigate = useNavigate()
-  
-   //get user data
   const [isConnected, setIsconnected] = useState(false);
   const [isAdmin, setIsadmin] = useState(false);
   const [isInscrit, setIsinsctit] = useState(false);
+  const token = localStorage.getItem("token");
 
 
+  //get user data
   const {data: user}= useQuery("userProfile", async ()=>{
-    const token = localStorage.getItem("token");
     if (!token){
       throw new Error("token missing");
     }
@@ -62,9 +61,6 @@ function Session() {
     }
   }, [user]);
   
-
-
-
 
 
   //inscrire a une session   
@@ -157,7 +153,7 @@ function Session() {
 
   //get user sessions
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  /* const { data: userSessions } = useQuery(
+  const { data: userSessions } = useQuery(
     "UserSessions",
     async () => {
       const token = localStorage.getItem("token");
@@ -181,30 +177,9 @@ function Session() {
     {
       enabled: !!user, // Active la requête si user est défini
     }
-  ); */
+  ); 
     
-  //get user sessions
-  // eslint-disable-next-line react-hooks/rules-of-hooks
- /*  const { data: allSession } = useQuery("AllSessions", async () => {
-    const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sessions");
-    if (!response.ok) {
-      throw new Error("failed to fetch sessions");
-    }
-    const data = await response.json();
-    return data;
-  }, {
-    enabled: !!userSessions, // Active la requête si userSessions est défini
-  });
-  const userSession = allSession?.filter((session: { id: any; }) => userSessions.some((userSession: { id_session: any; }) => userSession.id_session === session.id));
-
-
-
-  //chek if user inscrit
-
-  const handleCheck=(sessionId: number)=>{
-    console.log(sessionId)
-    console.log(userSession)
-  } */
+  console.log(userSessions)
 
 
 
@@ -317,7 +292,6 @@ function Session() {
              ):null}
           </center>
         </div>
-        {/* <button onClick={() => handleCheck(element.id)}>test</button> */}
         </div>
           ))}
         </div>
