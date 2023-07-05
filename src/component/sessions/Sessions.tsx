@@ -152,9 +152,12 @@ function Session() {
     alert("Vous devez vous connecter pour vous inscrire à la session  ");
   };
 
+
+
+
   //get user sessions
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { data: userSessions } = useQuery(
+  /* const { data: userSessions } = useQuery(
     "UserSessions",
     async () => {
       const token = localStorage.getItem("token");
@@ -178,11 +181,11 @@ function Session() {
     {
       enabled: !!user, // Active la requête si user est défini
     }
-  );
+  ); */
     
   //get user sessions
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { data: allSession } = useQuery("AllSessions", async () => {
+ /*  const { data: allSession } = useQuery("AllSessions", async () => {
     const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sessions");
     if (!response.ok) {
       throw new Error("failed to fetch sessions");
@@ -201,7 +204,7 @@ function Session() {
   const handleCheck=(sessionId: number)=>{
     console.log(sessionId)
     console.log(userSession)
-  }
+  } */
 
 
 
@@ -314,7 +317,7 @@ function Session() {
              ):null}
           </center>
         </div>
-        <button onClick={() => handleCheck(element.id)}>test</button>
+        {/* <button onClick={() => handleCheck(element.id)}>test</button> */}
         </div>
           ))}
         </div>
