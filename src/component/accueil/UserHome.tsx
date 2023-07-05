@@ -232,7 +232,7 @@ export default function UserHome(){
               <button className="btnMain2">
                 Accédez au live <span><FontAwesomeIcon icon={faCirclePlay} style={{color:'#23A082'}} /></span>
               </button>
-
+              <br /><br />
               <button onClick={()=>handleDesinscription(element.id)} className="btnMain2">
                 Se désinscrire
               </button>
