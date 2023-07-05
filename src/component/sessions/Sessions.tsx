@@ -169,7 +169,6 @@ function Session() {
   userSessionId?.map((id: number) => {
     const foundSession = elements.find((element: any) => element.id === id);
     if (foundSession) {
-      setIsinsctit(true)
       console.log(`User session with id ${id} found.`);
     }
   });
