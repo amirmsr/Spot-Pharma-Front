@@ -154,11 +154,19 @@ function Session() {
     }
   ); 
     
-  console.log(userSessions)
+  const filteredSessions = elements?.filter((session: { id: any; }) => userSessions.some((userSession: { id_session: any; }) => userSession.id_session === session.id));
+
+
+  console.log(filteredSessions.id_session)
 
 
 
-  
+
+
+
+
+
+
   if (isLoading) {
     return <div>Chargement...</div>;
   }
