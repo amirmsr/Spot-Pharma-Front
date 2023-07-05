@@ -1,3 +1,5 @@
+import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { useMutation, useQuery } from "react-query";
 import { useNavigate} from "react-router-dom";
@@ -284,7 +286,7 @@ function Session() {
             {isConnected ? (
               <center>
                {userSessionId.includes(element.id)?(
-                <button className="btnMain2"> Deja inscrit </button>
+                <button className="btnMain2"> Accédez au live <span><FontAwesomeIcon icon={faCirclePlay} style={{color:'#23A082'}} /></span></button>
                ):(
                   <button className="btnMain2" onClick={() => handleInscription(element.id, element.titre)}> S'inscrire à la session </button>
                )}                 
