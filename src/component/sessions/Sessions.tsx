@@ -159,9 +159,9 @@ function Session() {
 
   const userSessionId: number[] = [];
 
-  filteredSessions?.map((filteredSession: number) => {
-    userSessionId.push(filteredSession);
-    return filteredSession
+  filteredSessions?.forEach((filteredSession: any) => {
+    const sessionId = filteredSession.id;
+    userSessionId.push(sessionId);
   });
 
   console.log(userSessionId)
