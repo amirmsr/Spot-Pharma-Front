@@ -6,6 +6,7 @@ interface Sessions {
   titre: "";
   session_date: "";
   type: "";
+  description:'';
   invites: "";
   invites_descriptions: "";
   invites_images: "";
@@ -160,7 +161,7 @@ export default function UserHome(){
         <h1>Bienvenue {user?.name}</h1>
         <br />
         <h3>Voici les sessions où vous êtes inscrit</h3>
-        <br />
+        <br /> <br />
         <div className="container ">
         
         <div className="row">
@@ -177,11 +178,17 @@ export default function UserHome(){
                 ></img>
               )}
             </div>
-            <h2>{element.titre}</h2>
-                <br /><br />
+            <div style={{height:'60px'}}>
+              <h3>{element.titre}</h3>   
+            </div>  
 
+            <br /> 
 
-             {/*  image invité */}
+            <p style={{fontSize:'1.3rem',color:'#23A082' }}>{element.type} :</p>    
+            <p style={{fontSize:'1.3rem'}}>{element.description}</p>
+            <p style={{color:'#23A082',fontSize:'1.3rem'}}>{element.session_date}</p>   
+
+            <br /><br />
 
             <div className="container">
               <div className="row">
@@ -222,9 +229,9 @@ export default function UserHome(){
 
             <br /><br />
             
-            <button className="btnMain2">
+            {/* <button className="btnMain2">
               Voir le Replay
-            </button>
+            </button> */}
             <br /><br />
             <button onClick={()=>handleDesinscription(element.id)} className="btnMain2">
               Se désinscrire

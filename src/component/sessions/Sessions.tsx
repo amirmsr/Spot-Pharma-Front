@@ -264,11 +264,11 @@ function Session() {
             )}
             <br />
           <center>
-            <a href="https://bcombrun.com/spot-pharma/video/Film_Dermatologie.mp4">
+            {/* <a href="https://bcombrun.com/spot-pharma/video/Film_Dermatologie.mp4">
             <button className="btnMain2">
               Voir le Replay
             </button>
-            </a>
+            </a> */}
              <br /><br />
              {isAdmin ?(
               <button onClick={() => handleSession(element.id)} className="btnMain2">
