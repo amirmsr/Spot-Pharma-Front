@@ -154,7 +154,7 @@ function Session() {
     }
   ); 
     
-  const filteredSessions = elements?.filter((session: { id: any; }) => userSessions.some((userSession: { id_session: any; }) => userSession.id_session === session.id));
+  const filteredSessions = elements?.filter((session: { id: any; }) => userSessions?.some((userSession: { id_session: any; }) => userSession.id_session === session.id));
 
 
   console.log(filteredSessions)
