@@ -283,7 +283,7 @@ function Session() {
             <br /><br />
             {isConnected ? (
               <center>
-               {element.id === 89 ?(
+               {userSessionId.includes(element.id)?(
                 <button className="btnMain2"> Deja inscrit </button>
                ):(
                   <button className="btnMain2" onClick={() => handleInscription(element.id, element.titre)}> S'inscrire à la session </button>
