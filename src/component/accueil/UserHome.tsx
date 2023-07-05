@@ -1,3 +1,5 @@
+import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useMutation, useQuery } from "react-query";
 
 
@@ -152,110 +154,100 @@ export default function UserHome(){
 
 
     
-    return (
+  return (
 
-      <div className='homeMainDiv'>
+    <div className='homeMainDiv'>
       
-    <div className=''>
-        <div>
-        <h1>Bienvenue {user?.name}</h1>
-        <br />
-        <h3>Voici les sessions où vous êtes inscrit</h3>
-        <br /> <br />
-        <div className="container ">
-        
-        <div className="row">
+      <div>
+          <div>
+          <h1>Bienvenue {user?.name}</h1>
+          <br />
+          <h3>Voici les sessions où vous êtes inscrit</h3>
+          <br /> <br />
+          <div className="container ">
           
-          {filteredSessions?.slice(0.3).map((element:Sessions)=>(
-          <div key={element.id} className="col-md-4 ">
-            <div className="session">
-            <div className="sessionHeader">
-            {element.sponsors_images && (
-                <img
-                  style={{ width: "100%", height: "200px" }}
-                  src={"../uploads/LogoSponsors/" + element.sponsors_images}
-                  alt=""
-                ></img>
-              )}
-            </div>
-            <div style={{height:'60px'}}>
-              <h3>{element.titre}</h3>   
-            </div>  
-
-            <br /> 
-
-            <p style={{fontSize:'1.3rem',color:'#23A082' }}>{element.type} :</p>    
-            <p style={{fontSize:'1.3rem'}}>{element.description}</p>
-            <p style={{color:'#23A082',fontSize:'1.3rem'}}>{element.session_date}</p>   
-
-            <br /><br />
-
-            <div className="container">
-              <div className="row">
-
-
-                <div className="col">
-                  <div className="invite">             
-                    {element.invites_images && (
-                    <img
-                      src={"../uploads/intervenant/" + element.invites_images}
-                      alt=""
-                    ></img>
-                    )}
-                  <p>{element.invites}</p>
-                  <p>{element.invites_descriptions}</p>
-                  </div>    
-                </div>
-
-
-                <div className="col">
-                  <div className="invite">             
-                    {element.invites_images2 && (
-                    <img
-                      src={"../uploads/intervenant/" + element.invites_images2}
-                      alt=""
-                    ></img>
-                    )}
-                  <p>{element.invites2}</p>
-                  <p>{element.invites_descriptions2}</p>
-                  </div>    
-                </div>
-
-
-
-
-              </div>
-            </div>
-
-            <br /><br />
+          <div className="row">
             
-            {/* <button className="btnMain2">
-              Voir le Replay
-            </button> */}
-            <br /><br />
-            <button onClick={()=>handleDesinscription(element.id)} className="btnMain2">
-              Se désinscrire
-            </button>
+            {filteredSessions?.slice(0.3).map((element:Sessions)=>(
+            <div key={element.id} className="col-md-4 ">
+              <div className="session">
+              <div className="sessionHeader">
+              {element.sponsors_images && (
+                  <img
+                    style={{ width: "100%", height: "200px" }}
+                    src={"../uploads/LogoSponsors/" + element.sponsors_images}
+                    alt=""
+                  ></img>
+                )}
+              </div>
+              <div style={{height:'60px'}}>
+                <h3>{element.titre}</h3>   
+              </div>  
 
-        </div>
-           
+              <br /> 
 
-           
+              <p style={{fontSize:'1.3rem',color:'#23A082' }}>{element.type} :</p>    
+              <p style={{fontSize:'1.3rem'}}>{element.description}</p>
+              <p style={{color:'#23A082',fontSize:'1.3rem'}}>{element.session_date}</p>   
 
-           
+              <br /><br />
+
+              <div className="container">
+                <div className="row">
+
+
+                  <div className="col">
+                    <div className="invite">             
+                      {element.invites_images && (
+                      <img
+                        src={"../uploads/intervenant/" + element.invites_images}
+                        alt=""
+                      ></img>
+                      )}
+                    <p>{element.invites}</p>
+                    <p>{element.invites_descriptions}</p>
+                    </div>    
+                  </div>
+
+
+                  <div className="col">
+                    <div className="invite">             
+                      {element.invites_images2 && (
+                      <img
+                        src={"../uploads/intervenant/" + element.invites_images2}
+                        alt=""
+                      ></img>
+                      )}
+                    <p>{element.invites2}</p>
+                    <p>{element.invites_descriptions2}</p>
+                    </div>    
+                  </div>
 
 
 
-          
+
+                </div>
+              </div>
+              
+              <button className="btnMain2">
+                Accédez au live <span><FontAwesomeIcon icon={faCirclePlay} style={{color:'#23A082'}} /></span>
+              </button>
+
+              <button onClick={()=>handleDesinscription(element.id)} className="btnMain2">
+                Se désinscrire
+              </button>
+
           </div>
-          
-          ))}
-          
+            
+            </div>
+            
+            ))}
+            
+          </div>
+        </div>
+          <button className="btnMain2" onClick={handleLogout}>Déconnexion</button>
         </div>
       </div>
-        <button className="btnMain2" onClick={handleLogout}>Déconnexion</button>
-      </div>
-    </div>
      
     </div>
 
@@ -264,7 +256,7 @@ export default function UserHome(){
 
 
 
-    );
+  );
     
 
 

@@ -30,6 +30,8 @@ function Session() {
    //get user data
   const [isConnected, setIsconnected] = useState(false);
   const [isAdmin, setIsadmin] = useState(false);
+  const [isInscrit, setIsinsctit] = useState(false);
+
 
   const {data: user}= useQuery("userProfile", async ()=>{
     const token = localStorage.getItem("token");
@@ -66,53 +68,50 @@ function Session() {
 
 
   //inscrire a une session   
- 
- 
-
-    const { mutate: inscriptionMutation } = useMutation(async (inscription: { id_user: string; id_session: string; }) => {
-      try {
-        const token = localStorage.getItem("token");
-        const headers = { token: `${token}` };
-        const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_inscrit", {
-          method: 'POST',
-          headers: {
-            ...headers,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(inscription),
-        });
-    
-        if (response.ok) {
-          const json = await response.json();
-          console.log(json);
-          alert("Votre inscription est bien prise en compte")
-          return json;
-        } else {
-          // Gérer l'erreur de duplication ici
-          alert("Vous vous êtes déjà inscrit")
-        }
-      } catch (error) {
-        // Gérer d'autres erreurs ici
-        console.error(error);
-        throw error;
-      }
-    });
+  const { mutate: inscriptionMutation } = useMutation(async (inscription: { id_user: string; id_session: string; }) => {
+    try {
+      const token = localStorage.getItem("token");
+      const headers = { token: `${token}` };
+      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_inscrit", {
+        method: 'POST',
+        headers: {
+          ...headers,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(inscription),
+      });
   
-
-    const handleInscription = async (elementId: number, elementTitre: string) => {
-      const userId = user?.id as number;
-      console.log(userId);
-    
-      if (userId) {
-        const inscription = {
-          id_user: userId.toString(),
-          id_session: elementId.toString(),
-        };
-        inscriptionMutation(inscription)        
+      if (response.ok) {
+        const json = await response.json();
+        console.log(json);
+        alert("Votre inscription est bien prise en compte")
+        return json;
       } else {
-        console.log("userId n'est pas défini.");
+        // Gérer l'erreur de duplication ici
+        alert("Vous vous êtes déjà inscrit")
       }
-    };
+    } catch (error) {
+      // Gérer d'autres erreurs ici
+      console.error(error);
+      throw error;
+    }
+  });
+
+
+  const handleInscription = async (elementId: number, elementTitre: string) => {
+    const userId = user?.id as number;
+    console.log(userId);
+  
+    if (userId) {
+      const inscription = {
+        id_user: userId.toString(),
+        id_session: elementId.toString(),
+      };
+      inscriptionMutation(inscription)        
+    } else {
+      console.log("userId n'est pas défini.");
+    }
+  };
 
 
 
@@ -131,33 +130,84 @@ function Session() {
     }
   });
   
-    if (isLoading) {
-      return <div>Chargement...</div>;
-    }
-    
-    if (isError) {
-      console.log('erreuuuur')
-    }
-    console.log(elements)
-    if (!elements || elements.length === 0) {
-      return <div>Aucune session disponible</div>;
-    }
-    
-
-
-    const handleSession = async (sessionId: number) => {
-        navigate(`SessionsDetails/${sessionId}`)
-    };
-
+  if (isLoading) {
+    return <div>Chargement...</div>;
+  }
   
+  if (isError) {
+    console.log('erreuuuur')
+  }
+  console.log(elements)
+  if (!elements || elements.length === 0) {
+    return <div>Aucune session disponible</div>;
+  }
+    
 
 
-  
-
+  const handleSession = async (sessionId: number) => {
+      navigate(`SessionsDetails/${sessionId}`)
+  };
 
   const handleNotconnected = () => {
     alert("Vous devez vous connecter pour vous inscrire à la session  ");
   };
+
+  //get user sessions
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const { data: userSessions } = useQuery(
+    "UserSessions",
+    async () => {
+      const token = localStorage.getItem("token");
+      const userId = user.id;
+
+      const response = await fetch(
+        `https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/inscrit_session/${userId}`,
+        {
+          headers: {
+            token: `${token}`,
+          },
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("failed to fetch sessions");
+      }
+      const data = await response.json();
+      return data;
+    },
+    {
+      enabled: !!user, // Active la requête si user est défini
+    }
+  );
+    
+  //get user sessions
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const { data: allSession } = useQuery("AllSessions", async () => {
+    const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sessions");
+    if (!response.ok) {
+      throw new Error("failed to fetch sessions");
+    }
+    const data = await response.json();
+    return data;
+  }, {
+    enabled: !!userSessions, // Active la requête si userSessions est défini
+  });
+  const userSession = allSession?.filter((session: { id: any; }) => userSessions.some((userSession: { id_session: any; }) => userSession.id_session === session.id));
+
+
+
+  //chek if user inscrit
+
+  const handleCheck=(sessionId: number)=>{
+    console.log(sessionId)
+    console.log(userSession)
+  }
+
+
+
+
+
+
 
 
 
@@ -168,7 +218,7 @@ function Session() {
       <br></br> <br></br> <br></br> <br></br>
       <h1 style={{ margin: "0", color: "#7DBA33" }}>Toutes les</h1>
       <p style={{ fontSize: "2rem", margin: "0" }}>Sessions</p>
-<br></br><br /><br />
+      <br></br><br /><br />
       <div className="container ">
         
         <div className="row ">
@@ -200,8 +250,6 @@ function Session() {
 
             <div className="container">
               <div className="row">
-
-
                 <div className="col">
                   <div className="invite">             
                     {element.invites_images && (
@@ -215,7 +263,6 @@ function Session() {
                   <p>{element.invites_descriptions}</p>
                   </div>    
                 </div>
-
 
                 <div className="col">
                   <div className="invite">             
@@ -231,16 +278,8 @@ function Session() {
                   </div>    
                 </div>
 
-
-
-
               </div>
             </div>
-
-
-
-
-
 
             <br /><br />
             {isConnected ? (
@@ -262,40 +301,24 @@ function Session() {
                 </button>
               </center>
             )}
-            <br />
           <center>
             {/* <a href="https://bcombrun.com/spot-pharma/video/Film_Dermatologie.mp4">
             <button className="btnMain2">
               Voir le Replay
             </button>
             </a> */}
-             <br /><br />
              {isAdmin ?(
               <button onClick={() => handleSession(element.id)} className="btnMain2">
               Voir les inscrits
               </button>
              ):null}
-             
-
           </center>
         </div>
-           
-
-           
-
-           
-
-
-
-          
-          </div>
-          
+        <button onClick={() => handleCheck(element.id)}>test</button>
+        </div>
           ))}
-          
         </div>
       </div>
-
-    
     </div>
   );
 }
