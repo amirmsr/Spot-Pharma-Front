@@ -159,7 +159,7 @@ function Session() {
 
   const userSessionId: number[] = [];
 
-  filteredSessions?.forEach((filteredSession: any) => {
+  filteredSessions?.map((filteredSession: any) => {
     const sessionId = filteredSession.id;
     userSessionId.push(sessionId);
   });
@@ -172,7 +172,6 @@ function Session() {
       setIsinsctit(true)
       console.log(`User session with id ${id} found.`);
     }
-    return console.log("rien trouvé"); // or return something else if needed
   });
 
 
