@@ -162,15 +162,20 @@ function Session() {
   filteredSessions?.map((filteredSession: any) => {
     const sessionId = filteredSession.id;
     userSessionId.push(sessionId);
+    return filteredSession
   });
 
   console.log(userSessionId)
 
   userSessionId?.map((id: number) => {
-    const foundSession = elements.find((element: any) => element.id === id);
-    if (foundSession) {
-      console.log(`User session with id ${id} found.`);
+    if (!isInscrit) {
+      const foundSession = elements.find((element: any) => element.id === id);
+      if (foundSession) {
+        setIsinsctit(true);
+        console.log(`User session with id ${id} found.`);
+      }
     }
+    return userSessionId
   });
 
 
