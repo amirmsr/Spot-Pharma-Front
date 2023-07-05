@@ -159,13 +159,13 @@ function Session() {
 
   const userSessionId: number[] = [];
 
-  filteredSessions.map((filteredSession: number) => {
+  filteredSessions?.map((filteredSession: number) => {
     userSessionId.push(filteredSession);
     return filteredSession
   });
 
 
-  userSessionId.map((id: number) => {
+  userSessionId?.map((id: number) => {
     const foundSession = elements.find((element: any) => element.id === id);
     if (foundSession) {
       setIsinsctit(true)
