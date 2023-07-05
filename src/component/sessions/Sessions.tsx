@@ -164,6 +164,7 @@ function Session() {
     return filteredSession
   });
 
+  console.log(userSessionId)
 
   userSessionId?.map((id: number) => {
     const foundSession = elements.find((element: any) => element.id === id);
@@ -171,7 +172,7 @@ function Session() {
       setIsinsctit(true)
       console.log(`User session with id ${id} found.`);
     }
-    return null; // or return something else if needed
+    return console.log("rien trouvé"); // or return something else if needed
   });
 
 
