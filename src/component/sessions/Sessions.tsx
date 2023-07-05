@@ -157,8 +157,22 @@ function Session() {
   const filteredSessions = elements?.filter((session: { id: any; }) => userSessions?.some((userSession: { id_session: any; }) => userSession.id_session === session.id));
 
 
-  console.log(filteredSessions)
+  const userSessionId: number[] = [];
 
+  filteredSessions.map((filteredSession: number) => {
+    userSessionId.push(filteredSession);
+    return filteredSession
+  });
+
+
+  userSessionId.map((id: number) => {
+    const foundSession = elements.find((element: any) => element.id === id);
+    if (foundSession) {
+      setIsinsctit(true)
+      console.log(`User session with id ${id} found.`);
+    }
+    return null; // or return something else if needed
+  });
 
 
 
@@ -296,7 +310,7 @@ function Session() {
               Voir les inscrits
               </button>
              ):null}
-          </center>
+          </center>        
         </div>
         </div>
           ))}
