@@ -83,7 +83,7 @@ function EditSession() {
                   <div className="row">
                     <div className="col">
                       <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Titre</p>
-                      <input type="text" name="titre"  placeholder='Titre' onChange={handleChange} value={"jj"} />
+                      <input type="text" name="titre"  placeholder='Titre' onChange={handleChange} />
                     </div>
                     <div className="col">
                     <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Session Date</p>
@@ -114,7 +114,7 @@ function EditSession() {
 
                 
                 <br /><br />
-                <button type="submit" className='btnMain2'> S inscrire </button>
+                <button type="submit" className='btnMain2'> Modifier </button>
        
             </div>
       </form>
