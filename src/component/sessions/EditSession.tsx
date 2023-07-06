@@ -33,7 +33,7 @@ function EditSession() {
     try {
         const headers = { token: `${token}` };
         const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sessions/${sessionId}`, {  //https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_inscrit
-        method: 'POST',
+        method: 'PUT',
         headers: {
             ...headers,
             'Content-Type': 'application/json',
@@ -56,6 +56,8 @@ function EditSession() {
         throw error;
     }
     });
+
+    console.log(data)
 
 
     const handleSubmit = async (e:React.FormEvent<HTMLFormElement>)=>{
