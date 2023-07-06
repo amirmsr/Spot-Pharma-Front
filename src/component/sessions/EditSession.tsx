@@ -77,13 +77,13 @@ function EditSession() {
 
             <div className="add">
               <br /><br /><br />
-                <h1>Inscription</h1>
+                <h1>Modification session</h1>
                 <br /><br />
                 <div className="container">
                   <div className="row">
                     <div className="col">
                       <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Titre</p>
-                      <input type="text" name="titre"  placeholder='Titre' onChange={handleChange} />
+                      <input type="text" name="titre"  placeholder='Titre' onChange={handleChange} value={"jj"} />
                     </div>
                     <div className="col">
                     <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Session Date</p>
@@ -97,6 +97,7 @@ function EditSession() {
                     <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Déscription de la session</p>
                     <input type="text" name="description"  placeholder="Déscription de la session" onChange={handleChange} />
                     </div>
+                    <br /><br />
                     <div className="col">
                     <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Nom du première invité</p>
                     <input type="text" name="invites"  placeholder="Nom du première invité" onChange={handleChange} />
