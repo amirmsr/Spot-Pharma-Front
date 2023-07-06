@@ -1,4 +1,4 @@
-import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
+import { faCirclePlay, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { useMutation, useQuery } from "react-query";
@@ -65,7 +65,7 @@ function Session() {
     try {
       const token = localStorage.getItem("token");
       const headers = { token: `${token}` };
-      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_inscrit", {
+      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_inscrit", {  //https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_inscrit
         method: 'POST',
         headers: {
           ...headers,
@@ -112,7 +112,7 @@ function Session() {
   // fetch les sessions
   const { data: elements, isLoading, isError } = useQuery("Sessions", async () => {
     try {
-      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sessions", {});
+      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sessions", {});   //https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sessions
       if (!response.ok) {
         throw new Error("Failed to fetch sessions");
       }
@@ -172,13 +172,6 @@ function Session() {
     return userSessionId
   });
 
-
-
-
-
-
-
-
   if (isLoading) {
     return <div>Chargement...</div>;
   }
@@ -192,6 +185,7 @@ function Session() {
   }
     
 
+  
 
   const handleSession = async (sessionId: number) => {
       navigate(`SessionsDetails/${sessionId}`)
@@ -200,6 +194,11 @@ function Session() {
   const handleNotconnected = () => {
     alert("Vous devez vous connecter pour vous inscrire à la session  ");
   };
+
+  
+  const handleEdit=(sessionId: number)=>{
+    navigate(`edit/${sessionId}`)
+  }
 
 
 
@@ -222,6 +221,7 @@ function Session() {
           {elements?.slice(0.3).map((element:Sessions)=>(
           <div key={element.id} className="col-md-4 ">
             <div className="session">
+            <div><FontAwesomeIcon onClick={() => handleEdit(element.id)} icon={faPenToSquare} style={{color:'#23A082', fontSize:'1.5rem',position:'absolute', marginTop:'10px',marginLeft:'150px', cursor:'pointer'}}/></div>
             <div className="sessionHeader">
             {element.sponsors_images && (
                 <img
@@ -294,7 +294,7 @@ function Session() {
                 </button>
               </center>
             )}
-          <center>
+            <center>
             {/* <a href="https://bcombrun.com/spot-pharma/video/Film_Dermatologie.mp4">
             <button className="btnMain2">
               Voir le Replay
@@ -306,7 +306,7 @@ function Session() {
               Voir les inscrits
               </button>
              ):null}
-          </center>        
+            </center>        
         </div>
         </div>
           ))}
