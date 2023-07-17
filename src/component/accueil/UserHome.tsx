@@ -174,7 +174,7 @@ export default function UserHome(){
               <div className="sessionHeader">
               {element.sponsors_images && (
                   <img
-                    style={{ width: "100%", height: "200px" }}
+                    style={{ width: "100%", paddingTop:"40px", paddingBottom:"30px"  }}
                     src={"../uploads/LogoSponsors/" + element.sponsors_images}
                     alt=""
                   ></img>
