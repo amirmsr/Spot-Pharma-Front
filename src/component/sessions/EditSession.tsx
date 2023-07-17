@@ -99,7 +99,12 @@ function EditSession() {
                     <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Déscription de la session</p>
                     <input type="text" name="description"  placeholder="Déscription de la session" onChange={handleChange} />
                     </div>
-                    <br /><br /> <br />
+                    <br /><br />                    
+                  </div>
+                </div>
+
+                <div className="container">
+                  <div className="row">
                     <div className="col">
                     <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Nom du première invité</p>
                     <input type="text" name="invites"  placeholder="Nom du première invité" onChange={handleChange} />
