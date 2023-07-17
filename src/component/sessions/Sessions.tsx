@@ -221,7 +221,11 @@ function Session() {
           {elements?.slice(0.3).map((element:Sessions)=>(
           <div key={element.id} className="col-md-4 ">
             <div className="session">
-            <div><FontAwesomeIcon onClick={() => handleEdit(element.id)} icon={faPenToSquare} style={{color:'#23A082', fontSize:'1.5rem',position:'absolute', marginTop:'10px',marginLeft:'150px', cursor:'pointer'}}/></div>
+            <div>
+              {isAdmin ?(
+                <FontAwesomeIcon onClick={() => handleEdit(element.id)} icon={faPenToSquare} style={{color:'#23A082', fontSize:'1.5rem',position:'absolute', marginTop:'10px',marginLeft:'150px', cursor:'pointer'}}/>
+              ):null}              
+            </div>
             <div className="sessionHeader">
             {element.sponsors_images && (
                 <img

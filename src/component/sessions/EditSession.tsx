@@ -45,6 +45,7 @@ function EditSession() {
         const json = await response.json();
         console.log(json);
         alert("Modification pris prise en compte")
+        window.location.href = "/sessions";
         return json;
         } else {
         // Gérer l'erreur de duplication ici
@@ -63,6 +64,7 @@ function EditSession() {
     const handleSubmit = async (e:React.FormEvent<HTMLFormElement>)=>{
         e.preventDefault();
         editSession()
+
     }
 
 
