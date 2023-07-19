@@ -254,7 +254,8 @@ function Session() {
                   <div className="invite">             
                     {element.invites_images && (
                     <img
-                      src={"../uploads/intervenant/" + element.invites_images}
+                      /* src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + element.invites_images} */
+                      src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + element.invites_images}
                       alt=""
                     ></img>
                     )}
@@ -267,7 +268,7 @@ function Session() {
                   <div className="invite">             
                     {element.invites_images2 && (
                     <img
-                      src={"../uploads/intervenant/" + element.invites_images2}
+                      src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + element.invites_images2}
                       alt=""
                     ></img>
                     )}
