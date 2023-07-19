@@ -230,7 +230,7 @@ function Session() {
             {element.sponsors_images && (
                 <img
                   style={{ width: "100%", paddingTop:"40px", paddingBottom:"30px"  }}
-                  src={"../uploads/LogoSponsors/" + element.sponsors_images}
+                  src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + element.sponsors_images}
                   alt=""
                 ></img>
               )}
