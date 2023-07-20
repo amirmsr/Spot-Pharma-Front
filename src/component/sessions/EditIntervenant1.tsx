@@ -68,7 +68,7 @@ function EditIntervenant1() {
                 <Form.Control type="file" id="video" name="video" onChange={handleChangeFile} />
                 <br></br> 
                 <button type="submit" disabled={isDisabled} style={{opacity: isDisabled ? 0.4 : 1}}> 
-                    {uploadVideo.status === 'loading' ? 'Uploading...' : 'Upload video'}
+                    {uploadVideo.status === 'loading' ? 'Ajout...' : 'Ajouter'}
                 </button>
             </Form>
         </div>
