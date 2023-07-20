@@ -16,12 +16,10 @@ function EditIntervenant1() {
 
     return (
         <div>
-            
             <form style={{paddingBottom:'500px',paddingTop:'100px'}} onSubmit={handleSubmit}>
                 <h1>Changer image intervenant 1</h1>
                 <input type="file" />                
             </form>
-        
         </div>
     );
 }
