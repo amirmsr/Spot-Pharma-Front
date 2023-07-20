@@ -253,12 +253,16 @@ function Session() {
                 <div className="col">
                   <div className="invite">             
                     {element.invites_images && (
-                    <img
-                      /* src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + element.invites_images} */
+                    <img                      
                       src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + element.invites_images}
                       alt=""
                     ></img>
                     )}
+                    <div>
+                      {isAdmin ?(
+                        <FontAwesomeIcon onClick={() => handleEdit(element.id)} icon={faPenToSquare} style={{color:'#23A082', fontSize:'1.5rem',position:'absolute', marginTop:'10px',marginLeft:'150px', cursor:'pointer'}}/>
+                      ):null}              
+                    </div>
                     <br /><br />
                   <p>{element.invites}</p>
                   </div>    
@@ -272,6 +276,11 @@ function Session() {
                       alt=""
                     ></img>
                     )}
+                    <div>
+                      {isAdmin ?(
+                        <FontAwesomeIcon onClick={() => handleEdit(element.id)} icon={faPenToSquare} style={{color:'#23A082', fontSize:'1.5rem',position:'absolute', marginTop:'10px',marginLeft:'150px', cursor:'pointer'}}/>
+                      ):null}              
+                    </div>
                     <br /><br />
                   <p>{element.invites2}</p>
                   </div>    
