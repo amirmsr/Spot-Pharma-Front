@@ -200,6 +200,13 @@ function Session() {
     navigate(`edit/${sessionId}`)
   }
 
+  const handleEditIntervenant1=(sessionId: number)=>{
+    navigate(`editIntervenant1/${sessionId}`)
+  }
+  const handleEditIntervenant2=(sessionId: number)=>{
+    navigate(`editIntervenant2/${sessionId}`)
+  }
+
 
 
 
@@ -254,7 +261,7 @@ function Session() {
                   <div className="invite">     
                     <div>
                       {isAdmin ?(
-                        <FontAwesomeIcon onClick={() => handleEdit(element.id)} icon={faPenToSquare} style={{color:'#23A082', fontSize:'1.5rem', cursor:'pointer'}}/>
+                        <FontAwesomeIcon onClick={() => handleEditIntervenant1(element.id)} icon={faPenToSquare} style={{color:'#23A082', fontSize:'1.5rem', cursor:'pointer'}}/>
                       ):null}              
                     </div>        
                     {element.invites_images && (
@@ -274,7 +281,7 @@ function Session() {
                   <div className="invite">     
                     <div>
                       {isAdmin ?(
-                        <FontAwesomeIcon onClick={() => handleEdit(element.id)} icon={faPenToSquare} style={{color:'#23A082', fontSize:'1.5rem', cursor:'pointer'}}/>
+                        <FontAwesomeIcon onClick={() => handleEditIntervenant2(element.id)} icon={faPenToSquare} style={{color:'#23A082', fontSize:'1.5rem', cursor:'pointer'}}/>
                       ):null}              
                     </div>        
                     {element.invites_images2 && (
