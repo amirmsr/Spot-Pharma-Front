@@ -251,36 +251,38 @@ function Session() {
             <div className="container">
               <div className="row">
                 <div className="col">
-                  <div className="invite">             
+                  <div className="invite">     
+                    <div>
+                      {isAdmin ?(
+                        <FontAwesomeIcon onClick={() => handleEdit(element.id)} icon={faPenToSquare} style={{color:'#23A082', fontSize:'1.5rem', cursor:'pointer'}}/>
+                      ):null}              
+                    </div>        
                     {element.invites_images && (
                     <img                      
                       src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + element.invites_images}
                       alt=""
                     ></img>
                     )}
-                    <div>
-                      {isAdmin ?(
-                        <FontAwesomeIcon onClick={() => handleEdit(element.id)} icon={faPenToSquare} style={{color:'#23A082', position:'absolute', fontSize:'1.5rem', cursor:'pointer'}}/>
-                      ):null}              
-                    </div>
+                   
                     <br /><br />
                   <p>{element.invites}</p>
                   </div>    
                 </div>
 
                 <div className="col">
-                  <div className="invite">             
+                  <div className="invite">     
+                    <div>
+                      {isAdmin ?(
+                        <FontAwesomeIcon onClick={() => handleEdit(element.id)} icon={faPenToSquare} style={{color:'#23A082', fontSize:'1.5rem', cursor:'pointer'}}/>
+                      ):null}              
+                    </div>        
                     {element.invites_images2 && (
                     <img
                       src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + element.invites_images2}
                       alt=""
                     ></img>
                     )}
-                    <div>
-                      {isAdmin ?(
-                        <FontAwesomeIcon onClick={() => handleEdit(element.id)} icon={faPenToSquare} style={{color:'#23A082',position:'absolute', fontSize:'1.5rem', cursor:'pointer'}}/>
-                      ):null}              
-                    </div>
+                    
                     <br /><br />
                   <p>{element.invites2}</p>
                   </div>    
