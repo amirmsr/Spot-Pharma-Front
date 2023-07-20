@@ -260,7 +260,7 @@ function Session() {
                     )}
                     <div>
                       {isAdmin ?(
-                        <FontAwesomeIcon onClick={() => handleEdit(element.id)} icon={faPenToSquare} style={{color:'#23A082', fontSize:'1.5rem', cursor:'pointer'}}/>
+                        <FontAwesomeIcon onClick={() => handleEdit(element.id)} icon={faPenToSquare} style={{color:'#23A082', position:'absolute', fontSize:'1.5rem', cursor:'pointer'}}/>
                       ):null}              
                     </div>
                     <br /><br />
@@ -278,7 +278,7 @@ function Session() {
                     )}
                     <div>
                       {isAdmin ?(
-                        <FontAwesomeIcon onClick={() => handleEdit(element.id)} icon={faPenToSquare} style={{color:'#23A082', fontSize:'1.5rem', cursor:'pointer'}}/>
+                        <FontAwesomeIcon onClick={() => handleEdit(element.id)} icon={faPenToSquare} style={{color:'#23A082',position:'absolute', fontSize:'1.5rem', cursor:'pointer'}}/>
                       ):null}              
                     </div>
                     <br /><br />
