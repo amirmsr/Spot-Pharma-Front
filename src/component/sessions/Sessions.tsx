@@ -3,8 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { useMutation, useQuery } from "react-query";
 import { useNavigate} from "react-router-dom";
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
 
 
 
@@ -27,7 +25,6 @@ interface Sessions {
 function Session() {
   const navigate = useNavigate()
   const [isConnected, setIsconnected] = useState(false);
-  const [show, setShow] = useState(false);
   const [isAdmin, setIsadmin] = useState(false);
   const token = localStorage.getItem("token");
 
@@ -203,9 +200,6 @@ function Session() {
     navigate(`edit/${sessionId}`)
   }
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-  
 
 
 
@@ -260,23 +254,9 @@ function Session() {
                   <div className="invite">     
                     <div>
                       {isAdmin ?(
-                        <FontAwesomeIcon onClick={handleShow} icon={faPenToSquare} style={{color:'#23A082', fontSize:'1.5rem', cursor:'pointer'}}/>
+                        <FontAwesomeIcon onClick={() => handleEdit(element.id)} icon={faPenToSquare} style={{color:'#23A082', fontSize:'1.5rem', cursor:'pointer'}}/>
                       ):null}              
-                    </div>  
-                    <Modal show={show} onHide={handleClose}>
-                      <Modal.Header closeButton>
-                        <Modal.Title>Modal heading</Modal.Title>
-                      </Modal.Header>
-                      <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
-                      <Modal.Footer>
-                        <Button variant="secondary" onClick={handleClose}>
-                          Close
-                        </Button>
-                        <Button variant="primary" onClick={handleClose}>
-                          Save Changes
-                        </Button>
-                      </Modal.Footer>
-                    </Modal>    
+                    </div>        
                     {element.invites_images && (
                     <img                      
                       src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + element.invites_images}
@@ -288,28 +268,15 @@ function Session() {
                   <p>{element.invites}</p>
                   </div>    
                 </div>
+                
 
                 <div className="col">
                   <div className="invite">     
                     <div>
                       {isAdmin ?(
-                        <FontAwesomeIcon onClick={handleShow} icon={faPenToSquare} style={{color:'#23A082', fontSize:'1.5rem', cursor:'pointer'}}/>
+                        <FontAwesomeIcon onClick={() => handleEdit(element.id)} icon={faPenToSquare} style={{color:'#23A082', fontSize:'1.5rem', cursor:'pointer'}}/>
                       ):null}              
-                    </div>   
-                    <Modal show={show} onHide={handleClose}>
-                      <Modal.Header closeButton>
-                        <Modal.Title>Modal heading</Modal.Title>
-                      </Modal.Header>
-                      <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
-                      <Modal.Footer>
-                        <Button variant="secondary" onClick={handleClose}>
-                          Close
-                        </Button>
-                        <Button variant="primary" onClick={handleClose}>
-                          Save Changes
-                        </Button>
-                      </Modal.Footer>
-                    </Modal>         
+                    </div>        
                     {element.invites_images2 && (
                     <img
                       src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + element.invites_images2}
