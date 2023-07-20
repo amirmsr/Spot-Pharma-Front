@@ -27,6 +27,7 @@ interface Sessions {
 function Session() {
   const navigate = useNavigate()
   const [isConnected, setIsconnected] = useState(false);
+  const [show, setShow] = useState(false);
   const [isAdmin, setIsadmin] = useState(false);
   const token = localStorage.getItem("token");
 
@@ -202,6 +203,9 @@ function Session() {
     navigate(`edit/${sessionId}`)
   }
 
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  
 
 
 
@@ -270,25 +274,24 @@ function Session() {
                   <p>{element.invites}</p>
                   </div>    
                 </div>
-                <div
-      className="modal show"
-      style={{ display: 'block', position: 'initial' }}
-    >
-      <Modal.Dialog>
+                <Button variant="primary" onClick={handleShow}>
+        Launch demo modal
+      </Button>
+
+      <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal title</Modal.Title>
+          <Modal.Title>Modal heading</Modal.Title>
         </Modal.Header>
-
-        <Modal.Body>
-          <p>Modal body text goes here.</p>
-        </Modal.Body>
-
+        <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary">Close</Button>
-          <Button variant="primary">Save changes</Button>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Save Changes
+          </Button>
         </Modal.Footer>
-      </Modal.Dialog>
-    </div>
+      </Modal>
 
                 <div className="col">
                   <div className="invite">     
