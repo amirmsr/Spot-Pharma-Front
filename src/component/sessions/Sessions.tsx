@@ -277,7 +277,7 @@ function Session() {
                             <FontAwesomeIcon onClick={() => handleEditIntervenant1(element.id)} icon={faPen} style={{color:'#23A082', fontSize:'1.5rem', cursor:'pointer'}} />                        
                             </div>
                             <div className="col">
-                            <FontAwesomeIcon icon={faXmark} style={{color:'#23A082', fontSize:'1.5rem', cursor:'pointer'}}/>
+                            <FontAwesomeIcon icon={faXmark} style={{color:'#23A082', fontSize:'1.2rem', cursor:'pointer'}}/>
                             </div>
                           </div>
                         </div>                       
@@ -306,7 +306,7 @@ function Session() {
                             <FontAwesomeIcon onClick={() => handleEditIntervenant2(element.id)} icon={faPen} style={{color:'#23A082', fontSize:'1.5rem', cursor:'pointer'}} />                        
                             </div>
                             <div className="col">
-                            <FontAwesomeIcon icon={faXmark} style={{color:'#23A082', fontSize:'1.5rem', cursor:'pointer'}}/>
+                            <FontAwesomeIcon icon={faXmark} style={{color:'#23A082', fontSize:'1.2rem', cursor:'pointer'}}/>
                             </div>
                           </div>
                         </div>                       
@@ -338,7 +338,7 @@ function Session() {
                             <FontAwesomeIcon onClick={() => handleEditIntervenant3(element.id)} icon={faPen} style={{color:'#23A082', fontSize:'1.5rem', cursor:'pointer'}} />                        
                             </div>
                             <div className="col">
-                            <FontAwesomeIcon icon={faXmark} style={{color:'#23A082', fontSize:'1.5rem', cursor:'pointer'}}/>
+                            <FontAwesomeIcon icon={faXmark} style={{color:'#23A082', fontSize:'1.2rem', cursor:'pointer'}}/>
                             </div>
                           </div>
                         </div>                       
@@ -367,7 +367,7 @@ function Session() {
                             <FontAwesomeIcon onClick={() => handleEditIntervenant4(element.id)} icon={faPen} style={{color:'#23A082', fontSize:'1.5rem', cursor:'pointer'}} />                        
                             </div>
                             <div className="col">
-                            <FontAwesomeIcon icon={faXmark} style={{color:'#23A082', fontSize:'1.5rem', cursor:'pointer'}}/>
+                            <FontAwesomeIcon icon={faXmark} style={{color:'#23A082', fontSize:'1.2rem', cursor:'pointer'}}/>
                             </div>
                           </div>
                         </div>                       
