@@ -16,6 +16,10 @@ interface Sessions {
   invites_images: "";
   invites2: "";
   invites_images2: "";
+  invites3: "";
+  invites_images3: "";
+  invites4: "";
+  invites_images4: "";
   sponsors_images: "";
   video_titre: "";
   video: "";
@@ -255,6 +259,49 @@ function Session() {
 
             <br /><br />     
 
+            <div className="container">
+              <div className="row">
+                <div className="col">
+                  <div className="invite">     
+                    <div>
+                      {isAdmin ?(
+                        <FontAwesomeIcon onClick={() => handleEditIntervenant1(element.id)} icon={faPenToSquare} style={{color:'#23A082', fontSize:'1.5rem', cursor:'pointer'}}/>
+                      ):null}              
+                    </div>        
+                    {element.invites_images && (
+                    <img                      
+                      src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + element.invites_images}
+                      alt=""
+                    ></img>
+                    )}
+                   
+                    <br /><br />
+                  <p>{element.invites}</p>
+                  </div>    
+                </div>
+                
+
+                <div className="col">
+                  <div className="invite">     
+                    <div>
+                      {isAdmin ?(
+                        <FontAwesomeIcon onClick={() => handleEditIntervenant2(element.id)} icon={faPenToSquare} style={{color:'#23A082', fontSize:'1.5rem', cursor:'pointer'}}/>
+                      ):null}              
+                    </div>        
+                    {element.invites_images2 && (
+                    <img
+                      src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + element.invites_images2}
+                      alt=""
+                    ></img>
+                    )}
+                    
+                    <br /><br />
+                  <p>{element.invites2}</p>
+                  </div>    
+                </div>
+
+              </div>
+            </div>
             <div className="container">
               <div className="row">
                 <div className="col">
