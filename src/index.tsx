@@ -18,6 +18,8 @@ import SessionsDetails from "./component/sessions/SessionsDetails";
 import EditSession from "./component/sessions/EditSession";
 import EditIntervenant1 from "./component/sessions/EditIntervenant1";
 import EditIntervenant2 from "./component/sessions/EditIntervenant2";
+import EditIntervenant3 from "./component/sessions/EditIntervenant3";
+import EditIntervenant4 from "./component/sessions/EditIntervenant4";
 
 
 const router = createBrowserRouter([
@@ -46,6 +48,14 @@ const router = createBrowserRouter([
             {
               path: "/sessions/editIntervenant2/:sessionId",
               element: <EditIntervenant2 />
+            },       
+            {
+              path: "/sessions/editIntervenant3/:sessionId",
+              element: <EditIntervenant3 />
+            },       
+            {
+              path: "/sessions/editIntervenant4/:sessionId",
+              element: <EditIntervenant4 />
             },       
             {
               path: "sessions/sessionsDetails/:sessionId",

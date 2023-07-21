@@ -210,6 +210,12 @@ function Session() {
   const handleEditIntervenant2=(sessionId: number)=>{
     navigate(`editIntervenant2/${sessionId}`)
   }
+  const handleEditIntervenant3=(sessionId: number)=>{
+    navigate(`editIntervenant2/${sessionId}`)
+  }
+  const handleEditIntervenant4=(sessionId: number)=>{
+    navigate(`editIntervenant2/${sessionId}`)
+  }
 
 
 
@@ -308,18 +314,18 @@ function Session() {
                   <div className="invite">     
                     <div>
                       {isAdmin ?(
-                        <FontAwesomeIcon onClick={() => handleEditIntervenant1(element.id)} icon={faPenToSquare} style={{color:'#23A082', fontSize:'1.5rem', cursor:'pointer'}}/>
+                        <FontAwesomeIcon onClick={() => handleEditIntervenant3(element.id)} icon={faPenToSquare} style={{color:'#23A082', fontSize:'1.5rem', cursor:'pointer'}}/>
                       ):null}              
                     </div>        
-                    {element.invites_images && (
+                    {element.invites_images3 && (
                     <img                      
-                      src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + element.invites_images}
+                      src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + element.invites_images3}
                       alt=""
                     ></img>
                     )}
                    
                     <br /><br />
-                  <p>{element.invites}</p>
+                  <p>{element.invites3}</p>
                   </div>    
                 </div>
                 
@@ -328,18 +334,18 @@ function Session() {
                   <div className="invite">     
                     <div>
                       {isAdmin ?(
-                        <FontAwesomeIcon onClick={() => handleEditIntervenant2(element.id)} icon={faPenToSquare} style={{color:'#23A082', fontSize:'1.5rem', cursor:'pointer'}}/>
+                        <FontAwesomeIcon onClick={() => handleEditIntervenant4(element.id)} icon={faPenToSquare} style={{color:'#23A082', fontSize:'1.5rem', cursor:'pointer'}}/>
                       ):null}              
                     </div>        
-                    {element.invites_images2 && (
+                    {element.invites_images4 && (
                     <img
-                      src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + element.invites_images2}
+                      src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + element.invites_images4}
                       alt=""
                     ></img>
                     )}
                     
                     <br /><br />
-                  <p>{element.invites2}</p>
+                  <p>{element.invites4}</p>
                   </div>    
                 </div>
 
