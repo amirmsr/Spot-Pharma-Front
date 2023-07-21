@@ -1,4 +1,4 @@
-import { faCirclePlay, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
+import { faCirclePlay, faPen, faPenToSquare, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { useMutation, useQuery } from "react-query";
@@ -271,7 +271,16 @@ function Session() {
                   <div className="invite">     
                     <div>
                       {isAdmin ?(
-                        <FontAwesomeIcon onClick={() => handleEditIntervenant1(element.id)} icon={faPenToSquare} style={{color:'#23A082', fontSize:'1.5rem', cursor:'pointer'}}/>
+                        <div className="container">
+                          <div className="row">
+                            <div className="col">
+                            <FontAwesomeIcon onClick={() => handleEditIntervenant1(element.id)} icon={faPen} style={{color:'#23A082', fontSize:'1.5rem', cursor:'pointer'}} />                        
+                            </div>
+                            <div className="col">
+                            <FontAwesomeIcon icon={faXmark} style={{color:'#23A082', fontSize:'1.5rem', cursor:'pointer'}}/>
+                            </div>
+                          </div>
+                        </div>                       
                       ):null}              
                     </div>        
                     {element.invites_images && (
@@ -290,9 +299,18 @@ function Session() {
                 <div className="col">
                   <div className="invite">     
                     <div>
-                      {isAdmin ?(
-                        <FontAwesomeIcon onClick={() => handleEditIntervenant2(element.id)} icon={faPenToSquare} style={{color:'#23A082', fontSize:'1.5rem', cursor:'pointer'}}/>
-                      ):null}              
+                    {isAdmin ?(
+                        <div className="container">
+                          <div className="row">
+                            <div className="col">
+                            <FontAwesomeIcon onClick={() => handleEditIntervenant2(element.id)} icon={faPen} style={{color:'#23A082', fontSize:'1.5rem', cursor:'pointer'}} />                        
+                            </div>
+                            <div className="col">
+                            <FontAwesomeIcon icon={faXmark} style={{color:'#23A082', fontSize:'1.5rem', cursor:'pointer'}}/>
+                            </div>
+                          </div>
+                        </div>                       
+                      ):null}                         
                     </div>        
                     {element.invites_images2 && (
                     <img
@@ -313,9 +331,18 @@ function Session() {
                 <div className="col">
                   <div className="invite">     
                     <div>
-                      {isAdmin ?(
-                        <FontAwesomeIcon onClick={() => handleEditIntervenant3(element.id)} icon={faPenToSquare} style={{color:'#23A082', fontSize:'1.5rem', cursor:'pointer'}}/>
-                      ):null}              
+                    {isAdmin ?(
+                        <div className="container">
+                          <div className="row">
+                            <div className="col">
+                            <FontAwesomeIcon onClick={() => handleEditIntervenant3(element.id)} icon={faPen} style={{color:'#23A082', fontSize:'1.5rem', cursor:'pointer'}} />                        
+                            </div>
+                            <div className="col">
+                            <FontAwesomeIcon icon={faXmark} style={{color:'#23A082', fontSize:'1.5rem', cursor:'pointer'}}/>
+                            </div>
+                          </div>
+                        </div>                       
+                      ):null}                        
                     </div>        
                     {element.invites_images3 && (
                     <img                      
@@ -333,9 +360,18 @@ function Session() {
                 <div className="col">
                   <div className="invite">     
                     <div>
-                      {isAdmin ?(
-                        <FontAwesomeIcon onClick={() => handleEditIntervenant4(element.id)} icon={faPenToSquare} style={{color:'#23A082', fontSize:'1.5rem', cursor:'pointer'}}/>
-                      ):null}              
+                    {isAdmin ?(
+                        <div className="container">
+                          <div className="row">
+                            <div className="col">
+                            <FontAwesomeIcon onClick={() => handleEditIntervenant4(element.id)} icon={faPen} style={{color:'#23A082', fontSize:'1.5rem', cursor:'pointer'}} />                        
+                            </div>
+                            <div className="col">
+                            <FontAwesomeIcon icon={faXmark} style={{color:'#23A082', fontSize:'1.5rem', cursor:'pointer'}}/>
+                            </div>
+                          </div>
+                        </div>                       
+                      ):null}                        
                     </div>        
                     {element.invites_images4 && (
                     <img
