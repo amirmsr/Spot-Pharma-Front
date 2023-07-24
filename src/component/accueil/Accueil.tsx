@@ -1,12 +1,12 @@
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-
-
-
+import React, { useRef, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/pagination';
+import { FreeMode, Pagination } from 'swiper/modules';
 function Accueil(){
-
-
-
 
 
     return(
@@ -157,6 +157,29 @@ function Accueil(){
                     <p className="legend">Legend 3</p>
                 </div>
             </Carousel>
+
+            <br /><br />
+
+            <Swiper
+        slidesPerView={3}
+        spaceBetween={30}
+        freeMode={true}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[FreeMode, Pagination]}
+        className="mySwiper"
+      >
+        <SwiperSlide>Slide 1</SwiperSlide>
+        <SwiperSlide>Slide 2</SwiperSlide>
+        <SwiperSlide>Slide 3</SwiperSlide>
+        <SwiperSlide>Slide 4</SwiperSlide>
+        <SwiperSlide>Slide 5</SwiperSlide>
+        <SwiperSlide>Slide 6</SwiperSlide>
+        <SwiperSlide>Slide 7</SwiperSlide>
+        <SwiperSlide>Slide 8</SwiperSlide>
+        <SwiperSlide>Slide 9</SwiperSlide>
+      </Swiper>
 
             <br></br><br></br>  <br></br><br></br>  <br></br><br></br>  <br></br>
         </div>
