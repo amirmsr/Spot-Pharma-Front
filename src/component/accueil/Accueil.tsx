@@ -1,5 +1,5 @@
-import { Carousel } from 'react-responsive-carousel';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+/* import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css";  */// requires a loader
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -148,7 +148,7 @@ function Accueil(){
             <button className='btnMain2'>Voir tous les intervenants</button>
             </a>
             
-            <Carousel>
+      {/*       <Carousel>
                 <div>
                     <img src="../uploads/intervenant/intervenant2.jpg"  alt="" />
                     <p className="legend">Legend 1</p>
@@ -161,7 +161,7 @@ function Accueil(){
                     <img src="../uploads/intervenant/intervenant1.jpg"  alt="" />
                     <p className="legend">Legend 3</p>
                 </div>
-            </Carousel>
+            </Carousel> */}
 
 
             <br /><br />
