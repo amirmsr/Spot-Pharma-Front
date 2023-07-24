@@ -1,3 +1,4 @@
+import { Carousel } from "react-bootstrap"
 
 
 function Accueil(){
@@ -86,7 +87,9 @@ function Accueil(){
 
 
             <br /><br /><br />
-
+            <h2  style={{ margin:"0", color:"#7DBA33"}}>Tous les</h2>
+            <h3 style={{fontSize:"2rem", margin:"0"}}>Invités</h3>
+            <br></br><br /><br />
             <div className='container interv' >
                     <div className="row">
 
@@ -138,7 +141,20 @@ function Accueil(){
             <button className='btnMain2'>Voir tous les intervenants</button>
             </a>
             
-
+            <Carousel>
+                <div>
+                    <img src="../uploads/intervenant/intervenant2.jpg"  alt="" />
+                    <p className="legend">Legend 1</p>
+                </div>
+                <div>
+                    <img src="../uploads/intervenant/intervenant2.jpg"  alt="" />
+                    <p className="legend">Legend 2</p>
+                </div>
+                <div>
+                    <img src="../uploads/intervenant/intervenant2.jpg"  alt="" />
+                    <p className="legend">Legend 3</p>
+                </div>
+            </Carousel>
 
             <br></br><br></br>  <br></br><br></br>  <br></br><br></br>  <br></br>
         </div>
