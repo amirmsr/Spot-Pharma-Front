@@ -2,13 +2,13 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css";  */// requires a loader
 
 
-// Import Swiper React components
+/* // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Pagination } from 'swiper/modules';
+import { Pagination } from 'swiper/modules'; */
 
 
 
@@ -170,7 +170,7 @@ function Accueil(){
 
             <br /><br />
 
-            <Swiper
+            {/* <Swiper
         slidesPerView={3}
         spaceBetween={30}
         pagination={{
@@ -188,7 +188,7 @@ function Accueil(){
         <SwiperSlide>Slide 7</SwiperSlide>
         <SwiperSlide>Slide 8</SwiperSlide>
         <SwiperSlide>Slide 9</SwiperSlide>
-      </Swiper>
+      </Swiper> */}
   
             <br></br><br></br>  <br></br><br></br>  <br></br><br></br>  <br></br>
         </div>
