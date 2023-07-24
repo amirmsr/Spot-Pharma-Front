@@ -1,4 +1,6 @@
-import { Carousel } from "react-bootstrap"
+import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+
 
 
 function Accueil(){
@@ -147,11 +149,11 @@ function Accueil(){
                     <p className="legend">Legend 1</p>
                 </div>
                 <div>
-                    <img src="../uploads/intervenant/intervenant2.jpg"  alt="" />
+                    <img src="../uploads/intervenant/Laure.jpeg"  alt="" />
                     <p className="legend">Legend 2</p>
                 </div>
                 <div>
-                    <img src="../uploads/intervenant/intervenant2.jpg"  alt="" />
+                    <img src="../uploads/intervenant/intervenant1.jpg"  alt="" />
                     <p className="legend">Legend 3</p>
                 </div>
             </Carousel>
@@ -161,4 +163,4 @@ function Accueil(){
     )
 }
 
-export default Accueil
+export default Accueil 
