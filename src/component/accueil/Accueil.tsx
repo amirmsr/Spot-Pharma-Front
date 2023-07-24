@@ -2,7 +2,10 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css";  */// requires a loader
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/swiper.min.css'; // Importez le style Swiper
+
+// Import Swiper styles
+import 'swiper/css';
+
 
 
 function Accueil(){
@@ -163,17 +166,17 @@ function Accueil(){
 
             <br /><br />
 
-            <Swiper
-            spaceBetween={50}
-            slidesPerView={3}
-            onSlideChange={() => console.log('slide change')}
-            onSwiper={(swiper) => console.log(swiper)}
-            >
-            <SwiperSlide>Slide 1</SwiperSlide>
-            <SwiperSlide>Slide 2</SwiperSlide>
-            <SwiperSlide>Slide 3</SwiperSlide>
-            <SwiperSlide>Slide 4</SwiperSlide>
-            </Swiper>
+   <Swiper
+      spaceBetween={50}
+      slidesPerView={3}
+      onSlideChange={() => console.log('slide change')}
+      onSwiper={(swiper) => console.log(swiper)}
+    >
+      <SwiperSlide>Slide 1</SwiperSlide>
+      <SwiperSlide>Slide 2</SwiperSlide>
+      <SwiperSlide>Slide 3</SwiperSlide>
+      <SwiperSlide>Slide 4</SwiperSlide>
+    </Swiper>
   
             <br></br><br></br>  <br></br><br></br>  <br></br><br></br>  <br></br>
         </div>
