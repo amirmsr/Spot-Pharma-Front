@@ -164,8 +164,8 @@ function Accueil(){
             
            
             <br /><br />
-            <div style={{textAlign:'center', marginBottom:'30px'}} className='allInterv'>
-            <div className="intervenants">
+            <div style={{textAlign:'center', marginBottom:'30px'}}>
+            <div className="container">
                 <Slider {...settings}>
                 {Interv.map((item) => (
                     <div key={item.id}>
