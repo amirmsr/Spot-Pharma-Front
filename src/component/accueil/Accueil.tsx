@@ -1,10 +1,10 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Carousel from 'react-bootstrap/Carousel';
+import { useSnapCarousel } from 'react-snap-carousel';
 
 
 
 
 function Accueil(){
+    const { scrollRef } = useSnapCarousel();
 
     return(
         <div>
@@ -140,55 +140,34 @@ function Accueil(){
             <button className='btnMain2'>Voir tous les intervenants</button>
             </a>
 
-
             <br /><br />
-            <Carousel>
-      <Carousel.Item>
-        <div className="card">
-        <img className="d-block w-100" src="../uploads/intervenant/intervenant2.jpg" alt="Premièfffre imafge" />
-          <div className="card-body">
-            <h5 className="card-title">Image 1</h5>
-            <p className="card-text">Description de l'image 1.</p>
-          </div>
-        </div>
-      </Carousel.Item>
-      <Carousel.Item>
-        <div className="card">
-        <img className="d-block w-100" src="../uploads/intervenant/intervenant2.jpg" alt="Première iffmage" />
-          <div className="card-body">
-            <h5 className="card-title">Image 2</h5>
-            <p className="card-text">Description de l'image 2.</p>
-          </div>
-        </div>
-      </Carousel.Item>
-      <Carousel.Item>
-        <div className="card">
-        <img className="d-block w-100" src="../uploads/intervenant/intervenant2.jpg" alt="Premfffffgière fimage" />
-          <div className="card-body">
-            <h5 className="card-title">Image 3</h5>
-            <p className="card-text">Description de l'image 3.</p>
-          </div>
-        </div>
-      </Carousel.Item>
-      <Carousel.Item>
-        <div className="card">
-        <img className="d-block w-100" src="../uploads/intervenant/intervenant2.jpg" alt="Premfffffgière fimage" />
-          <div className="card-body">
-            <h5 className="card-title">Image 3</h5>
-            <p className="card-text">Description de l'image 3.</p>
-          </div>
-        </div>
-      </Carousel.Item>
-      <Carousel.Item>
-        <div className="card">
-        <img className="d-block w-100" src="../uploads/intervenant/intervenant2.jpg" alt="Premfffffgière fimage" />
-          <div className="card-body">
-            <h5 className="card-title">Image 3</h5>
-            <p className="card-text">Description de l'image 3.</p>
-          </div>
-        </div>
-      </Carousel.Item>
-    </Carousel>
+            <ul
+      ref={scrollRef}
+      style={{
+        display: 'flex',
+        overflow: 'auto',
+        scrollSnapType: 'x mandatory'
+      }}
+    >
+      {Array.from({ length: 100 }).map((_, i) => (
+        <li
+          style={{
+            backgroundColor: 'aqua',
+            fontSize: '50px',
+            width: '250px',
+            height: '250px',
+            flexShrink: 0,
+            color: '#fff',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}
+        >
+          Item {i}
+        </li>
+      ))}
+    </ul>
+  
   
             <br></br><br></br>  <br></br><br></br>  <br></br><br></br>  <br></br>
         </div>
