@@ -171,15 +171,18 @@ function Accueil(){
 
                 
             <br /><br />
-
-            <ScrollingCarousel>
-            <img src='../uploads/intervenant/intervenant2.jpg' alt='imagem' title='imagem' />
-            <img src='../uploads/intervenant/intervenant2.jpg' alt='imagem' title='imagem' />
-            <img src='../uploads/intervenant/intervenant2.jpg' alt='imagem' title='imagem' />
-            <img src='../uploads/intervenant/intervenant2.jpg' alt='imagem' title='imagem' />
-            <img src='../uploads/intervenant/intervenant2.jpg' alt='imagem' title='imagem' />
-            <img src='../uploads/intervenant/intervenant2.jpg' alt='imagem' title='imagem' />
-            </ScrollingCarousel>
+            
+            <div style={{maxWidth:'1320px'}}>
+                <ScrollingCarousel>
+                <img style={{margin:'30px'}} src='../uploads/intervenant/intervenant2.jpg' alt='imagem' title='imagem' />
+                <img style={{margin:'30px'}}  src='../uploads/intervenant/intervenant2.jpg' alt='imagem' title='imagem' />
+                <img style={{margin:'30px'}}  src='../uploads/intervenant/intervenant2.jpg' alt='imagem' title='imagem' />
+                <img style={{margin:'30px'}}  src='../uploads/intervenant/intervenant2.jpg' alt='imagem' title='imagem' />
+                <img style={{margin:'30px'}}  src='../uploads/intervenant/intervenant2.jpg' alt='imagem' title='imagem' />
+                <img style={{margin:'30px'}}  src='../uploads/intervenant/intervenant2.jpg' alt='imagem' title='imagem' />
+                </ScrollingCarousel>
+            </div>
+           
 
 
 
