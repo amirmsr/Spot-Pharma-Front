@@ -164,24 +164,26 @@ function Accueil(){
            
             <br /><br />
             <div style={{textAlign:'center', marginBottom:'30px'}}>
-                <div className="container">
-                    <Slider {...settings}>
-                        <div className="col-md-4">
-                        <div className="sponsor">
-                        <div className="invite">
-                        {Interv.map((item) => (
-                            <div key={item.id}>
-                            <img src={item.src} alt={item.alt} className="img" />
-                            <h2 className="title">{item.title}</h2>
-                            <p className="description">{item.description}</p>
-                            </div>
-                        ))}
-                        </div>
-                        <br /> 
-                        </div>
-                        </div>
-                    </Slider>
+            <div className="container">
+
+            <div >
+                <div className="sponsor">
+                <div className="invite">
+                <Slider {...settings}>
+                {Interv.map((item) => (
+                    <div key={item.id}>
+                    <img src={item.src} alt={item.alt} className="img" />
+                    <h2 className="title">{item.title}</h2>
+                    <p className="description">{item.description}</p>
+                    </div>
+                ))}
+                </Slider>
                 </div>
+                </div>
+            </div>
+                
+            
+            </div>
             </div>
 
 
