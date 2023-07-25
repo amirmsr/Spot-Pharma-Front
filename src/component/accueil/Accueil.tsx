@@ -172,14 +172,68 @@ function Accueil(){
                 
             <br /><br />
             
-            <div style={{maxWidth:'1320px'}}>
+            <div style={{maxWidth:'1320px', margin:'0 auto'}}>
                 <ScrollingCarousel>
-                <img style={{margin:'30px'}} src='../uploads/intervenant/intervenant2.jpg' alt='imagem' title='imagem' />
-                <img style={{margin:'30px'}}  src='../uploads/intervenant/intervenant2.jpg' alt='imagem' title='imagem' />
-                <img style={{margin:'30px'}}  src='../uploads/intervenant/intervenant2.jpg' alt='imagem' title='imagem' />
-                <img style={{margin:'30px'}}  src='../uploads/intervenant/intervenant2.jpg' alt='imagem' title='imagem' />
-                <img style={{margin:'30px'}}  src='../uploads/intervenant/intervenant2.jpg' alt='imagem' title='imagem' />
-                <img style={{margin:'30px'}}  src='../uploads/intervenant/intervenant2.jpg' alt='imagem' title='imagem' />
+                <div>
+                    <div className="sponsor">
+                        <div className="invite">
+                            <img src="../uploads/intervenant/intervenant2.jpg"  alt="" />
+                        </div>
+                        <br />
+                        <p style={{ fontSize:'1.4rem'}}>Dr Béatrice Clairaz</p>
+                        <p>Pharmacienne titulaire, spécialisée en soins de support en oncologie. Co-présidente SFSPO</p>
+                    </div>
+                </div>
+                <div>
+                    <div className="sponsor">
+                        <div className="invite">
+                            <img src="../uploads/intervenant/intervenant2.jpg"  alt="" />
+                        </div>
+                        <br />
+                        <p style={{ fontSize:'1.4rem'}}>Dr Béatrice Clairaz</p>
+                        <p>Pharmacienne titulaire, spécialisée en soins de support en oncologie. Co-présidente SFSPO</p>
+                    </div>
+                </div>
+                <div>
+                    <div className="sponsor">
+                        <div className="invite">
+                            <img src="../uploads/intervenant/intervenant2.jpg"  alt="" />
+                        </div>
+                        <br />
+                        <p style={{ fontSize:'1.4rem'}}>Dr Béatrice Clairaz</p>
+                        <p>Pharmacienne titulaire, spécialisée en soins de support en oncologie. Co-présidente SFSPO</p>
+                    </div>
+                </div>
+                <div>
+                    <div className="sponsor">
+                        <div className="invite">
+                            <img src="../uploads/intervenant/intervenant2.jpg"  alt="" />
+                        </div>
+                        <br />
+                        <p style={{ fontSize:'1.4rem'}}>Dr Béatrice Clairaz</p>
+                        <p>Pharmacienne titulaire, spécialisée en soins de support en oncologie. Co-présidente SFSPO</p>
+                    </div>
+                </div>
+                <div>
+                    <div className="sponsor">
+                        <div className="invite">
+                            <img src="../uploads/intervenant/intervenant2.jpg"  alt="" />
+                        </div>
+                        <br />
+                        <p style={{ fontSize:'1.4rem'}}>Dr Béatrice Clairaz</p>
+                        <p>Pharmacienne titulaire, spécialisée en soins de support en oncologie. Co-présidente SFSPO</p>
+                    </div>
+                </div>
+                <div>
+                    <div className="sponsor">
+                        <div className="invite">
+                            <img src="../uploads/intervenant/intervenant2.jpg"  alt="" />
+                        </div>
+                        <br />
+                        <p style={{ fontSize:'1.4rem'}}>Dr Béatrice Clairaz</p>
+                        <p>Pharmacienne titulaire, spécialisée en soins de support en oncologie. Co-présidente SFSPO</p>
+                    </div>
+                </div>
                 </ScrollingCarousel>
             </div>
            
