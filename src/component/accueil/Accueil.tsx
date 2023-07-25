@@ -141,40 +141,14 @@ function Accueil(){
             <button className='btnMain2'>Voir tous les intervenants</button>
             </a>
 
-            <br /><br />
-            <ul
-            ref={scrollRef}
-            style={{
-                display: 'flex',
-                overflow: 'auto',
-                scrollSnapType: 'x mandatory'
-            }}
-            >
-            {Array.from({ length: 100 }).map((_, i) => (
-                <li
-                style={{
-                    backgroundColor: 'aqua',
-                    fontSize: '50px',
-                    width: '250px',
-                    height: '250px',
-                    flexShrink: 0,
-                    color: '#fff',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center'
-                }}
-                >
-                Item {i}
-                </li>
-            ))}
-            </ul>
+            <br /><br />            
 
                 
             <br /><br />
             
-            <div style={{maxWidth:'1320px', margin:'0 auto'}}>
+            <div style={{maxWidth:'1320px', margin:'0 auto', backgroundColor:'#e5e7ea'}}>
                 <ScrollingCarousel>
-                <div>
+                <div className='col-md-4'>
                     <div className="sponsor">
                         <div className="invite">
                             <img src="../uploads/intervenant/intervenant2.jpg"  alt="" />
@@ -184,7 +158,7 @@ function Accueil(){
                         <p>Pharmacienne titulaire, spécialisée en soins de support en oncologie. Co-présidente SFSPO</p>
                     </div>
                 </div>
-                <div>
+                <div className='col-md-4'>
                     <div className="sponsor">
                         <div className="invite">
                             <img src="../uploads/intervenant/intervenant2.jpg"  alt="" />
@@ -194,7 +168,7 @@ function Accueil(){
                         <p>Pharmacienne titulaire, spécialisée en soins de support en oncologie. Co-présidente SFSPO</p>
                     </div>
                 </div>
-                <div>
+                <div className='col-md-4'>
                     <div className="sponsor">
                         <div className="invite">
                             <img src="../uploads/intervenant/intervenant2.jpg"  alt="" />
@@ -204,7 +178,7 @@ function Accueil(){
                         <p>Pharmacienne titulaire, spécialisée en soins de support en oncologie. Co-présidente SFSPO</p>
                     </div>
                 </div>
-                <div>
+                <div className='col-md-4'>
                     <div className="sponsor">
                         <div className="invite">
                             <img src="../uploads/intervenant/intervenant2.jpg"  alt="" />
@@ -214,7 +188,7 @@ function Accueil(){
                         <p>Pharmacienne titulaire, spécialisée en soins de support en oncologie. Co-présidente SFSPO</p>
                     </div>
                 </div>
-                <div>
+                <div className='col-md-4'>
                     <div className="sponsor">
                         <div className="invite">
                             <img src="../uploads/intervenant/intervenant2.jpg"  alt="" />
@@ -224,7 +198,7 @@ function Accueil(){
                         <p>Pharmacienne titulaire, spécialisée en soins de support en oncologie. Co-présidente SFSPO</p>
                     </div>
                 </div>
-                <div>
+                <div className='col-md-4'>
                     <div className="sponsor">
                         <div className="invite">
                             <img src="../uploads/intervenant/intervenant2.jpg"  alt="" />
