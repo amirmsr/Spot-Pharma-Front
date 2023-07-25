@@ -1,17 +1,3 @@
-/* import { Carousel } from 'react-responsive-carousel';
-import "react-responsive-carousel/lib/styles/carousel.min.css";  */// requires a loader
-
-
-/* // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-import { Pagination } from 'swiper/modules'; */
-
-
-
 function Accueil(){
 
 
@@ -151,44 +137,9 @@ function Accueil(){
             <a href="https://spot-pharma-front.vercel.app/intervenants">
             <button className='btnMain2'>Voir tous les intervenants</button>
             </a>
-            
-      {/*       <Carousel>
-                <div>
-                    <img src="../uploads/intervenant/intervenant2.jpg"  alt="" />
-                    <p className="legend">Legend 1</p>
-                </div>
-                <div>
-                    <img src="../uploads/intervenant/Laure.jpeg"  alt="" />
-                    <p className="legend">Legend 2</p>
-                </div>
-                <div>
-                    <img src="../uploads/intervenant/intervenant1.jpg"  alt="" />
-                    <p className="legend">Legend 3</p>
-                </div>
-            </Carousel> */}
 
 
-            <br /><br />
-
-            {/* <Swiper
-        slidesPerView={3}
-        spaceBetween={30}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Pagination]}
-        className="mySwiper"
-      >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
-      </Swiper> */}
+  
   
             <br></br><br></br>  <br></br><br></br>  <br></br><br></br>  <br></br>
         </div>
