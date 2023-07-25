@@ -1,4 +1,4 @@
-const Images = [
+const Interv = [
     {
       id: 1,
       src:"../uploads/intervenant/intervenant2.jpg",
@@ -9,7 +9,7 @@ const Images = [
     },
     {
       id: 2,
-      src:"../uploads/intervenant/intervenant2.jpg",
+      src:"../uploads/intervenant/intervenant1.jpg",
       alt: "Image 2 ",
       title: "Porsche 911 Turbo S",
       description:
@@ -17,7 +17,7 @@ const Images = [
     },
     {
       id: 3,
-      src:"../uploads/intervenant/intervenant2.jpg",
+      src:"../uploads/intervenant/Laure.jpeg",
       alt: "Image 3",
       title: "Ford Mustang",
       description: 
@@ -73,4 +73,4 @@ const Images = [
     },
   ];
 
-  export default Images;
+  export default Interv;

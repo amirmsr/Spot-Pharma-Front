@@ -2,7 +2,7 @@ import { ScrollingCarousel } from '@trendyol-js/react-carousel';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Images from "./SliderImage";
+import Interv from "./SliderInterv";
 
 
 function Accueil(){
@@ -11,11 +11,11 @@ function Accueil(){
     const settings = {
         dots: true,
         infinite: true,
-        speed: 500,
+        speed: 200,
         slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 1000,
+        autoplaySpeed: 800,
     };
 
 
@@ -128,7 +128,7 @@ function Accueil(){
                             <br />
                             <p style={{ fontSize:'1.4rem'}}>Laure Guéroult Accolas</p>
                             <p>Fondatrice, Directrice générale chez Patients en Réseau</p>
-                        </div>
+                            </div>
                         </div>
 
                         <div className="col-md-4">
@@ -161,84 +161,27 @@ function Accueil(){
                 
             <br /><br />
             
-            <div style={{maxWidth:'1320px', margin:'0 auto', backgroundColor:'#e5e7ea'}}>
-                <ScrollingCarousel>
-                <div className='col-md-4'>
-                    <div className="sponsor">
-                        <div className="invite">
-                            <img src="../uploads/intervenant/intervenant2.jpg"  alt="" />
-                        </div>
-                        <br />
-                        <p style={{ fontSize:'1.4rem'}}>Dr Béatrice Clairaz</p>
-                        <p>Pharmacienne titulaire, spécialisée en soins de support en oncologie. Co-présidente SFSPO</p>
-                    </div>
-                </div>
-                <div className='col-md-4'>
-                    <div className="sponsor">
-                        <div className="invite">
-                            <img src="../uploads/intervenant/intervenant2.jpg"  alt="" />
-                        </div>
-                        <br />
-                        <p style={{ fontSize:'1.4rem'}}>Dr Béatrice Clairaz</p>
-                        <p>Pharmacienne titulaire, spécialisée en soins de support en oncologie. Co-présidente SFSPO</p>
-                    </div>
-                </div>
-                <div className='col-md-4'>
-                    <div className="sponsor">
-                        <div className="invite">
-                            <img src="../uploads/intervenant/intervenant2.jpg"  alt="" />
-                        </div>
-                        <br />
-                        <p style={{ fontSize:'1.4rem'}}>Dr Béatrice Clairaz</p>
-                        <p>Pharmacienne titulaire, spécialisée en soins de support en oncologie. Co-présidente SFSPO</p>
-                    </div>
-                </div>
-                <div className='col-md-4'>
-                    <div className="sponsor">
-                        <div className="invite">
-                            <img src="../uploads/intervenant/intervenant2.jpg"  alt="" />
-                        </div>
-                        <br />
-                        <p style={{ fontSize:'1.4rem'}}>Dr Béatrice Clairaz</p>
-                        <p>Pharmacienne titulaire, spécialisée en soins de support en oncologie. Co-présidente SFSPO</p>
-                    </div>
-                </div>
-                <div className='col-md-4'>
-                    <div className="sponsor">
-                        <div className="invite">
-                            <img src="../uploads/intervenant/intervenant2.jpg"  alt="" />
-                        </div>
-                        <br />
-                        <p style={{ fontSize:'1.4rem'}}>Dr Béatrice Clairaz</p>
-                        <p>Pharmacienne titulaire, spécialisée en soins de support en oncologie. Co-présidente SFSPO</p>
-                    </div>
-                </div>
-                <div className='col-md-4'>
-                    <div className="sponsor">
-                        <div className="invite">
-                            <img src="../uploads/intervenant/intervenant2.jpg"  alt="" />
-                        </div>
-                        <br />
-                        <p style={{ fontSize:'1.4rem'}}>Dr Béatrice Clairaz</p>
-                        <p>Pharmacienne titulaire, spécialisée en soins de support en oncologie. Co-présidente SFSPO</p>
-                    </div>
-                </div>
-                </ScrollingCarousel>
-            </div>
            
             <br /><br />
             <div style={{textAlign:'center', marginBottom:'30px'}}>
-            <div className="container">
-                <Slider {...settings}>
-                {Images.map((item) => (
-                    <div key={item.id}>
-                    <img src={item.src} alt={item.alt} className="img" />
-                    <h2 className="title">{item.title}</h2>
-                    <p className="description">{item.description}</p>
-                    </div>
-                ))}
-                </Slider>
-            </div>
+                <div className="container">
+                    <Slider {...settings}>
+                        <div className="col-md-4">
+                        <div className="sponsor">
+                        <div className="invite">
+                        {Interv.map((item) => (
+                            <div key={item.id}>
+                            <img src={item.src} alt={item.alt} className="img" />
+                            <h2 className="title">{item.title}</h2>
+                            <p className="description">{item.description}</p>
+                            </div>
+                        ))}
+                        </div>
+                        <br /> 
+                        </div>
+                        </div>
+                    </Slider>
+                </div>
             </div>
 
 
