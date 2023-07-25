@@ -146,7 +146,7 @@ function Accueil(){
                 
             <br /><br />
             
-            <div style={{maxWidth:'1320px', margin:'0 auto', backgroundColor:'#e5e7ea'}}>
+            <div style={{/* maxWidth:'1320px', */ margin:'0 auto'}}>
                 <ScrollingCarousel>
                 <div className='col-md-4'>
                     <div className="sponsor">
