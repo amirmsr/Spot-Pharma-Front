@@ -1,11 +1,26 @@
-import { useSnapCarousel } from 'react-snap-carousel';
 import { ScrollingCarousel } from '@trendyol-js/react-carousel';
-
-
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Images from "./SliderImage";
 
 
 function Accueil(){
-    const { scrollRef } = useSnapCarousel();
+
+    //slider
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1000,
+    };
+
+
+
+
 
     return(
         <div>
@@ -211,7 +226,20 @@ function Accueil(){
                 </ScrollingCarousel>
             </div>
            
-
+            <br /><br />
+            <div style={{textAlign:'center', marginBottom:'30px'}}>
+            <div className="container">
+                <Slider {...settings}>
+                {Images.map((item) => (
+                    <div key={item.id}>
+                    <img src={item.src} alt={item.alt} className="img" />
+                    <h2 className="title">{item.title}</h2>
+                    <p className="description">{item.description}</p>
+                    </div>
+                ))}
+                </Slider>
+            </div>
+            </div>
 
 
         <br></br><br></br>  <br></br><br></br>  <br></br><br></br>  <br></br>
