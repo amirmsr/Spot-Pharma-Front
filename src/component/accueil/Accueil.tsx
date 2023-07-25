@@ -17,6 +17,7 @@ function Accueil(){
         autoplay: true,
         autoplaySpeed: 800,
     };
+    
 
 
 
@@ -128,7 +129,7 @@ function Accueil(){
                             <br />
                             <p style={{ fontSize:'1.4rem'}}>Laure Guéroult Accolas</p>
                             <p>Fondatrice, Directrice générale chez Patients en Réseau</p>
-                            </div>
+                        </div>
                         </div>
 
                         <div className="col-md-4">
@@ -163,12 +164,8 @@ function Accueil(){
             
            
             <br /><br />
-            <div style={{textAlign:'center', marginBottom:'30px'}}>
-            <div className="container">
-
-            <div >
-                <div className="sponsor">
-                <div className="invite">
+            <div style={{textAlign:'center', marginBottom:'30px'}} className='allInterv'>
+            <div className="intervenants">
                 <Slider {...settings}>
                 {Interv.map((item) => (
                     <div key={item.id}>
@@ -178,11 +175,6 @@ function Accueil(){
                     </div>
                 ))}
                 </Slider>
-                </div>
-                </div>
-            </div>
-                
-            
             </div>
             </div>
 
