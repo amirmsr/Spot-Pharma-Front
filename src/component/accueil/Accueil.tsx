@@ -144,25 +144,49 @@ function Accueil(){
             <br /><br />
             <Carousel>
       <Carousel.Item>
-        <img className="d-block w-100" src="../uploads/intervenant/intervenant2.jpg" alt="Premièree imaege" />
-        <Carousel.Caption>
-          <h3>Image 1</h3>
-          <p>Description de l'image 1.</p>
-        </Carousel.Caption>
+        <div className="card">
+        <img className="d-block w-100" src="../uploads/intervenant/intervenant2.jpg" alt="Premièfffre imafge" />
+          <div className="card-body">
+            <h5 className="card-title">Image 1</h5>
+            <p className="card-text">Description de l'image 1.</p>
+          </div>
+        </div>
       </Carousel.Item>
       <Carousel.Item>
-        <img className="d-block w-100" src="../uploads/intervenant/intervenant2.jpg" alt="Premirrère imaege" />
-        <Carousel.Caption>
-          <h3>Image 2</h3>
-          <p>Description de l'image 2.</p>
-        </Carousel.Caption>
+        <div className="card">
+        <img className="d-block w-100" src="../uploads/intervenant/intervenant2.jpg" alt="Première iffmage" />
+          <div className="card-body">
+            <h5 className="card-title">Image 2</h5>
+            <p className="card-text">Description de l'image 2.</p>
+          </div>
+        </div>
       </Carousel.Item>
       <Carousel.Item>
-        <img className="d-block w-100" src="../uploads/intervenant/intervenant2.jpg" alt="Première imrage" />
-        <Carousel.Caption>
-          <h3>Image 3</h3>
-          <p>Description de l'image 3.</p>
-        </Carousel.Caption>
+        <div className="card">
+        <img className="d-block w-100" src="../uploads/intervenant/intervenant2.jpg" alt="Premfffffgière fimage" />
+          <div className="card-body">
+            <h5 className="card-title">Image 3</h5>
+            <p className="card-text">Description de l'image 3.</p>
+          </div>
+        </div>
+      </Carousel.Item>
+      <Carousel.Item>
+        <div className="card">
+        <img className="d-block w-100" src="../uploads/intervenant/intervenant2.jpg" alt="Premfffffgière fimage" />
+          <div className="card-body">
+            <h5 className="card-title">Image 3</h5>
+            <p className="card-text">Description de l'image 3.</p>
+          </div>
+        </div>
+      </Carousel.Item>
+      <Carousel.Item>
+        <div className="card">
+        <img className="d-block w-100" src="../uploads/intervenant/intervenant2.jpg" alt="Premfffffgière fimage" />
+          <div className="card-body">
+            <h5 className="card-title">Image 3</h5>
+            <p className="card-text">Description de l'image 3.</p>
+          </div>
+        </div>
       </Carousel.Item>
     </Carousel>
   
