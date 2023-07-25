@@ -173,13 +173,13 @@ function Accueil(){
             <br /><br />
 
             <ScrollingCarousel>
-            <img src='https://via.placeholder.com/150' alt='imagem' title='imagem' />
-            <img src='https://via.placeholder.com/150' alt='imagem' title='imagem' />
-            <img src='https://via.placeholder.com/150' alt='imagem' title='imagem' />
-            <img src='https://via.placeholder.com/150' alt='imagem' title='imagem' />
-            <img src='https://via.placeholder.com/150' alt='imagem' title='imagem' />
-            <img src='https://via.placeholder.com/150' alt='imagem' title='imagem' />
-            </ScrollingCarousel>,
+            <img src='../uploads/intervenant/intervenant2.jpg' alt='imagem' title='imagem' />
+            <img src='../uploads/intervenant/intervenant2.jpg' alt='imagem' title='imagem' />
+            <img src='../uploads/intervenant/intervenant2.jpg' alt='imagem' title='imagem' />
+            <img src='../uploads/intervenant/intervenant2.jpg' alt='imagem' title='imagem' />
+            <img src='../uploads/intervenant/intervenant2.jpg' alt='imagem' title='imagem' />
+            <img src='../uploads/intervenant/intervenant2.jpg' alt='imagem' title='imagem' />
+            </ScrollingCarousel>
 
 
 
