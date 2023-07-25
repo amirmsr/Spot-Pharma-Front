@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Interv from "./SliderInterv";
+import Sponsors from './SliderSponsors';
 
 
 function Accueil(){
@@ -44,7 +45,7 @@ function Accueil(){
                     <br /><br /><br />
 
 
-            <div className="partenaire">
+            {/* <div className="partenaire">
                 <h2  style={{ margin:"0", color:"#7DBA33"}}>Tous les</h2>
                 <h3 style={{fontSize:"2rem", margin:"0"}}>Partenaires</h3>
                 <br></br><br /><br />
@@ -97,12 +98,12 @@ function Accueil(){
                 </a>
                 
    
-            </div>
+            </div> */}
 
 
 
 
-            <br /><br /><br />
+            {/* <br /><br /><br />
             <h2  style={{ margin:"0", color:"#7DBA33"}}>Tous les</h2>
             <h3 style={{fontSize:"2rem", margin:"0"}}>Invités</h3>
             <br></br><br /><br />
@@ -155,28 +156,62 @@ function Accueil(){
             <br></br>  <br /><br />
             <a href="https://spot-pharma-front.vercel.app/intervenants">
             <button className='btnMain2'>Voir tous les intervenants</button>
-            </a>
+            </a> */}
 
             <br /><br />            
 
-                
+            <h2  style={{ margin:"0", color:"#7DBA33"}}>Tous les</h2>
+            <h3 style={{fontSize:"2rem", margin:"0"}}>Partenaires</h3>
             <br /><br />
-            
-           
-            <br /><br />
-            <div style={{textAlign:'center', marginBottom:'30px'}}>
-            <div className="container">
-                <Slider {...settings}>
-                {Interv.map((item) => (
-                    <div key={item.id}>
-                    <img src={item.src} alt={item.alt} className="img" />
-                    <h2 className="title">{item.title}</h2>
-                    <p className="description">{item.description}</p>
+
+            {/*  slider sponsors */}
+            <div style={{textAlign:'center', marginBottom:'30px', /* backgroundColor:"rgb(255, 255, 255)", boxShadow:' 0px 1px 40px 14px rgba(0, 0, 0, 0.07)',borderRadius:'15px' */}}>
+            <div className="container" >
+                <Slider {...settings} >
+                {Sponsors.map((item) => (
+                    <div key={item.id} >
+                    <img src={item.src} alt={item.alt} style={{margin:'0 auto',width:'100%', height:'100%'}} />
+                    <br />
+                    <h3>{item.title}</h3>
+                    <p>{item.description}</p>
                     </div>
                 ))}
                 </Slider>
             </div>
             </div>
+
+            <br></br>  <br /><br />
+            <a href="https://spot-pharma-front.vercel.app/intervenants">
+            <button className='btnMain2'>Voir tous les intervenants</button>
+            </a>
+            
+           
+            <br /><br /> <br /><br /><br /><br />  
+
+            <h2  style={{ margin:"0", color:"#7DBA33"}}>Tous les</h2>
+            <h3 style={{fontSize:"2rem", margin:"0"}}>Invités</h3>
+            <br /><br />
+
+           {/*  slider intervenant */}
+            <div style={{textAlign:'center', marginBottom:'30px', /* backgroundColor:"rgb(255, 255, 255)", boxShadow:' 0px 1px 40px 14px rgba(0, 0, 0, 0.07)',borderRadius:'15px' */}}>
+            <div className="container" >
+                <Slider {...settings} >
+                {Interv.map((item) => (
+                    <div key={item.id} >
+                    <img src={item.src} alt={item.alt} style={{margin:'0 auto',width:'100px', height:'100px', borderRadius:'50%'}} />
+                    <br />
+                    <h3>{item.title}</h3>
+                    <p>{item.description}</p>
+                    </div>
+                ))}
+                </Slider>
+            </div>
+            </div>
+
+            <br></br>  <br /><br />
+            <a href="https://spot-pharma-front.vercel.app/intervenants">
+            <button className='btnMain2'>Voir tous les intervenants</button>
+            </a>
 
 
         <br></br><br></br>  <br></br><br></br>  <br></br><br></br>  <br></br>
