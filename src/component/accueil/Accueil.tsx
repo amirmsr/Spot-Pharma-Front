@@ -1,8 +1,10 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Carousel from 'react-bootstrap/Carousel';
+
+
+
+
 function Accueil(){
-
-
-
-
 
     return(
         <div>
@@ -139,7 +141,30 @@ function Accueil(){
             </a>
 
 
-  
+            <br /><br />
+            <Carousel>
+      <Carousel.Item>
+        <img className="d-block w-100" src="../uploads/intervenant/intervenant2.jpg" alt="Premièree imaege" />
+        <Carousel.Caption>
+          <h3>Image 1</h3>
+          <p>Description de l'image 1.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img className="d-block w-100" src="../uploads/intervenant/intervenant2.jpg" alt="Premirrère imaege" />
+        <Carousel.Caption>
+          <h3>Image 2</h3>
+          <p>Description de l'image 2.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img className="d-block w-100" src="../uploads/intervenant/intervenant2.jpg" alt="Première imrage" />
+        <Carousel.Caption>
+          <h3>Image 3</h3>
+          <p>Description de l'image 3.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+    </Carousel>
   
             <br></br><br></br>  <br></br><br></br>  <br></br><br></br>  <br></br>
         </div>
