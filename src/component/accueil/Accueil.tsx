@@ -12,11 +12,11 @@ function Accueil(){
     const settings = {
         dots: true,
         infinite: true,
-        speed: 50,
+        speed: 800,
         slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 500,
+        autoplaySpeed: 1200,
     };
     
 
