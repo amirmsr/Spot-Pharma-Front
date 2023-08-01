@@ -45,13 +45,18 @@ export default function Intervenants(){
             <h3 style={{fontSize:"2rem", margin:"0"}}>Intervenants</h3>
             </div>    
 
-            {elements.map((element:Intervenant)=>(
-                <div key={element.id}>
-                    <img  alt="" src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + element.image}/>
-                    <p>{element.nom}</p>
-                    <p>{element.description}</p>
+            <div className="container">
+                <div className="row">
+                    {elements?.slice(0.3).map((element:Intervenant)=>(
+                    <div key={element.id} className="col-md-4">
+                        <img  alt="" src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + element.image}/>
+                        <p>{element.nom}</p>
+                        <p>{element.description}</p>
+                    </div>
+                    ))}        
                 </div>
-            ))}                               
+            </div>
+                                   
         </div> 
 
     )
