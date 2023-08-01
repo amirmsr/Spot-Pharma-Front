@@ -20,7 +20,7 @@ function AddIntervenants() {
         setData((prevData) => ({ ...prevData, [e.target.name]: e.target.value }));
     };
     
-      
+    console.log(data)
     //upload image
     const uploadImage = useMutation((formData: FormData) => {
         return fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sessions/invite`, {
