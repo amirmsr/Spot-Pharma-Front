@@ -17,6 +17,7 @@ import UserHome from "./component/accueil/UserHome";
 import SessionsDetails from "./component/sessions/SessionsDetails";
 import EditSession from "./component/sessions/EditSession";
 import EditIntervenant1 from "./component/sessions/EditIntervenant1";
+import AddIntervenants from "./component/intervenants/AddIntervenants";
 
 
 
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
             {
               path: "/intervenants",
               element: <Intervenants />
+            },         
+            {
+              path: "/AddIntervenants",
+              element: <AddIntervenants />
             },         
             {
               path: "/inscription",
