@@ -54,12 +54,12 @@ export default function Intervenants(){
             </div> 
             <br />
             <button className="btnMain2" onClick={() => handleClick()}>Ajouter un nouvel intervenant</button>
-            <br /><br /><br />  
+            <br /><br /> 
 
             <div className="container">
                 <div className="row">
                     {elements?.slice(0.3).map((element:Intervenant)=>(
-                    <div key={element.id} className="col-md-4" style={{marginTop:'130px'}}>
+                    <div key={element.id} className="col-md-4" style={{marginTop:'50px'}}>
                         <div className="intervenants">
                             <div className="invite_img">
                                 <img  alt="" src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + element.image}/>
