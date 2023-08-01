@@ -52,7 +52,7 @@ export default function Intervenants(){
             <h2  style={{ margin:"0", color:"#7DBA33"}}>Tous les</h2>
             <h3 style={{fontSize:"2rem", margin:"0"}}>Intervenants</h3>
             </div> 
-            <br />
+            <br /><br />
             <button className="btnMain2" onClick={() => handleClick()}>Ajouter un nouvel intervenant</button>
             <br /><br /> 
 
@@ -72,6 +72,7 @@ export default function Intervenants(){
                     ))}        
                 </div>
             </div>
+            <br /><br /><br />
                                    
         </div> 
 
