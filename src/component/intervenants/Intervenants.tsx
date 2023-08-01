@@ -47,19 +47,19 @@ export default function Intervenants(){
     return(
 
 
-        <div className="allInterv" style={{marginBottom:'40px'}}>   
+        <div className="allInterv">   
             <div style={{paddingTop:'90px'}}>
             <h2  style={{ margin:"0", color:"#7DBA33"}}>Tous les</h2>
             <h3 style={{fontSize:"2rem", margin:"0"}}>Intervenants</h3>
             </div> 
             <br />
             <button className="btnMain2" onClick={() => handleClick()}>Ajouter un nouvel intervenant</button>
-            <br />           
+            <br /><br /><br />  
 
             <div className="container">
                 <div className="row">
                     {elements?.slice(0.3).map((element:Intervenant)=>(
-                    <div key={element.id} className="col-md-4">
+                    <div key={element.id} className="col-md-4" style={{marginTop:'130px'}}>
                         <div className="intervenants">
                             <div className="invite_img">
                                 <img  alt="" src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + element.image}/>
