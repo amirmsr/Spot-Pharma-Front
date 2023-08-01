@@ -23,7 +23,7 @@ function AddIntervenants() {
     console.log(data)
     //upload image
     const uploadImage = useMutation((formData: FormData) => {
-        return fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sessions/invite`, {
+        return fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sessions/intervenant`, {
             method: 'POST',
             body: formData
         }).then((response) => {
