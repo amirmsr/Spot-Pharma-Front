@@ -89,7 +89,7 @@ function AddIntervenants() {
 
                 <br /><br />
 
-                <Form.Control type="file" id="image" name="image" onChange={handleChangeFile} style={{width:'50%'}}/>
+                <Form.Control type="file" id="image" name="image" onChange={handleChangeFile} style={{width:'50%', margin:'0 auto'}}/>
                 <br></br> 
                 <button type="submit" className="btnMain2" disabled={isDisabled} style={{opacity: isDisabled ? 0.4 : 1}}> 
                     {uploadImage.status === 'loading' ? 'Ajout...' : 'Ajouter'}
