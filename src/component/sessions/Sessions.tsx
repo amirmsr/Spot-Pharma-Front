@@ -207,15 +207,7 @@ function Session() {
   const handleEditIntervenant1=(sessionId: number)=>{
     navigate(`editIntervenant1/${sessionId}`)
   }
-  const handleEditIntervenant2=(sessionId: number)=>{
-    navigate(`editIntervenant2/${sessionId}`)
-  }
-  const handleEditIntervenant3=(sessionId: number)=>{
-    navigate(`editIntervenant3/${sessionId}`)
-  }
-  const handleEditIntervenant4=(sessionId: number)=>{
-    navigate(`editIntervenant4/${sessionId}`)
-  }
+
 
 
 

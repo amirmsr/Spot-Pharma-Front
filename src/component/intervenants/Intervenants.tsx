@@ -1,4 +1,5 @@
 import { useQuery } from "react-query";
+import { useNavigate } from "react-router-dom";
 
 export default function Intervenants(){
 
@@ -8,6 +9,8 @@ export default function Intervenants(){
         description:any;
         image:any
     }
+    
+    const navigate = useNavigate()
 
     const { data: elements, isLoading, isError } = useQuery("Sessions", async () => {
         try {
@@ -33,6 +36,11 @@ export default function Intervenants(){
       if (!elements || elements.length === 0) {
         return <div>Aucun intervenant disponible</div>;
       }
+
+      const handleClick=()=>{
+        navigate(`addIntervenants`)
+      }
+    
         
     
 
@@ -43,13 +51,21 @@ export default function Intervenants(){
             <div style={{paddingTop:'90px'}}>
             <h2  style={{ margin:"0", color:"#7DBA33"}}>Tous les</h2>
             <h3 style={{fontSize:"2rem", margin:"0"}}>Intervenants</h3>
-            </div>    
+            </div> 
+            <br />
+            <button className="btnMain2" onClick={() => handleClick()}>Ajouter un nouvel intervenant</button>
+            <br />           
 
             <div className="container">
                 <div className="row">
                     {elements?.slice(0.3).map((element:Intervenant)=>(
                     <div key={element.id} className="col-md-4">
-                        <img  alt="" src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + element.image}/>
+                        <div className="intervenants">
+                            <div className="invite_img">
+                                <img  alt="" src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + element.image}/>
+                            </div>
+                          
+                        </div>                     
                         <p>{element.nom}</p>
                         <p>{element.description}</p>
                     </div>

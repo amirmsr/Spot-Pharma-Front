@@ -268,7 +268,7 @@ input{
 
 /* tous les intervenants */
 
-.allInterv .intervenants .invite_img img{
+.intervenants .invite_img img{
     
     object-fit: cover;
     width: 100px; /* taille fixe des images */
@@ -276,7 +276,7 @@ input{
     border-radius: 50%; /* forme de cercle */
 
 }
-.allInterv .intervenants {
+.intervenants {
     display: flex;
     max-width: 100%; 
     margin-bottom: 30px;
