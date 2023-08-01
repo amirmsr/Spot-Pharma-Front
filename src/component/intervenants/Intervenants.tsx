@@ -38,7 +38,7 @@ export default function Intervenants(){
       }
 
       const handleClick=()=>{
-        navigate(`addIntervenants`)
+        navigate(`https://spot-pharma-front.vercel.app/addIntervenants`)
       }
     
         

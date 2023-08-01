@@ -87,10 +87,11 @@ function AddIntervenants() {
                 <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Description</p>
                 <input type="text" name="description"  placeholder='Description' onChange={handleChange} />
 
+                <br /><br />
 
-                <Form.Control type="file" id="image" name="image" onChange={handleChangeFile} />
+                <Form.Control type="file" id="image" name="image" onChange={handleChangeFile} style={{width:'50%'}}/>
                 <br></br> 
-                <button type="submit" disabled={isDisabled} style={{opacity: isDisabled ? 0.4 : 1}}> 
+                <button type="submit" className="btnMain2" disabled={isDisabled} style={{opacity: isDisabled ? 0.4 : 1}}> 
                     {uploadImage.status === 'loading' ? 'Ajout...' : 'Ajouter'}
                 </button>
             </Form>
