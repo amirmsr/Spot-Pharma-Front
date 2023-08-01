@@ -53,7 +53,7 @@ const router = createBrowserRouter([
               element: <Intervenants />
             },         
             {
-              path: "/addIntervenants",
+              path: "intervenants/addIntervenants",
               element: <AddIntervenants />
             },         
             {

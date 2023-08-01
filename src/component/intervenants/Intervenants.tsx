@@ -65,7 +65,7 @@ export default function Intervenants(){
     }
 
     const handleClick=()=>{
-    navigate(`./addIntervenants`)
+    navigate(`/addIntervenants`)
     }
     
         
