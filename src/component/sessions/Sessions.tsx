@@ -309,13 +309,7 @@ function Session() {
                )}                 
               </center>
             ) : (
-              <center>
-                 <button
-                  className="btnMain2"
-                  onClick={() => handleAddIntervenants(element.id)}
-                >
-                  Ajouter des intervenants
-                </button>
+              <center>                
                 <br />
                 <button
                   className="btnMain2"
@@ -333,9 +327,18 @@ function Session() {
             </a> */}
             <br />
              {isAdmin ?(
+              <div>
+              <button
+               className="btnMain2"
+               onClick={() => handleAddIntervenants(element.id)}
+             >
+               Ajouter des intervenants
+             </button>
               <button onClick={() => handleSession(element.id)} className="btnMain2">
               Voir les inscrits
               </button>
+              </div>
+               
              ):null}
             </center>        
         </div>
