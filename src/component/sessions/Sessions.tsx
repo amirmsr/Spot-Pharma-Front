@@ -208,7 +208,9 @@ function Session() {
     navigate(`editIntervenant1/${sessionId}`)
   }
 
-
+  const handleAddSession=()=>{
+    navigate(`/addSession`)
+  }
 
 
 
@@ -222,7 +224,11 @@ function Session() {
       <br></br> <br></br> <br></br> <br></br>
       <h1 style={{ margin: "0", color: "#7DBA33" }}>Toutes les</h1>
       <p style={{ fontSize: "2rem", margin: "0" }}>Sessions</p>
-      <br></br><br /><br />
+      <br></br>
+      {isAdmin ? (
+                <button className="btnMain2" onClick={() => handleAddSession()}>Ajouter une session</button>  
+      ):null}
+      <br /><br />
       <div className="container ">
         
         <div className="row ">

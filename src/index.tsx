@@ -37,6 +37,10 @@ const router = createBrowserRouter([
               element: <Session />
             },       
             {
+              path: "/sessions/addSession",
+              element: <Session />
+            },       
+            {
               path: "/sessions/edit/:sessionId",
               element: <EditSession />
             },       
