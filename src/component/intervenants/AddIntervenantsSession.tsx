@@ -109,8 +109,8 @@ function AddIntervenantsSession() {
     }
 
     const handleAddIntervenants=(elementId: number)=>{
-        setData((prevData) => ({ ...prevData, elementId }))
-        alert(interv)
+        setInterv((prevData) => ({ ...prevData, elementId }))
+        console.log(interv)
     }
 
     
