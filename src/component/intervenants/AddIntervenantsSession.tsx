@@ -63,9 +63,9 @@ function AddIntervenantsSession() {
     });
 
 
-    const [interv, setInterv] = useState({
-        id_invites:[]
-    });
+    const [interv, setInterv] = useState<{ id_invites: number[] }>({
+        id_invites: []
+    });      
       
 
     //add intervenant a la session
@@ -95,22 +95,22 @@ function AddIntervenantsSession() {
             throw error;
         }
     });
-
     if (isLoading) {
         return <div>Chargement...</div>;
     }
-    
     if (isError) {
     alert("erreur")
     }
-    console.log(elements)
     if (!elements || elements.length === 0) {
     return <div>Aucun intervenant disponible</div>;
     }
 
-    const handleAddIntervenants=(elementId: number)=>{
-        setInterv((prevData) => ({ ...prevData, elementId }))
-        console.log(interv)
+    const handleAddIntervenants = (elementId: number) => {
+        setInterv((prevData) => ({
+            ...prevData,
+            id_invites: [...prevData.id_invites, elementId]
+        }));
+        console.log(interv); 
     }
 
     
