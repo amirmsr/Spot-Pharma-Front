@@ -110,8 +110,8 @@ function AddIntervenantsSession() {
             ...prevData,
             id_invites: [...prevData.id_invites, elementId]
         }));
-        console.log(interv); 
     }
+    console.log(interv)
 
     
     const handleSubmit = async (e:React.FormEvent<HTMLFormElement>)=>{
