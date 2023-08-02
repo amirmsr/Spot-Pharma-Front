@@ -15,6 +15,9 @@ function AddSession() {
         session_date: "",
         type: "",
         description:"",
+        sponsors_images:"",
+        video_titre:"",
+        video:""
     });
       
 
@@ -72,11 +75,11 @@ function AddSession() {
 
   return (
     <div>
-        <form style={{paddingBottom:'500px',paddingTop:'100px'}} onSubmit={handleSubmit}>
+        <form style={{paddingBottom:'300px',paddingTop:'100px'}} onSubmit={handleSubmit}>
 
             <div className="add">
               <br /><br /><br />
-                <h1>Modification session</h1>
+                <h1>Ajouter une session</h1>
                 <br /><br />
                 <div className="container">
                   <div className="row">
@@ -104,7 +107,7 @@ function AddSession() {
 
                 
                 <br /><br />
-                <button type="submit" className='btnMain2'> Modifier </button>
+                <button type="submit" className='btnMain2'> Ajouter </button>
        
             </div>
       </form>
