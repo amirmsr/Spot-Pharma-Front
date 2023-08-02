@@ -18,6 +18,7 @@ import SessionsDetails from "./component/sessions/SessionsDetails";
 import EditSession from "./component/sessions/EditSession";
 import EditIntervenant1 from "./component/sessions/EditIntervenant1";
 import AddIntervenants from "./component/intervenants/AddIntervenants";
+import AddSession from "./component/sessions/AddSession";
 
 
 
@@ -38,7 +39,7 @@ const router = createBrowserRouter([
             },       
             {
               path: "/sessions/addSession",
-              element: <Session />
+              element: <AddSession />
             },       
             {
               path: "/sessions/edit/:sessionId",
