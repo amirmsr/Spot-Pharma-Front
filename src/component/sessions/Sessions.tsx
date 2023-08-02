@@ -209,7 +209,10 @@ function Session() {
   }
 
   const handleAddSession=()=>{
-    navigate(`/addSession`)
+    navigate(`sessions/addSession`)
+  }
+  const handleAddIntervenants=(sessionId: number)=>{
+    navigate(`sessions/addIntervenantsSession/${sessionId}`)
   }
 
 
@@ -267,7 +270,7 @@ function Session() {
               <div className="row">
                 <div className="col">
                   <div className="invite">     
-                    <div>
+                    {/* <div>
                       {isAdmin ?(
                         <div className="container">
                           <div className="row">
@@ -280,7 +283,7 @@ function Session() {
                           </div>
                         </div>                       
                       ):null}              
-                    </div>        
+                    </div>       */}  
                     {element.invites_images && (
                     <img                      
                       src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + element.invites_images}
@@ -307,6 +310,13 @@ function Session() {
               </center>
             ) : (
               <center>
+                 <button
+                  className="btnMain2"
+                  onClick={() => handleAddIntervenants(element.id)}
+                >
+                  Ajouter des intervenants
+                </button>
+                <br />
                 <button
                   className="btnMain2"
                   onClick={() => handleNotconnected()}
