@@ -212,7 +212,7 @@ function Session() {
     navigate(`sessions/addSession`)
   }
   const handleAddIntervenants=(sessionId: number)=>{
-    navigate(`sessions/addIntervenantsSession/${sessionId}`)
+    navigate(`addIntervenantsSession/${sessionId}`)
   }
 
 
@@ -334,6 +334,7 @@ function Session() {
              >
                Ajouter des intervenants
              </button>
+             <br />
               <button onClick={() => handleSession(element.id)} className="btnMain2">
               Voir les inscrits
               </button>

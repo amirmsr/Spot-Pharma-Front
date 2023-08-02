@@ -79,9 +79,12 @@ export default function Intervenants(){
             <h2  style={{ margin:"0", color:"#7DBA33"}}>Tous les</h2>
             <h3 style={{fontSize:"2rem", margin:"0"}}>Intervenants</h3>
             </div>             
-            <br /><br />
+            <br />
             {isAdmin ? (
-                <button className="btnMain2" onClick={() => handleClick()}>Ajouter un nouvel intervenant</button>  
+                <div>
+                    <br />
+                    <button className="btnMain2" onClick={() => handleClick()}>Ajouter un nouvel intervenant</button>  
+                </div>                
             ):null}
             <br /><br /> 
             <div className="container">
