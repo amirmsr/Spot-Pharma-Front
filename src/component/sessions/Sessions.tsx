@@ -23,7 +23,7 @@ interface Sessions {
   sponsors_images: "";
   video_titre: "";
   video: "";
-  intervenants: number[];
+  intervenants?: number[];
 }
 interface IntervenantSession {
   id: number;
@@ -179,10 +179,10 @@ function Session() {
   }
   
   const sessionsAvecIntervenants: Sessions[] = associerIntervenantsAuxSessions(elements, intervSessions);
-  console.log(sessionsAvecIntervenants);
+  console.log(sessionsAvecIntervenants)
   
 
-  console.log(sessionsAvecIntervenants)
+ 
   
 
   //get user sessions
