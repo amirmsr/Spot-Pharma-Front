@@ -146,9 +146,6 @@ function Session() {
 
 
 
-
-
-
   // fetch les sessions
   const { data: elements, isLoading, isError } = useQuery("Sessions", async () => {
     try {
@@ -169,25 +166,23 @@ function Session() {
     sessions: Sessions[],
     intervenants: IntervenantSession[]
   ) {
-    const sessionsAvecIntervenants: { [sessionId: number]: Sessions } = {};
-
-    sessions?.forEach((session) => {
-
-      const intervenantsSession = intervenants?.filter(
+    const sessionsAvecIntervenants: Sessions[] = sessions.map((session) => {
+      const intervenantsSession = intervenants.filter(
         (intervenant) => intervenant.id_session === session.id
       );
-
-      session.intervenants = intervenantsSession?.map(
-        (intervenant) => intervenant.id_invite
-      );
-
-
-      sessionsAvecIntervenants[session.id] = session;
+      const sessionAvecIntervenants: Sessions = {
+        ...session,
+        intervenants: intervenantsSession.map((intervenant) => intervenant.id_invite),
+      };
+      return sessionAvecIntervenants;
     });
-
+  
     return sessionsAvecIntervenants;
   }
-  const sessionsAvecIntervenants = associerIntervenantsAuxSessions(elements, intervSessions);
+  
+  const sessionsAvecIntervenants: Sessions[] = associerIntervenantsAuxSessions(elements, intervSessions);
+  console.log(sessionsAvecIntervenants);
+  
 
   console.log(sessionsAvecIntervenants)
   
