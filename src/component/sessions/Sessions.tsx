@@ -71,51 +71,6 @@ function Session() {
   
 
 
-  //inscrire a une session   
-  const { mutate: inscriptionMutation } = useMutation(async (inscription: { id_user: string; id_session: string; }) => {
-    try {
-      const token = localStorage.getItem("token");
-      const headers = { token: `${token}` };
-      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_inscrit", {  //https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_inscrit
-        method: 'POST',
-        headers: {
-          ...headers,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(inscription),
-      });
-  
-      if (response.ok) {
-        const json = await response.json();
-        console.log(json);
-        alert("Votre inscription est bien prise en compte")
-        return json;
-      } else {
-        // Gérer l'erreur de duplication ici
-        alert("Vous vous êtes déjà inscrit")
-      }
-    } catch (error) {
-      // Gérer d'autres erreurs ici
-      console.error(error);
-      throw error;
-    }
-  });
-
-
-  const handleInscription = async (elementId: number, elementTitre: string) => {
-    const userId = user?.id as number;
-    if (userId) {
-      const inscription = {
-        id_user: userId.toString(),
-        id_session: elementId.toString(),
-      };
-      inscriptionMutation(inscription)        
-    } else {
-      console.log("userId n'est pas défini.");
-    }
-  };
-
-
   //fetch les intervenant 
   const { data: interv, } = useQuery("Intervenant", async () => {
     try {
@@ -184,7 +139,49 @@ function Session() {
   console.log(sessionsAvecIntervenants);
   
   
+  //inscrire a une session   
+  const { mutate: inscriptionMutation } = useMutation(async (inscription: { id_user: string; id_session: string; }) => {
+    try {
+      const token = localStorage.getItem("token");
+      const headers = { token: `${token}` };
+      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_inscrit", {  //https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_inscrit
+        method: 'POST',
+        headers: {
+          ...headers,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(inscription),
+      });
+  
+      if (response.ok) {
+        const json = await response.json();
+        console.log(json);
+        alert("Votre inscription est bien prise en compte")
+        return json;
+      } else {
+        // Gérer l'erreur de duplication ici
+        alert("Vous vous êtes déjà inscrit")
+      }
+    } catch (error) {
+      // Gérer d'autres erreurs ici
+      console.error(error);
+      throw error;
+    }
+  });
 
+
+  const handleInscription = async (elementId: number, elementTitre: string) => {
+    const userId = user?.id as number;
+    if (userId) {
+      const inscription = {
+        id_user: userId.toString(),
+        id_session: elementId.toString(),
+      };
+      inscriptionMutation(inscription)        
+    } else {
+      console.log("userId n'est pas défini.");
+    }
+  };
  
   
 
@@ -295,7 +292,7 @@ function Session() {
         
         <div className="row ">
           
-          {elements?.slice(0.3).map((element:Sessions)=>(
+          {sessionsAvecIntervenants?.slice(0.3).map((element:Sessions)=>(
           <div key={element.id} className="col-md-4 ">
             <div className="session">
             <div>
@@ -314,7 +311,8 @@ function Session() {
             </div>
 
             <div style={{height:'60px'}}>
-              <h3>{element.titre}</h3>   
+              <h3>{element.titre}</h3>  
+              <p>{element.intervenants.join(";")}</p> 
             </div>  
 
             <br /> 
