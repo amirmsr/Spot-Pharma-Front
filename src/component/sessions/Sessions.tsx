@@ -163,7 +163,7 @@ function Session() {
   
 
   function associerIntervenantsAuxSessions( sessions: Sessions[], intervenants: IntervenantSession[]) {
-    
+
     const sessionsAvecIntervenants: Sessions[] = sessions?.map((session) => {
       const intervenantsSession = intervenants?.filter(
         (intervenant) => intervenant.id_session === session.id
@@ -182,7 +182,7 @@ function Session() {
   console.log(sessionsAvecIntervenants);
   
 
-  console.log("voici : " + sessionsAvecIntervenants)
+  console.log(sessionsAvecIntervenants)
   
 
   //get user sessions
