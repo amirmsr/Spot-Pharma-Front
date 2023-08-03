@@ -23,7 +23,7 @@ interface Sessions {
   sponsors_images: "";
   video_titre: "";
   video: "";
-  intervenants?: number[];
+  intervenants: number[];
 }
 interface IntervenantSession {
   id: number;
@@ -162,15 +162,17 @@ function Session() {
 
   
 
-  function associerIntervenantsAuxSessions( sessions: Sessions[], intervenants: IntervenantSession[]) {
-
+  function associerIntervenantsAuxSessions(
+    sessions: Sessions[],
+    intervenants: IntervenantSession[]
+  ) {
     const sessionsAvecIntervenants: Sessions[] = sessions?.map((session) => {
       const intervenantsSession = intervenants?.filter(
-        (intervenant) => intervenant?.id_session === session?.id
+        (intervenant) => intervenant.id_session === session.id
       );
       const sessionAvecIntervenants: Sessions = {
         ...session,
-        intervenants: intervenantsSession?.map((intervenant) => intervenant?.id_invite),
+        intervenants: intervenantsSession?.map((intervenant) => intervenant.id_invite),
       };
       return sessionAvecIntervenants;
     });
@@ -179,7 +181,8 @@ function Session() {
   }
   
   const sessionsAvecIntervenants: Sessions[] = associerIntervenantsAuxSessions(elements, intervSessions);
-  console.log(sessionsAvecIntervenants)
+  console.log(sessionsAvecIntervenants);
+  
   
 
  
