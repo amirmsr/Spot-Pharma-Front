@@ -7,6 +7,7 @@ import { useNavigate} from "react-router-dom";
 
 
 interface Sessions {
+  intervenants: number[];
   id: number;
   titre: "";
   session_date: "";
@@ -23,6 +24,12 @@ interface Sessions {
   sponsors_images: "";
   video_titre: "";
   video: "";
+}
+interface IntervenantSession {
+  id: number;
+  id_session: number;
+  id_invite: number;
+
 }
 
 
@@ -139,6 +146,9 @@ function Session() {
 
 
 
+
+
+
   // fetch les sessions
   const { data: elements, isLoading, isError } = useQuery("Sessions", async () => {
     try {
@@ -153,18 +163,33 @@ function Session() {
     }
   });
 
-  // Fonction pour combiner les sessions et les intervenants en utilisant l'id_session
-  const combineSessionsAndIntervenants = (sessions:any, intervenants:any) => {
-    return sessions?.map((session: { id: any; }) => {
-      const matchingIntervenants = intervenants?.filter((interv: { id_session: any; }) => interv.id_session === session.id);
-      const idInvites = matchingIntervenants?.map((interv: { id_invite: any; }) => interv.id_invite);
-      return { ...session, id_invite: idInvites };
+  
+
+  function associerIntervenantsAuxSessions(
+    sessions: Sessions[],
+    intervenants: IntervenantSession[]
+  ) {
+    const sessionsAvecIntervenants: { [sessionId: number]: Sessions } = {};
+
+    sessions.forEach((session) => {
+
+      const intervenantsSession = intervenants.filter(
+        (intervenant) => intervenant.id_session === session.id
+      );
+
+      session.intervenants = intervenantsSession.map(
+        (intervenant) => intervenant.id_invite
+      );
+
+
+      sessionsAvecIntervenants[session.id] = session;
     });
-  };
-  const sessionsWithIntervenants = combineSessionsAndIntervenants(elements, intervSessions);
 
-  console.log(sessionsWithIntervenants)
+    return sessionsAvecIntervenants;
+  }
+  const sessionsAvecIntervenants = associerIntervenantsAuxSessions(elements, intervSessions);
 
+  console.log(sessionsAvecIntervenants)
   
 
   //get user sessions
