@@ -158,7 +158,7 @@ function Session() {
   // Fonction pour combiner les sessions et les intervenants en utilisant l'id_session
   const combineSessionsAndIntervenants = (sessions:any, intervenants:any) => {
     return sessions?.map((session: { id: any; }) => {
-      const matchingIntervenants = intervenants.filter((interv: { id_session: any; }) => interv.id_session === session.id);
+      const matchingIntervenants = intervenants?.filter((interv: { id_session: any; }) => interv.id_session === session.id);
       const idInvites = matchingIntervenants?.map((interv: { id_invite: any; }) => interv.id_invite);
       return { ...session, id_invite: idInvites };
     });
