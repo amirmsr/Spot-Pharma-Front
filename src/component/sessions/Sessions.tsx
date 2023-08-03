@@ -166,13 +166,13 @@ function Session() {
     sessions: Sessions[],
     intervenants: IntervenantSession[]
   ) {
-    const sessionsAvecIntervenants: Sessions[] = sessions.map((session) => {
-      const intervenantsSession = intervenants.filter(
+    const sessionsAvecIntervenants: Sessions[] = sessions?.map((session) => {
+      const intervenantsSession = intervenants?.filter(
         (intervenant) => intervenant.id_session === session.id
       );
       const sessionAvecIntervenants: Sessions = {
         ...session,
-        intervenants: intervenantsSession.map((intervenant) => intervenant.id_invite),
+        intervenants: intervenantsSession?.map((intervenant) => intervenant.id_invite),
       };
       return sessionAvecIntervenants;
     });
