@@ -7,7 +7,6 @@ import { useNavigate} from "react-router-dom";
 
 
 interface Sessions {
-  intervenants: number[];
   id: number;
   titre: "";
   session_date: "";
@@ -24,6 +23,7 @@ interface Sessions {
   sponsors_images: "";
   video_titre: "";
   video: "";
+  intervenants: number[];
 }
 interface IntervenantSession {
   id: number;
@@ -162,10 +162,8 @@ function Session() {
 
   
 
-  function associerIntervenantsAuxSessions(
-    sessions: Sessions[],
-    intervenants: IntervenantSession[]
-  ) {
+  function associerIntervenantsAuxSessions( sessions: Sessions[], intervenants: IntervenantSession[]) {
+    
     const sessionsAvecIntervenants: Sessions[] = sessions?.map((session) => {
       const intervenantsSession = intervenants?.filter(
         (intervenant) => intervenant.id_session === session.id
@@ -184,7 +182,7 @@ function Session() {
   console.log(sessionsAvecIntervenants);
   
 
-  console.log(sessionsAvecIntervenants)
+  console.log("voici : " + sessionsAvecIntervenants)
   
 
   //get user sessions
