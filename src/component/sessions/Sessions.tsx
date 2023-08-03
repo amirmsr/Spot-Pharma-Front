@@ -97,8 +97,6 @@ function Session() {
 
   const handleInscription = async (elementId: number, elementTitre: string) => {
     const userId = user?.id as number;
-    console.log(userId);
-  
     if (userId) {
       const inscription = {
         id_user: userId.toString(),
@@ -207,7 +205,6 @@ function Session() {
     return filteredSession
   });
 
-  console.log(userSessionId)
 
   userSessionId?.map((id: number) => {
     const foundSession = elements.find((element: any) => element.id === id);
