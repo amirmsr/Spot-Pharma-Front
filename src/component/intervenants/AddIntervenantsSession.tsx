@@ -71,7 +71,7 @@ function AddIntervenantsSession() {
     //add intervenant a la session
     const { mutate: addSession } = useMutation(async () => {
         try {
-            const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sessions_invites/${sessionId}`, {
+            const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_invites/${sessionId}`, {
             method: 'POST',
             headers: {
                'Content-Type': 'application/json',
@@ -111,6 +111,8 @@ function AddIntervenantsSession() {
             id_invites: [...prevData.id_invites, elementId]
         }));
     }
+
+    console.log(interv)
 
     
     const handleSubmit = async ()=>{
