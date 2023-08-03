@@ -62,7 +62,6 @@ function Session() {
       setIsconnected(true);
     }
   }, [user]);
-  console.log(user)
   useEffect(() => {
     if (user?.role === 1) {
       setIsadmin(true);
@@ -116,7 +115,7 @@ function Session() {
   });
 
   
-
+  // associer les intervenant aux sessions
   function associerIntervenantsAuxSessions(
     sessions: Sessions[],
     intervenants: IntervenantSession[]
@@ -155,7 +154,6 @@ function Session() {
   
       if (response.ok) {
         const json = await response.json();
-        console.log(json);
         alert("Votre inscription est bien prise en compte")
         return json;
       } else {
@@ -239,7 +237,6 @@ function Session() {
   if (isError) {
     console.log('erreuuuur')
   }
-  console.log(elements)
   if (!elements || elements.length === 0) {
     return <div>Aucune session disponible</div>;
   }
