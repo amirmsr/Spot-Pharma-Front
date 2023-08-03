@@ -171,13 +171,13 @@ function Session() {
   ) {
     const sessionsAvecIntervenants: { [sessionId: number]: Sessions } = {};
 
-    sessions.forEach((session) => {
+    sessions?.forEach((session) => {
 
-      const intervenantsSession = intervenants.filter(
+      const intervenantsSession = intervenants?.filter(
         (intervenant) => intervenant.id_session === session.id
       );
 
-      session.intervenants = intervenantsSession.map(
+      session.intervenants = intervenantsSession?.map(
         (intervenant) => intervenant.id_invite
       );
 
