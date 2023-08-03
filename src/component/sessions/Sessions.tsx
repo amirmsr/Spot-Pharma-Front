@@ -321,7 +321,7 @@ function Session() {
 
             <div style={{height:'60px'}}>
               <h3>{element.titre}</h3>  
-              <p>{element.intervenants.join(";")}</p> 
+              {/* <p>{element.intervenants.join(";")}</p>  */}
             </div>  
 
             <br /> 
