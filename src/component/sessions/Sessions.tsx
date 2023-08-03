@@ -115,12 +115,10 @@ function Session() {
 
   
   // associer les id des intervenant aux sessions
-  function associerIntervenantsAuxSessions(
-    sessions: Sessions[],
-    intervenants: IntervenantSession[]
-  ) {
+  function associerIntervenantsAuxSessions( sessions: Sessions[], intervenant_session: IntervenantSession[]) {
+    
     const sessionsAvecIntervenants: Sessions[] = sessions?.map((session) => {
-      const intervenantsSession = intervenants?.filter(
+      const intervenantsSession = intervenant_session?.filter(
         (intervenant) => intervenant.id_session === session.id
       );
       const sessionAvecIntervenants: Sessions = {
