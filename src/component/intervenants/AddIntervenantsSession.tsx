@@ -76,7 +76,7 @@ function AddIntervenantsSession() {
             headers: {
                'Content-Type': 'application/json',
             },
-            body: JSON.stringify(data),
+            body: JSON.stringify(interv),
             });
     
             if (response.ok) {
@@ -111,11 +111,9 @@ function AddIntervenantsSession() {
             id_invites: [...prevData.id_invites, elementId]
         }));
     }
-    console.log(interv)
 
     
-    const handleSubmit = async (e:React.FormEvent<HTMLFormElement>)=>{
-        e.preventDefault();
+    const handleSubmit = async ()=>{
         addSession()
     }  
 
@@ -145,7 +143,7 @@ function AddIntervenantsSession() {
                 </div>
             </div>
             <br /><br /><br />
-                                   
+            <button type="submit" className='btnMain2' onClick={handleSubmit}> Ajouter </button>           
         </div> 
 
     );
