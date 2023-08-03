@@ -111,12 +111,40 @@ function Session() {
   };
 
 
+  //fetch les intervenant 
+  const { data: interv, } = useQuery("Intervenant", async () => {
+    try {
+      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/invites");  
+      if (!response.ok) {
+        throw new Error("Failed to fetch interv");
+      }
+      const data = await response.json();
+      return data;
+    } catch (err) {
+      throw new Error("An error occurred while fetching interv");
+    }
+  });
+
+  //fetch les intervenant des sessions
+  const { data: intervSessions, } = useQuery("IantervSessions", async () => {
+    try {
+      const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/invites_session/`);  
+      if (!response.ok) {
+        throw new Error("Failed to fetch interv");
+      }
+      const data = await response.json();
+      return data;
+    } catch (err) {
+      throw new Error("An error occurred while fetching interv");
+    }
+  });
+
 
 
   // fetch les sessions
   const { data: elements, isLoading, isError } = useQuery("Sessions", async () => {
     try {
-      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sessions", {});   //https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sessions
+      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sessions");  
       if (!response.ok) {
         throw new Error("Failed to fetch sessions");
       }
@@ -126,6 +154,19 @@ function Session() {
       throw new Error("An error occurred while fetching sessions");
     }
   });
+
+  // Fonction pour combiner les sessions et les intervenants en utilisant l'id_session
+  const combineSessionsAndIntervenants = (sessions:any, intervenants:any) => {
+    return sessions.map((session: { id: any; }) => {
+      const matchingIntervenants = intervenants.filter((interv: { id_session: any; }) => interv.id_session === session.id);
+      const idInvites = matchingIntervenants.map((interv: { id_invite: any; }) => interv.id_invite);
+      return { ...session, id_invite: idInvites };
+    });
+  };
+  const sessionsWithIntervenants = combineSessionsAndIntervenants(elements, intervSessions);
+
+  console.log(sessionsWithIntervenants)
+
   
 
   //get user sessions
