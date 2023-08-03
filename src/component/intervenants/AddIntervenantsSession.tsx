@@ -75,6 +75,7 @@ function AddIntervenantsSession() {
             method: 'POST',
             headers: {
                'Content-Type': 'application/json',
+               token: `${token}`,
             },
             body: JSON.stringify(interv),
             });
@@ -145,7 +146,8 @@ function AddIntervenantsSession() {
                 </div>
             </div>
             <br /><br /><br />
-            <button type="submit" className='btnMain2' onClick={handleSubmit}> Ajouter </button>           
+            <button type="submit" className='btnMain2' onClick={handleSubmit}> Ajouter </button>         
+            <br /><br /><br />  
         </div> 
 
     );
