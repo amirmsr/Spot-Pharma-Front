@@ -15,7 +15,7 @@ interface Sessions {
   sponsors_images: "";
   video_titre: "";
   video: "";
-  intervenants: Intervenant[];
+  intervenants: number[];
 }
 interface IntervenantSession {
   id: number;
@@ -123,28 +123,20 @@ function Session() {
       const intervenantsSession = intervenants?.filter(
         (intervenant) => intervenant.id_session === session.id
       );
-
-      // Rechercher les intervenants correspondants à partir de leurs IDs
-      const intervenantsCorrespondants = intervenantsSession?.map((intervenantSession) =>
-        intervenants.find((intervenant) => intervenant.id === intervenantSession.id_invite)
-      );
-
-      console.log(intervenantsCorrespondants)
-
       const sessionAvecIntervenants: Sessions = {
-        ...session
+        ...session,
+        intervenants: intervenantsSession?.map((intervenant) => intervenant.id_invite),
       };
       return sessionAvecIntervenants;
     });
-
+  
     return sessionsAvecIntervenants;
   }
-
+  
   const sessionsAvecIntervenants: Sessions[] = associerIntervenantsAuxSessions(elements, intervSessions);
   console.log(sessionsAvecIntervenants);
-
   
-  
+  //associer les id des intervenant aux object intervenant
 
   
 
@@ -321,7 +313,7 @@ function Session() {
 
             <div style={{height:'60px'}}>
               <h3>{element.titre}</h3>  
-              {/* <p>{element.intervenants.join(";")}</p>  */}
+              <p>{element.intervenants.join(";")}</p> 
             </div>  
 
             <br /> 
