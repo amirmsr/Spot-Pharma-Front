@@ -11,25 +11,24 @@ interface Sessions {
   titre: "";
   session_date: "";
   type: "";
-  description:"";
-  invites: "";
-  invites_images: "";
-  invites2: "";
-  invites_images2: "";
-  invites3: "";
-  invites_images3: "";
-  invites4: "";
-  invites_images4: "";
+  description:"";  
   sponsors_images: "";
   video_titre: "";
   video: "";
-  intervenants: number[];
+  intervenants: Intervenant[];
 }
 interface IntervenantSession {
   id: number;
   id_session: number;
   id_invite: number;
 
+}
+
+interface Intervenant {
+  id: number;
+  nom:any;
+  description:any;
+  image:any
 }
 
 
@@ -115,7 +114,7 @@ function Session() {
   });
 
   
-  // associer les intervenant aux sessions
+  // associer les id des intervenant aux sessions
   function associerIntervenantsAuxSessions(
     sessions: Sessions[],
     intervenants: IntervenantSession[]
@@ -124,19 +123,32 @@ function Session() {
       const intervenantsSession = intervenants?.filter(
         (intervenant) => intervenant.id_session === session.id
       );
+
+      // Rechercher les intervenants correspondants à partir de leurs IDs
+      const intervenantsCorrespondants = intervenantsSession?.map((intervenantSession) =>
+        intervenants.find((intervenant) => intervenant.id === intervenantSession.id_invite)
+      );
+
+      console.log(intervenantsCorrespondants)
+
       const sessionAvecIntervenants: Sessions = {
-        ...session,
-        intervenants: intervenantsSession?.map((intervenant) => intervenant.id_invite),
+        ...session
       };
       return sessionAvecIntervenants;
     });
-  
+
     return sessionsAvecIntervenants;
   }
-  
+
   const sessionsAvecIntervenants: Sessions[] = associerIntervenantsAuxSessions(elements, intervSessions);
   console.log(sessionsAvecIntervenants);
+
   
+  
+
+  
+
+
   
   //inscrire a une session   
   const { mutate: inscriptionMutation } = useMutation(async (inscription: { id_user: string; id_session: string; }) => {
@@ -337,16 +349,7 @@ function Session() {
                           </div>
                         </div>                       
                       ):null}              
-                    </div>       */}  
-                    {element.invites_images && (
-                    <img                      
-                      src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + element.invites_images}
-                      alt=""
-                    ></img>
-                    )}
-                   
-                    <br /><br />
-                  <p>{element.invites}</p>
+                    </div>       */}                     
                   </div>    
                 </div>
 
