@@ -119,10 +119,10 @@ function Session() {
     intervenant_session: IntervenantSession[],
     intervenantsDetails: Intervenant[]
   ): Sessions[] {
-    const sessionsAvecIntervenants: Sessions[] = sessions.map(session => {
+    const sessionsAvecIntervenants: Sessions[] = sessions?.map(session => {
       const sessionIntervenants: Intervenant[] = [];
   
-      intervenant_session.forEach(intervenantSession => {
+      intervenant_session?.forEach(intervenantSession => {
         if (
           intervenantSession.id_session === session.id
         ) {
