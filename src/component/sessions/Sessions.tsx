@@ -15,7 +15,7 @@ interface Sessions {
   sponsors_images: "";
   video_titre: "";
   video: "";
-  intervenants: any[];
+  intervenants: Intervenant[] ;
 }
 interface IntervenantSession {
   id: number;
@@ -113,38 +113,36 @@ function Session() {
     }
   });
 
-  
+
   function associerIntervenantsAuxSessions(sessions: Sessions[], intervenant_session: IntervenantSession[], intervenantsDetails: Intervenant[]) {
-    const sessionsAvecIntervenants: Sessions[] = sessions?.map((session) => {
-      const intervenantsSession = intervenant_session?.filter(
-        (intervenant) => intervenant.id_session === session.id
-      );
+    // Créer un objet de dictionnaire pour les détails des intervenants, indexé par leur ID
+    const intervenantsDict: { [id: number]: Intervenant } = {};
+    intervenantsDetails.forEach(intervenant => {
+      intervenantsDict[intervenant.id] = intervenant;
+    });
   
-      const sessionAvecIntervenants: Sessions = {
-        ...session,
-        intervenants: intervenantsSession?.map((intervenantSession) => {
-          const intervenantAssocie = intervenantsDetails.find(intervenantsDetail => intervenantsDetail.id === intervenantSession.id_invite);
-          
-          if (intervenantAssocie) {
-            return intervenantAssocie;
-          } else {
-            // Si l'intervenant n'est pas trouvé, vous pouvez renvoyer un objet vide ou null
-            return null;
-          }
-        }) || [],
-      };
-  
-      return sessionAvecIntervenants;
+    // Parcourir les sessions et associer les intervenants appropriés
+    const sessionsAvecIntervenants: Sessions[] = sessions.map(session => {
+      const sessionIntervenants: Intervenant[] = [];
+      intervenant_session.forEach(intervenantSession => {
+        if (
+          intervenantSession.id_session === session.id &&
+          intervenantsDict[intervenantSession.id_invite]
+        ) {
+          sessionIntervenants.push(intervenantsDict[intervenantSession.id_invite]);
+        }
+      });
+      return { ...session, intervenants: sessionIntervenants };
     });
   
     return sessionsAvecIntervenants;
   }
   
+  // Utilisation de la fonction
   const sessionsAvecIntervenants: Sessions[] = associerIntervenantsAuxSessions(elements, intervSessions, intervSessions);
   console.log(sessionsAvecIntervenants);
   
-  //associer les id des intervenant aux object intervenant
-
+  
   
 
 
