@@ -15,7 +15,7 @@ interface Sessions {
   sponsors_images: "";
   video_titre: "";
   video: "";
-  intervenants: Intervenant[] ;
+  intervenants: number[];
 }
 interface IntervenantSession {
   id: number;
@@ -113,41 +113,29 @@ function Session() {
     }
   });
 
-
-  function associerIntervenantsAuxSessions(
-    sessions: Sessions[],
-    intervenant_session: IntervenantSession[],
-    intervenantsDetails: Intervenant[]
-  ): Sessions[] {
-    const sessionsAvecIntervenants: Sessions[] = sessions?.map(session => {
-      const sessionIntervenants: Intervenant[] = [];
   
-      intervenant_session?.forEach(intervenantSession => {
-        if (
-          intervenantSession.id_session === session.id
-        ) {
-          const intervenant = intervenantsDetails.find(
-            intervenant => intervenant.id === intervenantSession.id_invite
-          );
-  
-          if (intervenant) {
-            sessionIntervenants.push(intervenant);
-          }
-        }
-      });
-  
-      return { ...session, intervenants: sessionIntervenants };
+  // associer les id des intervenant aux sessions
+  function associerIntervenantsAuxSessions( sessions: Sessions[], intervenant_session: IntervenantSession[]) {
+    
+    const sessionsAvecIntervenants: Sessions[] = sessions?.map((session) => {
+      const intervenantsSession = intervenant_session?.filter(
+        (intervenant) => intervenant.id_session === session.id
+      );
+      const sessionAvecIntervenants: Sessions = {
+        ...session,
+        intervenants: intervenantsSession?.map((intervenant) => intervenant.id_invite),
+      };
+      return sessionAvecIntervenants;
     });
   
     return sessionsAvecIntervenants;
   }
   
-  
-  // Utilisation de la fonction
-  const sessionsAvecIntervenants: Sessions[] = associerIntervenantsAuxSessions(elements, intervSessions, intervSessions);
+  const sessionsAvecIntervenants: Sessions[] = associerIntervenantsAuxSessions(elements, intervSessions);
   console.log(sessionsAvecIntervenants);
   
-  
+  //associer les id des intervenant aux object intervenant
+
   
 
 
