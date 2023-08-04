@@ -114,8 +114,7 @@ function Session() {
   });
 
   
-  // associer les id des intervenant aux sessions
-  function associerIntervenantsAuxSessions(sessions: Sessions[], intervenant_session: IntervenantSession[], intervenants: Intervenant[]) {
+  function associerIntervenantsAuxSessions(sessions: Sessions[], intervenant_session: IntervenantSession[], intervenantsDetails: Intervenant[]) {
     const sessionsAvecIntervenants: Sessions[] = sessions?.map((session) => {
       const intervenantsSession = intervenant_session?.filter(
         (intervenant) => intervenant.id_session === session.id
@@ -124,8 +123,7 @@ function Session() {
       const sessionAvecIntervenants: Sessions = {
         ...session,
         intervenants: intervenantsSession?.map((intervenantSession) => {
-          // Trouver l'objet Intervenant correspondant à IntervenantSession.id_invite
-          const intervenantAssocie = intervenants.find(intervenant => intervenant.id === intervenantSession.id_invite);
+          const intervenantAssocie = intervenantsDetails.find(intervenantsDetail => intervenantsDetail.id === intervenantSession.id_invite);
           
           if (intervenantAssocie) {
             return intervenantAssocie;
@@ -133,8 +131,9 @@ function Session() {
             // Si l'intervenant n'est pas trouvé, vous pouvez renvoyer un objet vide ou null
             return null;
           }
-        }) || [], // Si intervenantsSession est null, renvoyer un tableau vide
+        }) || [],
       };
+  
       return sessionAvecIntervenants;
     });
   
