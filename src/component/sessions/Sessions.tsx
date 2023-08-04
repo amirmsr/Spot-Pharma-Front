@@ -121,6 +121,7 @@ function Session() {
       const intervenantsSession = intervenant_session?.filter(
         (intervenant) => intervenant.id_session === session.id
       );
+      console.log(intervenantsSession)
       const sessionAvecIntervenants: Sessions = {
         ...session,
         intervenants: intervenantsSession?.map((intervenant) => intervenant.id_invite),
@@ -132,7 +133,7 @@ function Session() {
   }
   
   const sessionsAvecIntervenants: Sessions[] = associerIntervenantsAuxSessions(elements, intervSessions);
-  console.log(sessionsAvecIntervenants);
+/*   console.log(sessionsAvecIntervenants); */
   
   //associer les id des intervenant aux object intervenant
 
