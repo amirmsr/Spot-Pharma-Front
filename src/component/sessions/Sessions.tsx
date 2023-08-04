@@ -117,14 +117,14 @@ function Session() {
   function associerIntervenantsAuxSessions(sessions: Sessions[], intervenant_session: IntervenantSession[], intervenantsDetails: Intervenant[]) {
     // Créer un objet de dictionnaire pour les détails des intervenants, indexé par leur ID
     const intervenantsDict: { [id: number]: Intervenant } = {};
-    intervenantsDetails.forEach(intervenant => {
+    intervenantsDetails?.forEach(intervenant => {
       intervenantsDict[intervenant.id] = intervenant;
     });
   
     // Parcourir les sessions et associer les intervenants appropriés
-    const sessionsAvecIntervenants: Sessions[] = sessions.map(session => {
+    const sessionsAvecIntervenants: Sessions[] = sessions?.map(session => {
       const sessionIntervenants: Intervenant[] = [];
-      intervenant_session.forEach(intervenantSession => {
+      intervenant_session?.forEach(intervenantSession => {
         if (
           intervenantSession.id_session === session.id &&
           intervenantsDict[intervenantSession.id_invite]
