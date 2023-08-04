@@ -271,15 +271,15 @@ input{
 .intervenants .invite_img img{
     
     object-fit: cover;
-    width: 100px; /* taille fixe des images */
-    height: 100px; /* taille fixe des images */
+    width: 50px; /* taille fixe des images */
+    height: 50px; /* taille fixe des images */
     border-radius: 50%; /* forme de cercle */
 
 }
 .intervenants {
     display: flex;
     max-width: 100%; 
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 
 
 }

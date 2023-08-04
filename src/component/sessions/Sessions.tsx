@@ -15,7 +15,7 @@ interface Sessions {
   sponsors_images: "";
   video_titre: "";
   video: "";
-  intervenants: number[];
+  intervenantsDetails : Intervenant[];
 }
 interface IntervenantSession {
   id: number;
@@ -44,7 +44,7 @@ function Session() {
     if (!token){
       throw new Error("token missing");
     }
-    const response = await fetch ("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/home",{
+    const response = await fetch ("http://localhost:3000/home",{
       headers: {
         token: `${token}`,
       }
@@ -72,7 +72,7 @@ function Session() {
   //fetch les intervenant 
   const { data: interv, } = useQuery("Intervenant", async () => {
     try {
-      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/invites");  
+      const response = await fetch("http://localhost:3000/invites");  
       if (!response.ok) {
         throw new Error("Failed to fetch interv");
       }
@@ -86,7 +86,7 @@ function Session() {
   //fetch les intervenant des sessions
   const { data: intervSessions, } = useQuery("IantervSessions", async () => {
     try {
-      const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/invites_session/`);  
+      const response = await fetch(`http://localhost:3000/invites_session/`);  
       if (!response.ok) {
         throw new Error("Failed to fetch interv");
       }
@@ -102,7 +102,7 @@ function Session() {
   // fetch les sessions
   const { data: elements, isLoading, isError } = useQuery("Sessions", async () => {
     try {
-      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sessions");  
+      const response = await fetch("http://localhost:3000/sessions");  
       if (!response.ok) {
         throw new Error("Failed to fetch sessions");
       }
@@ -114,27 +114,36 @@ function Session() {
   });
 
   
-  // associer les id des intervenant aux sessions
-  function associerIntervenantsAuxSessions( sessions: Sessions[], intervenant_session: IntervenantSession[]) {
-    
-    const sessionsAvecIntervenants: Sessions[] = sessions?.map((session) => {
+  function associerIntervenantsAuxSessions(sessions: Sessions[], intervenant_session: IntervenantSession[], intervenantsData: Intervenant[]) {
+    const sessionsAvecIntervenants: Sessions[] = [];
+  
+    sessions?.forEach((session) => {
       const intervenantsSession = intervenant_session?.filter(
         (intervenant) => intervenant.id_session === session.id
       );
+  
+      const intervenantsDetails: Intervenant[] = [];
+
+      intervenantsSession?.forEach((intervenant) => {
+        const intervenantDetail = intervenantsData.find(i => i.id === intervenant.id_invite);
+        if (intervenantDetail) {
+          intervenantsDetails.push(intervenantDetail);
+        }
+      });
+  
       const sessionAvecIntervenants: Sessions = {
         ...session,
-        intervenants: intervenantsSession?.map((intervenant) => intervenant.id_invite),
+        intervenantsDetails: intervenantsDetails,
       };
-      return sessionAvecIntervenants;
+      sessionsAvecIntervenants.push(sessionAvecIntervenants);
     });
   
     return sessionsAvecIntervenants;
   }
   
-  const sessionsAvecIntervenants: Sessions[] = associerIntervenantsAuxSessions(elements, intervSessions);
+  const sessionsAvecIntervenants: Sessions[] = associerIntervenantsAuxSessions(elements, intervSessions, interv );
   console.log(sessionsAvecIntervenants);
   
-  //associer les id des intervenant aux object intervenant
 
   
 
@@ -145,7 +154,7 @@ function Session() {
     try {
       const token = localStorage.getItem("token");
       const headers = { token: `${token}` };
-      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_inscrit", {  //https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_inscrit
+      const response = await fetch("http://localhost:3000/session_inscrit", {  //http://localhost:3000/session_inscrit
         method: 'POST',
         headers: {
           ...headers,
@@ -193,7 +202,7 @@ function Session() {
       const userId = user.id;
 
       const response = await fetch(
-        `https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/inscrit_session/${userId}`,
+        `http://localhost:3000/inscrit_session/${userId}`,
         {
           headers: {
             token: `${token}`,
@@ -311,7 +320,6 @@ function Session() {
 
             <div style={{height:'60px'}}>
               <h3>{element.titre}</h3>  
-              <p>{element.intervenants.join(";")}</p> 
             </div>  
 
             <br /> 
@@ -320,7 +328,23 @@ function Session() {
             <p style={{fontSize:'1.3rem', height:'100px'}}>{element.description}</p>
             <p style={{color:'#23A082',fontSize:'1.3rem'}}>{element.session_date}</p>   
 
-            <br /><br />     
+            <br /><br />   
+            <div className="container">
+              <div className="row">
+                {element.intervenantsDetails.map((interv:Intervenant)=>(
+                    <div key={interv.id} className="col-sm-6">
+                      <div className="intervenants"  >
+                            <div className="invite_img"   >
+                                <img  alt=""  src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + interv.image}/>
+                            </div>                          
+                        </div>                   
+                      <p>{interv.nom}</p>
+                    </div>
+                ))}
+              </div>
+            </div>  
+            
+            <br /><br />
 
             <div className="container">
               <div className="row">
