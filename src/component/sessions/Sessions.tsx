@@ -44,7 +44,7 @@ function Session() {
     if (!token){
       throw new Error("token missing");
     }
-    const response = await fetch ("http://localhost:3000/home",{
+    const response = await fetch ("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/home",{
       headers: {
         token: `${token}`,
       }
@@ -72,7 +72,7 @@ function Session() {
   //fetch les intervenant 
   const { data: interv, } = useQuery("Intervenant", async () => {
     try {
-      const response = await fetch("http://localhost:3000/invites");  
+      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/invites");  
       if (!response.ok) {
         throw new Error("Failed to fetch interv");
       }
@@ -86,7 +86,7 @@ function Session() {
   //fetch les intervenant des sessions
   const { data: intervSessions, } = useQuery("IantervSessions", async () => {
     try {
-      const response = await fetch(`http://localhost:3000/invites_session/`);  
+      const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/invites_session/`);  
       if (!response.ok) {
         throw new Error("Failed to fetch interv");
       }
@@ -102,7 +102,7 @@ function Session() {
   // fetch les sessions
   const { data: elements, isLoading, isError } = useQuery("Sessions", async () => {
     try {
-      const response = await fetch("http://localhost:3000/sessions");  
+      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sessions");  
       if (!response.ok) {
         throw new Error("Failed to fetch sessions");
       }
@@ -154,7 +154,7 @@ function Session() {
     try {
       const token = localStorage.getItem("token");
       const headers = { token: `${token}` };
-      const response = await fetch("http://localhost:3000/session_inscrit", {  //http://localhost:3000/session_inscrit
+      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_inscrit", {  //https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_inscrit
         method: 'POST',
         headers: {
           ...headers,
@@ -202,7 +202,7 @@ function Session() {
       const userId = user.id;
 
       const response = await fetch(
-        `http://localhost:3000/inscrit_session/${userId}`,
+        `https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/inscrit_session/${userId}`,
         {
           headers: {
             token: `${token}`,
