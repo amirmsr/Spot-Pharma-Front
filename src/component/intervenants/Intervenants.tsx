@@ -41,14 +41,14 @@ export default function Intervenants(){
     //fetch les intervenants
     const { data: elements, isLoading, isError } = useQuery("Invites", async () => {
         try {
-          const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/invites", {}); 
+          const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/intervenants", {}); 
           if (!response.ok) {
-            throw new Error("Failed to fetch invites");
+            throw new Error("Failed to fetch intervenant");
           }
           const data = await response.json();
           return data;
         } catch (err) {
-          throw new Error("An error occurred while fetching invite");
+          throw new Error("An error occurred while fetching intervenant");
         }
     });
 

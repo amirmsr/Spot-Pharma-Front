@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {useParams ,useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import Form from 'react-bootstrap/Form';
 import { useMutation } from "react-query";
 
@@ -23,7 +23,7 @@ function AddIntervenants() {
     console.log(data)
     //upload image
     const uploadImage = useMutation((formData: FormData) => {
-        return fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sessions/intervenant`, {
+        return fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sessions/intervenants`, {
             method: 'POST',
             body: formData
         }).then((response) => {
@@ -64,7 +64,7 @@ function AddIntervenants() {
         formData.append("description", data.description);
 
         if (selectedFile) {
-            formData.append("invite", selectedFile);
+            formData.append("intervenants", selectedFile);
         }
         console.log(formData)
         uploadImage.mutate(formData);

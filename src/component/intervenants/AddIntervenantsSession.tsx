@@ -51,7 +51,7 @@ function AddIntervenantsSession() {
     //fetch les intervenants
     const { data: elements, isLoading, isError } = useQuery("Invites", async () => {
         try {
-          const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/invites", {}); 
+          const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/intervenants", {}); 
           if (!response.ok) {
             throw new Error("Failed to fetch invites");
           }
@@ -71,7 +71,7 @@ function AddIntervenantsSession() {
     //add intervenant a la session
     const { mutate: addSession } = useMutation(async () => {
         try {
-            const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_invites/${sessionId}`, {
+            const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_intervenants/${sessionId}`, {
             method: 'POST',
             headers: {
                'Content-Type': 'application/json',

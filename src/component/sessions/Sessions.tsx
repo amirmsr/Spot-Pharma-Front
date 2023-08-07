@@ -17,6 +17,7 @@ interface Sessions {
   video: "";
   intervenantsDetails : Intervenant[];
 }
+
 interface IntervenantSession {
   id: number;
   id_session: number;
@@ -72,7 +73,7 @@ function Session() {
   //fetch les intervenant 
   const { data: interv, } = useQuery("Intervenant", async () => {
     try {
-      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/invites");  
+      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/intervenants");  
       if (!response.ok) {
         throw new Error("Failed to fetch interv");
       }
@@ -86,7 +87,7 @@ function Session() {
   //fetch les intervenant des sessions
   const { data: intervSessions, } = useQuery("IantervSessions", async () => {
     try {
-      const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/invites_session/`);  
+      const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/intervenants_session/`);  
       if (!response.ok) {
         throw new Error("Failed to fetch interv");
       }
@@ -268,9 +269,6 @@ function Session() {
     navigate(`edit/${sessionId}`)
   }
 
-  const handleEditIntervenant1=(sessionId: number)=>{
-    navigate(`editIntervenant1/${sessionId}`)
-  }
 
   const handleAddSession=()=>{
     navigate(`sessions/addSession`)
