@@ -16,7 +16,6 @@ import Root, {} from './Root';
 import UserHome from "./component/accueil/UserHome";
 import SessionsDetails from "./component/sessions/SessionsDetails";
 import EditSession from "./component/sessions/EditSession";
-import EditIntervenant1 from "./component/sessions/EditIntervenant1";
 import AddIntervenants from "./component/intervenants/AddIntervenants";
 import AddSession from "./component/sessions/AddSession";
 import AddIntervenantsSession from "./component/intervenants/AddIntervenantsSession";
@@ -49,11 +48,7 @@ const router = createBrowserRouter([
             {
               path: "/sessions/edit/:sessionId",
               element: <EditSession />
-            },       
-            {
-              path: "/sessions/editIntervenant1/:sessionId",
-              element: <EditIntervenant1 />
-            },             
+            },                 
             {
               path: "sessions/sessionsDetails/:sessionId",
               element: <SessionsDetails />
