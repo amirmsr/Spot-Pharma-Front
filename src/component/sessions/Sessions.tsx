@@ -96,7 +96,6 @@ function Session() {
     }
   });
 
-  console.log(intervSessions)
 
 
   // fetch les sessions
@@ -270,7 +269,7 @@ function Session() {
 
 
   const handleAddSession=()=>{
-    navigate(`sessions/addSession`)
+    navigate(`addSession`)
   }
   const handleAddIntervenants=(sessionId: number)=>{
     navigate(`addIntervenantsSession/${sessionId}`)
