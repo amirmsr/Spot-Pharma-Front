@@ -16,8 +16,6 @@ function EditSession() {
         session_date: "",
         type: "",
         description:"",
-        invites: "",
-        invites2: "",
     });
       
 
@@ -101,21 +99,7 @@ function EditSession() {
                     </div>
                     <br /><br />                    
                   </div>
-                </div>
-                  <br /><br />
-                <div className="container">
-                  <div className="row">
-                    <div className="col">
-                    <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Nom du première invité</p>
-                    <input type="text" name="invites"  placeholder="Nom du première invité" onChange={handleChange} />
-                    </div>
-                    <div className="col">
-                    <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Nom du second invité</p>
-                    <input type="text" name="invites2"  placeholder="Nom du second invité" onChange={handleChange} />
-                    </div>
-                  </div>
-                </div>
-               
+                </div>                                 
                 <br />                
                 <br />
 
