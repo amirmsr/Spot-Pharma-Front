@@ -20,9 +20,7 @@ function AddIntervenantsSession() {
     const [isAdmin, setIsadmin] = useState(false);
     const token = localStorage.getItem("token");
 
-    const [data, setData] = useState({
-        id_invite:""
-    });
+
 
     //get user data
     const {data: user}= useQuery("userProfile", async ()=>{
@@ -63,8 +61,8 @@ function AddIntervenantsSession() {
     });
 
 
-    const [interv, setInterv] = useState<{ id_invites: number[] }>({
-        id_invites: []
+    const [interv, setInterv] = useState<{ id_intervenants: number[] }>({
+        id_intervenants: []
     });      
       
 
@@ -109,7 +107,7 @@ function AddIntervenantsSession() {
     const handleAddIntervenants = (elementId: number) => {
         setInterv((prevData) => ({
             ...prevData,
-            id_invites: [...prevData.id_invites, elementId]
+            id_intervenants: [...prevData.id_intervenants, elementId]
         }));
     }
 

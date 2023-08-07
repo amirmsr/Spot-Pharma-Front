@@ -18,8 +18,8 @@ interface Sessions {
 
 interface IntervenantSession {
   id: number;
-  id_session: number;
-  id_intervenant: number;
+  id_sessions: number;
+  id_intervenants: number;
 
 }
 
@@ -118,13 +118,13 @@ function Session() {
   
     sessions?.forEach((session) => {
       const intervenantsSession = intervenant_session?.filter(
-        (intervenant) => intervenant.id_session === session.id
+        (intervenant) => intervenant.id_sessions === session.id
       );
   
       const intervenantsDetails: Intervenant[] = [];
 
       intervenantsSession?.forEach((intervenant) => {
-        const intervenantDetail = intervenantsData.find(i => i.id === intervenant.id_intervenant);
+        const intervenantDetail = intervenantsData.find(i => i.id === intervenant.id_intervenants);
         if (intervenantDetail) {
           intervenantsDetails.push(intervenantDetail);
         }
