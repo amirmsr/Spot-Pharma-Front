@@ -96,6 +96,7 @@ function Session() {
     }
   });
 
+  console.log(intervSessions)
 
 
   // fetch les sessions
