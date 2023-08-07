@@ -13,15 +13,13 @@ interface Sessions {
   type: "";
   description:"";  
   sponsors_images: "";
-  video_titre: "";
-  video: "";
   intervenantsDetails : Intervenant[];
 }
 
 interface IntervenantSession {
   id: number;
   id_session: number;
-  id_invite: number;
+  id_intervenant: number;
 
 }
 
@@ -126,7 +124,7 @@ function Session() {
       const intervenantsDetails: Intervenant[] = [];
 
       intervenantsSession?.forEach((intervenant) => {
-        const intervenantDetail = intervenantsData.find(i => i.id === intervenant.id_invite);
+        const intervenantDetail = intervenantsData.find(i => i.id === intervenant.id_intervenant);
         if (intervenantDetail) {
           intervenantsDetails.push(intervenantDetail);
         }
