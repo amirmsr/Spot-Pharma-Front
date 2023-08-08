@@ -64,6 +64,9 @@ export default function App() {
               <MDBNavbarLink><a href="https://spot-pharma-front.vercel.app/intervenants"> Intervenants</a></MDBNavbarLink>
             </MDBNavbarItem>           
             <MDBNavbarItem>
+              <MDBNavbarLink><a href="https://spot-pharma-front.vercel.app/sponsors"> Sponsors</a></MDBNavbarLink>
+            </MDBNavbarItem>           
+            <MDBNavbarItem>
               <MDBNavbarLink> <a href="https://spot-pharma-front.vercel.app/add"> Stand 3D</a></MDBNavbarLink>
             </MDBNavbarItem>           
             <MDBNavbarItem>

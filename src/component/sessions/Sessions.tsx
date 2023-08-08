@@ -125,7 +125,7 @@ function Session() {
       const intervenantsDetails: Intervenant[] = [];
 
       intervenantsSession?.forEach((intervenant) => {
-        const intervenantDetail = intervenantsData.find(i => i.id === intervenant.id_intervenants);
+        const intervenantDetail = intervenantsData?.find(i => i.id === intervenant.id_intervenants);
         if (intervenantDetail) {
           intervenantsDetails.push(intervenantDetail);
         }

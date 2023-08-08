@@ -48,7 +48,7 @@ const router = createBrowserRouter([
             {
               path: "/sessions/edit/:sessionId",
               element: <EditSession />
-            },                 
+            },            
             {
               path: "sessions/sessionsDetails/:sessionId",
               element: <SessionsDetails />
