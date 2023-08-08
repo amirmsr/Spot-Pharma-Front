@@ -36,6 +36,7 @@ function Session() {
   const [isConnected, setIsconnected] = useState(false);
   const [isAdmin, setIsadmin] = useState(false);
   const token = localStorage.getItem("token");
+  
 
 
   //get user data
@@ -43,7 +44,7 @@ function Session() {
     if (!token){
       throw new Error("token missing");
     }
-    const response = await fetch ("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/home",{
+    const response = await fetch ("http://localhost:3000/home",{
       headers: {
         token: `${token}`,
       }
@@ -71,7 +72,7 @@ function Session() {
   //fetch les intervenant 
   const { data: interv, } = useQuery("Intervenant", async () => {
     try {
-      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/intervenants");  
+      const response = await fetch("http://localhost:3000/intervenants");  
       if (!response.ok) {
         throw new Error("Failed to fetch interv");
       }
@@ -85,7 +86,7 @@ function Session() {
   //fetch les intervenant des sessions
   const { data: intervSessions, } = useQuery("IantervSessions", async () => {
     try {
-      const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/intervenants_session/`);  
+      const response = await fetch(`http://localhost:3000/intervenants_session/`);  
       if (!response.ok) {
         throw new Error("Failed to fetch interv");
       }
@@ -101,7 +102,7 @@ function Session() {
   // fetch les sessions
   const { data: elements, isLoading, isError } = useQuery("Sessions", async () => {
     try {
-      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sessions");  
+      const response = await fetch("http://localhost:3000/sessions");  
       if (!response.ok) {
         throw new Error("Failed to fetch sessions");
       }
@@ -153,7 +154,7 @@ function Session() {
     try {
       const token = localStorage.getItem("token");
       const headers = { token: `${token}` };
-      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_inscrit", {  //https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_inscrit
+      const response = await fetch("http://localhost:3000/session_inscrit", {  //http://localhost:3000/session_inscrit
         method: 'POST',
         headers: {
           ...headers,
@@ -201,7 +202,7 @@ function Session() {
       const userId = user.id;
 
       const response = await fetch(
-        `https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/inscrit_session/${userId}`,
+        `http://localhost:3000/inscrit_session/${userId}`,
         {
           headers: {
             token: `${token}`,
@@ -275,6 +276,21 @@ function Session() {
     navigate(`addIntervenantsSession/${sessionId}`)
   }
 
+  
+
+  const handleDeleteInterv= async (id_sessions: number , id_intervenants: number)=>{
+    const response = await fetch(`http://localhost:3000/session_intervenants/${id_sessions}/${id_intervenants}`, {
+      method: 'DELETE',
+    });
+  
+    if (!response.ok) {
+      throw new Error('An error occurred while deleting the intervenant.');
+    }
+    else{
+      alert("okok")
+    }
+  }
+
 
 
 
@@ -325,13 +341,26 @@ function Session() {
             <p style={{color:'#23A082',fontSize:'1.3rem'}}>{element.session_date}</p>   
 
             <br /><br />   
-            <div className="container">
+            <div className="container" style={{ height:'250px'}}>
               <div className="row">
                 {element.intervenantsDetails.map((interv:Intervenant)=>(
                     <div key={interv.id} className="col-sm-6">
                       <div className="intervenants"  >
-                            <div className="invite_img"   >
-                                <img  alt=""  src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + interv.image}/>
+                            <div className="invite_img">
+                              <div className="invite">     
+                                  <div>
+                                    {/*   {isAdmin ?( */}
+                                        <div className="container">
+                                          <div className="row">                                           
+                                            <div className="col">
+                                             <FontAwesomeIcon onClick={() => handleDeleteInterv(element.id, interv.id)} icon={faXmark} style={{color:'#23A082', fontSize:'1.2rem', cursor:'pointer'}}/>
+                                            </div>
+                                          </div>
+                                        </div>                       
+                                    {/*    ):null}      */}         
+                                  </div>    
+                                  <img  alt=""  src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + interv.image}/>                            
+                              </div>                           
                             </div>                          
                         </div>                   
                       <p>{interv.nom}</p>
@@ -342,31 +371,6 @@ function Session() {
             
             <br /><br />
 
-            <div className="container">
-              <div className="row">
-                <div className="col">
-                  <div className="invite">     
-                    {/* <div>
-                      {isAdmin ?(
-                        <div className="container">
-                          <div className="row">
-                            <div className="col">
-                            <FontAwesomeIcon onClick={() => handleEditIntervenant1(element.id)} icon={faPen} style={{color:'#23A082', fontSize:'1.2rem', cursor:'pointer'}} />                        
-                            </div>
-                            <div className="col">
-                            <FontAwesomeIcon icon={faXmark} style={{color:'#23A082', fontSize:'1.2rem', cursor:'pointer'}}/>
-                            </div>
-                          </div>
-                        </div>                       
-                      ):null}              
-                    </div>       */}                     
-                  </div>    
-                </div>
-
-              </div>
-            </div>
-
-            <br /><br />
             {isConnected ? (
               <center>
                {userSessionId.includes(element.id)?(
@@ -387,11 +391,6 @@ function Session() {
               </center>
             )}
             <center>
-            {/* <a href="https://bcombrun.com/spot-pharma/video/Film_Dermatologie.mp4">
-            <button className="btnMain2">
-              Voir le Replay
-            </button>
-            </a> */}
             <br />
              {isAdmin ?(
               <div>
@@ -401,7 +400,7 @@ function Session() {
              >
                Ajouter des intervenants
              </button>
-             <br />
+             <br /><br />
               <button onClick={() => handleSession(element.id)} className="btnMain2">
               Voir les inscrits
               </button>
