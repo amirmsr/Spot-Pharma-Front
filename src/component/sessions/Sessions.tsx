@@ -194,7 +194,7 @@ function Session() {
   
     sessions?.forEach((session) => {
       const sponsorsSession = sponsor_session?.filter(
-        (session) => session.id_sessions === session.id
+        (sponsorSession) => sponsorSession.id_sessions === session.id
       );
   
       const sponsorsDetail: Sponsor[] = [];
