@@ -53,7 +53,7 @@ const router = createBrowserRouter([
               element: <EditSession />
             },            
             {
-              path: "sessions/sessionsDetails/:sessionId",
+              path: "/sessions/sessionsDetails/:sessionId",
               element: <SessionsDetails />
             },       
             {
@@ -61,7 +61,7 @@ const router = createBrowserRouter([
               element: <Intervenants />
             },         
             {
-              path: "intervenants/addIntervenants",
+              path: "/intervenants/addIntervenants",
               element: <AddIntervenants />
             },         
             {
@@ -69,7 +69,7 @@ const router = createBrowserRouter([
               element: <Sponsors />
             },         
             {
-              path: "sponsors/addSponsors",
+              path: "/sponsors/addSponsors",
               element: <AddSponsors />
             }, 
             {
