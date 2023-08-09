@@ -65,7 +65,7 @@ export default function Sponsors(){
     }
 
     const handleClick=()=>{
-    navigate(`sponsors/addSponsors`)
+    navigate(`/addSponsors`)
     }
     
         
