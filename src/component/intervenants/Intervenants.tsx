@@ -65,7 +65,7 @@ function Intervenants(){
     }
 
     const handleClick=()=>{
-    navigate(`intervenants/addIntervenants`)
+    navigate(`addIntervenants`)
     }
     
         
