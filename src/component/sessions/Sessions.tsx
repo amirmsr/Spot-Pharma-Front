@@ -221,7 +221,7 @@ function Session() {
   
   const sessionsAvecSponsors: Sessions[] = associerSponsorsAuxSessions(sessionsAvecIntervenants, sponsorsSession, sponsors );
 
-  console.log(sessionsAvecSponsors)
+  console.log(sessionsAvecIntervenants)
 
   
 
