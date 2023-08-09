@@ -71,12 +71,10 @@ function Intervenants(){
     }
     
     const handleDeleteInterv= async (id_interv: number)=>{
+        const headers = { token: `${token}` };
         const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/intervenants/${id_interv}`, {
             method: 'DELETE',
-            headers: 
-            {
-            token: `${token}`,
-            }
+            headers: {...headers,'Content-Type': 'application/json',}
         });
         
         if (!response.ok) {
