@@ -407,13 +407,13 @@ function Session() {
 
 
 
-            {element.sponsors_images && (
+            {/* {element.sponsors_images && (
                 <img
                   style={{ width: "100%", paddingTop:"40px", paddingBottom:"30px"  }}
                   src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + element.sponsors_images}
                   alt=""
                 ></img>
-              )}
+              )} */}
             </div>
 
             <div style={{height:'60px'}}>
