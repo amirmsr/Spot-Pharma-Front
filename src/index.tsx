@@ -21,6 +21,7 @@ import AddSession from "./component/sessions/AddSession";
 import AddIntervenantsSession from "./component/intervenants/AddIntervenantsSession";
 import Sponsors from "./component/sponsors/Sponsors";
 import AddSponsors from "./component/sponsors/AddSponsors";
+import AddSponsorsSession from "./component/sponsors/AddSponsorsSession";
 
 
 
@@ -70,7 +71,11 @@ const router = createBrowserRouter([
             {
               path: "sponsors/addSponsors",
               element: <AddSponsors />
-            },         
+            }, 
+            {
+              path: "/sessions/addSponsorsSession/:sessionId",
+              element: <AddSponsorsSession/>
+            },              
             {
               path: "/inscription",
               element: <Inscription />,
