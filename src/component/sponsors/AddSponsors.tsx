@@ -23,7 +23,7 @@ function AddSponsors() {
     console.log(data)
     //upload image
     const uploadImage = useMutation((formData: FormData) => {
-        return fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sessions/intervenants`, {
+        return fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sessions/sponsors`, {
             method: 'POST',
             body: formData
         }).then((response) => {
@@ -44,7 +44,7 @@ function AddSponsors() {
     }, {
         onSuccess: () => {
             alert("Envoi réussit :) ");
-            navigate("/intervenants");
+            navigate("/sponsors");
         },
         onError: (error: Error) => {
             alert(`Upload failed: ${error.message}`);
@@ -64,7 +64,7 @@ function AddSponsors() {
         formData.append("description", data.description);
 
         if (selectedFile) {
-            formData.append("intervenants", selectedFile);
+            formData.append("sponsors", selectedFile);
         }
         console.log(formData)
         uploadImage.mutate(formData);
@@ -79,7 +79,7 @@ function AddSponsors() {
 
         <div>
             <Form onSubmit={handleSubmit} className="mb-3" style={{paddingBottom:'300px',paddingTop:'100px'}}>
-                <Form.Label>Ajouter un intervenant</Form.Label>
+                <Form.Label>Ajouter un sponsor</Form.Label>
 
                 <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Nom</p>
                 <input type="text" name="nom"  placeholder='Nom' onChange={handleChange} />

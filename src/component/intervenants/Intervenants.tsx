@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import { useNavigate } from "react-router-dom";
 
-export default function Intervenants(){
+function Intervenants(){
 
     interface Intervenant {
         id: number;
@@ -110,3 +110,5 @@ export default function Intervenants(){
     )
 
 }
+
+export default Intervenants;

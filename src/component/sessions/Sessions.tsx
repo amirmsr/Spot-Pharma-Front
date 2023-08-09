@@ -82,6 +82,19 @@ function Session() {
       throw new Error("An error occurred while fetching interv");
     }
   });
+  //fetch les sponsors 
+  const { data: sponsors, } = useQuery("Sponsors", async () => {
+    try {
+      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sponsors");  
+      if (!response.ok) {
+        throw new Error("Failed to fetch sponsors");
+      }
+      const data = await response.json();
+      return data;
+    } catch (err) {
+      throw new Error("An error occurred while fetching sponsors");
+    }
+  });
 
   //fetch les intervenant des sessions
   const { data: intervSessions, } = useQuery("IantervSessions", async () => {
@@ -97,6 +110,21 @@ function Session() {
     }
   });
 
+  //fetch les sponsors des sessions
+  const { data: sponsorsSession, } = useQuery("SponsorsSession", async () => {
+    try {
+      const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sponsors_session/`);  
+      if (!response.ok) {
+        throw new Error("Failed to fetch sponsors");
+      }
+      const data = await response.json();
+      return data;
+    } catch (err) {
+      throw new Error("An error occurred while fetching sponsors");
+    }
+  });
+
+  
 
 
   // fetch les sessions
