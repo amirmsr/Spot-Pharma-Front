@@ -216,9 +216,9 @@ function Session() {
     return sessionsAvecSponsors;
   }
   
-  const sessionsAvecSponsors: Sessions[] = associerSponsorsAuxSessions(sessionsAvecIntervenants, sponsorsSession, sponsors );
+  const sessionFinal: Sessions[] = associerSponsorsAuxSessions(sessionsAvecIntervenants, sponsorsSession, sponsors );
 
-  console.log(sessionsAvecSponsors)
+  console.log(sessionFinal)
 
   
 
@@ -387,7 +387,7 @@ function Session() {
         
         <div className="row ">
           
-          {sessionsAvecIntervenants?.slice(0.3).map((element:Sessions)=>(
+          {sessionFinal?.slice(0.3).map((element:Sessions)=>(
           <div key={element.id} className="col-md-4 ">
             <div className="session">
             <div>
@@ -396,6 +396,17 @@ function Session() {
               ):null}              
             </div>
             <div className="sessionHeader">
+                {element.sponsorsDetails.map((sponsors:Sponsor)=>(
+                     <img
+                     style={{ width: "100%", paddingTop:"40px", paddingBottom:"30px"  }}
+                     src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + sponsors.image}
+                     alt="">
+                     </img>
+                ))}
+
+
+
+
             {element.sponsors_images && (
                 <img
                   style={{ width: "100%", paddingTop:"40px", paddingBottom:"30px"  }}
