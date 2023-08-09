@@ -440,7 +440,7 @@ function Session() {
                             <div className="invite_img">
                               <div className="invite">     
                                   <div>
-                                    {/*   {isAdmin ?( */}
+                                    {isAdmin ?( 
                                         <div className="container">
                                           <div className="row">                                           
                                             <div className="col">
@@ -448,7 +448,7 @@ function Session() {
                                             </div>
                                           </div>
                                         </div>                       
-                                    {/*    ):null}      */}         
+                                     ):null}            
                                   </div>    
                                   <img  alt=""  src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + interv.image}/>                            
                               </div>                           

@@ -1,3 +1,5 @@
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import { useNavigate } from "react-router-dom";
@@ -67,7 +69,23 @@ export default function Sponsors(){
     const handleClick=()=>{
     navigate(`addSponsors`)
     }
-    
+
+    const handleDeleteSponsors= async (id_sponsors: number)=>{
+        const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sponsors/${id_sponsors}`, {
+          method: 'DELETE',
+          headers: 
+          {
+            token: `${token}`,
+          }
+        });
+      
+        if (!response.ok) {
+          throw new Error('An error occurred while deleting the sponsor.');
+        }
+        else{
+          alert("okok")
+        }
+    }
         
     
 
@@ -92,10 +110,14 @@ export default function Sponsors(){
                     {elements?.slice(0.3).map((element:Sponsors)=>(
                     <div key={element.id} className="col-md-4" style={{marginTop:'50px'}}>
                         <div className="intervenants">
+                            {isAdmin ?(                                                                                    
+                                <div>
+                                    <FontAwesomeIcon onClick={() => handleDeleteSponsors(element.id)} icon={faXmark} style={{color:'#23A082', fontSize:'1.2rem', cursor:'pointer'}}/>
+                                </div>                   
+                            ):null}            
                             <div className="invite_img">
                                 <img  alt="" src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + element.image}/>
-                            </div>
-                          
+                            </div>                          
                         </div>                     
                         <p>{element.nom}</p>
                         <p>{element.description}</p>
