@@ -85,8 +85,8 @@ function AddSponsorsSession() {
             window.location.href = "/sessions";
             return json;
             } else {
-            // Gérer l'erreur de duplication ici
-            alert("Problème")
+            const errorJson = await response.json(); 
+            alert("Problème" + errorJson.sqlMessage)
             }
         } catch (error) {
             // Gérer d'autres erreurs ici
