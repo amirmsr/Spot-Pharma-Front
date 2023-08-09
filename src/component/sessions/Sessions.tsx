@@ -111,7 +111,6 @@ function Session() {
     }
   });
 
-  console.log(sponsors)
 
   //fetch les intervenant des sessions
   const { data: intervSessions, } = useQuery("IantervSessions", async () => {
@@ -140,8 +139,6 @@ function Session() {
       throw new Error("An error occurred while fetching sponsors");
     }
   });
-
-  console.log(sponsorsSession)
 
   
 
@@ -221,7 +218,7 @@ function Session() {
   
   const sessionsAvecSponsors: Sessions[] = associerSponsorsAuxSessions(sessionsAvecIntervenants, sponsorsSession, sponsors );
 
-  console.log(sessionsAvecIntervenants)
+  console.log(sessionsAvecSponsors)
 
   
 
