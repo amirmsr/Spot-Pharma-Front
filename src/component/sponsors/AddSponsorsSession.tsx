@@ -8,7 +8,7 @@ import { useMutation, useQuery } from "react-query";
 
 function AddSponsorsSession() {
 
-    interface Intervenant {
+    interface Sponsors {
         id: number;
         nom:any;
         description:any;
@@ -46,10 +46,10 @@ function AddSponsorsSession() {
     }, [user]);
 
 
-    //fetch les intervenants
-    const { data: elements, isLoading, isError } = useQuery("Invites", async () => {
+    //fetch les sponsors
+    const { data: elements, isLoading, isError } = useQuery("Sponsor", async () => {
         try {
-          const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/intervenants", {}); 
+          const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sponsors", {}); 
           if (!response.ok) {
             throw new Error("Failed to fetch invites");
           }
@@ -61,21 +61,21 @@ function AddSponsorsSession() {
     });
 
 
-    const [interv, setInterv] = useState<{ id_intervenants: number[] }>({
-        id_intervenants: []
+    const [sponsors, setSponsors] = useState<{ id_sponsors: number[] }>({
+        id_sponsors: []
     });      
       
 
     //add intervenant a la session
     const { mutate: addSession } = useMutation(async () => {
         try {
-            const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_intervenants/${sessionId}`, {
+            const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_sponsors/${sessionId}`, {
             method: 'POST',
             headers: {
                'Content-Type': 'application/json',
                token: `${token}`,
             },
-            body: JSON.stringify(interv),
+            body: JSON.stringify(sponsors),
             });
     
             if (response.ok) {
@@ -104,14 +104,14 @@ function AddSponsorsSession() {
     return <div>Aucun intervenant disponible</div>;
     }
 
-    const handleAddIntervenants = (elementId: number) => {
-        setInterv((prevData) => ({
+    const handleAddSponsors = (elementId: number) => {
+        setSponsors((prevData) => ({
             ...prevData,
-            id_intervenants: [...prevData.id_intervenants, elementId]
+            id_intervenants: [...prevData.id_sponsors, elementId]
         }));
     }
 
-    console.log(interv)
+
 
     
     const handleSubmit = async ()=>{
@@ -123,18 +123,18 @@ function AddSponsorsSession() {
 
         <div className="allInterv">   
             <div style={{paddingTop:'90px'}}>
-            <h2  style={{ margin:"0", color:"#7DBA33"}}>Selectionnez les</h2>
-            <h3 style={{fontSize:"2rem", margin:"0"}}>Intervenants</h3>
+            <h2  style={{ margin:"0", color:"#7DBA33"}}>Selectionnez un</h2>
+            <h3 style={{fontSize:"2rem", margin:"0"}}>Sponsor</h3>
             </div>             
             <br />
             <br /><br /> 
             <div className="container">
                 <div className="row">
-                    {elements?.slice(0.3).map((element:Intervenant)=>(
-                    <div key={element.id} className="col-md-4" style={{marginTop:'50px', cursor:'pointer'}} onClick={() => handleAddIntervenants(element.id)}>
+                    {elements?.slice(0.3).map((element:Sponsors)=>(
+                    <div key={element.id} className="col-md-4" style={{marginTop:'50px', cursor:'pointer'}} onClick={() => handleAddSponsors(element.id)}>
                         <div className="intervenants">
                             <div className="invite_img">
-                                <img  alt="" src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + element.image}/>
+                                <img  alt="" src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + element.image}/>
                             </div>
                         </div>                     
                         <p>{element.nom}</p>

@@ -347,8 +347,13 @@ function Session() {
   const handleAddSession=()=>{
     navigate(`addSession`)
   }
+
   const handleAddIntervenants=(sessionId: number)=>{
     navigate(`addIntervenantsSession/${sessionId}`)
+  }
+
+  const handleAddSponsors=(sessionId: number)=>{
+    navigate(`addSponsorsSession/${sessionId}`)
   }
 
   
@@ -480,16 +485,21 @@ function Session() {
             <br />
              {isAdmin ?(
               <div>
-              <button
-               className="btnMain2"
-               onClick={() => handleAddIntervenants(element.id)}
-             >
-               Ajouter des intervenants
-             </button>
-             <br /><br />
-              <button onClick={() => handleSession(element.id)} className="btnMain2">
-              Voir les inscrits
-              </button>
+                <button
+                className="btnMain2"
+                onClick={() => handleAddIntervenants(element.id)}>
+                Ajouter des intervenants
+                </button>
+                <br /><br />
+                <button
+                className="btnMain2"
+                onClick={() => handleAddSponsors(element.id)}>
+                Ajouter un sponsor
+                </button>
+                <br /><br />
+                <button onClick={() => handleSession(element.id)} className="btnMain2">
+                Voir les inscrits
+                </button>
               </div>
                
              ):null}
