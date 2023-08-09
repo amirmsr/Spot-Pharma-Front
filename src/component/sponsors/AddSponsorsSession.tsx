@@ -66,7 +66,7 @@ function AddSponsorsSession() {
     });      
       
 
-    //add intervenant a la session
+    //add sponsor a la session
     const { mutate: addSession } = useMutation(async () => {
         try {
             const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_sponsors/${sessionId}`, {
@@ -81,7 +81,7 @@ function AddSponsorsSession() {
             if (response.ok) {
             const json = await response.json();
             console.log(json);
-            alert("Ajout de l'intervenant réussit")
+            alert("Ajout du sponsor réussit")
             window.location.href = "/sessions";
             return json;
             } else {
@@ -101,13 +101,13 @@ function AddSponsorsSession() {
     alert("erreur")
     }
     if (!elements || elements.length === 0) {
-    return <div>Aucun intervenant disponible</div>;
+    return <div>Aucun sponsor disponible</div>;
     }
 
     const handleAddSponsors = (elementId: number) => {
         setSponsors((prevData) => ({
             ...prevData,
-            id_intervenants: [...prevData.id_sponsors, elementId]
+            id_sponsors: [...prevData.id_sponsors, elementId]
         }));
     }
 
