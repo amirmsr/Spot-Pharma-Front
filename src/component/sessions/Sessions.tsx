@@ -14,6 +14,7 @@ interface Sessions {
   description:"";  
   sponsors_images: "";
   intervenantsDetails : Intervenant[];
+  sponsorsDetails : Sponsor[];
 }
 
 interface IntervenantSession {
@@ -24,6 +25,20 @@ interface IntervenantSession {
 }
 
 interface Intervenant {
+  id: number;
+  nom:any;
+  description:any;
+  image:any
+}
+
+interface SponsorSession {
+  id: number;
+  id_sessions: number;
+  id_sponsors: number;
+
+}
+
+interface Sponsor {
   id: number;
   nom:any;
   description:any;
@@ -170,8 +185,39 @@ function Session() {
   }
   
   const sessionsAvecIntervenants: Sessions[] = associerIntervenantsAuxSessions(elements, intervSessions, interv );
-  console.log(sessionsAvecIntervenants);
+
+
+
+  function associerSponsorsAuxSessions(sessions: Sessions[], sponsor_session: SponsorSession[], sponsorsData: Sponsor[]) {
+    const sessionsAvecSponsors: Sessions[] = [];
   
+    sessions?.forEach((session) => {
+      const sponsorsSession = sponsor_session?.filter(
+        (session) => session.id_sessions === session.id
+      );
+  
+      const sponsorsDetail: Sponsor[] = [];
+
+      sponsorsSession?.forEach((sponsor) => {
+        const sponsorDetail = sponsorsData?.find(i => i.id === sponsor.id_sponsors);
+        if (sponsorDetail) {
+          sponsorsDetail.push(sponsorDetail);
+        }
+      });
+  
+      const sessionAvecSponsors: Sessions = {
+        ...session,
+        sponsorsDetails: sponsorsDetail,
+      };
+      sessionsAvecSponsors.push(sessionAvecSponsors);
+    });
+  
+    return sessionsAvecSponsors;
+  }
+  
+  const sessionsAvecSponsors: Sessions[] = associerSponsorsAuxSessions(sessionsAvecIntervenants, sponsorsSession, sponsors );
+
+  console.log(sessionsAvecSponsors)
 
   
 
