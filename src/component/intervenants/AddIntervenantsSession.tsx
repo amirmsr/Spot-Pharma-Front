@@ -143,7 +143,7 @@ function AddIntervenantsSession() {
                 <div className="row">
                     {elements?.slice(0.3).map((element:Intervenant)=>(
                     <div key={element.id} className="col-md-4 " onClick={() => handleAddIntervenants(element.id)} style={{cursor:"pointer"}}>
-                        <div className="intervenantbloc" style={{background: bgColor}}>
+                        <div className="intervenantbloc" style={{backgroundColor: bgColor}}>
                             <div className="intervenants "> 
                                 <div className="invite_img">
                                     <img  alt="" src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + element.image}/>
