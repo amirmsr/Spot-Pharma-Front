@@ -20,8 +20,10 @@ function AddIntervenantsSession() {
     const [isAdmin, setIsadmin] = useState(false);
     const token = localStorage.getItem("token");
     const [selectedIntervenants, setSelectedIntervenants] = useState<number[]>([]);
-
-
+    const [interv, setInterv] = useState<{ id_intervenant: number[] }>({
+        id_intervenant: []
+    });      
+      
 
 
     //get user data
@@ -63,10 +65,7 @@ function AddIntervenantsSession() {
     });
 
 
-    const [interv, setInterv] = useState<{ id_intervenant: number[] }>({
-        id_intervenant: []
-    });      
-      
+
 
     //add intervenant a la session
     const { mutate: addSession } = useMutation(async () => {
@@ -118,9 +117,6 @@ function AddIntervenantsSession() {
         });
     };
     
-
-    console.log(interv)
-
     
     const handleSubmit = async ()=>{
         addSession()
