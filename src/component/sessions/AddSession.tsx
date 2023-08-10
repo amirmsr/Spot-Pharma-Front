@@ -15,9 +15,6 @@ function AddSession() {
         session_date: "",
         type: "",
         description:"",
-        sponsors_images:"",
-        video_titre:"",
-        video:""
     });
       
 
