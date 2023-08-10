@@ -19,10 +19,7 @@ function AddIntervenantsSession() {
     const navigate = useNavigate()
     const [isAdmin, setIsadmin] = useState(false);
     const token = localStorage.getItem("token");
-    const [selectedIntervenants, setSelectedIntervenants] = useState<number[]>([]);
-    const [interv, setInterv] = useState<{ id_intervenant: number[] }>({
-        id_intervenant: []
-    });      
+
       
 
 
@@ -95,6 +92,33 @@ function AddIntervenantsSession() {
             throw error;
         }
     });
+
+
+    const [interv, setInterv] = useState<{ id_intervenant: number[] }>({
+        id_intervenant: []
+    });      
+
+    let yellow = '#ffc800';
+    const [bgColor, setBgColor] = useState(yellow);
+
+    const handleAddIntervenants = (elementId: number) => {
+        setInterv((prevData) => ({
+            ...prevData,
+            id_intervenant: [...prevData.id_intervenant, elementId]
+        }));
+        let purple = '#A020F0';
+        setBgColor(purple);
+    }
+
+    console.log(interv)
+
+    
+    const handleSubmit = async ()=>{
+        addSession()
+    }  
+
+    
+
     if (isLoading) {
         return <div>Chargement...</div>;
     }
@@ -104,23 +128,6 @@ function AddIntervenantsSession() {
     if (!elements || elements.length === 0) {
     return <div>Aucun intervenant disponible</div>;
     }
-
-    
-
-    const handleAddIntervenants = (elementId: number) => {
-        setSelectedIntervenants((prevSelected) => {
-            if (prevSelected.includes(elementId)) {
-                return prevSelected.filter((id) => id !== elementId);
-            } else {
-                return [...prevSelected, elementId];
-            }
-        });
-    };
-    
-    
-    const handleSubmit = async ()=>{
-        addSession()
-    }  
 
 
     return (
@@ -135,8 +142,8 @@ function AddIntervenantsSession() {
             <div className="container">
                 <div className="row">
                     {elements?.slice(0.3).map((element:Intervenant)=>(
-                    <div key={element.id} className={`col-md-4 ${selectedIntervenants.includes(element.id) ? "selected" : ""}`} onClick={() => handleAddIntervenants(element.id)} style={{cursor:"pointer"}}>
-                        <div className="intervenantbloc">
+                    <div key={element.id} className="col-md-4 " onClick={() => handleAddIntervenants(element.id)} style={{cursor:"pointer"}}>
+                        <div className="intervenantbloc" style={{background: bgColor}}>
                             <div className="intervenants "> 
                                 <div className="invite_img">
                                     <img  alt="" src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + element.image}/>
