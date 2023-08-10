@@ -98,16 +98,11 @@ function AddIntervenantsSession() {
         id_intervenant: []
     });      
 
-    let yellow = '#ffc800';
-    const [bgColor, setBgColor] = useState(yellow);
-
     const handleAddIntervenants = (elementId: number) => {
         setInterv((prevData) => ({
             ...prevData,
             id_intervenant: [...prevData.id_intervenant, elementId]
         }));
-        let purple = '#A020F0';
-        setBgColor(purple);
     }
 
     console.log(interv)
@@ -143,7 +138,7 @@ function AddIntervenantsSession() {
                 <div className="row">
                     {elements?.slice(0.3).map((element:Intervenant)=>(
                     <div key={element.id} className="col-md-4 " onClick={() => handleAddIntervenants(element.id)} style={{cursor:"pointer"}}>
-                        <div className="intervenantbloc" style={{backgroundColor: bgColor}}>
+                        <div className="intervenantbloc">
                             <div className="intervenants "> 
                                 <div className="invite_img">
                                     <img  alt="" src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + element.image}/>

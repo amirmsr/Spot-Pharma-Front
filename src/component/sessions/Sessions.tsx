@@ -371,6 +371,20 @@ function Session() {
     }
   }
 
+  const handleDeleteSponsors= async (id_sponsors: number)=>{
+    const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sponsors/${id_sponsors}`, {
+      method: 'DELETE',
+      headers: {token: `${token}`,}
+    });
+  
+    if (!response.ok) {
+      throw new Error('An error occurred while deleting the intervenant.');
+    }
+    else{
+      alert("okok")
+    }
+  }
+
 
 
 
@@ -402,23 +416,24 @@ function Session() {
             </div>
             <div className="sessionHeader">
                 {element.sponsorsDetails.map((sponsors:Sponsor)=>(
-                     <img
-                     style={{ width: "100%", paddingTop:"40px", paddingBottom:"30px"  }}
-                     src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + sponsors.image}
-                     alt="">
-                     </img>
+                  <div>
+                      {isAdmin ?( 
+                        <div className="container">
+                          <div className="row">                                           
+                            <div className="col">
+                              <FontAwesomeIcon onClick={() => handleDeleteSponsors(sponsors.id)} icon={faXmark} style={{color:'#23A082', fontSize:'1.2rem', cursor:'pointer'}}/>
+                            </div>
+                          </div>
+                        </div>                       
+                      ):null}   
+
+                      <img
+                      style={{ width: "100%", paddingTop:"40px", paddingBottom:"30px"  }}
+                      src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + sponsors.image}
+                      alt="">
+                      </img>
+                  </div>                  
                 ))}
-
-
-
-
-            {/* {element.sponsors_images && (
-                <img
-                  style={{ width: "100%", paddingTop:"40px", paddingBottom:"30px"  }}
-                  src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + element.sponsors_images}
-                  alt=""
-                ></img>
-              )} */}
             </div>
 
             <div style={{height:'60px'}}>
