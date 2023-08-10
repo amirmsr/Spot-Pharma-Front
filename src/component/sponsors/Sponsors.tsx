@@ -71,14 +71,13 @@ export default function Sponsors(){
     }
 
     const handleDeleteSponsors= async (id_sponsors: number)=>{
-        const headers = { token: `${token}` };
         const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sponsors/${id_sponsors}`, {
           method: 'DELETE',
-          headers: {...headers,'Content-Type': 'application/json',}
+          headers: {token: `${token}`,}
         });
       
         if (!response.ok) {
-          throw new Error('An error occurred while deleting the sponsor.');
+          throw new Error('An error occurred while deleting the intervenant.');
         }
         else{
           alert("okok")
