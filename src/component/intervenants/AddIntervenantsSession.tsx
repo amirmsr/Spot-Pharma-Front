@@ -61,8 +61,8 @@ function AddIntervenantsSession() {
     });
 
 
-    const [interv, setInterv] = useState<{ id_intervenants: number[] }>({
-        id_intervenants: []
+    const [interv, setInterv] = useState<{ id_intervenant: number[] }>({
+        id_intervenant: []
     });      
       
 
@@ -109,7 +109,7 @@ function AddIntervenantsSession() {
     const handleAddIntervenants = (elementId: number) => {
         setInterv((prevData) => ({
             ...prevData,
-            id_intervenants: [...prevData.id_intervenants, elementId]
+            id_intervenant: [...prevData.id_intervenant, elementId]
         }));
     }
 
