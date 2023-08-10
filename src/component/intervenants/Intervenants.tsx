@@ -22,7 +22,7 @@ function Intervenants(){
         if (!token){
         throw new Error("token missing");
         }
-        const response = await fetch ("http://localhost:3000/home",{
+        const response = await fetch ("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/home",{
         headers: {
             token: `${token}`,
         }
@@ -43,7 +43,7 @@ function Intervenants(){
     //fetch les intervenants
     const { data: elements, isLoading, isError } = useQuery("Invites", async () => {
         try {
-          const response = await fetch("http://localhost:3000/intervenants"); 
+          const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/intervenants"); 
           if (!response.ok) {
             throw new Error("Failed to fetch intervenant");
           }
@@ -71,7 +71,7 @@ function Intervenants(){
     }
     
     const handleDeleteInterv= async (id_interv: number)=>{
-        const response = await fetch(`http://localhost:3000/intervenants/${id_interv}`, {
+        const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/intervenants/${id_interv}`, {
             method: 'DELETE',
             headers: {token: `${token}`,}
         });
