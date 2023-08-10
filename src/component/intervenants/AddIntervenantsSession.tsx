@@ -19,6 +19,7 @@ function AddIntervenantsSession() {
     const navigate = useNavigate()
     const [isAdmin, setIsadmin] = useState(false);
     const token = localStorage.getItem("token");
+    const [selectedIntervenants, setSelectedIntervenants] = useState<number[]>([]);
 
 
 
@@ -104,12 +105,18 @@ function AddIntervenantsSession() {
     return <div>Aucun intervenant disponible</div>;
     }
 
+    
+
     const handleAddIntervenants = (elementId: number) => {
-        setInterv((prevData) => ({
-            ...prevData,
-            id_intervenants: [...prevData.id_intervenants, elementId]
-        }));
-    }
+        setSelectedIntervenants((prevSelected) => {
+            if (prevSelected.includes(elementId)) {
+                return prevSelected.filter((id) => id !== elementId);
+            } else {
+                return [...prevSelected, elementId];
+            }
+        });
+    };
+    
 
     console.log(interv)
 
@@ -131,14 +138,18 @@ function AddIntervenantsSession() {
             <div className="container">
                 <div className="row">
                     {elements?.slice(0.3).map((element:Intervenant)=>(
-                    <div key={element.id} className="col-md-4" style={{marginTop:'50px', cursor:'pointer'}} onClick={() => handleAddIntervenants(element.id)}>
-                        <div className="intervenants">
-                            <div className="invite_img">
-                                <img  alt="" src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + element.image}/>
-                            </div>
-                        </div>                     
-                        <p>{element.nom}</p>
-                        <p>{element.description}</p>
+                    <div key={element.id} className={`col-md-4 ${selectedIntervenants.includes(element.id) ? "selected" : ""}`} onClick={() => handleAddIntervenants(element.id)}>
+                        <div className="intervenantbloc">
+                            <div className="intervenants "> 
+                                <div className="invite_img">
+                                    <img  alt="" src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + element.image}/>
+                                </div>                            
+                            </div>      
+                            <div style={{height:'100px'}}>
+                            <p>{element.nom}</p>
+                            <p style={{fontSize:'0.9rem'}}>{element.description}</p>
+                            </div>                               
+                        </div>
                     </div>
                     ))}        
                 </div>
