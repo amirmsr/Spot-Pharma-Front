@@ -19,7 +19,6 @@ function AddIntervenantsSession() {
     const navigate = useNavigate()
     const [isAdmin, setIsadmin] = useState(false);
     const token = localStorage.getItem("token");
-    const [selectedIntervenants, setSelectedIntervenants] = useState<number[]>([]);
 
 
 
@@ -108,15 +107,11 @@ function AddIntervenantsSession() {
     
 
     const handleAddIntervenants = (elementId: number) => {
-        setSelectedIntervenants((prevSelected) => {
-            if (prevSelected.includes(elementId)) {
-                return prevSelected.filter((id) => id !== elementId);
-            } else {
-                return [...prevSelected, elementId];
-            }
-        });
-    };
-    
+        setInterv((prevData) => ({
+            ...prevData,
+            id_intervenants: [...prevData.id_intervenants, elementId]
+        }));
+    }
 
     console.log(interv)
 
@@ -138,7 +133,7 @@ function AddIntervenantsSession() {
             <div className="container">
                 <div className="row">
                     {elements?.slice(0.3).map((element:Intervenant)=>(
-                    <div key={element.id} className={`col-md-4 ${selectedIntervenants.includes(element.id) ? "selected" : ""}`} onClick={() => handleAddIntervenants(element.id)}>
+                    <div key={element.id} className="col-md-4 " onClick={() => handleAddIntervenants(element.id)} style={{cursor:"pointer"}}>
                         <div className="intervenantbloc">
                             <div className="intervenants "> 
                                 <div className="invite_img">
