@@ -104,20 +104,23 @@ function Intervenants(){
             <div className="container">
                 <div className="row">
                     {elements?.slice(0.3).map((element:Intervenant)=>(
-                    <div key={element.id} className="col-md-4 sponsor" style={{marginTop:'50px'}}>
-                        <div className="intervenants">
-                            {isAdmin ?(                                                                                    
-                                <div>
-                                    <FontAwesomeIcon onClick={() => handleDeleteInterv(element.id)} icon={faXmark} style={{color:'#23A082', fontSize:'1.2rem', cursor:'pointer'}}/>
-                                </div>                   
-                            ):null}    
-                            <div className="invite_img">
-                                <img  alt="" src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + element.image}/>
-                            </div>
-                          
-                        </div>                     
-                        <p>{element.nom}</p>
-                        <p>{element.description}</p>
+                    <div key={element.id} className="col-md-4 ">
+                        <div className="intervenantbloc">
+                            <div className="intervenants ">
+                                {isAdmin ?(                                                                                    
+                                    <div style={{marginRight:'100px'}}>
+                                        <FontAwesomeIcon onClick={() => handleDeleteInterv(element.id)} icon={faXmark} style={{color:'#23A082', fontSize:'1.2rem', cursor:'pointer'}}/>
+                                    </div>                   
+                                ):null}    
+                                <div className="invite_img">
+                                    <img  alt="" src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + element.image}/>
+                                </div>
+                            
+                            </div>                     
+                            <p>{element.nom}</p>
+                            <p style={{fontSize:'0.9rem'}}>{element.description}</p>
+                        </div>
+                       
                     </div>
                     ))}        
                 </div>
