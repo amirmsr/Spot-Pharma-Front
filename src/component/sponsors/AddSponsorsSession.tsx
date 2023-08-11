@@ -149,7 +149,7 @@ function AddSponsorsSession() {
             <div className="container">
                 <div className="row">
                     {elements?.slice(0.3).map((element:Sponsors)=>(
-                    <div key={element.id} className="col-md-4 " onClick={() => handleAddSponsors(element.id)}>
+                    <div key={element.id} className="col-md-4 " onClick={() => handleAddSponsors(element.id)} style={{cursor:"pointer"}}>
                         <div className="intervenantbloc">   
                             <div style={{ height: '70px', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                             <img
@@ -168,8 +168,7 @@ function AddSponsorsSession() {
                     ))}        
                 </div>
             </div>
-            <br /><br /><br />
-            <button type="submit" className='btnMain2' onClick={handleSubmit}> Ajouter </button>         
+          
             <br /><br /><br />  
         </div> 
 
