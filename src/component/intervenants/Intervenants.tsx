@@ -41,7 +41,7 @@ function Intervenants(){
     }, [user]);
 
     //fetch les intervenants
-    const { data: elements, isLoading, isError } = useQuery("Invites", async () => {
+    const { data: elements, isError } = useQuery("Invites", async () => {
         try {
           const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/intervenants"); 
           if (!response.ok) {
@@ -53,10 +53,6 @@ function Intervenants(){
           throw new Error("An error occurred while fetching intervenant");
         }
     });
-
-    if (isLoading) {
-        return <div>Chargement...</div>;
-    }
     
     if (isError) {
     alert("erreur")
