@@ -414,7 +414,7 @@ function Session() {
                 <FontAwesomeIcon onClick={() => handleEdit(element.id)} icon={faPenToSquare} style={{color:'#23A082', fontSize:'1.5rem',position:'absolute', marginTop:'10px',marginLeft:'150px', cursor:'pointer'}}/>
               ):null}              
             </div>
-            <div style={{height:'200px', backgroundColor:'red'}}>
+            <div style={{height:'200px'}}>
                 {element.sponsorsDetails.map((sponsors:Sponsor)=>(
                   <div>
                       {isAdmin ?( 
