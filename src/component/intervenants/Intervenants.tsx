@@ -105,16 +105,17 @@ function Intervenants(){
                 <div className="row">
                     {elements?.slice(0.3).map((element:Intervenant)=>(
                     <div key={element.id} className="col-md-4 ">
-                        <div className="intervenantbloc">
-                            <div className="intervenants "> 
-                                <div className="invite_img">
-                                    <img  alt="" src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + element.image}/>
-                                </div>                            
-                            </div>      
-
+                        <div className="intervenantbloc">    
+                            <div style={{ height: '200px', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                            <img
+                                style={{ objectFit: 'contain', width: '100%', height: '100%' }}
+                                src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + element.image}
+                                alt=""
+                            />
+                            </div>
                             <div style={{height:'100px'}}>
-                            <p>{element.nom}</p>
-                            <p style={{fontSize:'0.9rem'}}>{element.description}</p>
+                                <p>{element.nom}</p>
+                                <p style={{fontSize:'0.9rem'}}>{element.description}</p>
                             </div>    
                             {isAdmin ?(
                                 <div>
