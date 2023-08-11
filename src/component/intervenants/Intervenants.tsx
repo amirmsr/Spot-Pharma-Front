@@ -58,9 +58,7 @@ function Intervenants(){
     alert("erreur")
     }
     console.log(elements)
-    if (!elements || elements.length === 0) {
-    return <div>Aucun intervenant disponible</div>;
-    }
+  
 
     const handleClick=()=>{
     navigate(`addIntervenants`)
