@@ -414,7 +414,7 @@ function Session() {
                 <FontAwesomeIcon onClick={() => handleEdit(element.id)} icon={faPenToSquare} style={{color:'#23A082', fontSize:'1.5rem',position:'absolute', marginTop:'10px',marginLeft:'150px', cursor:'pointer'}}/>
               ):null}              
             </div>
-            <div>
+            <div style={{height:'200px', backgroundColor:'red'}}>
                 {element.sponsorsDetails.map((sponsors:Sponsor)=>(
                   <div>
                       {isAdmin ?( 
@@ -425,19 +425,14 @@ function Session() {
                             </div>
                           </div>
                         </div>                       
-                      ):null}   
-                      <div style={{height:'200px', backgroundColor:'red'}}>
-                        <p>oik</p>
+                      ):null}                       
                         <div style={{ height: '200px', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                           <img
                               style={{ objectFit: 'contain', width: '100%', height: '100%' }}
                               src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + sponsors.image}
                               alt=""
                           />
-                        </div>
-                      </div>
-                     
-                   
+                        </div>                                       
                   </div>                  
                 ))}
             </div>
