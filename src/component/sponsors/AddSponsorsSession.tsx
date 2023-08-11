@@ -137,7 +137,7 @@ function AddSponsorsSession() {
                 <center>                
                     {sponsorSelected?.map((sponsor:Sponsors)=>(
                         <div>
-                            <img width={'3%'}  alt="" src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + sponsor.image}/>
+                            <img width={'10%'}  alt="" src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + sponsor.image}/>
                         </div>
                     ))}
                 </center>
