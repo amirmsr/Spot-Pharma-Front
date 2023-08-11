@@ -64,7 +64,7 @@ function Intervenants(){
     navigate(`addIntervenants`)
     }
     
-/*     const handleDeleteInterv= async (id_interv: number)=>{
+    const handleDeleteInterv= async (id_interv: number)=>{
         const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/intervenants/${id_interv}`, {
             method: 'DELETE',
             headers: {token: `${token}`,}
@@ -76,12 +76,7 @@ function Intervenants(){
         else{
             alert("okok")
         }
-      
-    } */
-
-    const handleDeleteInterv=()=>{
-        alert("okok")
-        }
+    }
     
 
     return(
@@ -117,7 +112,7 @@ function Intervenants(){
                             {isAdmin ?(
                                 <div>
                                     <br />
-                                    <button className="btnMain2"onClick={() => handleDeleteInterv()} /* onClick={() => handleDeleteInterv(element.id)} */> Supprimer <span><FontAwesomeIcon  icon={faXmark} style={{color:'red', fontSize:'1.2rem', cursor:'pointer'}}/></span></button>
+                                    <button className="btnMain2" onClick={() => handleDeleteInterv(element.id)}> Supprimer <span><FontAwesomeIcon  icon={faXmark} style={{color:'red', fontSize:'1.2rem', cursor:'pointer'}}/></span></button>
                                     <br /><br />
                                 </div>                                         
                             ):null}   

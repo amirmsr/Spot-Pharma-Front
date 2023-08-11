@@ -116,7 +116,7 @@ export default function Sponsors(){
                             {isAdmin ?(
                                 <div>
                                     <br />
-                                    <button className="btnMain2"> Supprimer <span><FontAwesomeIcon onClick={() => handleDeleteSponsors(element.id)} icon={faXmark} style={{color:'red', fontSize:'1.2rem', cursor:'pointer'}}/></span></button>
+                                    <button className="btnMain2" onClick={() => handleDeleteSponsors(element.id)}> Supprimer <span><FontAwesomeIcon  icon={faXmark} style={{color:'red', fontSize:'1.2rem', cursor:'pointer'}}/></span></button>
                                     <br /><br />
                                 </div>                                         
                             ):null}   
