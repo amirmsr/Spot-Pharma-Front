@@ -372,7 +372,7 @@ function Session() {
   }
 
   const handleDeleteSponsors= async (id_sessions: number, id_sponsors: number)=>{
-    const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sponsors/${id_sessions}/${id_sponsors}`, {
+    const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_sponsors/${id_sessions}/${id_sponsors}`, {
       method: 'DELETE',
       headers: {token: `${token}`,}
     });
