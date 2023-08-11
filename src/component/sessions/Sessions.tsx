@@ -371,14 +371,14 @@ function Session() {
     }
   }
 
-  const handleDeleteSponsors= async (id_sponsors: number)=>{
-    const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sponsors/${id_sponsors}`, {
+  const handleDeleteSponsors= async (id_sessions: number, id_sponsors: number)=>{
+    const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sponsors/${id_sessions}/${id_sponsors}`, {
       method: 'DELETE',
       headers: {token: `${token}`,}
     });
   
     if (!response.ok) {
-      throw new Error('An error occurred while deleting the intervenant.');
+      throw new Error('An error occurred while deleting the sponsors.');
     }
     else{
       alert("okok")
@@ -421,7 +421,7 @@ function Session() {
                         <div className="container">
                           <div className="row">                                           
                             <div className="col">
-                              <FontAwesomeIcon onClick={() => handleDeleteSponsors(sponsors.id)} icon={faXmark} style={{color:'#23A082', fontSize:'1.2rem', cursor:'pointer'}}/>
+                              <FontAwesomeIcon onClick={() => handleDeleteSponsors(element.id, sponsors.id)} icon={faXmark} style={{color:'#23A082', fontSize:'1.2rem', cursor:'pointer'}}/>
                             </div>
                           </div>
                         </div>                       
