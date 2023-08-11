@@ -426,14 +426,16 @@ function Session() {
                           </div>
                         </div>                       
                       ):null}   
-                      
-                      <div style={{ height: '200px', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                        <img
-                            style={{ objectFit: 'contain', width: '100%', height: '100%' }}
-                            src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + sponsors.image}
-                            alt=""
-                        />
+                      <div style={{height:'200px', backgroundColor:'red'}}>
+                        <div style={{ height: '200px', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                          <img
+                              style={{ objectFit: 'contain', width: '100%', height: '100%' }}
+                              src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + sponsors.image}
+                              alt=""
+                          />
+                        </div>
                       </div>
+                     
                    
                   </div>                  
                 ))}
