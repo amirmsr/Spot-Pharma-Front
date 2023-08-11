@@ -61,9 +61,7 @@ function AddSponsorsSession() {
     });
 
 
-    const [sponsors, setSponsors] = useState<{ id_sponsors: number[] }>({
-        id_sponsors: []
-    });      
+
       
 
     //add sponsor a la session
@@ -94,6 +92,30 @@ function AddSponsorsSession() {
             throw error;
         }
     });
+
+
+    const [sponsors, setSponsors] = useState<{ id_sponsors: number[] }>({
+        id_sponsors: []
+    });      
+
+    const handleAddSponsors = (elementId: number) => {
+        setSponsors((prevData) => ({
+            ...prevData,
+            id_sponsors: [...prevData.id_sponsors, elementId]
+        }));
+    }
+
+    const sponsorSelected = elements?.filter((element: { id: any; }) => sponsors.id_sponsors.includes(element.id));
+    console.log(sponsors)
+    console.log(sponsorSelected)
+
+
+
+    
+    const handleSubmit = async ()=>{
+        addSession()
+    }  
+
     if (isLoading) {
         return <div>Chargement...</div>;
     }
@@ -104,27 +126,23 @@ function AddSponsorsSession() {
     return <div>Aucun sponsor disponible</div>;
     }
 
-    const handleAddSponsors = (elementId: number) => {
-        setSponsors((prevData) => ({
-            ...prevData,
-            id_sponsors: [...prevData.id_sponsors, elementId]
-        }));
-    }
-
-
-
-    
-    const handleSubmit = async ()=>{
-        addSession()
-    }  
-
 
     return (
 
         <div className="allInterv">   
             <div style={{paddingTop:'90px'}}>
-            <h2  style={{ margin:"0", color:"#7DBA33"}}>Selectionnez un</h2>
-            <h3 style={{fontSize:"2rem", margin:"0"}}>Sponsor</h3>
+                <h2  style={{ margin:"0", color:"#7DBA33"}}>Selectionnez les</h2>
+                <h3 style={{fontSize:"2rem", margin:"0"}}>Intervenants</h3>
+                <br /><br />
+                <center>                
+                    {sponsorSelected?.map((sponsor:Sponsors)=>(
+                        <div>
+                            <img width={'3%'}  alt="" src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + sponsor.image}/>
+                        </div>
+                    ))}
+                </center>
+                <br />
+                <button type="submit" className='btnMain2' onClick={handleSubmit}> Ajouter </button>         
             </div>             
             <br />
             <br /><br /> 
