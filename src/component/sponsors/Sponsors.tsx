@@ -105,19 +105,27 @@ export default function Sponsors(){
             <div className="container">
                 <div className="row">
                     {elements?.slice(0.3).map((element:Sponsors)=>(
-                    <div key={element.id} className="col-md-4" style={{marginTop:'50px'}}>
-                        <div className="intervenants">
-                            {isAdmin ?(                                                                                    
+                    <div key={element.id} className="col-md-4 ">
+                        <div className="intervenantbloc">
+                            <div className="intervenants "> 
+                                <div className="invite_img">
+                                    <img  alt="" src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + element.image}/>
+                                </div>                            
+                            </div>      
+
+                            <div style={{height:'100px'}}>
+                            <p>{element.nom}</p>
+                            <p style={{fontSize:'0.9rem'}}>{element.description}</p>
+                            </div>    
+                            {isAdmin ?(
                                 <div>
-                                    <FontAwesomeIcon onClick={() => handleDeleteSponsors(element.id)} icon={faXmark} style={{color:'#23A082', fontSize:'1.2rem', cursor:'pointer'}}/>
-                                </div>                   
-                            ):null}            
-                            <div className="invite_img">
-                                <img  alt="" src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + element.image}/>
-                            </div>                          
-                        </div>                     
-                        <p>{element.nom}</p>
-                        <p>{element.description}</p>
+                                    <br />
+                                    <button className="btnMain2"> Supprimer <span><FontAwesomeIcon onClick={() => handleDeleteSponsors(element.id)} icon={faXmark} style={{color:'red', fontSize:'1.2rem', cursor:'pointer'}}/></span></button>
+                                    <br /><br />
+                                </div>                                         
+                            ):null}   
+                        </div>
+                        
                     </div>
                     ))}        
                 </div>
@@ -129,3 +137,5 @@ export default function Sponsors(){
     )
 
 }
+
+
