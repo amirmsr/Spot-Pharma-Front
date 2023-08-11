@@ -103,33 +103,33 @@ export default function Sponsors(){
             ):null}
             <br /><br /> 
             <div className="container">
-                <div className="row">
-                    {elements?.slice(0.3).map((element:Sponsors)=>(
-                    <div key={element.id} className="col-md-4 ">
-                        <div className="intervenantbloc">   
+            <div className="row">
+                {elements?.slice(0, 3).map((element: Sponsors) => (
+                    <div key={element.id} className="col-md-4">
+                        <div className="intervenantbloc">
                             <div style={{ height: '200px', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                            <img
-                                style={{ objectFit: 'contain', width: '100%', height: '100%' }}
-                                src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + element.image}
-                                alt=""
-                            />
-                            </div> 
-                            <div style={{height:'100px'}}>
-                            <p>{element.nom}</p>
-                            <p style={{fontSize:'0.9rem'}}>{element.description}</p>
-                            </div>    
-                            {isAdmin ?(
+                                <img
+                                    style={{ objectFit: 'contain', maxWidth: '100%', maxHeight: '100%', width: 'auto', height: 'auto' }}
+                                    src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + element.image}
+                                    alt=""
+                                />
+                            </div>
+                            <div style={{ height: '100px' }}>
+                                <p>{element.nom}</p>
+                                <p style={{ fontSize: '0.9rem' }}>{element.description}</p>
+                            </div>
+                            {isAdmin ? (
                                 <div>
                                     <br />
-                                    <button className="btnMain2"> Supprimer <span><FontAwesomeIcon onClick={() => handleDeleteSponsors(element.id)} icon={faXmark} style={{color:'red', fontSize:'1.2rem', cursor:'pointer'}}/></span></button>
+                                    <button className="btnMain2"> Supprimer <span><FontAwesomeIcon onClick={() => handleDeleteSponsors(element.id)} icon={faXmark} style={{ color: 'red', fontSize: '1.2rem', cursor: 'pointer' }} /></span></button>
                                     <br /><br />
-                                </div>                                         
-                            ):null}   
+                                </div>
+                            ) : null}
                         </div>
-                        
                     </div>
-                    ))}        
-                </div>
+                ))}
+            </div>
+
             </div>
             <br /><br /><br />
                                    
