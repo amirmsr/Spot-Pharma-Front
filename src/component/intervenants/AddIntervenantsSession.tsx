@@ -157,6 +157,14 @@ function AddIntervenantsSession() {
                 </div>
             </div>
             <br /><br /><br />
+            <center>
+                {intervSelected?.map((interv:Intervenant)=>(
+                    <div>
+                        <img  alt="" src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + interv.image}/>
+                    </div>
+                ))}
+            </center>
+            <br /><br /><br />
             <button type="submit" className='btnMain2' onClick={handleSubmit}> Ajouter </button>         
             <br /><br /><br />  
         </div> 
