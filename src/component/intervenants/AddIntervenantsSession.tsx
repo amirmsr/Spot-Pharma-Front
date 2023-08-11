@@ -106,7 +106,7 @@ function AddIntervenantsSession() {
     }
 
 
-    const intervSelected = elements.filter((element: { id: any; }) => interv.id_intervenant.includes(element.id));
+    const intervSelected = elements?.filter((element: { id: any; }) => interv.id_intervenant.includes(element.id));
     console.log(interv)
     console.log(intervSelected)
     
