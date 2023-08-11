@@ -41,7 +41,7 @@ export default function Sponsors(){
     }, [user]);
 
     //fetch les sponsors
-    const { data: elements, isError } = useQuery("Sponsors", async () => {
+    const { data: elements, isLoading, isError } = useQuery("Sponsors", async () => {
         try {
           const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sponsors"); 
           if (!response.ok) {
@@ -54,12 +54,16 @@ export default function Sponsors(){
         }
     });
 
+    if (isLoading) {
+        return;
+    }
+    
     if (isError) {
     alert("erreur")
     }
     console.log(elements)
     if (!elements || elements.length === 0) {
-    return <div>Aucun intervenant disponible</div>;
+    return ;
     }
 
     const handleClick=()=>{
