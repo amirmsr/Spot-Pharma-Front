@@ -74,7 +74,7 @@ function Intervenants(){
             throw new Error('An error occurred while deleting the intervenant.');
         }
         else{
-            alert("okok")
+            alert("Supprimer avec succés")
         }
     }
     
