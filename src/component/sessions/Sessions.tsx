@@ -427,6 +427,7 @@ function Session() {
                         </div>                       
                       ):null}   
                       <div style={{height:'200px', backgroundColor:'red'}}>
+                        <p>oik</p>
                         <div style={{ height: '200px', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                           <img
                               style={{ objectFit: 'contain', width: '100%', height: '100%' }}
