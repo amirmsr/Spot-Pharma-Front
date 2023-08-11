@@ -134,6 +134,16 @@ function AddIntervenantsSession() {
             <div style={{paddingTop:'90px'}}>
             <h2  style={{ margin:"0", color:"#7DBA33"}}>Selectionnez les</h2>
             <h3 style={{fontSize:"2rem", margin:"0"}}>Intervenants</h3>
+            <br /><br />
+            <center>                
+                {intervSelected?.map((interv:Intervenant)=>(
+                    <div>
+                        <img width={'3%'}  alt="" src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + interv.image}/>
+                    </div>
+                ))}
+            </center>
+            <br />
+            <button type="submit" className='btnMain2' onClick={handleSubmit}> Ajouter </button>         
             </div>             
             <br />
             <br /><br /> 
@@ -156,16 +166,7 @@ function AddIntervenantsSession() {
                     ))}        
                 </div>
             </div>
-            <br /><br /><br />
-            <center>
-                {intervSelected?.map((interv:Intervenant)=>(
-                    <div>
-                        <img width={'3%'}  alt="" src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + interv.image}/>
-                    </div>
-                ))}
-            </center>
-            <br /><br /><br />
-            <button type="submit" className='btnMain2' onClick={handleSubmit}> Ajouter </button>         
+
             <br /><br /><br />  
         </div> 
 
