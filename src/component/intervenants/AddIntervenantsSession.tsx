@@ -160,7 +160,7 @@ function AddIntervenantsSession() {
             <center>
                 {intervSelected?.map((interv:Intervenant)=>(
                     <div>
-                        <img width={'10%'}  alt="" src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + interv.image}/>
+                        <img width={'3%'}  alt="" src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + interv.image}/>
                     </div>
                 ))}
             </center>
