@@ -410,14 +410,14 @@ function Session() {
           <div key={element.id} className="col-md-4 ">
             <div className="session">
             <div>
-              {/* {isAdmin ?( */}
+              {isAdmin ?(
                 <FontAwesomeIcon onClick={() => handleEdit(element.id)} icon={faPenToSquare} style={{color:'#23A082', fontSize:'1.5rem',position:'absolute', marginTop:'10px',marginLeft:'150px', cursor:'pointer'}}/>
-              {/* ):null}  */}             
+              ):null}              
             </div>
             <div style={{height:'200px'}}>
                 {element.sponsorsDetails.map((sponsors:Sponsor)=>(
                   <div>
-                     {/*  {isAdmin ?( */} 
+                      {isAdmin ?( 
                         <div className="container">
                           <div className="row">                                           
                             <div className="col">
@@ -425,7 +425,7 @@ function Session() {
                             </div>
                           </div>
                         </div>                       
-                     {/*  ):null}  */}                      
+                       ):null}                     
                         <div style={{ height: '200px', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                           <img
                               style={{ objectFit: 'contain', width: '100%', height: '100%' }}
@@ -456,7 +456,7 @@ function Session() {
                             <div className="invite_img">
                               <div className="invite">     
                                   <div>
-                                    {/* {isAdmin ?(  */}
+                                    {isAdmin ?( 
                                         <div className="container">
                                           <div className="row">                                           
                                             <div className="col">
@@ -464,7 +464,7 @@ function Session() {
                                             </div>
                                           </div>
                                         </div>                       
-                                     {/* ):null}  */}           
+                                     ):null}      
                                   </div>    
                                   <img  alt=""  src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + interv.image}/>                            
                               </div>                           
