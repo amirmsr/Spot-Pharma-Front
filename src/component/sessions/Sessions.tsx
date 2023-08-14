@@ -435,7 +435,7 @@ function Session() {
                         <div className="container">
                           <div className="row">                                           
                             <div className="col">
-                              <FontAwesomeIcon onClick={() => handleDeleteSponsors(element.id, sponsors.id)} icon={faXmark} style={{color:'#23A082', fontSize:'1.2rem', cursor:'pointer',position:'absolute', top:"380px",}}/>
+                              <FontAwesomeIcon onClick={() => handleDeleteSponsors(element.id, sponsors.id)} icon={faXmark} style={{color:'#23A082', fontSize:'1.2rem', cursor:'pointer',position:'absolute', top:"480px",}}/>
                             </div>
                           </div>
                         </div>                       
@@ -510,7 +510,7 @@ function Session() {
                 </button>
               </center>
             )}  
-            <br /><br />
+            <br />
             {isAdmin ?(
               <div>
                 <button onClick={() => handleSession(element.id)} className="btnMain2">
