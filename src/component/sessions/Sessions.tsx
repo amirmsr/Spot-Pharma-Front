@@ -437,7 +437,7 @@ function Session() {
                         <div className="container">
                           <div className="row">                                           
                             <div className="col">
-                              <FontAwesomeIcon onClick={() => handleDeleteSponsors(element.id, sponsors.id)} icon={faXmark} style={{color:'#23A082', fontSize:'1.2rem', cursor:'pointer',position:'absolute', top:"480px",}}/>
+                             {/*  <FontAwesomeIcon onClick={() => handleDeleteSponsors(element.id, sponsors.id)} icon={faXmark} style={{color:'#23A082', fontSize:'1.2rem', cursor:'pointer',position:'absolute', top:"480px",}}/> */}
                             </div>
                           </div>
                         </div>                       
@@ -454,10 +454,10 @@ function Session() {
                               alt=""
                           />
                           {hoveredSponsor === sponsors.id && (
-                            <div
-                              style={{textAlign: 'center'}}
+                            <div            
                             >
-                              <FontAwesomeIcon onClick={() => handleDeleteSponsors(element.id, sponsors.id)} icon={faXmark} style={{color:'#23A082', fontSize:'1.2rem', cursor:'pointer'}}/>
+                              <button className="btnMain3" onClick={() => handleDeleteSponsors(element.id, sponsors.id)}><FontAwesomeIcon icon={faXmark} style={{color:'white', fontSize:'1.2rem', cursor:'pointer'}}/></button>
+                             
                             </div>
                           )}
                         </div>                                       
