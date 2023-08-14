@@ -431,8 +431,7 @@ function Session() {
             </div>
             <div style={{height:'200px'}}>
                 {element.sponsorsDetails.map((sponsors:Sponsor)=>(
-                  <div   onMouseEnter={() => setHoveredSponsor(sponsors.id)}
-                  onMouseLeave={() => setHoveredSponsor(null)}>
+                  <div   onMouseEnter={() => setHoveredSponsor(sponsors.id)} onMouseLeave={() => setHoveredSponsor(null)}>
                       {isAdmin ?( 
                         <div className="container">
                           <div className="row">                                           
@@ -443,6 +442,13 @@ function Session() {
                         </div>                       
                        ):null}                     
                         <div style={{ height: '200px', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                          {hoveredSponsor === sponsors.id && (
+                            <div            
+                            >
+                              <button className="btnMain3" onClick={() => handleDeleteSponsors(element.id, sponsors.id)}><FontAwesomeIcon icon={faXmark} style={{color:'white', fontSize:'1.2rem', cursor:'pointer'}}/></button>
+                             
+                            </div>
+                          )}
                           <img
                               style={{
                                 objectFit: 'contain',
@@ -452,14 +458,7 @@ function Session() {
                               }}
                               src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + sponsors.image}
                               alt=""
-                          />
-                          {hoveredSponsor === sponsors.id && (
-                            <div            
-                            >
-                              <button className="btnMain3" onClick={() => handleDeleteSponsors(element.id, sponsors.id)}><FontAwesomeIcon icon={faXmark} style={{color:'white', fontSize:'1.2rem', cursor:'pointer'}}/></button>
-                             
-                            </div>
-                          )}
+                          />                         
                         </div>                                       
                   </div>                  
                 ))}
