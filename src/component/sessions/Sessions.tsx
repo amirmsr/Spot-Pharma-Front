@@ -453,23 +453,13 @@ function Session() {
                               src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + sponsors.image}
                               alt=""
                           />
-                           {hoveredSponsor === sponsors.id && (
-              <div
-                style={{
-                  position: 'absolute',
-                  top: '50%',
-                  left: '50%',
-                  transform: 'translate(-50%, -50%)',
-                  textAlign: 'center',
-                  backgroundColor: 'rgba(0, 0, 0, 0.7)',
-                  color: 'white',
-                  padding: '10px',
-                  borderRadius: '4px',
-                }}
-              >
-                Votre texte ici
-              </div>
-            )}
+                          {hoveredSponsor === sponsors.id && (
+                            <div
+                              style={{textAlign: 'center',backgroundColor: 'rgba(0, 0, 0, 0.7)',color: 'white',padding: '10px',borderRadius: '4px',}}
+                            >
+                              <p>{sponsors.id}</p>
+                            </div>
+                          )}
                         </div>                                       
                   </div>                  
                 ))}
