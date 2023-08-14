@@ -441,12 +441,7 @@ function Session() {
                           </div>
                         </div>                       
                        ):null}                     
-                        <div style={{ height: '200px', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                          {hoveredSponsor === sponsors.id && (
-                            <div>
-                              <button className="btnMain3" onClick={() => handleDeleteSponsors(element.id, sponsors.id)}><FontAwesomeIcon icon={faXmark} style={{color:'white', fontSize:'1.2rem', cursor:'pointer'}}/></button>                             
-                            </div>
-                          )}
+                        <div style={{ height: '200px', width: '100%', justifyContent: 'center', alignItems: 'center' }}>
                           <img
                               style={{
                                 objectFit: 'contain',
@@ -456,7 +451,12 @@ function Session() {
                               }}
                               src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + sponsors.image}
                               alt=""
-                          />                         
+                          />   
+                          {hoveredSponsor === sponsors.id && (
+                            <div>
+                              <button className="btnMain3" onClick={() => handleDeleteSponsors(element.id, sponsors.id)}><FontAwesomeIcon icon={faXmark} style={{color:'white', fontSize:'1.2rem', cursor:'pointer'}}/></button>                             
+                            </div>
+                          )}                      
                         </div>                                       
                   </div>                  
                 ))}
