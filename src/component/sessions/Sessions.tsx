@@ -443,7 +443,7 @@ function Session() {
                        ):null}                     
                         <div style={{ height: '200px', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                           {hoveredSponsor === sponsors.id && (
-                            <div style={{position:'relative', left:'200px' }} >
+                            <div>
                               <button className="btnMain3" onClick={() => handleDeleteSponsors(element.id, sponsors.id)}><FontAwesomeIcon icon={faXmark} style={{color:'white', fontSize:'1.2rem', cursor:'pointer'}}/></button>                             
                             </div>
                           )}
