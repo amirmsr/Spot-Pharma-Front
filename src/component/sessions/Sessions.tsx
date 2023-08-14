@@ -52,6 +52,7 @@ function Session() {
   const [isConnected, setIsconnected] = useState(false);
   const [isAdmin, setIsadmin] = useState(false);
   const token = localStorage.getItem("token");
+  const [hoveredSponsor, setHoveredSponsor] = useState<number | null>(null);
   
 
 
@@ -430,7 +431,8 @@ function Session() {
             </div>
             <div style={{height:'200px'}}>
                 {element.sponsorsDetails.map((sponsors:Sponsor)=>(
-                  <div>
+                  <div   onMouseEnter={() => setHoveredSponsor(sponsors.id)}
+                  onMouseLeave={() => setHoveredSponsor(null)}>
                       {isAdmin ?( 
                         <div className="container">
                           <div className="row">                                           
@@ -442,10 +444,32 @@ function Session() {
                        ):null}                     
                         <div style={{ height: '200px', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                           <img
-                              style={{ objectFit: 'contain', width: '100%', height: '100%' }}
+                              style={{
+                                objectFit: 'contain',
+                                width: '100%',
+                                height: '100%',
+                                filter: hoveredSponsor === sponsors.id ? 'grayscale(100%)' : 'none',
+                              }}
                               src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + sponsors.image}
                               alt=""
                           />
+                           {hoveredSponsor === sponsors.id && (
+              <div
+                style={{
+                  position: 'absolute',
+                  top: '50%',
+                  left: '50%',
+                  transform: 'translate(-50%, -50%)',
+                  textAlign: 'center',
+                  backgroundColor: 'rgba(0, 0, 0, 0.7)',
+                  color: 'white',
+                  padding: '10px',
+                  borderRadius: '4px',
+                }}
+              >
+                Votre texte ici
+              </div>
+            )}
                         </div>                                       
                   </div>                  
                 ))}
