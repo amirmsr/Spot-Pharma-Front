@@ -59,7 +59,7 @@ function Session() {
     if (!token){
       throw new Error("token missing");
     }
-    const response = await fetch ("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/home",{
+    const response = await fetch ("http://localhost:3000/home",{
       headers: {
         token: `${token}`,
       }
@@ -87,7 +87,7 @@ function Session() {
   //fetch les intervenant 
   const { data: interv, } = useQuery("Intervenant", async () => {
     try {
-      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/intervenants");  
+      const response = await fetch("http://localhost:3000/intervenants");  
       if (!response.ok) {
         throw new Error("Failed to fetch interv");
       }
@@ -100,7 +100,7 @@ function Session() {
   //fetch les sponsors 
   const { data: sponsors, } = useQuery("Sponsors", async () => {
     try {
-      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sponsors");  
+      const response = await fetch("http://localhost:3000/sponsors");  
       if (!response.ok) {
         throw new Error("Failed to fetch sponsors");
       }
@@ -115,7 +115,7 @@ function Session() {
   //fetch les intervenant des sessions
   const { data: intervSessions, } = useQuery("IantervSessions", async () => {
     try {
-      const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/intervenants_session/`);  
+      const response = await fetch(`http://localhost:3000/intervenants_session/`);  
       if (!response.ok) {
         throw new Error("Failed to fetch interv");
       }
@@ -129,7 +129,7 @@ function Session() {
   //fetch les sponsors des sessions
   const { data: sponsorsSession, } = useQuery("SponsorsSession", async () => {
     try {
-      const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sponsors_session/`);  
+      const response = await fetch(`http://localhost:3000/sponsors_session/`);  
       if (!response.ok) {
         throw new Error("Failed to fetch sponsors");
       }
@@ -146,7 +146,7 @@ function Session() {
   // fetch les sessions
   const { data: elements, isLoading, isError } = useQuery("Sessions", async () => {
     try {
-      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sessions");  
+      const response = await fetch("http://localhost:3000/sessions");  
       if (!response.ok) {
         throw new Error("Failed to fetch sessions");
       }
@@ -229,7 +229,7 @@ function Session() {
     try {
       const token = localStorage.getItem("token");
       const headers = { token: `${token}` };
-      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_inscrit", {  //https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_inscrit
+      const response = await fetch("http://localhost:3000/session_inscrit", {  //http://localhost:3000/session_inscrit
         method: 'POST',
         headers: {
           ...headers,
@@ -277,7 +277,7 @@ function Session() {
       const userId = user.id;
 
       const response = await fetch(
-        `https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/inscrit_session/${userId}`,
+        `http://localhost:3000/inscrit_session/${userId}`,
         {
           headers: {
             token: `${token}`,
@@ -359,7 +359,7 @@ function Session() {
   
 
   const handleDeleteInterv= async (id_sessions: number , id_intervenants: number)=>{
-    const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_intervenants/${id_sessions}/${id_intervenants}`, {
+    const response = await fetch(`http://localhost:3000/session_intervenants/${id_sessions}/${id_intervenants}`, {
       method: 'DELETE',
     });
   
@@ -367,12 +367,12 @@ function Session() {
       throw new Error('An error occurred while deleting the intervenant.');
     }
     else{
-      alert("okok")
+      alert("Intervenant supprimer")
     }
   }
 
   const handleDeleteSponsors= async (id_sessions: number, id_sponsors: number)=>{
-    const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_sponsors/${id_sessions}/${id_sponsors}`, {
+    const response = await fetch(`http://localhost:3000/session_sponsors/${id_sessions}/${id_sponsors}`, {
       method: 'DELETE',
       headers: {token: `${token}`,}
     });
@@ -381,7 +381,7 @@ function Session() {
       throw new Error('An error occurred while deleting the sponsors.');
     }
     else{
-      alert("okok")
+      alert("Intervenant supprimer")
     }
   }
 
@@ -410,22 +410,22 @@ function Session() {
           <div key={element.id} className="col-md-4 ">
             <div className="session">
             <div>
-              {isAdmin ?(
+              {/* {isAdmin ?( */}
                 <FontAwesomeIcon onClick={() => handleEdit(element.id)} icon={faPenToSquare} style={{color:'#23A082', fontSize:'1.5rem',position:'absolute', marginTop:'10px',marginLeft:'150px', cursor:'pointer'}}/>
-              ):null}              
+              {/* ):null}  */}             
             </div>
             <div style={{height:'200px'}}>
                 {element.sponsorsDetails.map((sponsors:Sponsor)=>(
                   <div>
-                      {isAdmin ?( 
+                     {/*  {isAdmin ?( */} 
                         <div className="container">
                           <div className="row">                                           
                             <div className="col">
-                              <FontAwesomeIcon onClick={() => handleDeleteSponsors(element.id, sponsors.id)} icon={faXmark} style={{color:'#23A082', fontSize:'1.2rem', cursor:'pointer'}}/>
+                              <FontAwesomeIcon onClick={() => handleDeleteSponsors(element.id, sponsors.id)} icon={faXmark} style={{color:'#23A082', fontSize:'1.2rem', cursor:'pointer',position:'absolute', top:"330px",}}/>
                             </div>
                           </div>
                         </div>                       
-                      ):null}                       
+                     {/*  ):null}  */}                      
                         <div style={{ height: '200px', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                           <img
                               style={{ objectFit: 'contain', width: '100%', height: '100%' }}
@@ -456,7 +456,7 @@ function Session() {
                             <div className="invite_img">
                               <div className="invite">     
                                   <div>
-                                    {isAdmin ?( 
+                                    {/* {isAdmin ?(  */}
                                         <div className="container">
                                           <div className="row">                                           
                                             <div className="col">
@@ -464,7 +464,7 @@ function Session() {
                                             </div>
                                           </div>
                                         </div>                       
-                                     ):null}            
+                                     {/* ):null}  */}           
                                   </div>    
                                   <img  alt=""  src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + interv.image}/>                            
                               </div>                           
@@ -478,6 +478,38 @@ function Session() {
             
             <br /><br />
 
+
+            <center>
+            <br />
+             {isAdmin ?(
+              <div>
+                <button
+                className="btnMain2"
+                onClick={() => handleAddIntervenants(element.id)}>
+                Ajouter des intervenants
+                </button>
+                <br /><br />
+                <button
+                className="btnMain2"
+                onClick={() => handleAddSponsors(element.id)}>
+                Ajouter un sponsor
+                </button>
+                <br /><br />
+                <button
+                className="btnMain2"
+                onClick={() => handleEdit(element.id)}>
+                Modifier texte session
+                </button>
+                <br /><br />
+                <button onClick={() => handleSession(element.id)} className="btnMain2">
+                Voir les inscrits
+                </button>
+              </div>
+               
+             ):null}
+            </center> 
+            <br /><br /> 
+            <tr></tr>
             {isConnected ? (
               <center>
                {userSessionId.includes(element.id)?(
@@ -496,30 +528,7 @@ function Session() {
                   S'inscrire à la session
                 </button>
               </center>
-            )}
-            <center>
-            <br />
-             {isAdmin ?(
-              <div>
-                <button
-                className="btnMain2"
-                onClick={() => handleAddIntervenants(element.id)}>
-                Ajouter des intervenants
-                </button>
-                <br /><br />
-                <button
-                className="btnMain2"
-                onClick={() => handleAddSponsors(element.id)}>
-                Ajouter un sponsor
-                </button>
-                <br /><br />
-                <button onClick={() => handleSession(element.id)} className="btnMain2">
-                Voir les inscrits
-                </button>
-              </div>
-               
-             ):null}
-            </center>        
+            )}       
         </div>
         </div>
           ))}
