@@ -1,4 +1,4 @@
-import { faCirclePlay, faPen, faPenToSquare, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faCirclePlay, faPen, faPenToSquare, faSquarePlus, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { Dropdown } from "react-bootstrap";
@@ -413,16 +413,15 @@ function Session() {
             <div>
               {isAdmin ?(
                 <div>
-                  {/*  <FontAwesomeIcon onClick={() => handleEdit(element.id)} icon={faPenToSquare} style={{color:'#23A082', fontSize:'1.5rem',position:'absolute', marginTop:'10px',marginLeft:'150px', cursor:'pointer'}}/>                 */}
+                  <br /><br />               
                   <Dropdown>
-                  <Dropdown.Toggle variant="success" id="dropdown-basic">
-                    Dropdown Button
+                  <Dropdown.Toggle variant="success" style={{backgroundColor:'#7DBA33'}} id="dropdown-basic">
+                    Modifier <span><FontAwesomeIcon  icon={faPenToSquare} style={{color:'#23A082', fontSize:'1.5rem', cursor:'pointer'}}/>  </span>
                   </Dropdown.Toggle>
-
                   <Dropdown.Menu>
-                    <Dropdown.Item href="#/action-1">{element.id}</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                    <Dropdown.Item onClick={() => handleAddIntervenants(element.id)}>Ajouter des intervenants <span><FontAwesomeIcon icon={faSquarePlus} style={{color:'#23A082'}} /></span></Dropdown.Item>
+                    <Dropdown.Item onClick={() => handleAddSponsors(element.id)}>Ajouter un sponsor <span><FontAwesomeIcon icon={faSquarePlus} style={{color:'#23A082'}} /></span></Dropdown.Item>
+                    <Dropdown.Item onClick={() => handleEdit(element.id)}> Modifier texte session <span><FontAwesomeIcon icon={faPen} style={{color:'#23A082'}} /></span></Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
                 </div>
@@ -491,37 +490,8 @@ function Session() {
               </div>
             </div>  
             
-            <center>
-            <br />
-             {isAdmin ?(
-              <div>
-                <button
-                className="btnMain2"
-                onClick={() => handleAddIntervenants(element.id)}>
-                Ajouter des intervenants
-                </button>
-                <br /><br />
-                <button
-                className="btnMain2"
-                onClick={() => handleAddSponsors(element.id)}>
-                Ajouter un sponsor
-                </button>
-                <br /><br />
-                <button
-                className="btnMain2"
-                onClick={() => handleEdit(element.id)}>
-                Modifier texte session
-                </button>
-                <br /><br />
-                <button onClick={() => handleSession(element.id)} className="btnMain2">
-                Voir les inscrits
-                </button>
-              </div>
-               
-             ):null}
-            </center> 
+            <br />             
             <br /><br /> 
-            <tr></tr>
             {isConnected ? (
               <center>
                {userSessionId.includes(element.id)?(
@@ -540,7 +510,14 @@ function Session() {
                   S'inscrire à la session
                 </button>
               </center>
-            )}       
+            )}  
+            {isAdmin ?(
+              <div>
+                <button onClick={() => handleSession(element.id)} className="btnMain2">
+                Voir les inscrits
+                </button>
+              </div>               
+             ):null}     
         </div>
         </div>
           ))}
