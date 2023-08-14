@@ -59,7 +59,7 @@ function Session() {
     if (!token){
       throw new Error("token missing");
     }
-    const response = await fetch ("http://localhost:3000/home",{
+    const response = await fetch ("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/home",{
       headers: {
         token: `${token}`,
       }
@@ -87,7 +87,7 @@ function Session() {
   //fetch les intervenant 
   const { data: interv, } = useQuery("Intervenant", async () => {
     try {
-      const response = await fetch("http://localhost:3000/intervenants");  
+      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/intervenants");  
       if (!response.ok) {
         throw new Error("Failed to fetch interv");
       }
@@ -100,7 +100,7 @@ function Session() {
   //fetch les sponsors 
   const { data: sponsors, } = useQuery("Sponsors", async () => {
     try {
-      const response = await fetch("http://localhost:3000/sponsors");  
+      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sponsors");  
       if (!response.ok) {
         throw new Error("Failed to fetch sponsors");
       }
@@ -115,7 +115,7 @@ function Session() {
   //fetch les intervenant des sessions
   const { data: intervSessions, } = useQuery("IantervSessions", async () => {
     try {
-      const response = await fetch(`http://localhost:3000/intervenants_session/`);  
+      const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/intervenants_session/`);  
       if (!response.ok) {
         throw new Error("Failed to fetch interv");
       }
@@ -129,7 +129,7 @@ function Session() {
   //fetch les sponsors des sessions
   const { data: sponsorsSession, } = useQuery("SponsorsSession", async () => {
     try {
-      const response = await fetch(`http://localhost:3000/sponsors_session/`);  
+      const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sponsors_session/`);  
       if (!response.ok) {
         throw new Error("Failed to fetch sponsors");
       }
@@ -146,7 +146,7 @@ function Session() {
   // fetch les sessions
   const { data: elements, isLoading, isError } = useQuery("Sessions", async () => {
     try {
-      const response = await fetch("http://localhost:3000/sessions");  
+      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sessions");  
       if (!response.ok) {
         throw new Error("Failed to fetch sessions");
       }
@@ -229,7 +229,7 @@ function Session() {
     try {
       const token = localStorage.getItem("token");
       const headers = { token: `${token}` };
-      const response = await fetch("http://localhost:3000/session_inscrit", {  //http://localhost:3000/session_inscrit
+      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_inscrit", {  //https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_inscrit
         method: 'POST',
         headers: {
           ...headers,
@@ -277,7 +277,7 @@ function Session() {
       const userId = user.id;
 
       const response = await fetch(
-        `http://localhost:3000/inscrit_session/${userId}`,
+        `https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/inscrit_session/${userId}`,
         {
           headers: {
             token: `${token}`,
@@ -359,7 +359,7 @@ function Session() {
   
 
   const handleDeleteInterv= async (id_sessions: number , id_intervenants: number)=>{
-    const response = await fetch(`http://localhost:3000/session_intervenants/${id_sessions}/${id_intervenants}`, {
+    const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_intervenants/${id_sessions}/${id_intervenants}`, {
       method: 'DELETE',
     });
   
@@ -372,7 +372,7 @@ function Session() {
   }
 
   const handleDeleteSponsors= async (id_sessions: number, id_sponsors: number)=>{
-    const response = await fetch(`http://localhost:3000/session_sponsors/${id_sessions}/${id_sponsors}`, {
+    const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_sponsors/${id_sessions}/${id_sponsors}`, {
       method: 'DELETE',
       headers: {token: `${token}`,}
     });
