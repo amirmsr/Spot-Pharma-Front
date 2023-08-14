@@ -416,7 +416,7 @@ function Session() {
                   <br /><br />               
                   <Dropdown>
                   <Dropdown.Toggle variant="success" style={{backgroundColor:'#7DBA33'}} id="dropdown-basic">
-                    Modifier <span><FontAwesomeIcon  icon={faPenToSquare} style={{color:'#23A082', fontSize:'1.5rem', cursor:'pointer'}}/>  </span>
+                    Modifier   <span><FontAwesomeIcon  icon={faPenToSquare} style={{ fontSize:'1.5rem', cursor:'pointer'}}/>  </span>
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
                     <Dropdown.Item onClick={() => handleAddIntervenants(element.id)}>Ajouter des intervenants <span><FontAwesomeIcon icon={faSquarePlus} style={{color:'#23A082'}} /></span></Dropdown.Item>
@@ -435,7 +435,7 @@ function Session() {
                         <div className="container">
                           <div className="row">                                           
                             <div className="col">
-                              <FontAwesomeIcon onClick={() => handleDeleteSponsors(element.id, sponsors.id)} icon={faXmark} style={{color:'#23A082', fontSize:'1.2rem', cursor:'pointer',position:'absolute', top:"360px",}}/>
+                              <FontAwesomeIcon onClick={() => handleDeleteSponsors(element.id, sponsors.id)} icon={faXmark} style={{color:'#23A082', fontSize:'1.2rem', cursor:'pointer',position:'absolute', top:"380px",}}/>
                             </div>
                           </div>
                         </div>                       
@@ -491,7 +491,6 @@ function Session() {
             </div>  
             
             <br />             
-            <br /><br /> 
             {isConnected ? (
               <center>
                {userSessionId.includes(element.id)?(
@@ -511,6 +510,7 @@ function Session() {
                 </button>
               </center>
             )}  
+            <br /><br />
             {isAdmin ?(
               <div>
                 <button onClick={() => handleSession(element.id)} className="btnMain2">
