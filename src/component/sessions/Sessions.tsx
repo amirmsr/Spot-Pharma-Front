@@ -476,9 +476,6 @@ function Session() {
               </div>
             </div>  
             
-            <br /><br />
-
-
             <center>
             <br />
              {isAdmin ?(
