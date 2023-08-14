@@ -1,6 +1,7 @@
 import { faCirclePlay, faPen, faPenToSquare, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
+import { Dropdown } from "react-bootstrap";
 import { useMutation, useQuery } from "react-query";
 import { useNavigate} from "react-router-dom";
 
@@ -411,7 +412,21 @@ function Session() {
             <div className="session">
             <div>
               {isAdmin ?(
-                <FontAwesomeIcon onClick={() => handleEdit(element.id)} icon={faPenToSquare} style={{color:'#23A082', fontSize:'1.5rem',position:'absolute', marginTop:'10px',marginLeft:'150px', cursor:'pointer'}}/>
+                <div>
+                  {/*  <FontAwesomeIcon onClick={() => handleEdit(element.id)} icon={faPenToSquare} style={{color:'#23A082', fontSize:'1.5rem',position:'absolute', marginTop:'10px',marginLeft:'150px', cursor:'pointer'}}/>                 */}
+                  <Dropdown>
+                  <Dropdown.Toggle variant="success" id="dropdown-basic">
+                    Dropdown Button
+                  </Dropdown.Toggle>
+
+                  <Dropdown.Menu>
+                    <Dropdown.Item href="#/action-1">{element.id}</Dropdown.Item>
+                    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+                </div>
+               
               ):null}              
             </div>
             <div style={{height:'200px'}}>
@@ -421,7 +436,7 @@ function Session() {
                         <div className="container">
                           <div className="row">                                           
                             <div className="col">
-                              <FontAwesomeIcon onClick={() => handleDeleteSponsors(element.id, sponsors.id)} icon={faXmark} style={{color:'#23A082', fontSize:'1.2rem', cursor:'pointer',position:'absolute', top:"330px",}}/>
+                              <FontAwesomeIcon onClick={() => handleDeleteSponsors(element.id, sponsors.id)} icon={faXmark} style={{color:'#23A082', fontSize:'1.2rem', cursor:'pointer',position:'absolute', top:"360px",}}/>
                             </div>
                           </div>
                         </div>                       
