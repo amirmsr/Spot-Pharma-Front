@@ -453,7 +453,7 @@ function Session() {
                               alt=""
                           />   
                           {hoveredSponsor === sponsors.id && (
-                            <div>
+                            <div style={{position:'relative', top:'100px'}}>
                               <button className="btnMain3" onClick={() => handleDeleteSponsors(element.id, sponsors.id)}><FontAwesomeIcon icon={faXmark} style={{color:'white', fontSize:'1.2rem', cursor:'pointer'}}/></button>                             
                             </div>
                           )}                      
