@@ -448,16 +448,16 @@ function Session() {
                                 objectFit: 'contain',
                                 width: '100%',
                                 height: '100%',
-                                filter: hoveredSponsor === sponsors.id ? 'grayscale(100%)' : 'none',
+                                opacity: hoveredSponsor === sponsors.id ? 0.7 : 1,
                               }}
                               src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + sponsors.image}
                               alt=""
                           />
                           {hoveredSponsor === sponsors.id && (
                             <div
-                              style={{textAlign: 'center',backgroundColor: 'rgba(0, 0, 0, 0.7)',color: 'white',padding: '10px',borderRadius: '4px',}}
+                              style={{textAlign: 'center'}}
                             >
-                              <p>{sponsors.id}</p>
+                              <FontAwesomeIcon onClick={() => handleDeleteSponsors(element.id, sponsors.id)} icon={faXmark} style={{color:'#23A082', fontSize:'1.2rem', cursor:'pointer'}}/>
                             </div>
                           )}
                         </div>                                       
