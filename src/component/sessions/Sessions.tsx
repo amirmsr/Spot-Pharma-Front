@@ -440,24 +440,30 @@ function Session() {
                             </div>
                           </div>
                         </div>                       
-                       ):null}                     
-                        <div style={{ height: '200px', width: '100%', justifyContent: 'center', alignItems: 'center' }}>
-                          <img
-                              style={{
-                                objectFit: 'contain',
-                                width: '100%',
-                                height: '100%',
-                                opacity: hoveredSponsor === sponsors.id ? 0.7 : 1,
-                              }}
-                              src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + sponsors.image}
-                              alt=""
-                          />   
+                      ):null} 
+
+                      <div style={{ height: '200px', width: '100%', justifyContent: 'center', alignItems: 'center' }}>
+                        <img
+                            style={{
+                              objectFit: 'contain',
+                              width: '100%',
+                              height: '100%',
+                              opacity: hoveredSponsor === sponsors.id ? 0.7 : 1,
+                            }}
+                            src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + sponsors.image}
+                            alt=""
+                        /> 
+                        {isAdmin ?(
+                          <div>
                           {hoveredSponsor === sponsors.id && (
-                            <div style={{position:'relative', top:'-100px'}}>
+                            <div style={{position:'relative', top:'-120px'}}>
                               <button className="btnMain3" onClick={() => handleDeleteSponsors(element.id, sponsors.id)}><FontAwesomeIcon icon={faXmark} style={{color:'white', fontSize:'1.2rem', cursor:'pointer'}}/></button>                             
                             </div>
-                          )}                      
-                        </div>                                       
+                          )} 
+                          </div>                         
+                        ):null}  
+                     
+                      </div>                                       
                   </div>                  
                 ))}
             </div>
