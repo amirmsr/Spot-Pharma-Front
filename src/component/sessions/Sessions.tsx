@@ -442,28 +442,40 @@ function Session() {
                         </div>                       
                       ):null} 
 
-                      <div style={{ height: '200px', width: '100%', justifyContent: 'center', alignItems: 'center' }}>
-                        <img
-                            style={{
-                              objectFit: 'contain',
-                              width: '100%',
-                              height: '100%',
-                              opacity: hoveredSponsor === sponsors.id ? 0.7 : 1,
-                            }}
-                            src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + sponsors.image}
-                            alt=""
-                        /> 
-                        {isAdmin ?(
-                          <div>
+                      {isAdmin ?( 
+                        <div style={{ height: '200px', width: '100%', justifyContent: 'center', alignItems: 'center' }}>
+                          <img
+                              style={{
+                                objectFit: 'contain',
+                                width: '100%',
+                                height: '100%',
+                                opacity: hoveredSponsor === sponsors.id ? 0.7 : 1,
+                              }}
+                              src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + sponsors.image}
+                              alt=""
+                          />   
                           {hoveredSponsor === sponsors.id && (
                             <div style={{position:'relative', top:'-120px'}}>
                               <button className="btnMain3" onClick={() => handleDeleteSponsors(element.id, sponsors.id)}><FontAwesomeIcon icon={faXmark} style={{color:'white', fontSize:'1.2rem', cursor:'pointer'}}/></button>                             
                             </div>
-                          )} 
-                          </div>                         
-                        ):null}  
-                     
-                      </div>                                       
+                          )}                      
+                        </div>        
+                      ):
+
+                        <div style={{ height: '200px', width: '100%', justifyContent: 'center', alignItems: 'center' }}>
+                          <img
+                              style={{
+                                objectFit: 'contain',
+                                width: '100%',
+                                height: '100%',
+                              }}
+                              src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + sponsors.image}
+                              alt=""
+                          />                                           
+                        </div>                                                                    
+                      } 
+
+                                                         
                   </div>                  
                 ))}
             </div>
