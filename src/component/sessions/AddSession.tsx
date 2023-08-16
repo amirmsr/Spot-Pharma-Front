@@ -15,6 +15,7 @@ function AddSession() {
         session_date: "",
         type: "",
         description:"",
+        video:"",
     });
       
 
@@ -95,6 +96,10 @@ function AddSession() {
                     <div className="col">
                     <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Déscription de la session</p>
                     <input type="text" name="description"  placeholder="Déscription de la session" onChange={handleChange} />
+                    </div>
+                    <div className="col">
+                    <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Lien du live</p>
+                    <input type="text" name="live"  placeholder="Lien du live" onChange={handleChange} />
                     </div>
                     <br /><br />                    
                   </div>
