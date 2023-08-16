@@ -52,15 +52,13 @@ function Accueil(){
             <br /><br />
 
             {/*  slider sponsors */}
-            <div style={{textAlign:'center', marginBottom:'30px', /* backgroundColor:"rgb(255, 255, 255)", boxShadow:' 0px 1px 40px 14px rgba(0, 0, 0, 0.07)',borderRadius:'15px' */}}>
+            <div style={{textAlign:'center', marginBottom:'30px',backgroundColor:"rgb(255, 255, 255)", boxShadow:' 0px 1px 40px 14px rgba(0, 0, 0, 0.07)',borderRadius:'15px' /* backgroundColor:"rgb(255, 255, 255)", boxShadow:' 0px 1px 40px 14px rgba(0, 0, 0, 0.07)',borderRadius:'15px' */}}>
             <div className="container" >
                 <Slider {...settings} >
                 {Sponsors.map((item) => (
                     <div key={item.id} >
                     <img src={item.src} alt={item.alt} style={{margin:'0 auto',width:'100%', height:'100%'}} />
                     <br />
-                    <h3>{item.title}</h3>
-                    <p>{item.description}</p>
                     </div>
                 ))}
                 </Slider>
