@@ -337,7 +337,7 @@ function Session() {
   };
 
   const handleVideo = async (sessionVideo: any) => {
-      navigate(`${sessionVideo}`)
+      window.location.href= sessionVideo
   };
 
   const handleNotconnected = () => {
