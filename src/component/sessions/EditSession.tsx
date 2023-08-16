@@ -100,7 +100,7 @@ function EditSession() {
                     </div>
                     <div className="col">
                     <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Lien du live</p>
-                    <input type="text" name="live"  placeholder="Lien du live" onChange={handleChange} />
+                    <input type="text" name="video"  placeholder="Lien du live" onChange={handleChange} />
                     </div>
                     <br /><br />                    
                   </div>
