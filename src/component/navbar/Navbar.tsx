@@ -67,10 +67,10 @@ export default function App() {
               <MDBNavbarLink><a href="https://spot-pharma-front.vercel.app/sponsors"> Sponsors</a></MDBNavbarLink>
             </MDBNavbarItem>           
             <MDBNavbarItem>
-              <MDBNavbarLink> <a href="https://spot-pharma-front.vercel.app/add"> Stand 3D</a></MDBNavbarLink>
+              <MDBNavbarLink> <a href="https://spot-pharma-front.vercel.app"> Stand 3D</a></MDBNavbarLink>
             </MDBNavbarItem>           
             <MDBNavbarItem>
-              <MDBNavbarLink> <a href="https://spot-pharma-front.vercel.app/add"> Replay</a></MDBNavbarLink>
+              <MDBNavbarLink> <a href="https://spot-pharma-front.vercel.app/replay"> Replay</a></MDBNavbarLink>
             </MDBNavbarItem>      
             {isConnected ? (
                   <MDBNavbarItem>

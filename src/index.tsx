@@ -22,6 +22,7 @@ import AddIntervenantsSession from "./component/intervenants/AddIntervenantsSess
 import Sponsors from "./component/sponsors/Sponsors";
 import AddSponsors from "./component/sponsors/AddSponsors";
 import AddSponsorsSession from "./component/sponsors/AddSponsorsSession";
+import Replay from "./component/Replay/Replay";
 
 
 
@@ -87,6 +88,10 @@ const router = createBrowserRouter([
             {
               path: "/home",
               element: <UserHome />
+            },                                                        
+            {
+              path: "/replay",
+              element: <Replay />
             },                                                        
           ]
         },      
