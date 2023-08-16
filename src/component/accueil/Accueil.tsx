@@ -83,7 +83,7 @@ function Accueil(){
                 <Slider {...settings} >
                 {Interv.map((item) => (
                     <div key={item.id} >
-                    <img src={item.src} alt={item.alt} style={{margin:'0 auto',width:'100px', height:'100px', borderRadius:'50%'}} />
+                    <img src={item.src} alt={item.alt} style={{margin:'0 auto',width:'70px', height:'70px', borderRadius:'50%'}} />
                     <br />
                     <h3>{item.title}</h3>
                     <p>{item.description}</p>
