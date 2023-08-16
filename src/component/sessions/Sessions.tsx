@@ -13,7 +13,7 @@ interface Sessions {
   session_date: "";
   type: "";
   description:"";  
-  sponsors_images: "";
+  video: "";
   intervenantsDetails : Intervenant[];
   sponsorsDetails : Sponsor[];
 }
@@ -336,6 +336,10 @@ function Session() {
       navigate(`SessionsDetails/${sessionId}`)
   };
 
+  const handleVideo = async (sessionVideo: any) => {
+      navigate(`${sessionVideo}`)
+  };
+
   const handleNotconnected = () => {
     alert("Vous devez vous connecter pour vous inscrire à la session  ");
   };
@@ -523,7 +527,7 @@ function Session() {
             {isConnected ? (
               <center>
                {userSessionId.includes(element.id)?(
-                <button className="btnMain2"> Accédez au live <span><FontAwesomeIcon icon={faCirclePlay} style={{color:'#23A082'}} /></span></button>
+                <button className="btnMain2" onClick={() => handleVideo(element.video)} > Accédez au live <span><FontAwesomeIcon icon={faCirclePlay} style={{color:'#23A082'}} /></span></button>
                ):(
                   <button className="btnMain2" onClick={() => handleInscription(element.id, element.titre)}> S'inscrire à la session </button>
                )}                 
