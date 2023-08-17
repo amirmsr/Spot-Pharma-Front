@@ -45,7 +45,7 @@ export default function Connexion() {
   );
 
   const handleChangePassword = async () => { 
-      navigate(`/resetPassword`)
+      navigate(`./resetPassword`)
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -94,7 +94,7 @@ export default function Connexion() {
         </div>
       </form>
       <a href="/inscription">
-            <button className="btnMain2" style={{marginBottom:'300px'}}>          
+            <button className="btnMain2">          
               S'inscrire 
             </button>
       </a>

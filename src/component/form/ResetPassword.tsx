@@ -65,25 +65,9 @@ export default function ResetPassword() {
                 />
               </div>              
             </div>
-          </div>
-
-          <br />
-          <br />
-
-          <br />
-          <br />
-          <button type="submit" className="btnMain2" >
-            Se connecter
-          </button>
-          <br /> <br />
-          <p>ou</p>                    
+          </div>              
         </div>
       </form>
-      <a href="/inscription">
-            <button className="btnMain2" style={{marginBottom:'300px'}}>          
-              S'inscrire 
-            </button>
-      </a>
     </div>
   );
 }
