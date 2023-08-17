@@ -362,6 +362,7 @@ function Session() {
     navigate(`addSponsorsSession/${sessionId}`)
   }
 
+
   
 
   const handleDeleteInterv= async (id_sessions: number , id_intervenants: number)=>{
@@ -391,8 +392,19 @@ function Session() {
     }
   }
 
-
-
+  const handleDeleteSession= async (id_sessions: number)=>{
+    const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sessions/${id_sessions}`, {
+      method: 'DELETE',
+      headers: {token: `${token}`,}
+    });
+  
+    if (!response.ok) {
+      throw new Error('An error occurred while deleting the sponsors.');
+    }
+    else{
+      alert("Intervenant supprimer")
+    }
+  }
 
 
 
@@ -427,6 +439,7 @@ function Session() {
                     <Dropdown.Item onClick={() => handleAddIntervenants(element.id)}>Ajouter des intervenants <span><FontAwesomeIcon icon={faSquarePlus} style={{color:'#23A082'}} /></span></Dropdown.Item>
                     <Dropdown.Item onClick={() => handleAddSponsors(element.id)}>Ajouter un sponsor <span><FontAwesomeIcon icon={faSquarePlus} style={{color:'#23A082'}} /></span></Dropdown.Item>
                     <Dropdown.Item onClick={() => handleEdit(element.id)}> Modifier texte session <span><FontAwesomeIcon icon={faPen} style={{color:'#23A082'}} /></span></Dropdown.Item>
+                    <Dropdown.Item onClick={() => handleDeleteSession(element.id)}> Supprimer sessions <span><FontAwesomeIcon icon={faXmark} style={{color:'red', fontSize:'1.2rem'}}/></span></Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
                 </div>
