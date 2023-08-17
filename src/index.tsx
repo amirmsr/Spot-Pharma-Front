@@ -24,6 +24,7 @@ import AddSponsors from "./component/sponsors/AddSponsors";
 import AddSponsorsSession from "./component/sponsors/AddSponsorsSession";
 import Replay from "./component/Replay/Replay";
 import ResetPassword from "./component/form/ResetPassword";
+import ResetPasswordMail from "./component/form/ResetPasswordMail";
 
 
 
@@ -89,6 +90,10 @@ const router = createBrowserRouter([
             {
               path: "/resetPassword",
               element: <ResetPassword />
+            },                  
+            {
+              path: "/resetPasswordMail/:token",
+              element: <ResetPasswordMail />
             },                  
             {
               path: "/home",

@@ -3,10 +3,10 @@ import { useMutation } from "react-query";
 import { useNavigate } from "react-router-dom";
 
 
-export default function ResetPassword() {
+export default function ResetPasswordMail() {
   const navigate = useNavigate()
   const [data, setData] = useState({
-    email: "",
+    mdp: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -15,7 +15,7 @@ export default function ResetPassword() {
   console.log(data);
   const {mutate : resetPasswordMutation } = useMutation(
     async () => {
-      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/resetPassword", {
+      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/resetPassword/:token", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -28,11 +28,11 @@ export default function ResetPassword() {
     },
     {
       onSuccess: (data) => {     
-        alert("Un mail vous a été envoyé afin de réinitialiser votre mot de passe")  
+        alert("Modification de mot passe réussite")  
         navigate(`/connexion`)
       },
       onError: () => {
-          alert('Problème dans votre mail');
+          alert('Problème lors de la modification de votre mot de passe');
           
       }
       
@@ -50,17 +50,17 @@ export default function ResetPassword() {
       <form className="addSessionForm" onSubmit={handleSubmit} >
         <div className="add" >
           <br /><br /><br />
-          <h1 >Réinitialiser mot de passe </h1>
+          <h1 >Tappez votre nouveaux mot de passe </h1>
           <br />
           <br />
           <div className="container">
             <div className="row">
               <div className="col">
-                <p style={{ color: "#7DBA33", fontSize: "1.5rem" }}>Email</p>
+                <p style={{ color: "#7DBA33", fontSize: "1.5rem" }}>Mot de passe</p>
                 <input
                   type="text"
-                  name="email"
-                  placeholder="email"
+                  name="mdp"
+                  placeholder="mot de passe"
                   onChange={handleChange}
                 />
               </div>
