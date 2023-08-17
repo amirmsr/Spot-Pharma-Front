@@ -12,7 +12,7 @@ export default function Connexion() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setData((prevData) => ({ ...prevData, [e.target.name]: e.target.value }));
   };
-
+  console.log(data);
   const {mutate : loginMutation } = useMutation(
     async () => {
       const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/connexion", {
@@ -23,12 +23,14 @@ export default function Connexion() {
         body: JSON.stringify(data),
       });
       const json = await response.json();
+      
       return json
+      
     },
     {
       onSuccess: (data) => {
         const token = data.token;
-        console.log(token);
+        console.log(token);        
         localStorage.setItem("token", token);
         window.location.href = "/home";
       },
