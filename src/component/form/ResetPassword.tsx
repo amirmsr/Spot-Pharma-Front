@@ -63,9 +63,15 @@ export default function ResetPassword() {
                   placeholder="email"
                   onChange={handleChange}
                 />
-              </div>              
+              </div>
+              
             </div>
-          </div>              
+          </div>
+          <br />
+          <button type="submit" className="btnMain2" >
+            Envoyer
+          </button>
+          <br />                 
         </div>
       </form>
     </div>
