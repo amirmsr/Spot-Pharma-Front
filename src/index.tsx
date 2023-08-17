@@ -23,6 +23,7 @@ import Sponsors from "./component/sponsors/Sponsors";
 import AddSponsors from "./component/sponsors/AddSponsors";
 import AddSponsorsSession from "./component/sponsors/AddSponsorsSession";
 import Replay from "./component/Replay/Replay";
+import ResetPassword from "./component/form/ResetPassword";
 
 
 
@@ -84,6 +85,10 @@ const router = createBrowserRouter([
             {
               path: "/connexion",
               element: <Connexion />
+            },                  
+            {
+              path: "/resetPassword",
+              element: <ResetPassword />
             },                  
             {
               path: "/home",

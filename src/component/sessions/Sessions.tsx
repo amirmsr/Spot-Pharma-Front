@@ -399,10 +399,10 @@ function Session() {
     });
   
     if (!response.ok) {
-      throw new Error('An error occurred while deleting the sponsors.');
+      throw new Error('An error occurred while deleting the session.');
     }
     else{
-      alert("Intervenant supprimer")
+      alert("Session supprimer")
     }
   }
 
