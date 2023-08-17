@@ -55,7 +55,7 @@ export default function Connexion() {
 
 
   return (
-    <div >
+    <div style={{marginBottom:'100px'}} >
       <form className="addSessionForm" onSubmit={handleSubmit} >
         <div className="add" >
           <br /><br /><br />
@@ -94,16 +94,16 @@ export default function Connexion() {
         </div>
       </form>
       <a href="/inscription">
-            <button className="btnMain2">          
+            <button className="btnMain2" >          
               S'inscrire 
             </button>
       </a>
       <p>ou</p>
       <br />
       <br />
-          <button onClick={handleChangePassword} className="btnMain2" >
-            Mot de passe oublié 
-          </button>
+      <button onClick={handleChangePassword} className="btnMain2" >
+        Mot de passe oublié 
+      </button>
     </div>
   );
 }
