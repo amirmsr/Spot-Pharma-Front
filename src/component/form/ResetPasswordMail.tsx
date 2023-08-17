@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useMutation } from "react-query";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 
 export default function ResetPasswordMail() {
@@ -8,6 +8,7 @@ export default function ResetPasswordMail() {
   const [data, setData] = useState({
     password: "",
   });
+  const { token } = useParams<{ token: any }>();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setData((prevData) => ({ ...prevData, [e.target.name]: e.target.value }));
@@ -15,7 +16,7 @@ export default function ResetPasswordMail() {
   console.log(data);
   const {mutate : resetPasswordMutation } = useMutation(
     async () => {
-      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/resetPassword/:token", {
+      const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/resetPassword/${token}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
