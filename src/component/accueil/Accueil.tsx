@@ -4,9 +4,24 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Interv from "./SliderInterv";
 import Sponsors from './SliderSponsors';
+import { useQuery } from 'react-query';
 
 
 function Accueil(){
+
+    interface Intervenant {
+        id: number;
+        nom:any;
+        description:any;
+        image:any
+    }
+    interface Sponsor {
+        id: number;
+        nom:any;
+        description:any;
+        image:any
+    }
+      
 
     //slider
     const settings = {
@@ -18,6 +33,33 @@ function Accueil(){
         autoplay: true,
         autoplaySpeed: 1200,
     };
+
+    //fetch les intervenant 
+    const { data: interv, } = useQuery("Intervenant", async () => {
+        try {
+        const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/intervenants");  
+        if (!response.ok) {
+            throw new Error("Failed to fetch interv");
+        }
+        const data = await response.json();
+        return data;
+        } catch (err) {
+        throw new Error("An error occurred while fetching interv");
+        }
+    });
+  //fetch les sponsors 
+    const { data: sponsors, } = useQuery("Sponsors", async () => {
+        try {
+        const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sponsors");  
+        if (!response.ok) {
+            throw new Error("Failed to fetch sponsors");
+        }
+        const data = await response.json();
+        return data;
+        } catch (err) {
+        throw new Error("An error occurred while fetching sponsors");
+        }
+    });
     
 
 
@@ -55,9 +97,9 @@ function Accueil(){
             <div style={{textAlign:'center', marginBottom:'30px',backgroundColor:"rgb(255, 255, 255)", boxShadow:' 0px 1px 40px 14px rgba(0, 0, 0, 0.07)' /* backgroundColor:"rgb(255, 255, 255)", boxShadow:' 0px 1px 40px 14px rgba(0, 0, 0, 0.07)',borderRadius:'15px' */}}>
             <div className="container" >
                 <Slider {...settings} >
-                {Sponsors.map((item) => (
+                {interv.map((item:Intervenant) => (
                     <div key={item.id} >
-                    <img src={item.src} alt={item.alt} style={{margin:'0 auto',width:'100%', height:'100%'}} />
+                    <img src={item.image} alt={item.image} style={{margin:'0 auto',width:'100%', height:'100%'}} />
                     <br />
                     </div>
                 ))}
@@ -81,11 +123,11 @@ function Accueil(){
             <div  style={{textAlign:'center',paddingTop:'20px', marginBottom:'30px',backgroundColor:"rgb(255, 255, 255)", boxShadow:' 0px 1px 40px 14px rgba(0, 0, 0, 0.07)' /* backgroundColor:"rgb(255, 255, 255)", boxShadow:' 0px 1px 40px 14px rgba(0, 0, 0, 0.07)',borderRadius:'15px' */}}>
             <div className="container">
                 <Slider {...settings} >
-                {Interv.map((item) => (
+                {sponsors.map((item:Sponsor) => (
                     <div key={item.id}  >
-                    <img src={item.src} alt={item.alt} style={{margin:'0 auto',width:'70px', height:'70px', borderRadius:'50%'}} />
+                    <img src={item.image} alt={item.image} style={{margin:'0 auto',width:'70px', height:'70px', borderRadius:'50%'}} />
                     <br />
-                    <h3 style={{fontSize:'1.5rem'}}>{item.title}</h3>
+                    <h3 style={{fontSize:'1.5rem'}}>{item.nom}</h3>
                     <p style={{fontSize:'1rem'}}>{item.description}</p>
                     </div>
                 ))}
