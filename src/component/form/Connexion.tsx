@@ -44,9 +44,8 @@ export default function Connexion() {
     }
   );
 
-  const handleChangePassword = async () => {
-    
-      navigate(`resetPassword`)
+  const handleChangePassword = async () => { 
+      navigate(`/resetPassword`)
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
