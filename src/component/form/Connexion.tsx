@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { useMutation } from "react-query";
+import { useNavigate } from "react-router-dom";
 
 
 export default function Connexion() {
+  const navigate = useNavigate()
   const [data, setData] = useState({
     name: "",
     email: "",
@@ -42,6 +44,11 @@ export default function Connexion() {
     }
   );
 
+  const handleChangePassword = async () => {
+    
+      navigate(`resetPassword`)
+  };
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     loginMutation();
@@ -78,10 +85,6 @@ export default function Connexion() {
               </div>
             </div>
           </div>
-
-          <br />
-          <br />
-
           <br />
           <br />
           <button type="submit" className="btnMain2" >
@@ -96,6 +99,12 @@ export default function Connexion() {
               S'inscrire 
             </button>
       </a>
+      <p>ou</p>
+      <br />
+      <br />
+          <button onClick={handleChangePassword} className="btnMain2" >
+            Mot de passe oublié 
+          </button>
     </div>
   );
 }
