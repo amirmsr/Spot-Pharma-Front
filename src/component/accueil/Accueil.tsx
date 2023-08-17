@@ -125,7 +125,7 @@ function Accueil(){
                 <Slider {...settings} >
                 {interv?.map((item:Sponsor) => (
                     <div key={item.id}  >
-                    <img src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + item.image} alt={item.image} style={{margin:'0 auto',width:'70px', height:'70px', borderRadius:'50%'}} />
+                    <img src={"https://bcombrun.com/Spot-Pharma-Image/Intevenant/" + item.image} alt={item.image} style={{margin:'0 auto',width:'70px', height:'70px', borderRadius:'50%'}} />
                     <br />
                     <h3 style={{fontSize:'1.5rem'}}>{item.nom}</h3>
                     <p style={{fontSize:'1rem'}}>{item.description}</p>
