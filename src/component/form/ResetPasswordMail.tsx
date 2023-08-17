@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 export default function ResetPasswordMail() {
   const navigate = useNavigate()
   const [data, setData] = useState({
-    mdp: "",
+    password: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -59,7 +59,7 @@ export default function ResetPasswordMail() {
                 <p style={{ color: "#7DBA33", fontSize: "1.5rem" }}>Mot de passe</p>
                 <input
                   type="text"
-                  name="mdp"
+                  name="password"
                   placeholder="mot de passe"
                   onChange={handleChange}
                 />
