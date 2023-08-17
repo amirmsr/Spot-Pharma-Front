@@ -45,7 +45,7 @@ export default function Connexion() {
   );
 
   const handleChangePassword = async () => { 
-      navigate(`./resetPassword`)
+      navigate(`/resetPassword`)
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -55,7 +55,7 @@ export default function Connexion() {
 
 
   return (
-    <div style={{marginBottom:'100px'}} >
+    <div>
       <form className="addSessionForm" onSubmit={handleSubmit} >
         <div className="add" >
           <br /><br /><br />
@@ -100,8 +100,7 @@ export default function Connexion() {
       </a>
       <p>ou</p>
       <br />
-      <br />
-      <button onClick={handleChangePassword} className="btnMain2" >
+      <button onClick={handleChangePassword} className="btnMain2" style={{marginBottom:'100px'}} >
         Mot de passe oublié 
       </button>
     </div>
