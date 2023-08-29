@@ -56,8 +56,14 @@ p{
 }
 
 .navbarElement a{
-    color: red;
+    color: white;
+    text-decoration: none,
 }
+.navbarElement a :hover{
+    color: #7DBA33;
+}
+
+
 
 /* partenaire et sponsor main div */
 

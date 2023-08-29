@@ -113,7 +113,7 @@ export default function App() {
                   <MDBNavbarItem>
                   <MDBNavbarLink>
                     <a
-                    href="https://spot-pharma-front.vercel.app/connexion"
+                    href="https://spot-pharma-front.vercel.app/inscription"
                     style={{
                       border: "1.5px solid white",
                       padding: "5px 10px 5px 10px",
