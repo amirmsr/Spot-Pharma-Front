@@ -42,8 +42,9 @@ export default function Inscription(){
     e.preventDefault();
     try{
       const response = await axios.post('https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/inscription', data);
+      alert("Votre inscription est bien prise en compte")
       console.log(response.data)
-      navigate('/')
+      navigate('/connexion')
     }catch(error){
       console.log(error)
     }
