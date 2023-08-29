@@ -27,7 +27,7 @@ function Accueil(){
     const settings = {
         dots: true,
         infinite: true,
-        speed: 500,
+        speed: 400,
         slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: true,
@@ -99,7 +99,7 @@ function Accueil(){
                 <Slider {...settings} >
                 {sponsors?.map((item:Intervenant) => (
                     <div key={item.id} >
-                    <img src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + item.image} alt={item.image} style={{margin:'0 auto',width:'300px', height:'200px'}} />
+                    <img src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + item.image} alt={item.image} style={{margin:'0 auto',width:'100%', height:'100%'}} />
                     <br />
                     </div>
                 ))}
