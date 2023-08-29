@@ -104,7 +104,7 @@ export default function App() {
                     }}
                     >
                     {" "}
-                    Se connecter <span style={{ opacity: 0 }}>.</span>{" "}
+                    <span className='btnNavbar'>Connexion</span> <span style={{ opacity: 0 }}>.</span>{" "}
                     <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>{" "}
                    </a>
                   </MDBNavbarLink>

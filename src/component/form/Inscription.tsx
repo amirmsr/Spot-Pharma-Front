@@ -7,12 +7,21 @@ export default function Inscription(){
 
   const [data, setData] = useState({
     name: "",
+    prenom:"",
+    fonction:"",
     email: "",
     password: "",
     validation:1,
     role:0
     
   });
+
+  const fonctionOptions = [
+    { value: 'option1', label: 'Option 1' },
+    { value: 'option2', label: 'Option 2' },
+    { value: 'option3', label: 'Option 3' },
+    // Ajoutez d'autres options selon vos besoins
+  ];
   
 
 
@@ -21,6 +30,11 @@ export default function Inscription(){
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       setData((prevData) => ({ ...prevData, [e.target.name]: e.target.value }));
   };
+  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setData((prevData) => ({ ...prevData, [e.target.name]: e.target.value }));
+  };
+
+  console.log(data)
 
   const handleSubmit = async (e:React.FormEvent<HTMLFormElement>)=>{
     e.preventDefault();
@@ -54,11 +68,26 @@ export default function Inscription(){
                       <input type="text" name="name"  placeholder='Nom' onChange={handleChange} />
                     </div>
                     <div className="col">
+                      <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Prenom</p>
+                      <input type="text" name="prenom"  placeholder='Prenom' onChange={handleChange} />
+                    </div>
+                    <div className="col">
+                    <p style={{ color: '#7DBA33', fontSize: '1.5rem' }}>Fonction</p>
+                    <select name="fonction" onChange={handleSelectChange} value={data.fonction}>
+                      <option value="">Sélectionnez une fonction</option>
+                      {fonctionOptions.map((option, index) => (
+                        <option key={index} value={option.value}>
+                          {option.label}
+                        </option>
+                      ))}
+                    </select>
+                    </div>
+                    <div className="col">
                     <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Email</p>
                     <input type="text" name="email"  placeholder='Email' onChange={handleChange} />
                     </div>
                     <div className="col">
-                    <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Password</p>
+                    <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Mot de passe</p>
                     <input type="password" name="password"  placeholder="mot de passe" onChange={handleChange} />
                     </div>
                   </div>
