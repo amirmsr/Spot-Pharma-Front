@@ -142,7 +142,7 @@ function Accueil(){
                         <div className="intervenants">
                             <div className="invite_img">
                                 <div className="invite">
-                                    <img src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + item.image} alt={item.image} />
+                                    <img src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + item.image} alt={item.image} style={{width:'70px',height:'70px'}} />
                                 </div>
                             </div>
                         </div>
