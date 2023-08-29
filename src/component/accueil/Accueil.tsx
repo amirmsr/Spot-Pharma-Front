@@ -63,8 +63,7 @@ function Accueil(){
     });
     
 
-    // le compte a rebours 
-
+    // le compte a rebour
 
 
 
