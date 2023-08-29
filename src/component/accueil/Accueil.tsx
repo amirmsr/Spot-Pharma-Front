@@ -99,7 +99,7 @@ function Accueil(){
                 <Slider {...settings} >
                 {sponsors?.map((item:Intervenant) => (
                     <div key={item.id} >
-                    <img src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + item.image} alt={item.image} style={{margin:'0 auto',width:'400px', height:'200px'}} />
+                    <img src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + item.image} alt={item.image} style={{margin:'0 auto',width:'300px', height:'200px'}} />
                     <br />
                     </div>
                 ))}
