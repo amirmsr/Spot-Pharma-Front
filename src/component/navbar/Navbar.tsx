@@ -55,28 +55,28 @@ export default function App() {
         <MDBCollapse navbar show={showNav} style={{backgroundColor:'#23A082'}}>
           <MDBNavbarNav >
             <MDBNavbarItem>
-              <MDBNavbarLink><a href="https://spot-pharma-front.vercel.app/">Accueil</a></MDBNavbarLink>
+              <MDBNavbarLink><a href="https://spot-pharma.vercel.app/">Accueil</a></MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink><a href="https://spot-pharma-front.vercel.app/sessions"> Sessions</a></MDBNavbarLink>
+              <MDBNavbarLink><a href="https://spot-pharma.vercel.app/sessions"> Sessions</a></MDBNavbarLink>
             </MDBNavbarItem>           
             <MDBNavbarItem>
-              <MDBNavbarLink><a href="https://spot-pharma-front.vercel.app/intervenants"> Intervenants</a></MDBNavbarLink>
+              <MDBNavbarLink><a href="https://spot-pharma.vercel.app/intervenants"> Intervenants</a></MDBNavbarLink>
             </MDBNavbarItem>           
             <MDBNavbarItem>
-              <MDBNavbarLink><a href="https://spot-pharma-front.vercel.app/sponsors"> Sponsors</a></MDBNavbarLink>
+              <MDBNavbarLink><a href="https://spot-pharma.vercel.app/sponsors"> Sponsors</a></MDBNavbarLink>
             </MDBNavbarItem>           
             <MDBNavbarItem>
-              <MDBNavbarLink> <a href="https://spot-pharma-front.vercel.app"> Stand 3D</a></MDBNavbarLink>
+              <MDBNavbarLink> <a href="https://spot-pharma.vercel.app"> Stand 3D</a></MDBNavbarLink>
             </MDBNavbarItem>           
             <MDBNavbarItem>
-              <MDBNavbarLink> <a href="https://spot-pharma-front.vercel.app/replay"> Replay</a></MDBNavbarLink>
+              <MDBNavbarLink> <a href="https://spot-pharma.vercel.app/replay"> Replay</a></MDBNavbarLink>
             </MDBNavbarItem>      
             {isConnected ? (
                   <MDBNavbarItem>
                   <MDBNavbarLink>
                      <a
-                      href="https://spot-pharma-front.vercel.app/home"
+                      href="https://spot-pharma.vercel.app/home"
                       style={{
                         border: "1.5px solid white",
                         padding: "5px 10px 5px 10px",
@@ -94,7 +94,7 @@ export default function App() {
                   <MDBNavbarItem>
                   <MDBNavbarLink>
                     <a
-                    href="https://spot-pharma-front.vercel.app/connexion"
+                    href="https://spot-pharma.vercel.app/connexion"
                     style={{
                       border: "1.5px solid white",
                       padding: "5px 10px 5px 10px",
@@ -113,7 +113,7 @@ export default function App() {
                   <MDBNavbarItem>
                   <MDBNavbarLink>
                     <a
-                    href="https://spot-pharma-front.vercel.app/inscription"
+                    href="https://spot-pharma.vercel.app/inscription"
                     style={{
                       border: "1.5px solid white",
                       padding: "5px 10px 5px 10px",

@@ -4,7 +4,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Interv from "./SliderInterv";
 import Sponsors from './SliderSponsors';
-import Countdown from 'react-countdown';
 import { useQuery } from 'react-query';
 
 
@@ -75,13 +74,12 @@ function Accueil(){
                     <img  src="./logo.png" alt="" style={{width:"30%", height:"30%"}} /> 
                     <br></br><br></br>
                     <h1>SPOT PHARMA 7 <br></br>Conférences 2023</h1>                               
-                    <p>20 Septembre au 1er Octobre</p>
-                    <Countdown date={Date.now() + 10000} />,
+                    <p>20 Septembre au 1er Octobre</p>                                      
                     <br></br><br></br>
                     <div className="container">
                         <div className="row">
                             <div className="col">
-                                <a href="https://spot-pharma-front.vercel.app/sessions">
+                                <a href="https://spot-pharma.vercel.app/sessions">
                                     <button className='btnMain'>S'inscire aux sessions</button> 
                                 </a>
                             </div>
@@ -123,7 +121,7 @@ function Accueil(){
             </div>
 
             <br></br>  <br /><br />
-            <a href="https://spot-pharma-front.vercel.app/intervenants">
+            <a href="https://spot-pharma.vercel.app/intervenants">
             <button className='btnMain2'>Voir tous les intervenants</button>
             </a>
             
@@ -151,7 +149,7 @@ function Accueil(){
             </div>
 
             <br></br>  <br /><br />
-            <a href="https://spot-pharma-front.vercel.app/intervenants">
+            <a href="https://spot-pharma.vercel.app/intervenants">
             <button className='btnMain2'>Voir tous les intervenants</button>
             </a>
 
