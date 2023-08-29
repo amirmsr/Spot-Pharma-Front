@@ -99,7 +99,7 @@ function Accueil(){
                 <Slider {...settings} >
                 {sponsors?.map((item:Intervenant) => (
                     <div key={item.id} >
-                    <img src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + item.image} alt={item.image} style={{margin:'0 auto',width:'100%', height:'100%'}} />
+                    <img src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + item.image} alt={item.image} style={{margin:'0 auto',width:'200px', height:'200px'}} />
                     <br />
                     </div>
                 ))}
@@ -116,7 +116,7 @@ function Accueil(){
             <br /><br /> <br /><br /><br /><br />  
 
             <h2  style={{ margin:"0", color:"#7DBA33"}}>Tous les</h2>
-            <h3 style={{fontSize:"2rem", margin:"0"}}>Invités</h3>
+            <h3 style={{fontSize:"2rem", margin:"0"}}>Intervenants</h3>
             <br /><br />
 
            {/*  slider intervenant */}
