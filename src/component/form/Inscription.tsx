@@ -17,9 +17,11 @@ export default function Inscription(){
   });
 
   const fonctionOptions = [
-    { value: 'option1', label: 'Option 1' },
-    { value: 'option2', label: 'Option 2' },
-    { value: 'option3', label: 'Option 3' },
+    { value: 'pharmacien', label: 'Pharmacien' },
+    { value: 'preparateur', label: 'Préparateur' },
+    { value: 'preparatrice', label: 'Préparatrice' },
+    { value: 'etudiant', label: 'Étudiant' },
+    { value: 'apprenti', label: 'Apprenti' },
     // Ajoutez d'autres options selon vos besoins
   ];
   
@@ -86,10 +88,10 @@ export default function Inscription(){
                     <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Email</p>
                     <input type="text" name="email"  placeholder='Email' onChange={handleChange} />
                     </div>
-                    <div className="col">
+                    <br />
+                    <p>Choisir un mot de passe</p>
                     <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Mot de passe</p>
                     <input type="password" name="password"  placeholder="mot de passe" onChange={handleChange} />
-                    </div>
                   </div>
                 </div>
                
