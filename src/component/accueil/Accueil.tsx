@@ -27,11 +27,11 @@ function Accueil(){
     const settings = {
         dots: true,
         infinite: true,
-        speed: 400,
+        speed: 3000,
         slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 1200,
+        autoplaySpeed: 3000,
     };
 
     //fetch les intervenant 
