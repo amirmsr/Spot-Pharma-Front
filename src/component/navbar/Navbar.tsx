@@ -105,6 +105,20 @@ export default function App() {
                     <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>{" "}
                    </a>
                   </MDBNavbarLink>
+                  <MDBNavbarLink>
+                    <a
+                    href="https://spot-pharma-front.vercel.app/inscription"
+                    style={{
+                      border: "1.5px solid white",
+                      padding: "5px 10px 5px 10px",
+                      borderRadius: "15px",
+                    }}
+                    >
+                    {" "}
+                    S'inscrire <span style={{ opacity: 0 }}>.</span>{" "}
+                    <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>{" "}
+                   </a>
+                  </MDBNavbarLink>
                   </MDBNavbarItem>  
             )}     
           </MDBNavbarNav>
