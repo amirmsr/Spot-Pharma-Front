@@ -90,6 +90,7 @@ export default function App() {
                   </MDBNavbarLink>
                   </MDBNavbarItem>  
             ):(
+              <div>
                   <MDBNavbarItem>
                   <MDBNavbarLink>
                     <a
@@ -105,9 +106,11 @@ export default function App() {
                     <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>{" "}
                    </a>
                   </MDBNavbarLink>
+                  </MDBNavbarItem>  
+                  <MDBNavbarItem>
                   <MDBNavbarLink>
                     <a
-                    href="https://spot-pharma-front.vercel.app/inscription"
+                    href="https://spot-pharma-front.vercel.app/connexion"
                     style={{
                       border: "1.5px solid white",
                       padding: "5px 10px 5px 10px",
@@ -115,11 +118,12 @@ export default function App() {
                     }}
                     >
                     {" "}
-                    S'inscrire <span style={{ opacity: 0 }}>.</span>{" "}
+                    Se connecter <span style={{ opacity: 0 }}>.</span>{" "}
                     <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>{" "}
                    </a>
                   </MDBNavbarLink>
                   </MDBNavbarItem>  
+              </div>                  
             )}     
           </MDBNavbarNav>
         </MDBCollapse>
