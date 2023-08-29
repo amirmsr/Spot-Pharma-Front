@@ -42,7 +42,7 @@ export default function App() {
 
 
   return (
-    <MDBNavbar expand='lg' style={{backgroundColor:'#23A082'}}>
+    <MDBNavbar expand='lg' style={{backgroundColor:'#23A082'}} className='navbar'>
       <MDBContainer fluid>       
         <MDBNavbarToggler
           type='button'
@@ -108,7 +108,8 @@ export default function App() {
                     <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>{" "}
                    </a>
                   </MDBNavbarLink>
-                  </MDBNavbarItem>  
+                  </MDBNavbarItem>
+                    
                   <MDBNavbarItem>
                   <MDBNavbarLink>
                     <a
