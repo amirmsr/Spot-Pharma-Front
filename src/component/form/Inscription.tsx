@@ -88,10 +88,12 @@ export default function Inscription(){
                     <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Email</p>
                     <input type="text" name="email"  placeholder='Email' onChange={handleChange} />
                     </div>
-                    <br />
-                    <p>Choisir un mot de passe</p>
-                    <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Mot de passe</p>
-                    <input type="password" name="password"  placeholder="mot de passe" onChange={handleChange} />
+                    <br /><br />
+                    <center>
+                      <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Mot de passe</p>
+                      <input style={{width:'30%'}} type="password" name="password"  placeholder="mot de passe" onChange={handleChange} />
+                    </center>                    
+                  
                   </div>
                 </div>
                
