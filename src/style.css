@@ -55,7 +55,9 @@ p{
     height: 80%;
 }
 
-
+.navbarElement a{
+    color: red;
+}
 
 /* partenaire et sponsor main div */
 

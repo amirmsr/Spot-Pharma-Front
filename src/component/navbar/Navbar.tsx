@@ -42,7 +42,7 @@ export default function App() {
 
 
   return (
-    <MDBNavbar expand='lg' style={{backgroundColor:'#23A082'}} className='navbar'>
+    <MDBNavbar expand='lg' style={{backgroundColor:'#23A082'}} className='navbarElement'>
       <MDBContainer fluid>       
         <MDBNavbarToggler
           type='button'
