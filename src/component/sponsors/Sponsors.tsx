@@ -48,7 +48,10 @@ export default function Sponsors(){
             throw new Error("Failed to fetch intervenant");
           }
           const data = await response.json();
-          return data;
+          const sortedElements = data.sort((a: { nom: string; }, b: { nom: string; }) => a.nom.localeCompare(b.nom));
+          
+          return sortedElements;
+
         } catch (err) {
           throw new Error("An error occurred while fetching intervenant");
         }
