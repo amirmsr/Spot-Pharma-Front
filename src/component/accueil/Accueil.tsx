@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Interv from "./SliderInterv";
 import Sponsors from './SliderSponsors';
+import Countdown from 'react-countdown';
 import { useQuery } from 'react-query';
 
 
@@ -62,6 +63,8 @@ function Accueil(){
     });
     
 
+    // le compte a rebours 
+
 
 
 
@@ -74,10 +77,23 @@ function Accueil(){
                     <br></br><br></br>
                     <h1>SPOT PHARMA 7 <br></br>Conférences 2023</h1>                               
                     <p>20 Septembre au 1er Octobre</p>
+                    <Countdown date={Date.now() + 10000} />,
                     <br></br><br></br>
-                    <a href="https://spot-pharma-front.vercel.app/sessions">
-                    <button className='btnMain'>S'inscire aux sessions</button> 
-                    </a>
+                    <div className="container">
+                        <div className="row">
+                            <div className="col">
+                                <a href="https://spot-pharma-front.vercel.app/sessions">
+                                    <button className='btnMain'>S'inscire aux sessions</button> 
+                                </a>
+                            </div>
+                            <div className="col">
+                                <a href="https://bcombrun.com/Spot-Pharma-Image/Programme/programmeSpot7.pdf">
+                                    <button className='btnMain'>Accéder au programme</button> 
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                  
                     
                 </div>
                
