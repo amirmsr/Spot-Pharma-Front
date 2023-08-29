@@ -123,7 +123,7 @@ export default function App() {
                     }}
                     >
                     {" "}
-                    <span className='test'>S'inscrire</span>  <span style={{ opacity: 0 }}>.</span>{" "}
+                    <span className='btnNavbar'>S'inscrire</span>  <span style={{ opacity: 0 }}>.</span>{" "}
                     <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>{" "}
                    </a>
                   </MDBNavbarLink>

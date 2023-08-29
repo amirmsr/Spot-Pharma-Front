@@ -63,9 +63,14 @@ p{
     color: #7DBA33;
 }
 
-.test{
+.btnNavbar {
+    color: white;
+    text-decoration: none,
+}
+.btnNavbar :hover{
     color: #7DBA33;
 }
+
 
 
 
