@@ -27,7 +27,7 @@ function Accueil(){
     const settings = {
         dots: true,
         infinite: true,
-        speed: 3000,
+        speed: 2000,
         slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: true,
@@ -110,7 +110,7 @@ function Accueil(){
             <div style={{textAlign:'center', marginBottom:'30px',backgroundColor:"rgb(255, 255, 255)", boxShadow:' 0px 1px 40px 14px rgba(0, 0, 0, 0.07)' /* backgroundColor:"rgb(255, 255, 255)", boxShadow:' 0px 1px 40px 14px rgba(0, 0, 0, 0.07)',borderRadius:'15px' */}}>
             <div className="container" >
                 <Slider {...settings} >
-                {sponsors?.map((item:Intervenant) => (
+                {sponsors?.map((item:Sponsor) => (
                     <div key={item.id} >
                     <img src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + item.image} alt={item.image} style={{margin:'0 auto',width:'100%', height:'100%'}} />
                     <br />
@@ -136,9 +136,16 @@ function Accueil(){
             <div  style={{textAlign:'center',paddingTop:'20px', marginBottom:'30px',backgroundColor:"rgb(255, 255, 255)", boxShadow:' 0px 1px 40px 14px rgba(0, 0, 0, 0.07)' /* backgroundColor:"rgb(255, 255, 255)", boxShadow:' 0px 1px 40px 14px rgba(0, 0, 0, 0.07)',borderRadius:'15px' */}}>
             <div className="container">
                 <Slider {...settings} >
-                {interv?.map((item:Sponsor) => (
+                {interv?.map((item:Intervenant) => (
                     <div key={item.id}  >
-                    <img src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + item.image} alt={item.image} style={{margin:'0 auto',width:'70px', height:'70px', borderRadius:'50%'}} />
+                        <div className="intervenants">
+                            <div className="invite_img">
+                                <div className="invite">
+                                    <img src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + item.image} alt={item.image} />
+                                </div>
+                            </div>
+                        </div>
+                    
                     <br />
                     <h3 style={{fontSize:'1.5rem'}}>{item.nom}</h3>
                     <p style={{fontSize:'1rem'}}>{item.description}</p>
