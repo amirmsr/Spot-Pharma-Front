@@ -2,6 +2,7 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
+import Iframe from 'react-iframe'
 import { useNavigate } from "react-router-dom";
 
 function Replay(){
@@ -102,7 +103,7 @@ function Replay(){
                         <div className="intervenantbloc">   
                             <p>{element.nom}</p>                                                    
                             <p>{element.description}</p>    
-                            <iframe title="replay" src={"https://bcombrun.com/Spot-Pharma-Image/Replay/" + element.replay}></iframe>                                                
+                            <Iframe title="replay" src={"https://bcombrun.com/Spot-Pharma-Image/Replay/" + element.replay} url={""}></Iframe>                                                
                             {isAdmin ?(
                                 <div>
                                     <br />
