@@ -83,28 +83,27 @@ function EditSession() {
                 <br /><br />
                 <div className="container">
                   <div className="row">
-                    <div className="col">
+                    <div className="col"  style={{marginBottom:'20px'}}>
                       <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Titre</p>
                       <input type="text" name="titre"  placeholder='Titre' onChange={handleChange} />
                     </div>
-                    <div className="col">
+                    <div className="col"  style={{marginBottom:'20px'}}>
                     <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Session Date</p>
                     <input type="text" name="session_date"  placeholder='Session Date' onChange={handleChange} />
                     </div>
-                    <div className="col">
+                    <div className="col"  style={{marginBottom:'20px'}}>
                     <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Type de session</p>
                     <input type="text" name="type"  placeholder="Type de session" onChange={handleChange} />
                     </div>
-                    <div className="col">
+                    <div className="col"  style={{marginBottom:'20px'}}>
                     <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Déscription de la session</p>
                     <input type="text" name="description"  placeholder="Déscription de la session" onChange={handleChange} />
                     </div>
-                    <br /><br />
-                    <div className="col">
+                    <div className="col"  style={{marginBottom:'20px'}}>
                     <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Lien du live</p>
                     <input type="text" name="video"  placeholder="Lien du live" onChange={handleChange} />
                     </div>
-                    <div className="col">
+                    <div className="col"  style={{marginBottom:'20px'}}>
                     <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Jours</p>
                     <input type="text" name="jours"  placeholder="Jours" onChange={handleChange} />
                     </div>
