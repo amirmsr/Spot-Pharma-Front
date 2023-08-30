@@ -88,7 +88,7 @@ export default function Inscription(){
                     </div>
                     <div className="col">
                     <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Email</p>
-                    <input type="text" name="email"  placeholder='Email' onChange={handleChange} required />
+                    <input type="text" name="email"  placeholder='Email' onChange={handleChange} required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" />
                     </div>
                     <center>
                       <div style={{marginTop:'30px'}}>
