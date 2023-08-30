@@ -62,7 +62,7 @@ function Replay(){
   
 
     const handleClick=()=>{
-    navigate(`addIntervenants`)
+    navigate(`addReplay`)
     }
     
     const handleDeleteReplay = async (id_replay: number)=>{
@@ -103,7 +103,7 @@ function Replay(){
                         <div className="intervenantbloc">   
                             <p>{element.nom}</p>                                                    
                             <p>{element.description}</p>    
-                            <Iframe title="replay" src={"https://bcombrun.com/Spot-Pharma-Image/Replay/" + element.replay} url={""}></Iframe>                                                
+                            <Iframe title="replay" src={"https://bcombrun.com/Spot-Pharma-Image/Replay/" + element.replay} url={""} styles={{width:"640px", height:"320px"}}></Iframe>                                                
                             {isAdmin ?(
                                 <div>
                                     <br />
