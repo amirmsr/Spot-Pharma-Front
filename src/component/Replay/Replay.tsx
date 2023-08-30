@@ -1,4 +1,4 @@
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faCirclePlay, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
@@ -103,7 +103,7 @@ function Replay(){
                             <p>{element.nom}</p>                                                    
                             <p>{element.description}</p> 
                             <a href={"https://bcombrun.com/Spot-Pharma-Image/Replay/" + element.replay}>
-                                <button className="btnMain2"> Voir le replay</button>   
+                                <button className="btnMain2"> Voir le replay <span><FontAwesomeIcon icon={faCirclePlay} style={{color:'#23A082'}} /></span></button>   
                             </a>                                                        
                             {isAdmin ?(
                                 <div>
