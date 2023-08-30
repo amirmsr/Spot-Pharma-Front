@@ -101,7 +101,7 @@ function Replay(){
               {elements && elements.length > 0 ? (
                 elements.map((element: Replay) => (
                   <div key={element.id} className="col-md-4 ">
-                    <div className="intervenantbloc" style={{marginBottom:'20px'}}>
+                    <div className="intervenantbloc">
                       <p>{element.nom}</p>
                       <p>{element.description}</p>
                       <a href={"https://bcombrun.com/Spot-Pharma-Image/Replay/" + element.replay}>
@@ -109,6 +109,7 @@ function Replay(){
                           Voir le replay <span><FontAwesomeIcon icon={faCirclePlay} style={{ color: '#23A082' }} /></span>
                         </button>
                       </a>
+                      <br /><br />
                       {isAdmin ? (
                         <div>
                           <br />
