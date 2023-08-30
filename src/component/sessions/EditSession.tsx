@@ -98,6 +98,7 @@ function EditSession() {
                     <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Déscription de la session</p>
                     <input type="text" name="description"  placeholder="Déscription de la session" onChange={handleChange} />
                     </div>
+                    <br /><br />
                     <div className="col">
                     <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Lien du live</p>
                     <input type="text" name="video"  placeholder="Lien du live" onChange={handleChange} />

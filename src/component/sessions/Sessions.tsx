@@ -446,6 +446,7 @@ function Session() {
                
               ):null}              
             </div>
+            <h3 style={{color:'#23A082'}}>Jours 1</h3>
             <div style={{height:'200px'}}>
                 {element.sponsorsDetails.map((sponsors:Sponsor)=>(
                   <div   onMouseEnter={() => setHoveredSponsor(sponsors.id)} onMouseLeave={() => setHoveredSponsor(null)}>

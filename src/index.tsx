@@ -26,6 +26,7 @@ import Replay from "./component/Replay/Replay";
 import ResetPassword from "./component/form/ResetPassword";
 import ResetPasswordMail from "./component/form/ResetPasswordMail";
 import AddReplay from "./component/Replay/AddReplay";
+import AddReplaySession from "./component/Replay/AddReplaySession";
 
 
 
@@ -107,7 +108,11 @@ const router = createBrowserRouter([
             {
               path: "/replay/addReplay",
               element: <AddReplay />
-            },                                                 
+            },    
+            {
+              path: "/sessions/addReplaySession/:sessionId",
+              element: <AddReplaySession/>
+            },                                                      
           ]
         },      
       ],
