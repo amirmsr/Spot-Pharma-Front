@@ -6,11 +6,11 @@ import { useNavigate } from "react-router-dom";
 
 function Replay(){
 
-    interface Intervenant {
+    interface Replay {
         id: number;
         nom:any;
         description:any;
-        image:any
+        replay:any
     }
     
     const navigate = useNavigate()
@@ -40,17 +40,17 @@ function Replay(){
         }
     }, [user]);
 
-    //fetch les intervenants
-    const { data: elements, isError } = useQuery("Invites", async () => {
+    //fetch les replay
+    const { data: elements, isError } = useQuery("Replay", async () => {
         try {
-          const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/intervenants"); 
+          const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/replay"); 
           if (!response.ok) {
-            throw new Error("Failed to fetch intervenant");
+            throw new Error("Failed to fetch replay");
           }
           const data = await response.json();
           return data;
         } catch (err) {
-          throw new Error("An error occurred while fetching intervenant");
+          throw new Error("An error occurred while fetching replay");
         }
     });
     
@@ -64,14 +64,14 @@ function Replay(){
     navigate(`addIntervenants`)
     }
     
-    const handleDeleteInterv= async (id_interv: number)=>{
-        const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/intervenants/${id_interv}`, {
+    const handleDeleteReplay = async (id_replay: number)=>{
+        const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/replay/${id_replay}`, {
             method: 'DELETE',
             headers: {token: `${token}`,}
         });
         
         if (!response.ok) {
-            throw new Error('An error occurred while deleting the intervenant.');
+            throw new Error('An error occurred while deleting the replay.');
         }
         else{
             alert("Supprimer avec succés")
@@ -91,28 +91,22 @@ function Replay(){
             {isAdmin ? (
                 <div>
                     <br />
-                    <button className="btnMain2" onClick={() => handleClick()}>Ajouter un nouvel intervenant</button>  
+                    <button className="btnMain2" onClick={() => handleClick()}>Ajouter un nouveaux replay</button>  
                 </div>                
             ):null}
             <br /><br /> 
             <div className="container">
                 <div className="row">
-                    {elements?.slice(0.3).map((element:Intervenant)=>(
+                    {elements?.slice(0.3).map((element:Replay)=>(
                     <div key={element.id} className="col-md-4 ">
-                        <div className="intervenantbloc">
-                            <div className="intervenants "> 
-                                <div className="invite_img">
-                                    <img  alt="" src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + element.image}/>
-                                </div>                            
-                            </div>      
-                            <div style={{height:'100px'}}>
-                            <p>{element.nom}</p>
-                            <p style={{fontSize:'0.9rem'}}>{element.description}</p>
-                            </div>    
+                        <div className="intervenantbloc">   
+                            <p>{element.nom}</p>                                                    
+                            <p>{element.description}</p>    
+                            <iframe title="replay" src={"https://bcombrun.com/Spot-Pharma-Image/Replay/" + element.replay}></iframe>                                                
                             {isAdmin ?(
                                 <div>
                                     <br />
-                                    <button className="btnMain2" onClick={() => handleDeleteInterv(element.id)}> Supprimer <span><FontAwesomeIcon  icon={faXmark} style={{color:'red', fontSize:'1.2rem', cursor:'pointer'}}/></span></button>
+                                    <button className="btnMain2" onClick={() => handleDeleteReplay(element.id)}> Supprimer <span><FontAwesomeIcon  icon={faXmark} style={{color:'red', fontSize:'1.2rem', cursor:'pointer'}}/></span></button>
                                     <br /><br />
                                 </div>                                         
                             ):null}   
