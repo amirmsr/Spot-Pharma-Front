@@ -22,6 +22,7 @@ export default function Inscription(){
     { value: 'preparatrice', label: 'Préparatrice' },
     { value: 'etudiant', label: 'Étudiant' },
     { value: 'apprenti', label: 'Apprenti' },
+    { value: 'autre', label: 'Autre' },
     // Ajoutez d'autres options selon vos besoins
   ];
   
@@ -68,15 +69,15 @@ export default function Inscription(){
                   <div className="row">
                     <div className="col">
                       <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Nom</p>
-                      <input type="text" name="name"  placeholder='Nom' onChange={handleChange} />
+                      <input type="text" name="name"  placeholder='Nom' onChange={handleChange} required/>
                     </div>
                     <div className="col">
                       <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Prenom</p>
-                      <input type="text" name="prenom"  placeholder='Prenom' onChange={handleChange} />
+                      <input type="text" name="prenom"  placeholder='Prenom' onChange={handleChange} required />
                     </div>
                     <div className="col">
                     <p style={{ color: '#7DBA33', fontSize: '1.5rem' }}>Fonction</p>
-                    <select name="fonction" onChange={handleSelectChange} value={data.fonction}>
+                    <select name="fonction" onChange={handleSelectChange} value={data.fonction} required>
                       <option value="">Sélectionnez une fonction</option>
                       {fonctionOptions.map((option, index) => (
                         <option key={index} value={option.value}>
@@ -87,12 +88,12 @@ export default function Inscription(){
                     </div>
                     <div className="col">
                     <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Email</p>
-                    <input type="text" name="email"  placeholder='Email' onChange={handleChange} />
+                    <input type="text" name="email"  placeholder='Email' onChange={handleChange} required />
                     </div>
                     <center>
                       <div style={{marginTop:'30px'}}>
                         <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Mot de passe</p>
-                        <input style={{width:'30%'}} type="password" name="password"  placeholder="mot de passe" onChange={handleChange} />
+                        <input style={{width:'30%'}} type="password" name="password"  placeholder="mot de passe" onChange={handleChange} required />
                       </div>
                      
                     </center>                    
