@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-export default function CountDown() {
+export default function Countdown() {
     const targetDate = new Date("2023-09-20T00:00:00Z");
 
     const calculateTimeRemaining = () => {

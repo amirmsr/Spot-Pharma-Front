@@ -9,6 +9,7 @@ import Countdown from './countdown';
 
 
 
+
 function Accueil(){
 
     interface Intervenant {
@@ -78,7 +79,7 @@ function Accueil(){
                     <br></br><br></br>
                     <h1>SPOT PHARMA 7 <br></br>Conférences 2023</h1>                               
                     <p>20 Septembre au 1er Octobre</p> 
-                    <Countdown></Countdown>                                     
+                    <Countdown></Countdown>                                 
                     <br></br><br></br>
                     <div className="container">
                         <div className="row">
