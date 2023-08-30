@@ -117,7 +117,7 @@ function Accueil(){
                 <Slider {...settings} >
                 {sponsors?.map((item:Sponsor) => (
                     <div key={item.id}>
-                      <div style={{ marginTop:'20px', width: '100%', textAlign: 'center' }}>
+                      <div style={{ marginTop:'40px', width: '100%', textAlign: 'center' }}>
                         <img
                           src={`https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/${item.image}`}
                           alt={item.image}
