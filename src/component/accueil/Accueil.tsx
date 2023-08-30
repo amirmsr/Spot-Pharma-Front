@@ -116,9 +116,15 @@ function Accueil(){
             <div className="container" >
                 <Slider {...settings} >
                 {sponsors?.map((item:Sponsor) => (
-                    <div key={item.id} >
-                    <img src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + item.image} alt={item.image} style={{margin:'0 auto',width:'100%', height:'100%'}} />
-                    <br />
+                    <div key={item.id}>
+                      <div style={{ margin: '0 auto', width: '100%', textAlign: 'center' }}>
+                        <img
+                          src={`https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/${item.image}`}
+                          alt={item.image}
+                          style={{ maxWidth: '100%', height: 'auto' }}
+                        />
+                      </div>
+                      <br />
                     </div>
                 ))}
                 </Slider>
