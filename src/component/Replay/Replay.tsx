@@ -101,7 +101,7 @@ function Replay(){
               {elements && elements.length > 0 ? (
                 elements.map((element: Replay) => (
                   <div key={element.id} className="col-md-4 ">
-                    <div className="intervenantbloc">
+                    <div className="intervenantbloc" style={{marginBottom:'20px'}}>
                       <p>{element.nom}</p>
                       <p>{element.description}</p>
                       <a href={"https://bcombrun.com/Spot-Pharma-Image/Replay/" + element.replay}>
