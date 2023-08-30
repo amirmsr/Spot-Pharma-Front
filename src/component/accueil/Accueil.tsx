@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Interv from "./SliderInterv";
 import Sponsors from './SliderSponsors';
 import { useQuery } from 'react-query';
-import Countdown from './Ok';
+import Countdown from './CountDown';
 
 
 

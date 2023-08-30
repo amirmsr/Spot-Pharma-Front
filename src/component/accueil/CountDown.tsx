@@ -33,8 +33,7 @@ export default function Countdown() {
 
     return (
         <div>
-            <p>Time remaining until {targetDate.toDateString()}:</p>
-            <p>{formatTimeUnit(timeRemaining.days, 'day')}, {formatTimeUnit(timeRemaining.hours, 'hour')}, {formatTimeUnit(timeRemaining.minutes, 'minute')}, {formatTimeUnit(timeRemaining.seconds, 'second')}</p>
+            <p>{formatTimeUnit(timeRemaining.days, 'Jours')}, {formatTimeUnit(timeRemaining.hours, 'heure')}, {formatTimeUnit(timeRemaining.minutes, 'minute')}, {formatTimeUnit(timeRemaining.seconds, 'seconde')}</p>
         </div>
     );
 }
