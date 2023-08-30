@@ -79,50 +79,57 @@ function Replay(){
     }
     
 
-    return(
-
-
-        <div className="allInterv">   
-            <div style={{paddingTop:'90px'}}>
-            <h2  style={{ margin:"0", color:"#7DBA33"}}>Tous les</h2>
-            <h3 style={{fontSize:"2rem", margin:"0"}}>Replay</h3>
-            </div>             
-            <br />
-            {isAdmin ? (
-                <div>
-                    <br />
-                    <button className="btnMain2" onClick={() => handleClick()}>Ajouter un nouveaux replay</button>  
-                </div>                
-            ):null}
-            <br /><br /> 
-            <div className="container">
-                <div className="row">
-                    {elements?.slice(0.3).map((element:Replay)=>(
-                    <div key={element.id} className="col-md-4 ">
-                        <div className="intervenantbloc">   
-                            <p>{element.nom}</p>                                                    
-                            <p>{element.description}</p> 
-                            <a href={"https://bcombrun.com/Spot-Pharma-Image/Replay/" + element.replay}>
-                                <button className="btnMain2"> Voir le replay <span><FontAwesomeIcon icon={faCirclePlay} style={{color:'#23A082'}} /></span></button>   
-                            </a>                                                        
-                            {isAdmin ?(
-                                <div>
-                                    <br />
-                                    <button className="btnMain2" onClick={() => handleDeleteReplay(element.id)}> Supprimer <span><FontAwesomeIcon  icon={faXmark} style={{color:'red', fontSize:'1.2rem', cursor:'pointer'}}/></span></button>
-                                    <br /><br />
-                                </div>                                         
-                            ):null}   
-                        </div>
-                        
-                    </div>
-                    ))}        
-                </div>
+    return (
+        <div className="allInterv">
+          <div style={{ paddingTop: '90px' }}>
+            <h2 style={{ margin: '0', color: '#7DBA33' }}>Tous les</h2>
+            <h3 style={{ fontSize: '2rem', margin: '0' }}>Replay</h3>
+          </div>
+          <br />
+          {isAdmin ? (
+            <div>
+              <br />
+              <button className="btnMain2" onClick={() => handleClick()}>
+                Ajouter un nouveau replay
+              </button>
             </div>
-            <br /><br /><br />
-                                   
-        </div> 
-
-    )
+          ) : null}
+          <br />
+          <br />
+          <div className="container">
+            <div className="row">
+              {elements && elements.length > 0 ? (
+                elements.map((element: Replay) => (
+                  <div key={element.id} className="col-md-4 ">
+                    <div className="intervenantbloc">
+                      <p>{element.nom}</p>
+                      <p>{element.description}</p>
+                      <a href={"https://bcombrun.com/Spot-Pharma-Image/Replay/" + element.replay}>
+                        <button className="btnMain2">
+                          Voir le replay <span><FontAwesomeIcon icon={faCirclePlay} style={{ color: '#23A082' }} /></span>
+                        </button>
+                      </a>
+                      {isAdmin ? (
+                        <div>
+                          <br />
+                          <button className="btnMain2" onClick={() => handleDeleteReplay(element.id)}>
+                            Supprimer <span><FontAwesomeIcon icon={faXmark} style={{ color: 'red', fontSize: '1.2rem', cursor: 'pointer' }} /></span>
+                          </button>
+                          <br /><br />
+                        </div>
+                      ) : null}
+                    </div>
+                  </div>
+                ))
+              ) : (
+                <h3>Aucune vidéo encore disponible</h3>
+              )}
+            </div>
+          </div>
+          <br /><br /><br />
+        </div>
+      );
+      
 
 }
 
