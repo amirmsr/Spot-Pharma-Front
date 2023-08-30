@@ -17,6 +17,7 @@ function EditSession() {
         type: "",
         description:"",
         video:"",
+        jours:""
     });
       
 
@@ -102,6 +103,10 @@ function EditSession() {
                     <div className="col">
                     <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Lien du live</p>
                     <input type="text" name="video"  placeholder="Lien du live" onChange={handleChange} />
+                    </div>
+                    <div className="col">
+                    <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Jours</p>
+                    <input type="text" name="jours"  placeholder="Jours" onChange={handleChange} />
                     </div>
                     <br /><br />                    
                   </div>
