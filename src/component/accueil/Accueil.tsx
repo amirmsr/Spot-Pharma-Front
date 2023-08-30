@@ -5,7 +5,8 @@ import "slick-carousel/slick/slick-theme.css";
 import Interv from "./SliderInterv";
 import Sponsors from './SliderSponsors';
 import { useQuery } from 'react-query';
-import CountDown from './countdown';
+import Countdown from './countdown';
+
 
 
 function Accueil(){
@@ -77,7 +78,7 @@ function Accueil(){
                     <br></br><br></br>
                     <h1>SPOT PHARMA 7 <br></br>Conférences 2023</h1>                               
                     <p>20 Septembre au 1er Octobre</p> 
-                    <CountDown></CountDown>                                     
+                    <Countdown></Countdown>                                     
                     <br></br><br></br>
                     <div className="container">
                         <div className="row">
