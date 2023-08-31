@@ -8,7 +8,7 @@ import { useParams } from "react-router-dom";
 
 function EditSponsor() {
 
-    const { intervenant_id } = useParams<{ intervenant_id: any }>();
+    const { sponsor_id } = useParams<{ sponsor_id: any }>();
     const token = localStorage.getItem("token");
 
     const [data, setData] = useState({
@@ -24,11 +24,11 @@ function EditSponsor() {
     };
     
 
-    //edit intervenant
-    const { mutate: editIntervenant } = useMutation(async () => {
+    //edit sponsor
+    const { mutate: editSponsor } = useMutation(async () => {
     try {
         const headers = { token: `${token}` };
-        const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/intervenant/${intervenant_id}`, {  //https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_inscrit
+        const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sponsor/${sponsor_id}`, {  //https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_inscrit
         method: 'PUT',
         headers: {
             ...headers,
@@ -41,7 +41,7 @@ function EditSponsor() {
         const json = await response.json();
         console.log(json);
         alert("Modification pris prise en compte")
-        window.location.href = "/intervenants";
+        window.location.href = "/sponsors";
         return json;
         } else {
         // Gérer l'erreur de duplication ici
@@ -59,7 +59,7 @@ function EditSponsor() {
 
     const handleSubmit = async (e:React.FormEvent<HTMLFormElement>)=>{
         e.preventDefault();
-        editIntervenant()
+        editSponsor()
 
     }
 

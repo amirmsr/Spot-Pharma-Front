@@ -2,8 +2,6 @@ import { ScrollingCarousel } from '@trendyol-js/react-carousel';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Interv from "./SliderInterv";
-import Sponsors from './SliderSponsors';
 import { useQuery } from 'react-query';
 import Countdown from './CountDown';
 
@@ -73,7 +71,7 @@ function Accueil(){
 
     return(
         <div>
-            <div className='main_div'>
+            <div className='main_div' style={{backgroundColor:'white'}}>
                 <div className='main_div_cont'>
                     <img  src="./logo.png" alt="" style={{width:"30%", height:"30%"}} /> 
                     <br></br><br></br>
