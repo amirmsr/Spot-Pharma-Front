@@ -239,6 +239,7 @@ input{
 }
 .btnMain4{
     padding:10px 30px;
+    cursor: wait;
     outline: none;
     background-color: #ffffff;
     border: none;
