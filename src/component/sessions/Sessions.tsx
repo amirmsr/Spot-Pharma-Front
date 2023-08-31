@@ -480,7 +480,6 @@ function Session() {
                           )}                      
                         </div>        
                       ):
-
                         <div style={{ height: '200px', width: '100%', justifyContent: 'center', alignItems: 'center' }}>
                           <img
                               style={{
@@ -498,8 +497,6 @@ function Session() {
                   </div>                  
                 ))}
             </div>
-
-            <br /> 
 
             <p style={{fontSize:'1.3rem',color:'#23A082' }}>{element.type} :</p>    
             <p style={{fontSize:'1.3rem', height:'100px'}}>{element.description}</p>
