@@ -9,7 +9,6 @@ import { useNavigate} from "react-router-dom";
 
 interface Sessions {
   id: number;
-  titre: "";
   session_date: "";
   type: "";
   description:"";  
@@ -257,7 +256,7 @@ function Session() {
   });
 
 
-  const handleInscription = async (elementId: number, elementTitre: string) => {
+  const handleInscription = async (elementId: number) => {
     const userId = user?.id as number;
     if (userId) {
       const inscription = {
@@ -500,10 +499,6 @@ function Session() {
                 ))}
             </div>
 
-            <div style={{height:'60px'}}>
-              <h3>{element.titre}</h3>  
-            </div>  
-
             <br /> 
 
             <p style={{fontSize:'1.3rem',color:'#23A082' }}>{element.type} :</p>    
@@ -546,7 +541,7 @@ function Session() {
                {userSessionId.includes(element.id)?(
                 <button className="btnMain2" onClick={() => handleVideo(element.video)} > Accédez au live <span><FontAwesomeIcon icon={faCirclePlay} style={{color:'#23A082'}} /></span></button>
                ):(
-                  <button className="btnMain2" onClick={() => handleInscription(element.id, element.titre)}> S'inscrire à la session </button>
+                  <button className="btnMain2" onClick={() => handleInscription(element.id)}> S'inscrire à la session </button>
                )}                 
               </center>
             ) : (

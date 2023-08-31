@@ -10,8 +10,7 @@ function AddSession() {
 
     const token = localStorage.getItem("token");
 
-    const [data, setData] = useState({
-        titre: "",
+    const [data, setData] = useState({        
         session_date: "",
         type: "",
         description:"",
@@ -82,10 +81,6 @@ function AddSession() {
                 <br /><br />
                 <div className="container">
                   <div className="row">
-                    <div className="col" style={{marginBottom:'20px'}}>
-                      <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Titre</p>
-                      <input type="text" name="titre"  placeholder='Titre' onChange={handleChange} />
-                    </div>
                     <div className="col"  style={{marginBottom:'20px'}}>
                     <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Session Date</p>
                     <input type="text" name="session_date"  placeholder='Session Date' onChange={handleChange} />

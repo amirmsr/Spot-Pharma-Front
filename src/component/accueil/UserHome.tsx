@@ -8,18 +8,9 @@ interface Sessions {
   titre: "";
   session_date: "";
   type: "";
-  description:'';
-  invites: "";
-  invites_descriptions: "";
-  invites_images: "";
-  invites2: "";
-  invites_descriptions2: "";
-  invites_images2: "";
-  sponsors: "";
-  sponsors_descriptions: "";
-  sponsors_images: "";
-  video_titre: "";
+  description:"";  
   video: "";
+  jours:""
 }
 
 
@@ -171,15 +162,6 @@ export default function UserHome(){
             {filteredSessions?.slice(0.3).map((element:Sessions)=>(
             <div key={element.id} className="col-md-4 ">
               <div className="session">
-              <div className="sessionHeader">
-              {element.sponsors_images && (
-                  <img
-                    style={{ width: "100%", paddingTop:"40px", paddingBottom:"30px"  }}
-                    src={"../uploads/LogoSponsors/" + element.sponsors_images}
-                    alt=""
-                  ></img>
-                )}
-              </div>
               <div style={{height:'60px'}}>
                 <h3>{element.titre}</h3>   
               </div>  
@@ -188,46 +170,7 @@ export default function UserHome(){
 
               <p style={{fontSize:'1.3rem',color:'#23A082' }}>{element.type} :</p>    
               <p style={{fontSize:'1.3rem'}}>{element.description}</p>
-              <p style={{color:'#23A082',fontSize:'1.3rem'}}>{element.session_date}</p>   
-
-              <br /><br />
-
-              <div className="container">
-                <div className="row">
-
-
-                  <div className="col">
-                    <div className="invite">             
-                      {element.invites_images && (
-                      <img
-                        src={"../uploads/intervenant/" + element.invites_images}
-                        alt=""
-                      ></img>
-                      )}
-                    <p>{element.invites}</p>
-                    <p>{element.invites_descriptions}</p>
-                    </div>    
-                  </div>
-
-
-                  <div className="col">
-                    <div className="invite">             
-                      {element.invites_images2 && (
-                      <img
-                        src={"../uploads/intervenant/" + element.invites_images2}
-                        alt=""
-                      ></img>
-                      )}
-                    <p>{element.invites2}</p>
-                    <p>{element.invites_descriptions2}</p>
-                    </div>    
-                  </div>
-
-
-
-
-                </div>
-              </div>
+              <p style={{color:'#23A082',fontSize:'1.3rem'}}>{element.session_date}</p>               
               <br /><br />
               <button className="btnMain2">
                 Accédez au live <span><FontAwesomeIcon icon={faCirclePlay} style={{color:'#23A082'}} /></span>
