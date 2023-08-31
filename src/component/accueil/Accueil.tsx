@@ -78,7 +78,7 @@ function Accueil(){
                     <img  src="./logo.png" alt="" style={{width:"30%", height:"30%"}} /> 
                     <br></br><br></br>
                     <h1>SPOT PHARMA 7 <br></br>Conférences 2023</h1>                               
-                    <p>20 Septembre au 1er Octobre</p> 
+                    <p>20 Septembre au 4 Octobre</p> 
                     <Countdown></Countdown>                                 
                     <br></br><br></br>
                     <div className="container">
