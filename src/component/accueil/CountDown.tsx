@@ -34,9 +34,10 @@ export default function Countdown() {
     return (
         <div>
             <div style={{backgroundColor:"white"}}>
-                <p style={{color:'#7DBA33'}}>{formatTimeUnit(timeRemaining.days, 'Jours')}, {formatTimeUnit(timeRemaining.hours, 'heures')}, {formatTimeUnit(timeRemaining.minutes, 'minutes')}, {formatTimeUnit(timeRemaining.seconds, 'secondes')}</p>
+                <button className="btnMain2">
+                    <p style={{color:'#7DBA33'}}>{formatTimeUnit(timeRemaining.days, 'Jours')}, {formatTimeUnit(timeRemaining.hours, 'heures')}, {formatTimeUnit(timeRemaining.minutes, 'minutes')}, {formatTimeUnit(timeRemaining.seconds, 'secondes')}</p>
+                </button>
             </div>
-            
         </div>
     );
 }
