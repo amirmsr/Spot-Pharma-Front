@@ -16,7 +16,7 @@ export default function Countdown() {
     };
 
     const formatTimeUnit = (unit: number, label: string) => {
-        return `${unit} ${label}${unit !== 1 ? 's' : ''}`;
+        return `${unit} ${label}${unit !== 1 ? '' : ''}`;
     };
 
     const [timeRemaining, setTimeRemaining] = useState(calculateTimeRemaining());
