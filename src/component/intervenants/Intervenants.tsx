@@ -1,6 +1,7 @@
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faPen, faPenToSquare, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
+import { Dropdown } from "react-bootstrap";
 import { useQuery } from "react-query";
 import { useNavigate } from "react-router-dom";
 
@@ -77,6 +78,11 @@ function Intervenants(){
             alert("Supprimer avec succés")
         }
     }
+
+    //edit intervenant
+    const handleEdit=(intervenant_id: number)=>{
+        navigate(`edit/${intervenant_id}`)
+    }
     
 
     return(
@@ -100,6 +106,22 @@ function Intervenants(){
                     {elements?.slice(0.3).map((element:Intervenant)=>(
                     <div key={element.id} className="col-md-4 ">
                         <div className="intervenantbloc">
+                            <div>
+                                {isAdmin ?(
+                                    <div>
+                                    <br /><br />               
+                                    <Dropdown>
+                                    <Dropdown.Toggle variant="success" style={{backgroundColor:'#7DBA33'}} id="dropdown-basic">
+                                        Modifier   <span><FontAwesomeIcon  icon={faPenToSquare} style={{ fontSize:'1.5rem', cursor:'pointer'}}/>  </span>
+                                    </Dropdown.Toggle>
+                                    <Dropdown.Menu>                                        
+                                        <Dropdown.Item onClick={() => handleEdit(element.id)}> Modifier texte intervenant <span><FontAwesomeIcon icon={faPen} style={{color:'#23A082'}} /></span></Dropdown.Item>                                       
+                                    </Dropdown.Menu>
+                                    </Dropdown>
+                                    </div>
+                                
+                                ):null}              
+                            </div>
                             <div className="intervenants "> 
                                 <div className="invite_img">
                                     <img  alt="" src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + element.image}/>

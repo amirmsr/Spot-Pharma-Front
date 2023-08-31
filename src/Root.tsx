@@ -11,7 +11,7 @@ import Navbar from "./component/navbar/Navbar";
 export default function Root() {
   return (
     <div>
-      <Navbar />
+        <Navbar />
         <main style={{backgroundColor:"#e5e7ea", textAlign:"center"}}>
           <Outlet />
         </main>

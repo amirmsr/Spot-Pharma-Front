@@ -27,6 +27,7 @@ import ResetPassword from "./component/form/ResetPassword";
 import ResetPasswordMail from "./component/form/ResetPasswordMail";
 import AddReplay from "./component/Replay/AddReplay";
 import AddReplaySession from "./component/Replay/AddReplaySession";
+import EditIntervenant from "./component/intervenants/EditIntervenant";
 
 
 
@@ -68,7 +69,11 @@ const router = createBrowserRouter([
             {
               path: "/intervenants/addIntervenants",
               element: <AddIntervenants />
-            },         
+            },     
+            {
+              path: "/intervenants/edit/:intervenant_id",
+              element: <EditIntervenant />
+            },       
             {
               path: "/sponsors",
               element: <Sponsors />
