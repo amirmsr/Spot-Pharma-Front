@@ -33,7 +33,7 @@ export default function Countdown() {
 
     return (
         <div>
-            <p>{formatTimeUnit(timeRemaining.days, 'Jours')}, {formatTimeUnit(timeRemaining.hours, 'heure')}, {formatTimeUnit(timeRemaining.minutes, 'minute')}, {formatTimeUnit(timeRemaining.seconds, 'seconde')}</p>
+            <p>{formatTimeUnit(timeRemaining.days, 'Jours')}, {formatTimeUnit(timeRemaining.hours, 'heures')}, {formatTimeUnit(timeRemaining.minutes, 'minutes')}, {formatTimeUnit(timeRemaining.seconds, 'secondes')}</p>
         </div>
     );
 }
