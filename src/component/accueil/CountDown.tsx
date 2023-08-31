@@ -33,7 +33,10 @@ export default function Countdown() {
 
     return (
         <div>
-            <p>{formatTimeUnit(timeRemaining.days, 'Jours')}, {formatTimeUnit(timeRemaining.hours, 'heures')}, {formatTimeUnit(timeRemaining.minutes, 'minutes')}, {formatTimeUnit(timeRemaining.seconds, 'secondes')}</p>
+            <div style={{backgroundColor:"white"}}>
+                <p style={{color:'#7DBA33'}}>{formatTimeUnit(timeRemaining.days, 'Jours')}, {formatTimeUnit(timeRemaining.hours, 'heures')}, {formatTimeUnit(timeRemaining.minutes, 'minutes')}, {formatTimeUnit(timeRemaining.seconds, 'secondes')}</p>
+            </div>
+            
         </div>
     );
 }
