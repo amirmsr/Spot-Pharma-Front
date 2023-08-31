@@ -70,8 +70,8 @@ function Accueil(){
 
 
     return(
-        <div>
-            <div className='main_div' style={{backgroundColor:'white'}}>
+        <div style={{backgroundColor:'white'}}>
+            <div className='main_div'>
                 <div className='main_div_cont'>
                     <img  src="./logo.png" alt="" style={{width:"30%", height:"30%"}} /> 
                     <br></br><br></br>
