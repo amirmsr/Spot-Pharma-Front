@@ -108,8 +108,7 @@ function Intervenants(){
                         <div className="intervenantbloc">
                             <div>
                                 {isAdmin ?(
-                                    <div>
-                                    <br /><br />               
+                                    <div>             
                                     <Dropdown>
                                     <Dropdown.Toggle variant="success" style={{backgroundColor:'#7DBA33'}} id="dropdown-basic">
                                         Modifier   <span><FontAwesomeIcon  icon={faPenToSquare} style={{ fontSize:'1.5rem', cursor:'pointer'}}/>  </span>
@@ -119,9 +118,9 @@ function Intervenants(){
                                     </Dropdown.Menu>
                                     </Dropdown>
                                     </div>
-                                
                                 ):null}              
                             </div>
+                            <br />
                             <div className="intervenants "> 
                                 <div className="invite_img">
                                     <img  alt="" src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + element.image}/>
