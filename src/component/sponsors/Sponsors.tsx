@@ -105,7 +105,6 @@ export default function Sponsors(){
                 <div className="row">
                     {elements?.slice(0.3).map((element:Sponsors)=>(
                     <div key={element.id} className="col-md-4 ">
-                        <a href={element.lien}>
                             <div className="intervenantbloc">   
                                 <div style={{ height: '70px', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                                 <img
@@ -125,10 +124,7 @@ export default function Sponsors(){
                                         <br /><br />
                                     </div>                                         
                                 ):null}   
-                            </div>
-                        </a>
-                        
-                        
+                            </div>                                                
                     </div>
                     ))}        
                 </div>
