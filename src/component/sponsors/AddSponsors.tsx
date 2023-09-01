@@ -14,6 +14,7 @@ function AddSponsors() {
     const [data, setData] = useState({
         nom: "",
         description: "",
+        lien:"",
     });
         
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -62,6 +63,7 @@ function AddSponsors() {
 
         formData.append("nom", data.nom);
         formData.append("description", data.description);
+        formData.append("lien", data.lien);
 
         if (selectedFile) {
             formData.append("sponsors", selectedFile);
@@ -86,6 +88,10 @@ function AddSponsors() {
                 <br />
                 <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Description</p>
                 <input type="text" name="description"  placeholder='Description' onChange={handleChange} />
+                <br />
+                <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Lien</p>
+                <input type="text" name="lien"  placeholder='Lien' onChange={handleChange} />
+
 
                 <br /><br />
 

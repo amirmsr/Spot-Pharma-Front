@@ -83,7 +83,7 @@ function Accueil(){
                         <div className="row">
                             <div className="col">
                                 <a href="https://spot-pharma.vercel.app/sessions">
-                                    <button className='btnMain'>S'inscire aux sessions</button> 
+                                    <button className='btnMain'>S'inscrire aux sessions</button> 
                                 </a>
                             </div>
                             <div className="col">

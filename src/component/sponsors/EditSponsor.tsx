@@ -13,7 +13,8 @@ function EditSponsor() {
 
     const [data, setData] = useState({
         nom: "",
-        description: ""
+        description: "",
+        lien:""
     });
       
 
@@ -86,6 +87,10 @@ function EditSponsor() {
                     <div className="col"  style={{marginBottom:'20px'}}>
                       <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Description</p>
                       <input type="text" name="description"  placeholder='Description' onChange={handleChange} />
+                    </div>                  
+                    <div className="col"  style={{marginBottom:'20px'}}>
+                      <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Lien</p>
+                      <input type="text" name="lien"  placeholder='Lien' onChange={handleChange} />
                     </div>                  
                     <br /><br />                    
                   </div>

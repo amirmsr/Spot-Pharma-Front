@@ -18,10 +18,6 @@ export default function Inscription(){
 
   const fonctionOptions = [
     { value: 'pharmacien', label: 'Pharmacien' },
-    { value: 'preparateur', label: 'Préparateur' },
-    { value: 'preparatrice', label: 'Préparatrice' },
-    { value: 'etudiant', label: 'Étudiant' },
-    { value: 'apprenti', label: 'Apprenti' },
     { value: 'autre', label: 'Autre' },
     // Ajoutez d'autres options selon vos besoins
   ];
