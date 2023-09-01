@@ -55,44 +55,42 @@ export default function Connexion() {
 
 
   return (
-    <div className="loginBg" /* style={{ backgroundColor: '#1A4550' }} */>
-    <form style={{ paddingBottom: '100px', paddingTop: '100px' }} onSubmit={handleSubmit}>
-
-      <div className="add" style={{ backgroundColor: 'white', margin: '0px 150px 0px 150px', padding: '0px 100px 0px 100px', borderRadius: '15px' }}>
+  <div className="loginBg">
+    <div className="container">
+    <form style={{ paddingBottom: '100px', padding: '100px' }} onSubmit={handleSubmit}>
+      <div className="add" style={{ backgroundColor: 'white', padding: '0px 20px', borderRadius: '15px' }}>
         <br /><br /><br />
-        <h1 style={{ color: '#1A4550' }}>Connexion</h1>
+        <h1 style={{ color: '#1A4550', textAlign: 'center' }}>Connexion</h1>
         <br /><br />
-        <div className="container">
-          <div className="row">
-            <div className="col">
-              <p style={{ color: '#1A4550', fontSize: '1.5rem' }}>Email</p>
-              <input className='form-control' type="text" name="email" placeholder='Email' onChange={handleChange} />
-            </div>
-            <div className="col">
-              <p style={{ color: '#1A4550', fontSize: '1.5rem' }}>Mot de passe</p>
-              <input className='form-control' type="password" name="password" placeholder="Mot de passe" onChange={handleChange} />
-            </div>
+        <div className="form-group">
+          <label htmlFor="email" style={{ color: '#1A4550', fontSize: '1.5rem' }}>Email</label>
+          <center><input style={{width:'30%'}} className='form-control' type="text" id="email" name="email" placeholder='Email' onChange={handleChange} /></center>
+          
+        </div>
+        <br />
+        <div className="form-group">
+          <label htmlFor="password" style={{ color: '#1A4550', fontSize: '1.5rem' }}>Mot de passe</label>
+          <center><input  style={{width:'30%'}} className='form-control' type="password" id="password" name="password" placeholder="Mot de passe" onChange={handleChange} /></center>
+        </div>
+        <br /><br />
+        <button type="submit" className='btnMain2 btn-block'>Se connecter</button>
+        <br /><br />
+        <p>ou</p>
+        <div className="row">
+          <div className="col">
+            <a href="/inscription">
+              <button className="btnMain2 btn-block">S'inscrire</button>
+            </a>
           </div>
-        </div>
-        <br /><br />
-        <button type="submit" className='btnMain2'>Se connecter</button>
-        <br /><br />
-        <p>où</p>
-        <div className="container">
-          <div className="row">                       
-            <div className="col">
-              <a href="/inscription">
-                <button className="btnMain2"> S'inscrire </button>
-              </a>
-            </div>
-            <div className="col">
-            <button onClick={handleChangePassword} className="btnMain2" style={{ marginBottom: '100px' }}> Mot de passe oublié </button>
-            </div>
+          <div className="col">
+            <button onClick={handleChangePassword} className="btnMain2 btn-block">Mot de passe oublié</button>
           </div>
+          <br /><br /><br /><br /><br />
         </div>
-        </div>
+      </div>
     </form>
-    
+    </div>    
   </div>
+
   );
 }
