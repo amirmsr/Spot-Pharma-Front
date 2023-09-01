@@ -57,12 +57,17 @@ export default function ResetPassword() {
             <div className="row">
               <div className="col">
                 <p style={{ color: "#7DBA33", fontSize: "1.5rem" }}>Email</p>
+                <center>
                 <input
+                style={{width:'30%'}}
+                  className='form-control'
                   type="text"
                   name="email"
                   placeholder="email"
                   onChange={handleChange}
                 />
+                </center>
+                
               </div>
               
             </div>
@@ -71,7 +76,7 @@ export default function ResetPassword() {
           <button type="submit" className="btnMain2" >
             Envoyer
           </button>
-          <br /> <br />              
+          <br /> <br />  <br /><br /><br />            
         </div>
       </form>
     </div>

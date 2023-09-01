@@ -362,6 +362,13 @@ input{
 }
 
 
+.loginBg{
+    background-image: url("/uploads/main_image.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
 
 
 

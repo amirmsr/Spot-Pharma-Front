@@ -55,7 +55,7 @@ export default function Connexion() {
 
 
   return (
-    <div style={{ backgroundColor: '#1A4550' }}>
+    <div className="loginBg" /* style={{ backgroundColor: '#1A4550' }} */>
     <form style={{ paddingBottom: '100px', paddingTop: '100px' }} onSubmit={handleSubmit}>
 
       <div className="add" style={{ backgroundColor: 'white', margin: '0px 150px 0px 150px', padding: '0px 100px 0px 100px', borderRadius: '15px' }}>
@@ -76,18 +76,20 @@ export default function Connexion() {
         </div>
         <br /><br />
         <button type="submit" className='btnMain2'>Se connecter</button>
-        <br /> <br />
-        <p>ou</p>
-        <a href="/inscription">
-        <button className="btnMain2">
-          S'inscrire
-        </button>
-        </a>
         <br /><br />
-        <p>ou</p>
-        <button onClick={handleChangePassword} className="btnMain2" style={{ marginBottom: '100px' }}>
-          Mot de passe oublié
-        </button>
+        <p>où</p>
+        <div className="container">
+          <div className="row">                       
+            <div className="col">
+              <a href="/inscription">
+                <button className="btnMain2"> S'inscrire </button>
+              </a>
+            </div>
+            <div className="col">
+            <button onClick={handleChangePassword} className="btnMain2" style={{ marginBottom: '100px' }}> Mot de passe oublié </button>
+            </div>
+          </div>
+        </div>
         </div>
     </form>
     
