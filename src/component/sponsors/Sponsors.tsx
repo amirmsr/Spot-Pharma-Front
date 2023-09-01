@@ -104,31 +104,32 @@ export default function Sponsors(){
             <div className="container">
                 <div className="row">
                     {elements?.slice(0.3).map((element:Sponsors)=>(
-                   <a href={element.lien}>
-                   <div key={element.id} className="col-md-4">
-                     <div className="intervenantbloc">
-                       <div style={{ height: '70px', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                         <img
-                           style={{ objectFit: 'contain', width: '100%', height: '100%' }}
-                           src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + element.image}
-                           alt=""
-                         />
-                       </div>
-                       <div style={{ height: '100px' }}>
-                         <p>{element.nom}</p>
-                         <p style={{ fontSize: '0.9rem' }}>{element.description}</p>
-                       </div>
-                       {isAdmin ? (
-                         <div>
-                           <br />
-                           <button className="btnMain2" onClick={() => handleDeleteSponsors(element.id)}> Supprimer <span><FontAwesomeIcon icon={faXmark} style={{ color: 'red', fontSize: '1.2rem', cursor: 'pointer' }} /></span></button>
-                           <br /><br />
-                         </div>
-                       ) : null}
-                     </div>
-                   </div>
-                 </a>
-                 
+                    <div key={element.id} className="col-md-4 ">
+                        <a href={element.lien}>
+                            <div className="intervenantbloc">   
+                                <div style={{ height: '70px', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                                <img
+                                    style={{ objectFit: 'contain', width: '100%', height: '100%' }}
+                                    src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + element.image}
+                                    alt=""
+                                />
+                                </div> 
+                                <div style={{height:'100px'}}>
+                                <p>{element.nom}</p>
+                                <p style={{fontSize:'0.9rem'}}>{element.description}</p>
+                                </div>    
+                                {isAdmin ?(
+                                    <div>
+                                        <br />
+                                        <button className="btnMain2" onClick={() => handleDeleteSponsors(element.id)}> Supprimer <span><FontAwesomeIcon  icon={faXmark} style={{color:'red', fontSize:'1.2rem', cursor:'pointer'}}/></span></button>
+                                        <br /><br />
+                                    </div>                                         
+                                ):null}   
+                            </div>
+                        </a>
+                        
+                        
+                    </div>
                     ))}        
                 </div>
             </div>
