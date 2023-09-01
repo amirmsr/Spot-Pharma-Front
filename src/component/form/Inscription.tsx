@@ -65,14 +65,17 @@ export default function Inscription(){
             <label htmlFor="name" style={{ color: '#1A4550', fontSize: '1.5rem' }}>Nom</label>
             <center><input style={{width:'30%'}} className='form-control' type="text" id="name" name="name" placeholder='Nom' onChange={handleChange} required /></center>
           </div>
+          <br /><br />
           <div className="form-group">
             <label htmlFor="prenom" style={{ color: '#1A4550', fontSize: '1.5rem' }}>Prénom</label>
             <center><input style={{width:'30%'}} className='form-control' type="text" id="prenom" name="prenom" placeholder='Prénom' onChange={handleChange} required /></center>
           </div>
+          <br /><br />
           <div className="form-group">
             <label htmlFor="email" style={{ color: '#1A4550', fontSize: '1.5rem' }}>Email</label>
             <center><input type="text" style={{width:'30%'}} id="email" name="email" className='form-control' placeholder='Email' onChange={handleChange} required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" /></center>
           </div>
+          <br /><br />
           <p style={{ color: '#1A4550', fontSize: '1.5rem', textAlign: 'center' }}>Fonction</p>
           <div style={{ display: 'flex', justifyContent: 'center' }}>
             <select style={{ width: '30%' }} name="fonction" onChange={handleSelectChange} value={data.fonction} required>

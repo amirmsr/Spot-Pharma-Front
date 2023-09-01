@@ -105,14 +105,16 @@ export default function Sponsors(){
                 <div className="row">
                     {elements?.slice(0.3).map((element:Sponsors)=>(
                     <div key={element.id} className="col-md-4 ">
-                            <div className="intervenantbloc">   
-                                <div style={{ height: '70px', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                                <img
-                                    style={{ objectFit: 'contain', width: '100%', height: '100%' }}
-                                    src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + element.image}
-                                    alt=""
-                                />
-                                </div> 
+                            <div className="intervenantbloc">
+                                <a href={element.lien}>
+                                    <div style={{ height: '70px', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                                        <img
+                                            style={{ objectFit: 'contain', width: '100%', height: '100%' }}
+                                            src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + element.image}
+                                            alt=""
+                                        />
+                                    </div> 
+                                </a>                                  
                                 <div style={{height:'100px'}}>
                                 <p>{element.nom}</p>
                                 <p style={{fontSize:'0.9rem'}}>{element.description}</p>
