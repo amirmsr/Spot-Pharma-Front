@@ -499,7 +499,7 @@ function Session() {
                 ))}
             </div>
 
-            <p style={{fontSize:'1.3rem',color:'#23A082' }}>{element.type} :</p>    
+            <p style={{fontSize:'1.5rem',color:'#23A082' }}>{element.type} :</p>    
             <p style={{fontSize:'1.3rem', height:'100px'}}>{element.description}</p>
             <br />
             <div className="container" style={{ height:'250px'}}>
