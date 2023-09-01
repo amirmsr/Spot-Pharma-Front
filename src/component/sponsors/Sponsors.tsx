@@ -106,7 +106,7 @@ export default function Sponsors(){
                     {elements?.slice(0.3).map((element:Sponsors)=>(
                     <div key={element.id} className="col-md-4 ">
                             <div className="intervenantbloc">
-                                <a href={element.lien}>
+                                <a href={element.lien} target="_blank" rel="noreferrer">
                                     <div style={{ height: '70px', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                                         <img
                                             style={{ objectFit: 'contain', width: '100%', height: '100%' }}
