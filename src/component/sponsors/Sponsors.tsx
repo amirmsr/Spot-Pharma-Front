@@ -2,7 +2,7 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Sponsors(){
 
@@ -106,15 +106,15 @@ export default function Sponsors(){
                     {elements?.slice(0.3).map((element:Sponsors)=>(
                     <div key={element.id} className="col-md-4 ">
                             <div className="intervenantbloc">
-                                <a href={element.lien} target="_blank" rel="noreferrer">
+                                <Link to={element.lien} target="_blank"> {/* Utilisation de Link */}
                                     <div style={{ height: '70px', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                                         <img
                                             style={{ objectFit: 'contain', width: '100%', height: '100%' }}
                                             src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + element.image}
                                             alt=""
                                         />
-                                    </div> 
-                                </a>                                  
+                                    </div>
+                                </Link>                              
                                 <div style={{height:'100px'}}>
                                 <p>{element.nom}</p>
                                 <p style={{fontSize:'0.9rem'}}>{element.description}</p>
