@@ -448,6 +448,7 @@ function Session() {
             </div>
             <br />
             <h3 style={{color:'#23A082'}}>{element.jours}</h3>
+            <p style={{color:'#23A082',fontSize:'1.3rem'}}>{element.session_date}</p>   
             <div style={{height:'200px'}}>
                 {element.sponsorsDetails.map((sponsors:Sponsor)=>(
                   <div onMouseEnter={() => setHoveredSponsor(sponsors.id)} onMouseLeave={() => setHoveredSponsor(null)}>
@@ -501,9 +502,6 @@ function Session() {
             <p style={{fontSize:'1.3rem',color:'#23A082' }}>{element.type} :</p>    
             <p style={{fontSize:'1.3rem', height:'100px'}}>{element.description}</p>
             <br />
-            <p style={{color:'#23A082',fontSize:'1.3rem'}}>{element.session_date}</p>   
-
-            <br /><br />   
             <div className="container" style={{ height:'250px'}}>
               <div className="row">
                 {element.intervenantsDetails.map((interv:Intervenant)=>(
