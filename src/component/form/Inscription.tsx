@@ -58,26 +58,31 @@ export default function Inscription(){
 
   return (
     
-      <div>
-        <form style={{paddingBottom:'500px',paddingTop:'100px'}} onSubmit={handleSubmit}>
+      <div style={{backgroundColor:'#1A4550'}}>
+        <form style={{paddingBottom:'100px',paddingTop:'100px'}} onSubmit={handleSubmit}>
 
-            <div className="add">
+            <div className="add" style={{backgroundColor:'white', margin:'0px 150px 0px 150px', padding:'0px 100px 60px 100px', borderRadius:'15px'}}>
               <br /><br /><br />
-                <h1>Inscription</h1>
+                <h1 style={{color:'#1A4550'}}>Inscription</h1>
                 <br /><br />
                 <div className="container">
                   <div className="row">
                     <div className="col">
-                      <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Nom</p>
-                      <input type="text" name="name"  placeholder='Nom' onChange={handleChange} required/>
+                      <p style={{color:'#1A4550', fontSize:'1.5rem'}}>Nom</p>
+                      <input className='form-control' type="text" name="name"  placeholder='Nom' onChange={handleChange} required/>
                     </div>
                     <div className="col">
-                      <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Prenom</p>
-                      <input type="text" name="prenom"  placeholder='Prenom' onChange={handleChange} required />
-                    </div>
+                      <p style={{color:'#1A4550', fontSize:'1.5rem'}}>Prenom</p>
+                      <input className='form-control' type="text" name="prenom"  placeholder='Prenom' onChange={handleChange} required />
+                    </div>                    
                     <div className="col">
-                    <p style={{ color: '#7DBA33', fontSize: '1.5rem' }}>Fonction</p>
-                    <select name="fonction" onChange={handleSelectChange} value={data.fonction} required>
+                    <p style={{color:'#1A4550', fontSize:'1.5rem'}}>Email</p>
+                    <input type="text" name="email" className='form-control'  placeholder='Email' onChange={handleChange} required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" />
+                    </div>
+                    <br /><br /><br /><br /> 
+                    <p style={{ color: '#1A4550', fontSize: '1.5rem' }}>Fonction</p>
+                    <center>
+                    <select style={{width:'30%'}} name="fonction" onChange={handleSelectChange} value={data.fonction} required>
                       <option value="">Sélectionnez une fonction</option>
                       {fonctionOptions.map((option, index) => (
                         <option key={index} value={option.value}>
@@ -85,28 +90,20 @@ export default function Inscription(){
                         </option>
                       ))}
                     </select>
-                    </div>
-                    <div className="col">
-                    <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Email</p>
-                    <input type="text" name="email"  placeholder='Email' onChange={handleChange} required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" />
-                    </div>
+                    </center>
                     <center>
                       <div style={{marginTop:'30px'}}>
-                        <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Mot de passe</p>
-                        <input style={{width:'30%'}} type="password" name="password"  placeholder="mot de passe" onChange={handleChange} required />
+                        <p style={{color:'#1A4550', fontSize:'1.5rem'}}>Mot de passe</p>
+                        <input style={{width:'30%'}} className='form-control' type="password" name="password"  placeholder="mot de passe" onChange={handleChange} required />
                       </div>
                      
                     </center>                    
                   
                   </div>
-                </div>
-               
-                <br />                
-                <br />
-
-                
+                </div> 
                 <br /><br />
                 <button type="submit" className='btnMain2'> S inscrire </button>
+                
        
             </div>
       </form>

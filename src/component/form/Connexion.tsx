@@ -55,54 +55,42 @@ export default function Connexion() {
 
 
   return (
-    <div>
-      <form className="addSessionForm" onSubmit={handleSubmit} >
-        <div className="add" >
-          <br /><br /><br />
-          <h1 >Connexion</h1>
-          <br />
-          <br />
-          <div className="container">
-            <div className="row">
-              <div className="col">
-                <p style={{ color: "#7DBA33", fontSize: "1.5rem" }}>Email</p>
-                <input
-                  type="text"
-                  name="email"
-                  placeholder="email"
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="col">
-                <p style={{ color: "#7DBA33", fontSize: "1.5rem" }}>Password</p>
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="mot de passe"
-                  onChange={handleChange}
-                />
-              </div>
+    <div style={{ backgroundColor: '#1A4550' }}>
+    <form style={{ paddingBottom: '100px', paddingTop: '100px' }} onSubmit={handleSubmit}>
+
+      <div className="add" style={{ backgroundColor: 'white', margin: '0px 150px 0px 150px', padding: '0px 100px 0px 100px', borderRadius: '15px' }}>
+        <br /><br /><br />
+        <h1 style={{ color: '#1A4550' }}>Connexion</h1>
+        <br /><br />
+        <div className="container">
+          <div className="row">
+            <div className="col">
+              <p style={{ color: '#1A4550', fontSize: '1.5rem' }}>Email</p>
+              <input className='form-control' type="text" name="email" placeholder='Email' onChange={handleChange} />
+            </div>
+            <div className="col">
+              <p style={{ color: '#1A4550', fontSize: '1.5rem' }}>Mot de passe</p>
+              <input className='form-control' type="password" name="password" placeholder="Mot de passe" onChange={handleChange} />
             </div>
           </div>
-          <br />
-          <br />
-          <button type="submit" className="btnMain2" >
-            Se connecter
-          </button>
-          <br /> <br />
-          <p>ou</p>                    
         </div>
-      </form>
-      <a href="/inscription">
-            <button className="btnMain2" >          
-              S'inscrire 
-            </button>
-      </a>
-      <p>ou</p>
-      <br />
-      <button onClick={handleChangePassword} className="btnMain2" style={{marginBottom:'100px'}} >
-        Mot de passe oublié 
-      </button>
-    </div>
+        <br /><br />
+        <button type="submit" className='btnMain2'>Se connecter</button>
+        <br /> <br />
+        <p>ou</p>
+        <a href="/inscription">
+        <button className="btnMain2">
+          S'inscrire
+        </button>
+        </a>
+        <br /><br />
+        <p>ou</p>
+        <button onClick={handleChangePassword} className="btnMain2" style={{ marginBottom: '100px' }}>
+          Mot de passe oublié
+        </button>
+        </div>
+    </form>
+    
+  </div>
   );
 }

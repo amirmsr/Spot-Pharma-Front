@@ -75,7 +75,7 @@ function EditSponsor() {
 
             <div className="add">
               <br /><br /><br />
-                <h1>Modification intervenant</h1>
+                <h1>Modification partenaire</h1>
                 <br /><br />
                 <div className="container">
                   <div className="row">

@@ -132,7 +132,7 @@ function AddSponsorsSession() {
         <div className="allInterv">   
             <div style={{paddingTop:'90px'}}>
                 <h2  style={{ margin:"0", color:"#7DBA33"}}>Selectionnez les</h2>
-                <h3 style={{fontSize:"2rem", margin:"0"}}>Intervenants</h3>
+                <h3 style={{fontSize:"2rem", margin:"0"}}>Partenaires</h3>
                 <br /><br />
                 <center>                
                     {sponsorSelected?.map((sponsor:Sponsors)=>(

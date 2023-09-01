@@ -130,8 +130,8 @@ function Accueil(){
             </div>
 
             <br></br>  <br /><br />
-            <a href="https://spot-pharma.vercel.app/intervenants">
-            <button className='btnMain2'>Voir tous les intervenants</button>
+            <a href="https://spot-pharma.vercel.app/sponsors">
+            <button className='btnMain2'>Voir tous les partenaires</button>
             </a>
             
            

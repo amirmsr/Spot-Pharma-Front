@@ -79,7 +79,7 @@ function AddSponsors() {
 
         <div>
             <Form onSubmit={handleSubmit} className="mb-3" style={{paddingBottom:'300px',paddingTop:'100px'}}>
-                <Form.Label>Ajouter un sponsor</Form.Label>
+                <Form.Label>Ajouter un partenaire</Form.Label>
 
                 <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Nom</p>
                 <input type="text" name="nom"  placeholder='Nom' onChange={handleChange} />
