@@ -45,7 +45,7 @@ export default function Sponsors(){
         try {
           const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sponsors"); 
           if (!response.ok) {
-            throw new Error("Failed to fetch intervenant");
+            throw new Error("Failed to fetch sponsors");
           }
           const data = await response.json();
           const sortedElements = data.sort((a: { nom: string; }, b: { nom: string; }) => a.nom.localeCompare(b.nom));
@@ -53,7 +53,7 @@ export default function Sponsors(){
           return sortedElements;
 
         } catch (err) {
-          throw new Error("An error occurred while fetching intervenant");
+          throw new Error("An error occurred while fetching sponsors");
         }
     });
 
