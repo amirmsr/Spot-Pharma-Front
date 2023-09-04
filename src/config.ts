@@ -1,0 +1,1 @@
+export const baseUrl = "https://spot-pharma-api-bd00f8c1ff03.herokuapp.com";
