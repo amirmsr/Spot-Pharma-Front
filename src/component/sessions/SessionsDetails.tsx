@@ -83,6 +83,7 @@ function Session() {
     <div>
         <div style={{paddingTop:'100px'}}>
             <h1>Listes des inscrits</h1>
+            <h1>{filteredUsers.length}</h1>
             <div className="container" style={{paddingTop:'100px', paddingBottom:'200px'}}>
                 <div className="row">
                     {filteredUsers.map((filteredUser:Users)=>(

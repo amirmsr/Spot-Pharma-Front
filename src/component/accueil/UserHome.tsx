@@ -18,6 +18,7 @@ interface Sessions {
 export default function UserHome(){
   
    //get user data
+   const token = localStorage.getItem("token");
 
    const {data: user}= useQuery("userProfile", async ()=>{
      const token = localStorage.getItem("token");
@@ -87,13 +88,10 @@ export default function UserHome(){
 
 
 
-
-
   //desinscription
 
   const { mutate: desinscriptionMutation } = useMutation(async (desinscription: { id_user: string; id_session: string; }) => {
     try {
-      const token = localStorage.getItem("token");
       const headers = { token: `${token}` };
       const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_inscrit", {
         method: 'DELETE',
@@ -118,7 +116,27 @@ export default function UserHome(){
       console.error(error);
       throw error;
     }
-  });
+  }); 
+
+  
+    //fetch tous les inscrits
+    const { data: allinscrits, } = useQuery("AllInscrit", async () => {
+      try {
+        const headers = { token: `${token}` };
+        const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/users`,{
+          headers
+        });  
+        if (!response.ok) {
+          throw new Error("Failed to fetch all inscrits");
+        }
+        const data = await response.json();
+        return data;
+      } catch (err) {
+        throw new Error("An error occurred while fetching inscrits");
+      }
+    });
+
+
 
   
   const handleDesinscription=(sessionId : number)=>{

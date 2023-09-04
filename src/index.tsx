@@ -28,6 +28,7 @@ import ResetPasswordMail from "./component/form/ResetPasswordMail";
 import AddReplay from "./component/Replay/AddReplay";
 import AddReplaySession from "./component/Replay/AddReplaySession";
 import EditIntervenant from "./component/intervenants/EditIntervenant";
+import Utilisateurs from "./component/accueil/Utilisateurs/Utilisateurs";
 
 
 
@@ -117,6 +118,10 @@ const router = createBrowserRouter([
             {
               path: "/sessions/addReplaySession/:sessionId",
               element: <AddReplaySession/>
+            },                                                      
+            {
+              path: "/utilisateurs",
+              element: <Utilisateurs/>
             },                                                      
           ]
         },      
