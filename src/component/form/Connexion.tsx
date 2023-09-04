@@ -47,6 +47,9 @@ export default function Connexion() {
   const handleChangePassword = async () => { 
       navigate(`/resetPassword`)
   };
+  const handleInscription = async () => { 
+      navigate(`/inscription`)
+  };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -78,9 +81,7 @@ export default function Connexion() {
         <p>ou</p>
         <div className="row">
           <div className="col">
-            <a href="/inscription">
-              <button className="btnMain2 btn-block">S'inscrire</button>
-            </a>
+              <button onClick={handleInscription} className="btnMain2 btn-block">S'inscrire</button>
           </div>
           <div className="col">
             <button onClick={handleChangePassword} className="btnMain2 btn-block">Mot de passe oublié</button>

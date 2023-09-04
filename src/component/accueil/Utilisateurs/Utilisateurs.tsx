@@ -61,7 +61,7 @@ export default function Utilisateurs(){
 
     <div>
     <div style={{paddingTop:'100px'}}>
-        <h1>Listes des utilisateur</h1>
+        <h1>Listes des utilisateurs</h1>
         <h1>{allinscrits?.length}</h1>
         <div className="container" style={{paddingTop:'100px', paddingBottom:'200px'}}>
             <div className="row">
