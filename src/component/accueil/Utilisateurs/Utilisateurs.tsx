@@ -65,7 +65,7 @@ export default function Utilisateurs(){
         <h1>{allinscrits?.length}</h1>
         <div className="container" style={{paddingTop:'100px', paddingBottom:'200px'}}>
             <div className="row">
-                {allinscrits.map((allinscrit:Users)=>(
+                {allinscrits?.map((allinscrit:Users)=>(
                     <div key={allinscrit.id} className="col-md-4">
                         <div className="session" style={{paddingTop:'50px',marginBottom: '40px',}}>
                             <div>
