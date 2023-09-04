@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   MDBContainer,
   MDBNavbar,
@@ -14,31 +14,42 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faUser } from '@fortawesome/free-solid-svg-icons';
 import { useQuery } from 'react-query';
 
+
 export default function App() {
+
   const [showNav, setShowNav] = useState(false);
-
   const [isConnected, setIsconnected] = useState(false);
-
-  useQuery("userProfile", async ()=>{
-
+  const [isAdmin, setIsadmin] = useState(false);
   const token = localStorage.getItem("token");
-  if (!token){
-    throw new Error("token missing");
-  }
 
-  const response = await fetch ("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/home",{
-    headers: {
-      token: `${token}`,
+  //get user data
+  const {data: user}= useQuery("userProfile", async ()=>{
+    if (!token){
+      throw new Error("token missing");
     }
+    const response = await fetch ("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/home",{
+      headers: {
+        token: `${token}`,
+      }
+    })
+    if (!response.ok){
+      throw new Error("failed to fetch user profil")
+    }
+    const data = await response.json();
+    return data
   })
-  if (!response.ok){
-    throw new Error("failed to fetch user profil")
-  }
-  setIsconnected(true)
-  const data = await response.json();
-  return data
-  
-  })
+
+  useEffect(() => {
+    if (user) {
+      setIsconnected(true);
+    }
+  }, [user]);
+
+  useEffect(() => {
+    if (user?.role === 1) {
+      setIsadmin(true);
+    }
+  }, [user]);
 
 
   return (
@@ -71,10 +82,12 @@ export default function App() {
             </MDBNavbarItem>           
             <MDBNavbarItem>
               <MDBNavbarLink> <a href="https://spot-pharma.vercel.app/replay"> Replays</a></MDBNavbarLink>
-            </MDBNavbarItem>      
-            <MDBNavbarItem>
-              <MDBNavbarLink> <a href="https://spot-pharma.vercel.app/utilisateurs"> Utilisateurs</a></MDBNavbarLink>
-            </MDBNavbarItem>      
+            </MDBNavbarItem>  
+            {isConnected && isAdmin ? (
+              <MDBNavbarItem>
+                <MDBNavbarLink> <a href="https://spot-pharma.vercel.app/utilisateurs"> Utilisateurs</a></MDBNavbarLink>
+              </MDBNavbarItem>      
+            ):null}              
             {isConnected ? (
                   <MDBNavbarItem>
                   <MDBNavbarLink>
