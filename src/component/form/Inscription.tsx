@@ -43,7 +43,7 @@ export default function Inscription(){
       console.log(response.data)
       navigate('/connexion')
     }catch(error){
-      alert(error)
+      alert("Ce mail existe déjà")
       console.log(error)
     }
   }
