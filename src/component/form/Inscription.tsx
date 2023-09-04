@@ -43,6 +43,7 @@ export default function Inscription(){
       console.log(response.data)
       navigate('/connexion')
     }catch(error){
+      alert(error)
       console.log(error)
     }
   }
