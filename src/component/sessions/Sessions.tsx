@@ -448,8 +448,8 @@ function Session() {
               ):null}              
             </div>
             <br />
-            <h3 style={{color:'#23A082'}}>{element.jours}</h3>
-            <p style={{color:'#23A082',fontSize:'1.3rem'}}>{element.session_date}</p>   
+            <h3 style={{color:'#7DBA33'}}>{element.jours}</h3>
+            <p style={{color:'#7DBA33',fontSize:'1.3rem'}}>{element.session_date}</p>   
             <div style={{height:'200px'}}>
                 {element.sponsorsDetails.map((sponsors:Sponsor)=>(
                   <div onMouseEnter={() => setHoveredSponsor(sponsors.id)} onMouseLeave={() => setHoveredSponsor(null)}>
