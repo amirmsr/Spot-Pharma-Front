@@ -83,8 +83,8 @@ function EditSession() {
                 <div className="container">
                   <div className="row">
                     <div className="col"  style={{marginBottom:'20px'}}>
-                    <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Session Date</p>
-                    <input type="text" name="session_date"  placeholder='Session Date' onChange={handleChange} />
+                    <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Session heure</p>
+                    <input type="text" name="session_date"  placeholder='Session Heure' onChange={handleChange} />
                     </div>
                     <div className="col"  style={{marginBottom:'20px'}}>
                     <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Type de session</p>
@@ -99,8 +99,8 @@ function EditSession() {
                     <input type="text" name="video"  placeholder="Lien du live" onChange={handleChange} />
                     </div>
                     <div className="col"  style={{marginBottom:'20px'}}>
-                    <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Heures</p>
-                    <input type="text" name="jours"  placeholder="Heures" onChange={handleChange} />
+                    <p style={{color:'#7DBA33', fontSize:'1.5rem'}}>Jours</p>
+                    <input type="text" name="jours"  placeholder="Jours" onChange={handleChange} />
                     </div>
                     <br /><br />                    
                   </div>
