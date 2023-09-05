@@ -106,7 +106,7 @@ function Accueil(){
             <br /><br />            
 
             <h2  style={{ margin:"0", color:"#7DBA33"}}>Tous les</h2>
-            <h3 style={{fontSize:"2rem", margin:"0"}}>Partenaires</h3>
+            <h3 style={{fontSize:"2rem", margin:"0", color:"#004651"}}>Partenaires</h3>
             <br /><br />
 
             {/*  slider sponsors */}
@@ -138,7 +138,7 @@ function Accueil(){
             <br /><br /> <br /><br /><br /><br />  
 
             <h2  style={{ margin:"0", color:"#7DBA33"}}>Tous les</h2>
-            <h3 style={{fontSize:"2rem", margin:"0"}}>Intervenants</h3>
+            <h3 style={{fontSize:"2rem", margin:"0",color:"#004651"}}>Intervenants</h3>
             <br /><br />
 
            {/*  slider intervenant */}
