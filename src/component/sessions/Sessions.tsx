@@ -156,13 +156,6 @@ function Session() {
         throw new Error("Failed to fetch sessions");
       }
       const data = await response.json();
-  
-      // Vérifier si au moins un élément a la propriété 'stand' différente de null
-      const hasStandNotNull = data.some((item: { stand: null; }) => item.stand !== null);
-  
-      // Mettre à jour 'stand3D' en fonction du résultat
-      setStand3D(hasStandNotNull);
-  
       return data;
     } catch (err) {
       throw new Error("An error occurred while fetching sessions");
@@ -554,9 +547,9 @@ function Session() {
             ) : (
               <center>                
                 <br />            
-                {stand3D ? (
+                {element.stand !== null ? (
                   <button className="btnMain2">Stand 3D</button>
-                ):null}             
+                ) : null}           
                 <button className="btnMain2" onClick={() => handleNotconnected()}>S'inscrire à la session</button>
               </center>
             )}  
