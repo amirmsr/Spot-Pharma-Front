@@ -553,10 +553,8 @@ function Session() {
               </center>
             ) : (
               <center>                
-                <br />
-                {stand3D ? (
-                    <button className="btnMain2">Stand 3D</button>
-                ):null}            
+                <br />                
+                <button className="btnMain2">Stand 3D</button>
                 <button className="btnMain2" onClick={() => handleNotconnected()}></button>
               </center>
             )}  
