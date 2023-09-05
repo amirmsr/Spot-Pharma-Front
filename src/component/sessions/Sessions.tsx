@@ -14,6 +14,7 @@ interface Sessions {
   description:"";  
   video: "";
   jours:"",
+  stand:"";
   intervenantsDetails : Intervenant[];
   sponsorsDetails : Sponsor[];
 }
@@ -51,6 +52,7 @@ function Session() {
   const navigate = useNavigate()
   const [isConnected, setIsconnected] = useState(false);
   const [isAdmin, setIsadmin] = useState(false);
+  const [stand3D, setStand3D] = useState(false);
   const token = localStorage.getItem("token");
   const [hoveredSponsor, setHoveredSponsor] = useState<number | null>(null);
   
@@ -149,16 +151,25 @@ function Session() {
   // fetch les sessions
   const { data: elements, isLoading, isError } = useQuery("Sessions", async () => {
     try {
-      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sessions");  
+      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sessions");
       if (!response.ok) {
         throw new Error("Failed to fetch sessions");
       }
       const data = await response.json();
+  
+      // Vérifier si au moins un élément a la propriété 'stand' différente de null
+      const hasStandNotNull = data.some((item: { stand: null; }) => item.stand !== null);
+  
+      // Mettre à jour 'stand3D' en fonction du résultat
+      setStand3D(hasStandNotNull);
+  
       return data;
     } catch (err) {
       throw new Error("An error occurred while fetching sessions");
     }
   });
+  
+  
 
   
   function associerIntervenantsAuxSessions(sessions: Sessions[], intervenant_session: IntervenantSession[], intervenantsData: Intervenant[]) {
@@ -543,12 +554,10 @@ function Session() {
             ) : (
               <center>                
                 <br />
-                <button
-                  className="btnMain2"
-                  onClick={() => handleNotconnected()}
-                >
-                  S'inscrire à la session
-                </button>
+                {stand3D ? (
+                    <button className="btnMain2">Stand 3D</button>
+                ):null}            
+                <button className="btnMain2" onClick={() => handleNotconnected()}></button>
               </center>
             )}  
             <br />
