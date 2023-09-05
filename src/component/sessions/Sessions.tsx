@@ -553,9 +553,11 @@ function Session() {
               </center>
             ) : (
               <center>                
-                <br />                
-                <button className="btnMain2">Stand 3D</button>
-                <button className="btnMain2" onClick={() => handleNotconnected()}></button>
+                <br />            
+                {stand3D ? (
+                  <button className="btnMain2">Stand 3D</button>
+                ):null}             
+                <button className="btnMain2" onClick={() => handleNotconnected()}>S'inscrire à la session</button>
               </center>
             )}  
             <br />
