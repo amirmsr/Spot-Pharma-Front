@@ -29,6 +29,7 @@ import AddReplay from "./component/Replay/AddReplay";
 import AddReplaySession from "./component/Replay/AddReplaySession";
 import EditIntervenant from "./component/intervenants/EditIntervenant";
 import Utilisateurs from "./component/accueil/Utilisateurs/Utilisateurs";
+import Stand3D from "./component/stand3D/Stand3D";
 
 
 
@@ -124,8 +125,8 @@ const router = createBrowserRouter([
               element: <Utilisateurs/>
             },                                                      
             {
-              path: "/stand3D/:standId",
-              element: <Utilisateurs/>
+              path: "/stand3D",
+              element: <Stand3D/>
             },                                                      
           ]
         },      
