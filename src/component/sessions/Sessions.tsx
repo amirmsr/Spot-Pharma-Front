@@ -51,8 +51,7 @@ interface Sponsor {
 function Session() {
   const navigate = useNavigate()
   const [isConnected, setIsconnected] = useState(false);
-  const [isAdmin, setIsadmin] = useState(false);
-  const [stand3D, setStand3D] = useState(false);
+  const [isAdmin, setIsadmin] = useState(false);  
   const token = localStorage.getItem("token");
   const [hoveredSponsor, setHoveredSponsor] = useState<number | null>(null);
   
@@ -547,7 +546,7 @@ function Session() {
             ) : (
               <center>                
                 <br />            
-                {element.stand !== null ? (
+                {element.stand == null ? (
                   <button className="btnMain2">Stand 3D</button>
                 ) : null}           
                 <button className="btnMain2" onClick={() => handleNotconnected()}>S'inscrire à la session</button>
