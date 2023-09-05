@@ -546,7 +546,7 @@ function Session() {
             ) : (
               <center>                
                 <br />            
-                {element.stand == null ? (
+                {element.stand !== null ? (
                   <button className="btnMain2">Stand 3D</button>
                 ) : null}           
                 <button className="btnMain2" onClick={() => handleNotconnected()}>S'inscrire à la session</button>
