@@ -123,6 +123,10 @@ const router = createBrowserRouter([
               path: "/utilisateurs",
               element: <Utilisateurs/>
             },                                                      
+            {
+              path: "/stand3D/:standId",
+              element: <Utilisateurs/>
+            },                                                      
           ]
         },      
       ],

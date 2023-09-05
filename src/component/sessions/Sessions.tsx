@@ -362,6 +362,10 @@ function Session() {
     navigate(`addIntervenantsSession/${sessionId}`)
   }
 
+  const handleStand3D=()=>{
+    navigate(`/stand3D`)
+  }
+
   const handleAddSponsors=(sessionId: number)=>{
     navigate(`addSponsorsSession/${sessionId}`)
   }
@@ -547,8 +551,9 @@ function Session() {
               <center>                
                 <br />            
                 {element.stand !== "" && element.stand !== null ?  (
-                  <button className="btnMain2">{element.stand}</button>
+                  <button onClick={() => handleStand3D()} className="btnMain2">Stand 3D</button>
                 ) : null}           
+                <br />
                 <button className="btnMain2" onClick={() => handleNotconnected()}>S'inscrire à la session</button>
               </center>
             )}  
