@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {useNavigate} from "react-router-dom";
 import Form from 'react-bootstrap/Form';
-import { useMutation } from "react-query";
+import { useMutation, useQuery } from "react-query";
+import { fetchUserData } from "../CheckAuth";
 
 
 
@@ -10,21 +11,36 @@ function AddReplay() {
 
     const navigate = useNavigate();
     const [selectedFile, setSelectedFile] = useState<File | null>(null);
+    const [isAdmin, setIsadmin] = useState(false);
+    const token = localStorage.getItem("token");
 
     const [data, setData] = useState({
         nom: "",
         description: "",
     });
         
+
+    //fetch profil
+    const { data: user, isLoading } = useQuery("userProfile", () => fetchUserData(token));
+    useEffect(() => {
+        if (!isLoading && user?.role === 1) {
+          setIsadmin(true);
+        }
+    }, [isLoading, user]);
+
+
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setData((prevData) => ({ ...prevData, [e.target.name]: e.target.value }));
     };
     
     console.log(data)
+
+
     //upload image
     const uploadImage = useMutation((formData: FormData) => {
         return fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sessions/replay`, {
             method: 'POST',
+            headers: {token: `${token}`},
             body: formData
         }).then((response) => {
             const contentType = response.headers.get("content-type");

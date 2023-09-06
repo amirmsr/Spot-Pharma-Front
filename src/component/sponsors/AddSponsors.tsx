@@ -10,6 +10,7 @@ function AddSponsors() {
 
     const navigate = useNavigate();
     const [selectedFile, setSelectedFile] = useState<File | null>(null);
+    const token = localStorage.getItem("token");
 
     const [data, setData] = useState({
         nom: "",
@@ -22,10 +23,12 @@ function AddSponsors() {
     };
     
     console.log(data)
+
     //upload image
     const uploadImage = useMutation((formData: FormData) => {
         return fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sessions/sponsors`, {
             method: 'POST',
+            headers: {token: `${token}`},
             body: formData
         }).then((response) => {
             const contentType = response.headers.get("content-type");

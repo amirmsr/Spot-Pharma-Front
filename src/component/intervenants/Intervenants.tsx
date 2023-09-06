@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Dropdown } from "react-bootstrap";
 import { useQuery } from "react-query";
 import { useNavigate } from "react-router-dom";
+import { fetchUserData } from "../CheckAuth";
 
 function Intervenants(){
 
@@ -18,28 +19,16 @@ function Intervenants(){
     const [isAdmin, setIsadmin] = useState(false);
     const token = localStorage.getItem("token");
 
-    //get user data
-    const {data: user}= useQuery("userProfile", async ()=>{
-        if (!token){
-        throw new Error("token missing");
-        }
-        const response = await fetch ("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/home",{
-        headers: {
-            token: `${token}`,
-        }
-        })
-        if (!response.ok){
-        throw new Error("failed to fetch user profil")
-        }
-        const data = await response.json();
-        return data
-    })
+    //fetch profil
+    const { data: user, isLoading } = useQuery("userProfile", () => fetchUserData(token));
 
     useEffect(() => {
-        if (user?.role === 1) {
+      if (!isLoading && user?.role === 1) {
         setIsadmin(true);
-        }
-    }, [user]);
+      }
+    }, [isLoading, user]);
+
+    
 
     //fetch les intervenants
     const { data: elements, isError } = useQuery("Invites", async () => {

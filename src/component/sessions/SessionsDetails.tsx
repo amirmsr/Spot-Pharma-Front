@@ -15,9 +15,10 @@ interface Users {
   role:boolean
 }
 
-const token = localStorage.getItem("token");
-function Session() {
 
+function Session() {
+    
+    const token = localStorage.getItem("token");
     const { sessionId } = useParams<{ sessionId: any }>();
     console.log(sessionId)
 

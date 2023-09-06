@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import { Link, useNavigate } from "react-router-dom";
+import { fetchUserData } from "../CheckAuth";
 
 export default function Sponsors(){
 
@@ -18,28 +19,15 @@ export default function Sponsors(){
     const [isAdmin, setIsadmin] = useState(false);
     const token = localStorage.getItem("token");
 
-    //get user data
-    const {data: user}= useQuery("userProfile", async ()=>{
-        if (!token){
-        throw new Error("token missing");
-        }
-        const response = await fetch ("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/home",{
-        headers: {
-            token: `${token}`,
-        }
-        })
-        if (!response.ok){
-        throw new Error("failed to fetch user profil")
-        }
-        const data = await response.json();
-        return data
-    })
+    //fetch profil
+    const { data: user, isLoading } = useQuery("userProfile", () => fetchUserData(token));
 
     useEffect(() => {
-        if (user?.role === 1) {
+      if (!isLoading && user?.role === 1) {
         setIsadmin(true);
-        }
-    }, [user]);
+      }
+    }, [isLoading, user]);
+
 
     //fetch les sponsors
     const { data: elements, isError } = useQuery("Sponsors", async () => {
@@ -57,7 +45,6 @@ export default function Sponsors(){
           throw new Error("An error occurred while fetching sponsors");
         }
     });
-
 
     if (isError) {
     alert("erreur")

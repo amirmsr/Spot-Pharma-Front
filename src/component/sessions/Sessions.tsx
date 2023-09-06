@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { Dropdown } from "react-bootstrap";
 import { useMutation, useQuery } from "react-query";
 import { useNavigate} from "react-router-dom";
+import { fetchUserData } from "../CheckAuth";
 
 
 
@@ -57,22 +58,8 @@ function Session() {
   
 
 
-  //get user data
-  const {data: user}= useQuery("userProfile", async ()=>{
-    if (!token){
-      throw new Error("token missing");
-    }
-    const response = await fetch ("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/home",{
-      headers: {
-        token: `${token}`,
-      }
-    })
-    if (!response.ok){
-      throw new Error("failed to fetch user profil")
-    }
-    const data = await response.json();
-    return data
-  })
+  //fetch profil
+  const { data: user } = useQuery("userProfile", () => fetchUserData(token));
 
   useEffect(() => {
     if (user) {
@@ -376,6 +363,7 @@ function Session() {
   const handleDeleteInterv= async (id_sessions: number , id_intervenants: number)=>{
     const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_intervenants/${id_sessions}/${id_intervenants}`, {
       method: 'DELETE',
+      headers: {token: `${token}`}
     });
   
     if (!response.ok) {

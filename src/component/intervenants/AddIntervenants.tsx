@@ -1,20 +1,37 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {useNavigate} from "react-router-dom";
 import Form from 'react-bootstrap/Form';
-import { useMutation } from "react-query";
+import { useMutation, useQuery } from "react-query";
+import { fetchUserData } from "../CheckAuth";
 
 
 
 
 function AddIntervenants() {
 
-    const navigate = useNavigate();
-    const [selectedFile, setSelectedFile] = useState<File | null>(null);
-
     const [data, setData] = useState({
         nom: "",
         description: "",
     });
+
+    const navigate = useNavigate();
+    const [selectedFile, setSelectedFile] = useState<File | null>(null);
+    const [isAdmin, setIsadmin] = useState(false);
+    const token = localStorage.getItem("token");
+
+
+
+    //fetch profil
+    const { data: user, isLoading } = useQuery("userProfile", () => fetchUserData(token));
+
+    useEffect(() => {
+      if (!isLoading && user?.role === 1) {
+        setIsadmin(true);
+      }
+    }, [isLoading, user]);
+
+
+
         
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setData((prevData) => ({ ...prevData, [e.target.name]: e.target.value }));
@@ -25,6 +42,7 @@ function AddIntervenants() {
     const uploadImage = useMutation((formData: FormData) => {
         return fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sessions/intervenants`, {
             method: 'POST',
+            headers: {token: `${token}`},
             body: formData
         }).then((response) => {
             const contentType = response.headers.get("content-type");

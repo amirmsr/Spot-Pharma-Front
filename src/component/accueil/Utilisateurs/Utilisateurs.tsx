@@ -1,6 +1,8 @@
 import { faCirclePlay, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useMutation, useQuery } from "react-query";
+import { fetchUserData } from "../../CheckAuth";
+import { useEffect, useState } from "react";
 
 
 interface Users {
@@ -16,25 +18,17 @@ interface Users {
 
 export default function Utilisateurs(){
   
-   //get user data
-   const token = localStorage.getItem("token");
+    const [isAdmin, setIsadmin] = useState(false);
+    const token = localStorage.getItem("token");
+  
+    //fetch profil
+    const { data: user, isLoading } = useQuery("userProfile", () => fetchUserData(token));
 
-   const {data: user}= useQuery("userProfile", async ()=>{
-     const token = localStorage.getItem("token");
-     if (!token){
-       throw new Error("token missing");
-     }
-     const response = await fetch ("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/home",{
-       headers: {
-         token: `${token}`,
-       }
-     })
-     if (!response.ok){
-       throw new Error("failed to fetch user profil")
-     }
-     const data = await response.json();
-     return data
-   })
+    useEffect(() => {
+      if (!isLoading && user?.role === 1) {
+        setIsadmin(true);
+      }
+    }, [isLoading, user]);
 
 
   

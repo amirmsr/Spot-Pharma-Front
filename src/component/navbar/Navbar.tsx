@@ -13,6 +13,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faUser } from '@fortawesome/free-solid-svg-icons';
 import { useQuery } from 'react-query';
+import { fetchUserData } from '../CheckAuth';
 
 
 export default function App() {
@@ -22,22 +23,8 @@ export default function App() {
   const [isAdmin, setIsadmin] = useState(false);
   const token = localStorage.getItem("token");
 
-  //get user data
-  const {data: user}= useQuery("userProfile", async ()=>{
-    if (!token){
-      throw new Error("token missing");
-    }
-    const response = await fetch ("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/home",{
-      headers: {
-        token: `${token}`,
-      }
-    })
-    if (!response.ok){
-      throw new Error("failed to fetch user profil")
-    }
-    const data = await response.json();
-    return data
-  })
+  //fetch profil
+  const { data: user } = useQuery("userProfile", () => fetchUserData(token));
 
   useEffect(() => {
     if (user) {

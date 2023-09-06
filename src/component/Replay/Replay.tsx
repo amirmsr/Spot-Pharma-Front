@@ -57,7 +57,7 @@ function Replay(){
     const handleDeleteReplay = async (id_replay: number)=>{
         const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/replay/${id_replay}`, {
             method: 'DELETE',
-            headers: {token: `${token}`,}
+            headers: {token: `${token}`}
         });
         
         if (!response.ok) {

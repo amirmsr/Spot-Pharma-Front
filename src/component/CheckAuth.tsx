@@ -7,7 +7,7 @@ export async function fetchUserData(token: any) {
     if (!token) {
       throw new Error("Token missing");
     }
-    const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/home", {
+    const response = await fetch(`${baseUrl}/home`, {
       headers: {
         token: `${token}`,
       },
