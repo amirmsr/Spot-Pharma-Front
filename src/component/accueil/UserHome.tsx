@@ -2,8 +2,8 @@ import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { useMutation, useQuery } from "react-query";
-import { fetchUserData } from "../CheckAuth";
-import {Sessions} from "../../types/types";
+import { fetchUserData } from "../../CheckAuth";
+import {Sessions} from "../../types";
 import { baseUrl } from "../../config";
 
 

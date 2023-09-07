@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useMutation, useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import { baseUrl } from "../../config";
-import { Users } from "../../types/types";
+import { Users } from "../../types";
 
 
 

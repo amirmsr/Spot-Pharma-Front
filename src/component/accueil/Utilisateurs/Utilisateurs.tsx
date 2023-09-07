@@ -1,7 +1,7 @@
 import { faCirclePlay, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useMutation, useQuery } from "react-query";
-import { fetchUserData } from "../../CheckAuth";
+import { fetchUserData } from "../../../CheckAuth";
 import { useEffect, useState } from "react";
 
 

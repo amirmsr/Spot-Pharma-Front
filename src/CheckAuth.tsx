@@ -1,5 +1,5 @@
 import { useQuery } from "react-query";
-import { baseUrl } from "../config";
+import { baseUrl } from "./config";
 
 
 

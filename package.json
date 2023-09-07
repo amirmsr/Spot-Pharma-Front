@@ -23,7 +23,7 @@
     "react-query": "^3.39.3",
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.8.1",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "react-slick": "^0.29.0",
     "react-snap-carousel": "^0.3.2",
     "slick-carousel": "^1.8.1",

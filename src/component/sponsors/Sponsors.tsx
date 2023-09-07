@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import { Link, useNavigate } from "react-router-dom";
-import { fetchUserData } from "../CheckAuth";
+import { fetchUserData } from "../../CheckAuth";
 
 export default function Sponsors(){
 

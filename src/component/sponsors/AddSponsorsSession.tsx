@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import {useParams ,useNavigate} from "react-router-dom";
 import Form from 'react-bootstrap/Form';
 import { useMutation, useQuery } from "react-query";
-import { fetchUserData } from "../CheckAuth";
+import { fetchUserData } from "../../CheckAuth";
 
 
 

@@ -13,7 +13,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faUser } from '@fortawesome/free-solid-svg-icons';
 import { useQuery } from 'react-query';
-import { fetchUserData } from '../CheckAuth';
+import { fetchUserData } from '../../CheckAuth';
 
 
 export default function App() {

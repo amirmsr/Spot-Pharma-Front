@@ -4,8 +4,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useQuery } from 'react-query';
 import Countdown from './CountDown';
-import { FetchIntervenants, FetchSponsors } from '../../request/Request';
-import { Intervenant, Sponsor } from '../../types/types';
+import { FetchIntervenants, FetchSponsors } from '../../Request';
+import { Intervenant, Sponsor } from '../../types';
 
 
 
@@ -44,7 +44,7 @@ function Accueil(){
                     <img  src="./logo.png" alt="" style={{width:"30%", height:"30%"}} /> 
                     <br></br><br></br>
                     <h1>SPOT PHARMA 7 <br></br>Conférences 2023</h1>                               
-                    <p>20 Septembre au 4 Octobr</p> 
+                    <p>20 Septembre au 4 Octobre</p> 
                     <Countdown></Countdown>                                 
                     <br></br><br></br>
                     <div className="container">

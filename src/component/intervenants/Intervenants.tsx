@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import { Dropdown } from "react-bootstrap";
 import { useQuery } from "react-query";
 import { useNavigate } from "react-router-dom";
-import { fetchUserData } from "../CheckAuth";
-import { Intervenant } from "../../types/types";
+import { fetchUserData } from "../../CheckAuth";
+import { Intervenant } from "../../types";
 import { baseUrl } from "../../config";
 
 function Intervenants(){

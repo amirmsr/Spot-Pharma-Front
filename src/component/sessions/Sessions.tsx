@@ -4,9 +4,9 @@ import React, { useEffect, useState } from "react";
 import { Dropdown } from "react-bootstrap";
 import { useMutation, useQuery } from "react-query";
 import { useNavigate} from "react-router-dom";
-import { fetchUserData } from "../CheckAuth";
-import {FetchIntervSessions, FetchIntervenants, FetchSessions, FetchSponsors, FetchSponsorsSessions} from "../../request/Request";
-import { Intervenant, IntervenantSession, Sessions, Sponsor, SponsorSession } from "../../types/types";
+import { fetchUserData } from "../../CheckAuth";
+import {FetchIntervSessions, FetchIntervenants, FetchSessions, FetchSponsors, FetchSponsorsSessions} from "../../Request";
+import { Intervenant, IntervenantSession, Sessions, Sponsor, SponsorSession } from "../../types";
 import { baseUrl } from "../../config";
 
 
