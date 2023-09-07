@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useMutation } from "react-query";
 import { useParams } from "react-router-dom";
+import { baseUrl } from "../../config";
 
 
 
@@ -28,7 +29,7 @@ function EditIntervenant() {
     const { mutate: editIntervenant } = useMutation(async () => {
     try {
         const headers = { token: `${token}` };
-        const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/intervenant/${intervenant_id}`, {  //https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_inscrit
+        const response = await fetch(`${baseUrl}/intervenant/${intervenant_id}`, {  //${baseUrl}/session_inscrit
         method: 'PUT',
         headers: {
             ...headers,

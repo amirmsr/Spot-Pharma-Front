@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useMutation } from "react-query";
+import { baseUrl } from "../../config";
 
 
 
@@ -30,7 +31,7 @@ function AddSession() {
     const { mutate: addSession } = useMutation(async () => {
     try {
         const headers = { token: `${token}` };
-        const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sessions/`, {
+        const response = await fetch(`${baseUrl}/sessions/`, {
         method: 'POST',
         headers: {
             ...headers,

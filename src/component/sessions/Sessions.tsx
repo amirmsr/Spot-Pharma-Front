@@ -5,51 +5,16 @@ import { Dropdown } from "react-bootstrap";
 import { useMutation, useQuery } from "react-query";
 import { useNavigate} from "react-router-dom";
 import { fetchUserData } from "../CheckAuth";
+import {FetchIntervSessions, FetchIntervenants, FetchSessions, FetchSponsors, FetchSponsorsSessions} from "../../request/Request";
+import { Intervenant, IntervenantSession, Sessions, Sponsor, SponsorSession } from "../../types/types";
+import { baseUrl } from "../../config";
 
 
 
-interface Sessions {
-  id: number;
-  session_date: "";
-  type: "";
-  description:"";  
-  video: "";
-  jours:"",
-  stand:"";
-  intervenantsDetails : Intervenant[];
-  sponsorsDetails : Sponsor[];
-}
-
-interface IntervenantSession {
-  id: number;
-  id_sessions: number;
-  id_intervenants: number;
-
-}
-
-interface Intervenant {
-  id: number;
-  nom:any;
-  description:any;
-  image:any
-}
-
-interface SponsorSession {
-  id: number;
-  id_sessions: number;
-  id_sponsors: number;
-
-}
-
-interface Sponsor {
-  id: number;
-  nom:any;
-  description:any;
-  image:any
-}
 
 
 function Session() {
+
   const navigate = useNavigate()
   const [isConnected, setIsconnected] = useState(false);
   const [isAdmin, setIsadmin] = useState(false);  
@@ -74,83 +39,32 @@ function Session() {
   
 
 
-  //fetch les intervenant 
-  const { data: interv, } = useQuery("Intervenant", async () => {
-    try {
-      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/intervenants");  
-      if (!response.ok) {
-        throw new Error("Failed to fetch interv");
-      }
-      const data = await response.json();
-      return data;
-    } catch (err) {
-      throw new Error("An error occurred while fetching interv");
-    }
-  });
+  //fetch les intervenants 
+  const { interv } = FetchIntervenants();
+
+
   //fetch les sponsors 
-  const { data: sponsors, } = useQuery("Sponsors", async () => {
-    try {
-      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sponsors");  
-      if (!response.ok) {
-        throw new Error("Failed to fetch sponsors");
-      }
-      const data = await response.json();
-      return data;
-    } catch (err) {
-      throw new Error("An error occurred while fetching sponsors");
-    }
-  });
+  const { sponsors } = FetchSponsors();
+
 
 
   //fetch les intervenant des sessions
-  const { data: intervSessions, } = useQuery("IantervSessions", async () => {
-    try {
-      const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/intervenants_session/`);  
-      if (!response.ok) {
-        throw new Error("Failed to fetch interv");
-      }
-      const data = await response.json();
-      return data;
-    } catch (err) {
-      throw new Error("An error occurred while fetching interv");
-    }
-  });
+  const { intervSessions } = FetchIntervSessions();
+
 
   //fetch les sponsors des sessions
-  const { data: sponsorsSession, } = useQuery("SponsorsSession", async () => {
-    try {
-      const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sponsors_session/`);  
-      if (!response.ok) {
-        throw new Error("Failed to fetch sponsors");
-      }
-      const data = await response.json();
-      return data;
-    } catch (err) {
-      throw new Error("An error occurred while fetching sponsors");
-    }
-  });
+ const { sponsorsSession } = FetchSponsorsSessions();
 
-
-  
 
 
   // fetch les sessions
-  const { data: elements, isLoading, isError } = useQuery("Sessions", async () => {
-    try {
-      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sessions");
-      if (!response.ok) {
-        throw new Error("Failed to fetch sessions");
-      }
-      const data = await response.json();
-      return data;
-    } catch (err) {
-      throw new Error("An error occurred while fetching sessions");
-    }
-  });
+  const { elements, isLoading, isError } = FetchSessions();
   
   
 
   
+
+  //association des intervenants avec leurs sessions
   function associerIntervenantsAuxSessions(sessions: Sessions[], intervenant_session: IntervenantSession[], intervenantsData: Intervenant[]) {
     const sessionsAvecIntervenants: Sessions[] = [];
   
@@ -181,7 +95,7 @@ function Session() {
   const sessionsAvecIntervenants: Sessions[] = associerIntervenantsAuxSessions(elements, intervSessions, interv );
 
 
-
+  //association des sponsors avec leurs sessions
   function associerSponsorsAuxSessions(sessions: Sessions[], sponsor_session: SponsorSession[], sponsorsData: Sponsor[]) {
     const sessionsAvecSponsors: Sessions[] = [];
   
@@ -222,7 +136,7 @@ function Session() {
     try {
       const token = localStorage.getItem("token");
       const headers = { token: `${token}` };
-      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_inscrit", {  //https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_inscrit
+      const response = await fetch(`${baseUrl}/session_inscrit`, {  //https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_inscrit
         method: 'POST',
         headers: {
           ...headers,
@@ -270,7 +184,7 @@ function Session() {
       const userId = user.id;
 
       const response = await fetch(
-        `https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/inscrit_session/${userId}`,
+        `${baseUrl}/inscrit_session/${userId}`,
         {
           headers: {
             token: `${token}`,
@@ -308,6 +222,8 @@ function Session() {
     }
     return userSessionId
   });
+
+  
 
   if (isLoading) {
     return <div>Chargement...</div>;
@@ -361,7 +277,7 @@ function Session() {
   
 
   const handleDeleteInterv= async (id_sessions: number , id_intervenants: number)=>{
-    const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_intervenants/${id_sessions}/${id_intervenants}`, {
+    const response = await fetch(`${baseUrl}/session_intervenants/${id_sessions}/${id_intervenants}`, {
       method: 'DELETE',
       headers: {token: `${token}`}
     });
@@ -375,7 +291,7 @@ function Session() {
   }
 
   const handleDeleteSponsors= async (id_sessions: number, id_sponsors: number)=>{
-    const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_sponsors/${id_sessions}/${id_sponsors}`, {
+    const response = await fetch(`${baseUrl}/session_sponsors/${id_sessions}/${id_sponsors}`, {
       method: 'DELETE',
       headers: {token: `${token}`,}
     });
@@ -389,7 +305,7 @@ function Session() {
   }
 
   const handleDeleteSession= async (id_sessions: number)=>{
-    const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sessions/${id_sessions}`, {
+    const response = await fetch(`${baseUrl}/sessions/${id_sessions}`, {
       method: 'DELETE',
       headers: {token: `${token}`,}
     });

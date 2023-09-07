@@ -4,24 +4,15 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useQuery } from 'react-query';
 import Countdown from './CountDown';
+import { FetchIntervenants, FetchSponsors } from '../../request/Request';
+import { Intervenant, Sponsor } from '../../types/types';
 
 
 
 
 function Accueil(){
 
-    interface Intervenant {
-        id: number;
-        nom:any;
-        description:any;
-        image:any
-    }
-    interface Sponsor {
-        id: number;
-        nom:any;
-        description:any;
-        image:any
-    }
+
       
 
     //slider
@@ -36,35 +27,12 @@ function Accueil(){
     };
 
     //fetch les intervenant 
-    const { data: interv, } = useQuery("Intervenant", async () => {
-        try {
-        const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/intervenants");  
-        if (!response.ok) {
-            throw new Error("Failed to fetch interv");
-        }
-        const data = await response.json();
-        return data;
-        } catch (err) {
-        throw new Error("An error occurred while fetching interv");
-        }
-    });
-  //fetch les sponsors 
-    const { data: sponsors, } = useQuery("Sponsors", async () => {
-        try {
-        const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sponsors");  
-        if (!response.ok) {
-            throw new Error("Failed to fetch sponsors");
-        }
-        const data = await response.json();
-        const sortedElements = data.sort((a: { nom: string; }, b: { nom: string; }) => a.nom.localeCompare(b.nom));
-        return sortedElements;
-        } catch (err) {
-        throw new Error("An error occurred while fetching sponsors");
-        }
-    });
+    const { interv } = FetchIntervenants();
+
+    //fetch les sponsors 
+    const { sponsors } = FetchSponsors();
     
 
-    // le compte a rebour
 
 
 
@@ -76,7 +44,7 @@ function Accueil(){
                     <img  src="./logo.png" alt="" style={{width:"30%", height:"30%"}} /> 
                     <br></br><br></br>
                     <h1>SPOT PHARMA 7 <br></br>Conférences 2023</h1>                               
-                    <p>20 Septembre au 4 Octobre</p> 
+                    <p>20 Septembre au 4 Octobr</p> 
                     <Countdown></Countdown>                                 
                     <br></br><br></br>
                     <div className="container">

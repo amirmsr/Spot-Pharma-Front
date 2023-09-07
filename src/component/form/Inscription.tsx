@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { baseUrl } from '../../config';
 
 export default function Inscription(){
 
@@ -38,7 +39,7 @@ export default function Inscription(){
   const handleSubmit = async (e:React.FormEvent<HTMLFormElement>)=>{
     e.preventDefault();
     try{
-      const response = await axios.post('https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/inscription', data);
+      const response = await axios.post(`${baseUrl}/inscription`, data);
       alert("Votre inscription est bien prise en compte")
       console.log(response.data)
       navigate('/connexion')

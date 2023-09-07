@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useMutation } from "react-query";
 import { useNavigate } from "react-router-dom";
+import { baseUrl } from "../../config";
 
 
 export default function Connexion() {
@@ -15,9 +16,10 @@ export default function Connexion() {
     setData((prevData) => ({ ...prevData, [e.target.name]: e.target.value }));
   };
   console.log(data);
+
   const {mutate : loginMutation } = useMutation(
     async () => {
-      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/connexion", {
+      const response = await fetch(`${baseUrl}/connexion`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

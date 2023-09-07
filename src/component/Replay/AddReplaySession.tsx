@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import {useParams ,useNavigate} from "react-router-dom";
 import Form from 'react-bootstrap/Form';
 import { useMutation, useQuery } from "react-query";
+import { baseUrl } from "../../config";
 
 
 
@@ -27,7 +28,7 @@ function AddReplaySession() {
         if (!token){
         throw new Error("token missing");
         }
-        const response = await fetch ("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/home",{
+        const response = await fetch (`${baseUrl}/home`,{
         headers: {
             token: `${token}`,
         }
@@ -49,7 +50,7 @@ function AddReplaySession() {
     //fetch les replay
     const { data: elements, isLoading, isError } = useQuery("Replay", async () => {
         try {
-          const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/replay", {}); 
+          const response = await fetch(`${baseUrl}/replay`, {}); 
           if (!response.ok) {
             throw new Error("Failed to fetch replay");
           }
@@ -67,7 +68,7 @@ function AddReplaySession() {
     //add replay a la session
     const { mutate: addSession } = useMutation(async () => {
         try {
-            const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_replay/${sessionId}`, {
+            const response = await fetch(`${baseUrl}/session_replay/${sessionId}`, {
             method: 'POST',
             headers: {
                'Content-Type': 'application/json',

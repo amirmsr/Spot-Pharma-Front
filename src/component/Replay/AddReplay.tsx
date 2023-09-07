@@ -3,6 +3,7 @@ import {useNavigate} from "react-router-dom";
 import Form from 'react-bootstrap/Form';
 import { useMutation, useQuery } from "react-query";
 import { fetchUserData } from "../CheckAuth";
+import { baseUrl } from "../../config";
 
 
 
@@ -38,7 +39,7 @@ function AddReplay() {
 
     //upload image
     const uploadImage = useMutation((formData: FormData) => {
-        return fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sessions/replay`, {
+        return fetch(`${baseUrl}/sessions/replay`, {
             method: 'POST',
             headers: {token: `${token}`},
             body: formData

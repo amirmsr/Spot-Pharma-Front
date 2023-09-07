@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useMutation } from "react-query";
 import { useNavigate, useParams } from "react-router-dom";
+import { baseUrl } from "../../config";
 
 
 export default function ResetPasswordMail() {
@@ -16,7 +17,7 @@ export default function ResetPasswordMail() {
   console.log(data);
   const {mutate : resetPasswordMutation } = useMutation(
     async () => {
-      const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/resetPassword/${token}`, {
+      const response = await fetch(`${baseUrl}/resetPassword/${token}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

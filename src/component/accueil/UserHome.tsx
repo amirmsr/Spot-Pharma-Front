@@ -3,17 +3,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { useMutation, useQuery } from "react-query";
 import { fetchUserData } from "../CheckAuth";
+import {Sessions} from "../../types/types";
+import { baseUrl } from "../../config";
 
 
-interface Sessions {
-  id: number;
-  titre: "";
-  session_date: "";
-  type: "";
-  description:"";  
-  video: "";
-  jours:""
-}
+
 
 
 
@@ -42,7 +36,7 @@ export default function UserHome(){
         const userId = user.id;
     
         const response = await fetch(
-          `https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/inscrit_session/${userId}`,
+          `${baseUrl}/inscrit_session/${userId}`,
           {
             headers: {
               token: `${token}`,
@@ -66,7 +60,7 @@ export default function UserHome(){
     //get user sessions
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const { data: allSession } = useQuery("AllSessions", async () => {
-      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sessions");
+      const response = await fetch(`${baseUrl}/sessions`);
       if (!response.ok) {
         throw new Error("failed to fetch sessions");
       }
@@ -90,7 +84,7 @@ export default function UserHome(){
   const { mutate: desinscriptionMutation } = useMutation(async (desinscription: { id_user: string; id_session: string; }) => {
     try {
       const headers = { token: `${token}` };
-      const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_inscrit", {
+      const response = await fetch(`${baseUrl}/session_inscrit`, {
         method: 'DELETE',
         headers: {
           ...headers,
@@ -120,7 +114,7 @@ export default function UserHome(){
     const { data: allinscrits, } = useQuery("AllInscrit", async () => {
       try {
         const headers = { token: `${token}` };
-        const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/users`,{
+        const response = await fetch(`${baseUrl}/users`,{
           headers
         });  
         if (!response.ok) {
@@ -177,8 +171,7 @@ export default function UserHome(){
             {filteredSessions?.slice(0.3).map((element:Sessions)=>(
             <div key={element.id} className="col-md-4 ">
               <div className="session">
-              <div style={{height:'60px'}}>
-                <h3>{element.titre}</h3>   
+              <div style={{height:'60px'}}>  
               </div>  
 
               <br /> 

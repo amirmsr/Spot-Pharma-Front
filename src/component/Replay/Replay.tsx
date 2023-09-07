@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import { useNavigate } from "react-router-dom";
 import { fetchUserData } from "../CheckAuth";
+import { baseUrl } from "../../config";
 
 function Replay(){
 
@@ -33,7 +34,7 @@ function Replay(){
     //fetch les replay
     const { data: elements, isError } = useQuery("Replay", async () => {
         try {
-          const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/replay"); 
+          const response = await fetch(`${baseUrl}/replay`); 
           if (!response.ok) {
             throw new Error("Failed to fetch replay");
           }
@@ -55,7 +56,7 @@ function Replay(){
     }
     
     const handleDeleteReplay = async (id_replay: number)=>{
-        const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/replay/${id_replay}`, {
+        const response = await fetch(`${baseUrl}/replay/${id_replay}`, {
             method: 'DELETE',
             headers: {token: `${token}`}
         });

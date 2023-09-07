@@ -5,15 +5,12 @@ import { Dropdown } from "react-bootstrap";
 import { useQuery } from "react-query";
 import { useNavigate } from "react-router-dom";
 import { fetchUserData } from "../CheckAuth";
+import { Intervenant } from "../../types/types";
+import { baseUrl } from "../../config";
 
 function Intervenants(){
 
-    interface Intervenant {
-        id: number;
-        nom:any;
-        description:any;
-        image:any
-    }
+
     
     const navigate = useNavigate()
     const [isAdmin, setIsadmin] = useState(false);
@@ -33,7 +30,7 @@ function Intervenants(){
     //fetch les intervenants
     const { data: elements, isError } = useQuery("Invites", async () => {
         try {
-          const response = await fetch("https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/intervenants"); 
+          const response = await fetch(`${baseUrl}/intervenants`); 
           if (!response.ok) {
             throw new Error("Failed to fetch intervenant");
           }
@@ -56,7 +53,7 @@ function Intervenants(){
     }
     
     const handleDeleteInterv= async (id_interv: number)=>{
-        const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/intervenants/${id_interv}`, {
+        const response = await fetch(`${baseUrl}/intervenants/${id_interv}`, {
             method: 'DELETE',
             headers: {token: `${token}`,}
         });

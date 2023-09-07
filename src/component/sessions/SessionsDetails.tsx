@@ -3,17 +3,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { useMutation, useQuery } from "react-query";
 import { useParams } from "react-router-dom";
+import { baseUrl } from "../../config";
+import { Users } from "../../types/types";
 
 
 
-interface Users {
-  id: number;  
-  name : string;
-  email: string;
-  password: string;
-  validation:boolean;
-  role:boolean
-}
 
 
 function Session() {
@@ -25,7 +19,7 @@ function Session() {
     //fetch les user
     const { data: users } = useQuery("Users", async () => {
     try {
-    const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/users`, {
+    const response = await fetch(`${baseUrl}/users`, {
         headers: {
             token: `${token}`,
         }
@@ -45,7 +39,7 @@ function Session() {
     // fetch les user inscrit au sessions
     const { data: inscrits } = useQuery("Inscrits", async () => {
     try {
-    const response = await fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/session_inscrit/${sessionId}`, {
+    const response = await fetch(`${baseUrl}/session_inscrit/${sessionId}`, {
         headers: {
             token: `${token}`,
         }

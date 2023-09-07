@@ -2,6 +2,7 @@ import { useState } from "react";
 import {useNavigate} from "react-router-dom";
 import Form from 'react-bootstrap/Form';
 import { useMutation } from "react-query";
+import { baseUrl } from "../../config";
 
 
 
@@ -26,7 +27,7 @@ function AddSponsors() {
 
     //upload image
     const uploadImage = useMutation((formData: FormData) => {
-        return fetch(`https://spot-pharma-api-bd00f8c1ff03.herokuapp.com/sessions/sponsors`, {
+        return fetch(`${baseUrl}/sessions/sponsors`, {
             method: 'POST',
             headers: {token: `${token}`},
             body: formData
