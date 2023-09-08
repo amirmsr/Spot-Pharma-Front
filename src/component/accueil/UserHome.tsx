@@ -160,9 +160,9 @@ export default function UserHome(){
       
       <div>
           <div>
-          <h1>Bienvenue {user?.name}</h1>
+          <h1 style={{color:'white'}}>Bienvenue {user?.name}</h1>
           <br />
-          <h3>Voici les sessions où vous êtes inscrit</h3>
+          <h3 style={{color:'white'}}>Voici les sessions où vous êtes inscrit</h3>
           <br /> <br />
           <div className="container ">
           
