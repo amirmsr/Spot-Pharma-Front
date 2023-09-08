@@ -12,7 +12,7 @@ export default function Root() {
   return (
     <div>
         <Navbar />
-        <main style={{backgroundColor:"white", textAlign:"center"}}> {/* //e5e7ea */}
+        <main style={{backgroundColor:"#004651", textAlign:"center"}}> {/* //e5e7ea */}
           <Outlet />
         </main>
         <Footer></Footer>
