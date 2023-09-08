@@ -78,7 +78,7 @@ export default function Sponsors(){
         <div className="allInterv">   
             <div style={{paddingTop:'90px'}}>
             <h2  style={{ margin:"0", color:"white"}}>Tous les</h2>
-            <h3 style={{fontSize:"2rem", margin:"0", color:"#23A082"}}>Partenaires</h3>
+            <h3 style={{fontSize:"2rem", margin:"0", color:"#7DBA33"}}>Partenaires</h3>
             </div>             
             <br />
             {isAdmin ? (
