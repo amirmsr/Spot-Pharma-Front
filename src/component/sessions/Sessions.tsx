@@ -325,8 +325,8 @@ function Session() {
   return (
     <div className="container">
       <br></br> <br></br> <br></br> <br></br>
-      <h1 style={{ margin: "0", color: "#7DBA33" }}>Toutes les</h1>
-      <p style={{ fontSize: "2rem", margin: "0", color:"#004651" }}>Sessions</p>
+      <h1 style={{ margin: "0", color: "white" }}>Toutes les</h1>
+      <p style={{ fontSize: "2rem", margin: "0", color:"white" }}>Sessions</p>
       <br></br>
       {isAdmin ? (
                 <button className="btnMain2" onClick={() => handleAddSession()}>Ajouter une session</button>  

@@ -73,7 +73,7 @@ function Replay(){
     return (
         <div className="allInterv">
           <div style={{ paddingTop: '90px' }}>
-            <h2 style={{ margin: '0', color: '#7DBA33' }}>Tous les</h2>
+            <h2 style={{ margin: '0', color: 'white' }}>Tous les</h2>
             <h3 style={{ fontSize: '2rem', margin: '0' }}>Replay</h3>
           </div>
           <br />
