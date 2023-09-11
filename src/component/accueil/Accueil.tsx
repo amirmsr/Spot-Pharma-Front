@@ -6,14 +6,27 @@ import { useQuery } from 'react-query';
 import Countdown from './CountDown';
 import { FetchIntervenants, FetchSponsors } from '../../Request';
 import { Intervenant, Sponsor } from '../../types';
+import { useEffect, useState } from 'react';
 
 
 
 
 function Accueil(){
 
-
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
       
+    useEffect(() => {
+        function handleResize() {
+          setWindowWidth(window.innerWidth);
+        }
+    
+        window.addEventListener('resize', handleResize);
+    
+        return () => {
+          window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
 
     //slider
     const settings = {
@@ -54,6 +67,7 @@ function Accueil(){
                                     <button className='btnMain'>S'inscrire aux sessions</button> 
                                 </a>
                             </div>
+                            <br /><br /><br /><br />
                             <div className="col">
                                 <a href="https://bcombrun.com/Spot-Pharma-Image/Programme/programmeSpot7.pdf">
                                     <button className='btnMain'>Accéder au programme</button> 
@@ -79,7 +93,7 @@ function Accueil(){
 
             {/*  slider sponsors */}
             <div style={{textAlign:'center', marginBottom:'30px',backgroundColor:"rgb(255, 255, 255)", boxShadow:' 0px 1px 40px 14px rgba(0, 0, 0, 0.07)' /* backgroundColor:"rgb(255, 255, 255)", boxShadow:' 0px 1px 40px 14px rgba(0, 0, 0, 0.07)',borderRadius:'15px' */}}>
-            <div className="container" >
+            <div className={`container ${windowWidth < 768 ? 'hide-slider' : ''}`} >
                 <Slider {...settings} >
                 {sponsors?.map((item:Sponsor) => (
                     <div key={item.id}>
@@ -111,7 +125,7 @@ function Accueil(){
 
            {/*  slider intervenant */}
             <div  style={{textAlign:'center',paddingTop:'20px', marginBottom:'30px',backgroundColor:"rgb(255, 255, 255)", boxShadow:' 0px 1px 40px 14px rgba(0, 0, 0, 0.07)' /* backgroundColor:"rgb(255, 255, 255)", boxShadow:' 0px 1px 40px 14px rgba(0, 0, 0, 0.07)',borderRadius:'15px' */}}>
-            <div className="container">
+            <div className={`container ${windowWidth < 768 ? 'hide-slider' : ''}`}>
                 <Slider {...settings} >
                 {interv?.map((item:Intervenant) => (
                     <div key={item.id}  >
