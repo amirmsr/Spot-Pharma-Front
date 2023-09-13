@@ -51,7 +51,7 @@ export default function ResetPassword() {
       <form className="addSessionForm" onSubmit={handleSubmit} >
         <div className="add" >
           <br /><br /><br />
-          <h1 >Réinitialiser mot de passe </h1>
+          <h1  style={{color:'white'}} >Réinitialiser mot de passe </h1>
           <br />
           <br />
           <div className="container">
