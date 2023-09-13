@@ -59,7 +59,26 @@ function Session() {
 
   // fetch les sessions
   const { elements, isLoading, isError } = FetchSessions();
-  
+
+
+  // fetch tout les inscrit des Sessions
+  const { data: inscritSession, } = useQuery("InscritSession", async () => {
+    const headers = { token: `${token}` };
+    try {
+    const response = await fetch(`${baseUrl}/session_inscrit/`,{
+      headers
+    });  
+    if (!response.ok) {
+        throw new Error("Failed to fetch sponsors");
+    }
+    const data = await response.json();
+    return data;
+    } catch (err) {
+    throw new Error("An error occurred while fetching sponsors");
+    }
+  });
+
+  console.log(inscritSession.length)
   
 
   
@@ -224,6 +243,7 @@ function Session() {
   });
 
   
+  
 
   if (isLoading) {
     return <div>Chargement...</div>;
@@ -327,6 +347,10 @@ function Session() {
       <br></br> <br></br> <br></br> <br></br>
       <h1 style={{ margin: "0", color: "white" }}>Toutes les</h1>
       <p style={{ fontSize: "2rem", margin: "0", color:"#7DBA33" }}>Sessions</p>
+      <br /><br/>
+      <p style={{color:'white',fontSize:'1.3rem'}}>Nombre d'inscrit aux sessions : </p>
+      <h3 style={{color:'white'}}></h3>
+      
       <br></br>
       {isAdmin ? (
                 <button className="btnMain2" onClick={() => handleAddSession()}>Ajouter une session</button>  
