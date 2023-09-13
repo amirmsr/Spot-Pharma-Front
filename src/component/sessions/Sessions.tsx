@@ -269,6 +269,7 @@ function Session() {
 
   const handleNotconnected = () => {
     alert("Merci de créer votre compte pour vous inscrire à la session");
+    navigate("inscription")
   };
 
   
