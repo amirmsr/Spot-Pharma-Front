@@ -268,7 +268,7 @@ function Session() {
   };
 
   const handleNotconnected = () => {
-    alert("Vous devez vous connecter pour vous inscrire à la session  ");
+    alert("Merci de créer votre compte pour vous inscrire à la session");
   };
 
   
@@ -286,8 +286,10 @@ function Session() {
   }
 
   const handleStand3D=()=>{
-    navigate(`/stand3D`)
+    /* navigate(`/stand3D`) */
+    alert("Stand disponible à partir du 20 septembre")
   }
+
 
   const handleAddSponsors=(sessionId: number)=>{
     navigate(`addSponsorsSession/${sessionId}`)

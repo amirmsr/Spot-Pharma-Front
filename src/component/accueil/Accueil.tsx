@@ -46,7 +46,10 @@ function Accueil(){
     const { sponsors } = FetchSponsors();
     
 
-
+    const handleEnquete=()=>{
+        /* navigate(`/stand3D`) */
+        alert("Enquête bientôt disponible")
+    }
 
 
 
@@ -102,7 +105,7 @@ function Accueil(){
                                             <img style={{objectFit: 'contain',width: '100%',height: '100%',}} src="https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/Group%2091.png"  alt="" />                 
                                         </div> 
                                         <br /> 
-                                        <button className='btnMain5'>Participez à l'enquête</button>
+                                        <button className='btnMain5' onClick={() => handleEnquete()}>Participez à l'enquête</button>
                                     </div>                        
                                 </div>
                             </div>
@@ -113,7 +116,7 @@ function Accueil(){
                                             <img style={{objectFit: 'contain',width: '100%',height: '100%',}} src="https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/sfspo.png" alt="" />                 
                                         </div> 
                                         <br /> 
-                                        <button className='btnMain5'>Participez à l'enquête</button>
+                                        <button className='btnMain5' onClick={() => handleEnquete()}>Participez à l'enquête</button>
                                     </div>                        
                                 </div>
                             </div>
