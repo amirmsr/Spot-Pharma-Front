@@ -78,7 +78,7 @@ function Session() {
     }
   });
 
-  console.log(inscritSession?.length)
+
   
 
   
@@ -347,10 +347,13 @@ function Session() {
       <br></br> <br></br> <br></br> <br></br>
       <h1 style={{ margin: "0", color: "white" }}>Toutes les</h1>
       <p style={{ fontSize: "2rem", margin: "0", color:"#7DBA33" }}>Sessions</p>
-      <br /><br/>
-      <p style={{color:'white',fontSize:'1.3rem'}}>Nombre d'inscrit aux sessions : </p>
-      <h3 style={{color:'white'}}></h3>
-      
+      {isAdmin ? (
+        <div>
+          <br /><br/>
+          <p style={{color:'white',fontSize:'1.3rem'}}>Nombre d'inscrit aux sessions : </p>
+          <h3 style={{color:'white'}}>{inscritSession.length}</h3>
+        </div>      
+      ):null}            
       <br></br>
       {isAdmin ? (
                 <button className="btnMain2" onClick={() => handleAddSession()}>Ajouter une session</button>  
