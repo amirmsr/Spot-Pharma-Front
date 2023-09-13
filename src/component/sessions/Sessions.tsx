@@ -78,7 +78,7 @@ function Session() {
     }
   });
 
-  console.log(inscritSession.length)
+  console.log(inscritSession?.length)
   
 
   
