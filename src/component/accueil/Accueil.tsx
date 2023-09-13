@@ -113,7 +113,7 @@ function Accueil(){
                                             <img style={{objectFit: 'contain',width: '100%',height: '100%',}} src="https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/sfspo.png" alt="" />                 
                                         </div> 
                                         <br /> 
-                                        <p></p>
+                                        <button className='btnMain5'>Participez à l'enquête</button>
                                     </div>                        
                                 </div>
                             </div>
