@@ -93,26 +93,7 @@ export default function App() {
                   </MDBNavbarLink>
                   </MDBNavbarItem>  
             ):(
-              <div style={{display:'flex'}}>
-                  <MDBNavbarItem>
-                  <MDBNavbarLink>
-                    <a
-                    href="https://spot-pharma.vercel.app/connexion"
-                    style={{
-                      border: "1.5px solid white",
-                      padding: "5px 10px 5px 10px",
-                      borderRadius: "15px",
-                      textDecoration: "none", 
-                      color: "white",
-                    }}
-                    >
-                    {" "}
-                    <span className='btnNavbar'>Connexion</span> <span style={{ opacity: 0 }}>.</span>{" "}
-                    <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>{" "}
-                   </a>
-                  </MDBNavbarLink>
-                  </MDBNavbarItem>
-                    
+              <div style={{display:'flex'}}>                      
                   <MDBNavbarItem>
                   <MDBNavbarLink>
                     <a
@@ -131,6 +112,25 @@ export default function App() {
                    </a>
                   </MDBNavbarLink>
                   </MDBNavbarItem>  
+
+                  <MDBNavbarItem>
+                  <MDBNavbarLink>
+                    <a
+                    href="https://spot-pharma.vercel.app/connexion"
+                    style={{
+                      border: "1.5px solid white",
+                      padding: "5px 10px 5px 10px",
+                      borderRadius: "15px",
+                      textDecoration: "none", 
+                      color: "white",
+                    }}
+                    >
+                    {" "}
+                    <span className='btnNavbar'>Connexion</span> <span style={{ opacity: 0 }}>.</span>{" "}
+                    <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>{" "}
+                   </a>
+                  </MDBNavbarLink>
+                  </MDBNavbarItem>
               </div>                  
             )}     
           </MDBNavbarNav>
