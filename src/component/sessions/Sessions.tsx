@@ -351,7 +351,7 @@ function Session() {
         <div>
           <br /><br/>
           <p style={{color:'white',fontSize:'1.3rem'}}>Nombre d'inscrit aux sessions : </p>
-          <h3 style={{color:'white'}}>{inscritSession.length}</h3>
+          <h3 style={{color:'white'}}>{inscritSession?.length}</h3>
         </div>      
       ):null}            
       <br></br>
