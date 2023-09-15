@@ -52,7 +52,7 @@ export default function ResetPasswordMail() {
       <form className="addSessionForm" onSubmit={handleSubmit} >
         <div className="add" >
           <br /><br /><br />
-          <h1 style={{color:'white'}}>Écrivez votre nouveaux mot de passe</h1>
+          <h1 style={{color:'white'}}>Écrivez votre nouveau mot de passe</h1>
           <br />
           <br />
           <div className="container">
