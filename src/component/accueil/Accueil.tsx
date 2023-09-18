@@ -59,7 +59,7 @@ function Accueil(){
                 <div className='main_div_cont'>
                     <img  src="./logo.png" alt="" style={{width:"30%", height:"30%"}} /> 
                     <br></br><br></br>
-                    <h1>SPOT PHARMA 7 <br></br>Conférences 2023</h1>                               
+                    <h1>SPOT PHARMA 7 </h1>
                     <p>20 Septembre au 4 Octobre</p> 
                     <Countdown></Countdown>                                 
                     <br></br><br></br>
@@ -72,7 +72,7 @@ function Accueil(){
                             </div>
                             <br /><br /><br /><br />
                             <div className="col">
-                                <a href="https://bcombrun.com/Spot-Pharma-Image/Programme/programmeSpot7.pdf">
+                                <a href="https://www.bcombrun.com/PDF_online/bcb_pdf/depot/Programme SPOT 7.pdf">
                                     <button className='btnMain'>Accéder au programme</button> 
                                 </a>
                             </div>
