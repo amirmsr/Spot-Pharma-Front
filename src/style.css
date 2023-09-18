@@ -296,7 +296,11 @@ input{
    
 }
 
-
+.infoSession {
+    font-style: italic;
+    color: #d7a100;
+    font-size: 1.5em;
+}
 
 
 

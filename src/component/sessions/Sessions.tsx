@@ -444,7 +444,8 @@ function Session() {
             <p style={{fontSize:'1.5rem',color:'#23A082' }}>{element.type} :</p>    
             <p style={{fontSize:'1.3rem', height:'100px'}}>{element.description}</p>
             <br />
-            <div className="container" style={{ height:'350px'}}>
+
+            <div className="container" style={{ height:'300px'}}>
               <div className="row">
                 {element.intervenantsDetails.map((interv:Intervenant)=>(
                     <div key={interv.id} className="col-sm-6">
@@ -470,9 +471,15 @@ function Session() {
                     </div>
                 ))}
               </div>
-            </div>  
-            
-            <br />             
+            </div>
+
+            <div>
+                <center>
+                    <p className="infoSession">
+                        L'accès au live sera disponible 5 minutes avant l'heure de la session
+                    </p>
+                </center>
+            </div>
             {isConnected ? (
               <center>
                {userSessionId.includes(element.id)?(

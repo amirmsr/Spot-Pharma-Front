@@ -78,10 +78,7 @@ function Accueil(){
                             </div>
                         </div>
                     </div>
-                  
-                    
                 </div>
-               
             </div>
 
 
