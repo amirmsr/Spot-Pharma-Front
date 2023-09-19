@@ -175,7 +175,8 @@ export default function UserHome(){
 
               <p style={{fontSize:'1.3rem',color:'#23A082' }}>{element.type} :</p>    
               <p style={{fontSize:'1.3rem'}}>{element.description}</p>
-              <p style={{color:'#23A082',fontSize:'1.3rem'}}>{element.session_date}</p>               
+              <p style={{color:'#23A082',fontSize:'1.3rem'}}>{element.jours}</p>
+              <p style={{color:'#23A082',fontSize:'1.3rem'}}>{element.session_date}</p>
               <br /><br />
               <button className="btnMain2">
                 Accédez au live <span><FontAwesomeIcon icon={faCirclePlay} style={{color:'#23A082'}} /></span>
