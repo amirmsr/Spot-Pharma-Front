@@ -87,7 +87,7 @@ function Accueil(){
 
             <br /><br /> 
             <div style={{backgroundImage: `url("./hexa.png")`, backgroundRepeat:'none', backgroundSize:'1100px', backgroundPosition:'center'}}>
-                <h2  style={{ margin:"0", color:"#7DBA33"}}>Tous les</h2>
+                <h2  style={{ margin:"0", color:"#7DBA33"}}>Toutes les</h2>
                 <h3 style={{fontSize:"2rem", margin:"0", color:"#004651"}}>Actualités</h3>
                 <br /><br />
 
