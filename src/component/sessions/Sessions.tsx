@@ -483,7 +483,7 @@ function Session() {
             {isConnected ? (
               <center>
                {userSessionId.includes(element.id)?(
-                <button className="btnMain2" onClick={() => handleVideo(element.video)} > Accédez au live <span><FontAwesomeIcon icon={faCirclePlay} style={{color:'#23A082'}} /></span></button>
+                <a href="#" className="btnMain2 btn"> Accédez au live <span><FontAwesomeIcon icon={faCirclePlay} style={{color:'#23A082'}} /></span></a>
                ):(
                   <button className="btnMain2" onClick={() => handleInscription(element.id)}> S'inscrire à la session </button>
                )}                 
