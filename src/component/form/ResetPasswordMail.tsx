@@ -66,7 +66,6 @@ export default function ResetPasswordMail() {
                   onChange={handleChange}
                 />
               </div>
-              
             </div>
           </div>
           <br />
