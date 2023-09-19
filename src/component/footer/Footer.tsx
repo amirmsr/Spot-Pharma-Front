@@ -14,9 +14,6 @@ export default function Footer(){
                     <img src="./facebook.png" width='10%' alt="" />
                 </div>
                 <div className="col">
-                    <img src="./twitter.png" width='10%' alt="" />
-                </div>
-                <div className="col">
                     <img src="./social.png" width='10%' alt="" />
                 </div>
             </div>
