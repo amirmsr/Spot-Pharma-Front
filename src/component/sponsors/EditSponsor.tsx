@@ -40,7 +40,6 @@ function EditSponsor() {
 
         if (response.ok) {
         const json = await response.json();
-        console.log(json);
         alert("Modification pris prise en compte")
         window.location.href = "/sponsors";
         return json;
@@ -54,8 +53,6 @@ function EditSponsor() {
         throw error;
     }
     });
-
-    console.log(data)
 
 
     const handleSubmit = async (e:React.FormEvent<HTMLFormElement>)=>{

@@ -48,7 +48,6 @@ function Replay(){
     if (isError) {
     alert("erreur")
     }
-    console.log(elements)
   
 
     const handleClick=()=>{

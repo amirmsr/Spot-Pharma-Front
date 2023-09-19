@@ -43,7 +43,6 @@ function EditSession() {
 
         if (response.ok) {
         const json = await response.json();
-        console.log(json);
         alert("Modification pris prise en compte")
         window.location.href = "/sessions";
         return json;
@@ -58,7 +57,6 @@ function EditSession() {
     }
     });
 
-    console.log(data)
 
 
     const handleSubmit = async (e:React.FormEvent<HTMLFormElement>)=>{

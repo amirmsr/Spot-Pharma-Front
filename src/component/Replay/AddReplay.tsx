@@ -33,8 +33,6 @@ function AddReplay() {
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setData((prevData) => ({ ...prevData, [e.target.name]: e.target.value }));
     };
-    
-    console.log(data)
 
 
     //upload image
@@ -83,7 +81,6 @@ function AddReplay() {
         if (selectedFile) {
             formData.append("replay", selectedFile);
         }
-        console.log(formData)
         uploadImage.mutate(formData);
         e.preventDefault()
     }

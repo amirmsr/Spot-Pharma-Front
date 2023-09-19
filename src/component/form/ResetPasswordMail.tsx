@@ -14,7 +14,6 @@ export default function ResetPasswordMail() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setData((prevData) => ({ ...prevData, [e.target.name]: e.target.value }));
   };
-  console.log(data);
   const {mutate : resetPasswordMutation } = useMutation(
     async () => {
       const response = await fetch(`${baseUrl}/resetPassword/${token}`, {

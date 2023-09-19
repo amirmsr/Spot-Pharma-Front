@@ -144,7 +144,6 @@ function Session() {
   
   const sessionFinal: Sessions[] = associerSponsorsAuxSessions(sessionsAvecIntervenants, sponsorsSession, sponsors );
 
-  console.log(sessionFinal)
 
   
 
@@ -188,8 +187,6 @@ function Session() {
         id_session: elementId.toString(),
       };
       inscriptionMutation(inscription)        
-    } else {
-      console.log("userId n'est pas défini.");
     }
   };
  
@@ -236,9 +233,7 @@ function Session() {
 
   userSessionId?.map((id: number) => {
     const foundSession = elements.find((element: any) => element.id === id);
-    if (foundSession) {
-      console.log(`User session with id ${id} found.`);
-    }
+
     return userSessionId
   });
 
@@ -249,9 +244,7 @@ function Session() {
     return <div>Chargement...</div>;
   }
   
-  if (isError) {
-    console.log('erreuuuur')
-  }
+
   if (!elements || elements.length === 0) {
     return <div>Aucune session disponible</div>;
   }
@@ -264,9 +257,9 @@ function Session() {
   };
 
   const handleVideo = async (sessionVideo: any) => {
-      console.log(sessionVideo);
-      if (sessionVideo != null) {
-          window.location.href= sessionVideo
+      if (sessionVideo != "") {
+          // window.location.href= sessionVideo
+          window.open(sessionVideo, '_blank');
       }
   };
 

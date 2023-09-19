@@ -15,7 +15,6 @@ export default function Connexion() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setData((prevData) => ({ ...prevData, [e.target.name]: e.target.value }));
   };
-  console.log(data);
 
   const {mutate : loginMutation } = useMutation(
     async () => {
@@ -34,7 +33,6 @@ export default function Connexion() {
     {
       onSuccess: (data) => {
         const token = data.token;
-        console.log(token);        
         localStorage.setItem("token", token);
         window.location.href = "/home";
       },

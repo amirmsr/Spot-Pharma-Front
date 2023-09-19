@@ -42,7 +42,6 @@ function AddSession() {
 
         if (response.ok) {
         const json = await response.json();
-        console.log(json);
         alert("Ajout de session réussit")
         window.location.href = "/sessions";
         return json;
@@ -57,7 +56,6 @@ function AddSession() {
     }
     });
 
-    console.log(data)
 
 
     const handleSubmit = async (e:React.FormEvent<HTMLFormElement>)=>{

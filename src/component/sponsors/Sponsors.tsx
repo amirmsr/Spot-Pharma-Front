@@ -49,7 +49,6 @@ export default function Sponsors(){
     if (isError) {
     alert("erreur")
     }
-    console.log(elements)
 
 
     const handleClick=()=>{

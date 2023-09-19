@@ -79,7 +79,6 @@ function AddReplaySession() {
     
             if (response.ok) {
             const json = await response.json();
-            console.log(json);
             alert("Ajout du replay réussit")
             window.location.href = "/replay";
             return json;
@@ -107,8 +106,6 @@ function AddReplaySession() {
     }
 
     const replaySelected = elements?.filter((element: { id: any; }) => replays.id_replay.includes(element.id));
-    console.log(replays)
-    console.log(replaySelected)
 
 
 

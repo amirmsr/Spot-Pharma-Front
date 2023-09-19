@@ -37,8 +37,7 @@ function AddIntervenants() {
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setData((prevData) => ({ ...prevData, [e.target.name]: e.target.value }));
     };
-    
-    console.log(data)
+
     //upload image
     const uploadImage = useMutation((formData: FormData) => {
         return fetch(`${baseUrl}/sessions/intervenants`, {
@@ -85,7 +84,6 @@ function AddIntervenants() {
         if (selectedFile) {
             formData.append("intervenants", selectedFile);
         }
-        console.log(formData)
         uploadImage.mutate(formData);
         e.preventDefault()
     }

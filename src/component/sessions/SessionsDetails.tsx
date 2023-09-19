@@ -14,7 +14,6 @@ function Session() {
     
     const token = localStorage.getItem("token");
     const { sessionId } = useParams<{ sessionId: any }>();
-    console.log(sessionId)
 
     //fetch les user
     const { data: users } = useQuery("Users", async () => {
@@ -33,7 +32,6 @@ function Session() {
     throw new Error("An error occurred while fetching sessions");
     }
     });
-    console.log(users)
 
 
     // fetch les user inscrit au sessions
@@ -53,7 +51,6 @@ function Session() {
     throw new Error("An error occurred while fetching sessions");
     }
     });
-    console.log(inscrits)
 
 
     // filtrer users 
@@ -64,9 +61,6 @@ function Session() {
             const exists = inscrits?.some((inscrit: { id_user: any; }) => inscrit?.id_user === user?.id);
             return exists;
         });
-        filteredUsers.map((filteredUser: Users) => {
-            console.log(filteredUser);
-        });      
     }
    
 

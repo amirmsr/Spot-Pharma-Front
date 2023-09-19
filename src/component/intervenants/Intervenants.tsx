@@ -45,7 +45,6 @@ function Intervenants(){
     if (isError) {
     alert("erreur")
     }
-    console.log(elements)
   
 
     const handleClick=()=>{

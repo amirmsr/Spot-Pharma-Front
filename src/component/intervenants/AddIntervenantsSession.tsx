@@ -66,7 +66,6 @@ function AddIntervenantsSession() {
     
             if (response.ok) {
             const json = await response.json();
-            console.log(json);
             alert("Ajout de l'intervenant réussit")
             window.location.href = "/sessions";
             return json;
@@ -95,8 +94,6 @@ function AddIntervenantsSession() {
 
 
     const intervSelected = elements?.filter((element: { id: any; }) => interv.id_intervenant.includes(element.id));
-    console.log(interv)
-    console.log(intervSelected)
     
     
     const handleSubmit = async ()=>{

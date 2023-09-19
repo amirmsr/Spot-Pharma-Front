@@ -34,18 +34,14 @@ export default function Inscription(){
     setData((prevData) => ({ ...prevData, [e.target.name]: e.target.value }));
   };
 
-  console.log(data)
-
   const handleSubmit = async (e:React.FormEvent<HTMLFormElement>)=>{
     e.preventDefault();
     try{
       const response = await axios.post(`${baseUrl}/inscription`, data);
       alert("Votre inscription est bien prise en compte")
-      console.log(response.data)
       navigate('/connexion')
     }catch(error){
       alert("Ce mail existe déjà")
-      console.log(error)
     }
   }
 

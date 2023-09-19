@@ -62,7 +62,6 @@ function AddSponsorsSession() {
     
             if (response.ok) {
             const json = await response.json();
-            console.log(json);
             alert("Ajout du sponsor réussit")
             window.location.href = "/sessions";
             return json;
@@ -90,9 +89,6 @@ function AddSponsorsSession() {
     }
 
     const sponsorSelected = elements?.filter((element: { id: any; }) => sponsors.id_sponsors.includes(element.id));
-    console.log(sponsors)
-    console.log(sponsorSelected)
-
 
 
     

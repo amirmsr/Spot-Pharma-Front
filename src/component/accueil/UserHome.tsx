@@ -72,8 +72,6 @@ export default function UserHome(){
     const filteredSessions = allSession?.filter((session: { id: any; }) => userSessions.some((userSession: { id_session: any; }) => userSession.id_session === session.id));
 
 
-    console.log(filteredSessions)
-
 
 
 
@@ -95,7 +93,6 @@ export default function UserHome(){
   
       if (response.ok) {
         const json = await response.json();
-        console.log(json);
         alert("Votre désinscription est bien prise en compte")
         return json;
       } else {

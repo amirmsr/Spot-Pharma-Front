@@ -40,7 +40,6 @@ function EditIntervenant() {
 
         if (response.ok) {
         const json = await response.json();
-        console.log(json);
         alert("Modification pris prise en compte")
         window.location.href = "/intervenants";
         return json;
@@ -55,7 +54,6 @@ function EditIntervenant() {
     }
     });
 
-    console.log(data)
 
 
     const handleSubmit = async (e:React.FormEvent<HTMLFormElement>)=>{

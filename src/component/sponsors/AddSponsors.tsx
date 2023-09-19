@@ -22,8 +22,7 @@ function AddSponsors() {
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setData((prevData) => ({ ...prevData, [e.target.name]: e.target.value }));
     };
-    
-    console.log(data)
+
 
     //upload image
     const uploadImage = useMutation((formData: FormData) => {
@@ -72,7 +71,6 @@ function AddSponsors() {
         if (selectedFile) {
             formData.append("sponsors", selectedFile);
         }
-        console.log(formData)
         uploadImage.mutate(formData);
         e.preventDefault()
     }
