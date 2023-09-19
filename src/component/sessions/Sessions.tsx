@@ -264,7 +264,10 @@ function Session() {
   };
 
   const handleVideo = async (sessionVideo: any) => {
-      window.location.href= sessionVideo
+      console.log(sessionVideo);
+      if (sessionVideo != null) {
+          window.location.href= sessionVideo
+      }
   };
 
   const handleNotconnected = () => {
@@ -483,7 +486,7 @@ function Session() {
             {isConnected ? (
               <center>
                {userSessionId.includes(element.id)?(
-                <a href="#" className="btnMain2 btn"> Accédez au live <span><FontAwesomeIcon icon={faCirclePlay} style={{color:'#23A082'}} /></span></a>
+                <button className="btnMain2" onClick={() => handleVideo(element.video)} > Accédez au live <span><FontAwesomeIcon icon={faCirclePlay} style={{color:'#23A082'}} /></span></button>
                ):(
                   <button className="btnMain2" onClick={() => handleInscription(element.id)}> S'inscrire à la session </button>
                )}                 
