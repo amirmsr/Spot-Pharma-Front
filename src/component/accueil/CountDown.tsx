@@ -34,7 +34,7 @@ export default function Countdown() {
     return (
         <div>
             <button className="btnMain4">
-                {formatTimeUnit(timeRemaining.days, 'Jours')}, {formatTimeUnit(timeRemaining.hours, 'heures')}, {formatTimeUnit(timeRemaining.minutes, 'minutes')}, {formatTimeUnit(timeRemaining.seconds, 'secondes')}
+                {formatTimeUnit(timeRemaining.days, 'Jour')}, {formatTimeUnit(timeRemaining.hours, 'heures')}, {formatTimeUnit(timeRemaining.minutes, 'minutes')}, {formatTimeUnit(timeRemaining.seconds, 'secondes')}
             </button>
         </div>
     );
