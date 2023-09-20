@@ -125,7 +125,12 @@ export default function UserHome(){
     });
 
 
-
+    const handleVideo = async (sessionVideo: any) => {
+        if (sessionVideo != "") {
+            // window.location.href= sessionVideo
+            window.open(sessionVideo, '_blank');
+        }
+    };
   
   const handleDesinscription=(sessionId : number)=>{
     const userId = user?.id as number;
@@ -178,7 +183,7 @@ export default function UserHome(){
               <p style={{color:'#23A082',fontSize:'1.3rem'}}>{element.jours}</p>
               <p style={{color:'#23A082',fontSize:'1.3rem'}}>{element.session_date}</p>
               <br /><br />
-              <button className="btnMain2">
+              <button className="btnMain2" onClick={() => handleVideo(element.video)} >
                 Accédez au live <span><FontAwesomeIcon icon={faCirclePlay} style={{color:'#23A082'}} /></span>
               </button>
               <br /><br />

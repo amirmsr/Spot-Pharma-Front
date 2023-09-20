@@ -45,8 +45,8 @@ export default function Stand3D(){
                                 </div>
                             </div>
                         </div>
-                        <div className="row  justify-content-center">
-                            <div className="col-6 ">
+                        <div className="row justify-content-center">
+                            <div className="col-6">
                                 <div className="session" style={{paddingTop:'50px',marginBottom: '10px',}}>
                                     <div>
                                         <div style={{ height: '100px', width: '100%', justifyContent: 'center', alignItems: 'center' }}>
