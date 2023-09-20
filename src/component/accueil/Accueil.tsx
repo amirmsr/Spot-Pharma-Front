@@ -105,7 +105,7 @@ function Accueil(){
                                             <img style={{objectFit: 'contain',width: '100%',height: '100%',}} src="https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/Group%2091.png"  alt="" />                 
                                         </div> 
                                         <br /> 
-                                        <button className='btnMain5' onClick={() => handleEnquete("")}>Participez à l'enquête</button>
+                                        <button className='btnMain5' onClick={() => handleEnquete("https://docs.google.com/forms/d/e/1FAIpQLSecmAfX9RjIkUiUQi6a9RQ2MNGcx0Kb9frj7Js4R5RDdwZqBA/viewform?usp=pp_url")}>Participez à l'enquête</button>
                                     </div>                        
                                 </div>
                             </div>

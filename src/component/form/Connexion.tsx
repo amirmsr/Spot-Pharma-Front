@@ -59,38 +59,40 @@ export default function Connexion() {
 
   return (
   <div className="loginBg">
-    <div className="container">
-    <form style={{ paddingBottom: '100px', padding: '100px' }} onSubmit={handleSubmit}>
-      <div className="add" style={{ backgroundColor: 'white', padding: '0px 20px', borderRadius: '15px' }}>
-        <br /><br /><br />
-        <h1 style={{ color: '#1A4550', textAlign: 'center' }}>Connexion</h1>
-        <br /><br />
-        <div className="form-group">
-          <label htmlFor="email" style={{ color: '#1A4550', fontSize: '1.5rem' }}>Email</label>
-          <center><input style={{width:'30%'}} className='form-control' type="text" id="email" name="email" placeholder='Email' onChange={handleChange} /></center>
-          
-        </div>
-        <br />
-        <div className="form-group">
-          <label htmlFor="password" style={{ color: '#1A4550', fontSize: '1.5rem' }}>Mot de passe</label>
-          <center><input  style={{width:'30%'}} className='form-control' type="password" id="password" name="password" placeholder="Mot de passe" onChange={handleChange} /></center>
-        </div>
-        <br /><br />
-        <button type="submit" className='btnMain2 btn-block'>Se connecter</button>
-        <br /><br />
-        <p>ou</p>
-        <div className="row">
-          <div className="col">
-              <button onClick={handleInscription} className="btnMain2 btn-block">S'inscrire</button>
+    <div className="container w-100 p-5 text-center">
+      <form onSubmit={handleSubmit}>
+        <div className="card p-5">
+          <h3>Connexion</h3>
+
+          <div className="row justify-content-center px-md-5 py-3">
+            <div className="col-md-8">
+              <div className="form-group">
+                <label htmlFor="email">Email</label>
+                <input className='form-control' type="text" id="email" name="email" placeholder='Email' onChange={handleChange} />
+              </div>
+            </div>
           </div>
-          <div className="col">
-            <button onClick={handleChangePassword} className="btnMain2 btn-block">Mot de passe oublié</button>
+
+          <div className="row justify-content-center px-md-5 py-3">
+            <div className="col-md-8">
+              <div className="form-group">
+                <label htmlFor="password">Mot de passe</label>
+                <input className='form-control' type="password" id="password" name="password" placeholder="Mot de passe" onChange={handleChange} />
+              </div>
+              <a href="#" onClick={handleChangePassword} className="forgottenPassword">Mot de passe oublié ?</a>
+            </div>
           </div>
-          <br /><br /><br /><br /><br />
+
+          <div className="mt-3 mb-1">
+            <button type="submit" className='btn btn-outline-success btn-block'>Se connecter</button>
+          </div>
+          <p>ou</p>
+          <div>
+            <button onClick={handleInscription} className="btn btn-outline-success btn-block">S'inscrire</button>
+          </div>
         </div>
-      </div>
-    </form>
-    </div>    
+      </form>
+    </div>
   </div>
 
   );

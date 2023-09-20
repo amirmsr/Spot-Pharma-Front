@@ -360,10 +360,10 @@ function Session() {
       <br /><br />
       <div className="container ">
         
-        <div className="row ">
+        <div className="row justify-content-center">
           
           {sessionFinal?.slice(0.3).map((element:Sessions)=>(
-          <div key={element.id} className="col-md-4 ">
+          <div key={element.id} className="col-xl-4 col-lg-6 col-md-10">
             <div className="session">
             <div>
               {isAdmin ?(
@@ -444,7 +444,7 @@ function Session() {
             <div className="container" style={{ height:'300px'}}>
               <div className="row">
                 {element.intervenantsDetails.map((interv:Intervenant)=>(
-                    <div key={interv.id} className="col-sm-6">
+                    <div key={interv.id} className="col-6">
                       <div className="intervenants"  >
                             <div className="invite_img">
                               <div className="invite">     

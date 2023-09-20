@@ -90,7 +90,7 @@ function Intervenants(){
             <div className="container">
                 <div className="row">
                     {elements?.slice(0.3).map((element:Intervenant)=>(
-                    <div key={element.id} className="col-md-4 ">
+                    <div key={element.id} className="col-md-6 col-lg-4">
                         <div className="intervenantbloc">
                             <div>
                                 {isAdmin ?(
@@ -106,7 +106,6 @@ function Intervenants(){
                                     </div>
                                 ):null}              
                             </div>
-                            <br />
                             <div className="intervenants "> 
                                 <div className="invite_img">
                                     <img  alt="" src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + element.image}/>
