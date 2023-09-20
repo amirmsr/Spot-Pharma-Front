@@ -13,7 +13,6 @@ export default function Stand3D(){
         }
 
         const dateLimite = new Date(date);
-
         const dateActuelle = new Date();
 
         if (dateActuelle >= dateLimite) {
@@ -60,7 +59,7 @@ export default function Stand3D(){
                             </div>
                         </div>
                         <div className="row justify-content-center">
-                            <div className="col-6">
+                            <div className="col-sm-6">
                                 <div className="session" style={{paddingTop:'50px',marginBottom: '10px',}}>
                                     <div>
                                         <div style={{ height: '100px', width: '100%', justifyContent: 'center', alignItems: 'center' }}>

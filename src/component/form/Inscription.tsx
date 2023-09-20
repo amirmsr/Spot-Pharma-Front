@@ -52,10 +52,10 @@ export default function Inscription(){
 
   return (
     
-    <div className="loginBg">
+  <div className="loginBg">
     <div className="container">
       <form style={{ paddingBottom: '100px', padding: '100px' }} onSubmit={handleSubmit}>
-        <div className="add" style={{ backgroundColor: 'white', padding: '0px 20px', borderRadius: '15px' }}>
+        <div className="add" style={{ backgroundColor: 'white', borderRadius: '15px' }}>
           <br /><br /><br />
           <h1 style={{ color: '#1A4550', textAlign: 'center' }}>Inscription</h1>
           <br /><br />

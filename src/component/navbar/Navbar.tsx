@@ -40,7 +40,7 @@ export default function App() {
 
 
   return (
-    <MDBNavbar expand='lg' style={{backgroundColor:'#23A082'}} className='navbarElement'>
+    <MDBNavbar expand='xl' style={{backgroundColor:'#23A082'}} className='navbarElement'>
       <MDBContainer fluid>       
         <MDBNavbarToggler
           type='button'
@@ -80,11 +80,6 @@ export default function App() {
                   <MDBNavbarLink>
                      <a
                       href="https://spot-pharma.vercel.app/home"
-                      style={{
-                        border: "1.5px solid white",
-                        padding: "5px 10px 5px 10px",
-                        borderRadius: "15px",
-                      }}
                       >
                       {" "}
                       Mon compte <span style={{ opacity: 0 }}>.</span>{" "}
@@ -93,15 +88,11 @@ export default function App() {
                   </MDBNavbarLink>
                   </MDBNavbarItem>  
             ):(
-              <div style={{display:'flex'}}>                      
                   <MDBNavbarItem>
                   <MDBNavbarLink>
                     <a
                     href="https://spot-pharma.vercel.app/inscription"
                     style={{
-                      border: "1.5px solid white",
-                      padding: "5px 10px 5px 10px",
-                      borderRadius: "15px",
                       textDecoration: "none", 
                       color: "white",
                     }}
@@ -111,16 +102,18 @@ export default function App() {
                     <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>{" "}
                    </a>
                   </MDBNavbarLink>
-                  </MDBNavbarItem>  
+                  </MDBNavbarItem>
+            )}
+            {isConnected ? (
+                <div>
 
+                </div>
+                ):(
                   <MDBNavbarItem>
                   <MDBNavbarLink>
                     <a
                     href="https://spot-pharma.vercel.app/connexion"
                     style={{
-                      border: "1.5px solid white",
-                      padding: "5px 10px 5px 10px",
-                      borderRadius: "15px",
                       textDecoration: "none", 
                       color: "white",
                     }}
@@ -131,8 +124,7 @@ export default function App() {
                    </a>
                   </MDBNavbarLink>
                   </MDBNavbarItem>
-              </div>                  
-            )}     
+              )}
           </MDBNavbarNav>
         </MDBCollapse>
       </MDBContainer>
