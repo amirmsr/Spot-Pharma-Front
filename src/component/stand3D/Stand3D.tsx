@@ -7,7 +7,8 @@ export default function Stand3D(){
     const handleStand3D = async (lien: string, date: string)=>{
         /* navigate(`/stand3D`) */
 
-        if (date == "") {
+        if (date == "" || lien == "" ) {
+            alert("Le stand sera bientôt disponible")
             return;
         }
 
@@ -15,7 +16,7 @@ export default function Stand3D(){
 
         const dateActuelle = new Date();
 
-        if (lien != "" && dateActuelle >= dateLimite) {
+        if (dateActuelle >= dateLimite) {
             window.open(lien, '_blank'); // Ouvre le lien dans un nouvel onglet
         } else {
             alert("Le stand sera bientôt disponible")
@@ -53,7 +54,7 @@ export default function Stand3D(){
                                             <img style={{objectFit: 'contain',width: '100%',height: '100%',}} src="https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/Group%2091.png" alt="" />
                                         </div>
                                         <br />
-                                        <button className='btnMain5' onClick={() => handleStand3D("https://www.bcombrun.com/PDF_online/bcb_pdf/depot/Stand_Vichy.pdf", "2023-09-20T10:30:00+02:00")}>Accéder au stand</button>
+                                        <button className='btnMain5' onClick={() => handleStand3D("https://www.bcombrun.com/PDF_online/bcb_pdf/depot/Stand_Vichy.pdf", "2023-09-20T10:40:00+02:00")}>Accéder au stand</button>
                                     </div>
                                 </div>
                             </div>
