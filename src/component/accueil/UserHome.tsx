@@ -157,7 +157,6 @@ export default function UserHome(){
 
     
   return (
-
     <div className='homeMainDiv'>
       
       <div>
@@ -202,13 +201,7 @@ export default function UserHome(){
           <button className="btnMain2" onClick={handleLogout}>Déconnexion</button>
         </div>
       </div>
-     
     </div>
-
-
-        
-
-
 
   );
     

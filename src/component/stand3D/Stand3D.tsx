@@ -4,9 +4,13 @@ import {Intervenant, Sponsor} from "../../types";
 export default function Stand3D(){
 
 
-    const handleEnquete=()=>{
+    const handleStand3D = async (lien: any)=>{
         /* navigate(`/stand3D`) */
-        alert("Stand bientôt disponible")
+        if (lien != "") {
+            window.open(lien, '_blank'); // Ouvre le lien dans un nouvel onglet
+        } else {
+            alert("Stand bientôt disponible")
+        }
     }
 
     return(
@@ -29,7 +33,7 @@ export default function Stand3D(){
                                             <img style={{objectFit: 'contain',width: '100%',height: '100%',}} src="https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/haleon.png"  alt="" />
                                         </div>
                                         <br />
-                                        <button className='btnMain5' onClick={() => handleEnquete()}>Accéder au stand</button>
+                                        <button className='btnMain5' onClick={() => handleStand3D("")}>Accéder au stand</button>
                                     </div>
                                 </div>
                             </div>
@@ -40,7 +44,7 @@ export default function Stand3D(){
                                             <img style={{objectFit: 'contain',width: '100%',height: '100%',}} src="https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/Group%2091.png" alt="" />
                                         </div>
                                         <br />
-                                        <button className='btnMain5' onClick={() => handleEnquete()}>Accéder au stand</button>
+                                        <button className='btnMain5' onClick={() => handleStand3D("")}>Accéder au stand</button>
                                     </div>
                                 </div>
                             </div>
@@ -53,7 +57,7 @@ export default function Stand3D(){
                                             <img style={{objectFit: 'contain',width: '100%',height: '100%',}} src="https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/viiv-healthcare-logo-vector.png" alt="" />
                                         </div>
                                         <br />
-                                        <button className='btnMain5' onClick={() => handleEnquete()}>Accéder au stand</button>
+                                        <button className='btnMain5' onClick={() => handleStand3D("")}>Accéder au stand</button>
                                     </div>
                                 </div>
                             </div>
