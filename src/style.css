@@ -395,6 +395,10 @@ input{
     height: 230px;
 }
 
+.replayBloc {
+    min-width: 450px !important;
+}
+
 .container {
     min-height: fit-content;
 }
