@@ -1,6 +1,3 @@
-import Countdown from "../accueil/CountDown";
-import {Intervenant, Sponsor} from "../../types";
-
 export default function Stand3D(){
 
 

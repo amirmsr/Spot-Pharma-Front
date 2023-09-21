@@ -1,9 +1,6 @@
-import { ScrollingCarousel } from '@trendyol-js/react-carousel';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { useQuery } from 'react-query';
-import Countdown from './CountDown';
 import { FetchIntervenants, FetchSponsors } from '../../Request';
 import { Intervenant, Sponsor } from '../../types';
 import { useEffect, useState } from 'react';
@@ -63,8 +60,7 @@ function Accueil(){
                     <img  src="./logo.png" alt="" style={{width:"30%", height:"30%"}} /> 
                     <br></br><br></br>
                     <h1>SPOT PHARMA 7 </h1>
-                    <p>20 Septembre au 4 Octobre</p> 
-                    <Countdown></Countdown>                                 
+                    <p>20 Septembre au 4 Octobre</p>
                     <br></br><br></br>
                     <div className="container">
                         <div className="row">
