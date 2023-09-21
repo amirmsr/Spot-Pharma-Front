@@ -4,10 +4,11 @@ export type Sessions = {
     type: "";
     description:"";  
     video: "";
-    jours:"",
+    jours:"";
     stand:"";
     intervenantsDetails : Intervenant[];
     sponsorsDetails : Sponsor[];
+    date_release:"";
 }
   
 export type  IntervenantSession = {
