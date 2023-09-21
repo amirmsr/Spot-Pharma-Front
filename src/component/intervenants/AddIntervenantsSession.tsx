@@ -65,13 +65,14 @@ function AddIntervenantsSession() {
             });
     
             if (response.ok) {
-            const json = await response.json();
-            alert("Ajout de l'intervenant réussit")
-            window.location.href = "/sessions";
-            return json;
+                const json = await response.json();
+                alert("Ajout de l'intervenant réussit")
+                window.location.href = "/sessions";
+                return json;
             } else {
             // Gérer l'erreur de duplication ici
-            alert("Problème")
+                console.log()
+                alert("Problème")
             }
         } catch (error) {
             // Gérer d'autres erreurs ici
