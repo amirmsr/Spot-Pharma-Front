@@ -71,7 +71,7 @@ function AddIntervenantsSession() {
                 return json;
             } else {
             // Gérer l'erreur de duplication ici
-                console.log()
+                console.log(response)
                 alert("Problème")
             }
         } catch (error) {
