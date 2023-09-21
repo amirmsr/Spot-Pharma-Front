@@ -290,10 +290,16 @@ function Session() {
     navigate(`addIntervenantsSession/${sessionId}`)
   }
 
-  const handleStand3D=()=>{
-    /* navigate(`/stand3D`) */
-    alert("Stand disponible à partir du 20 septembre")
-  }
+    const handleStand3D = async (lien: string)=>{
+        /* navigate(`/stand3D`) */
+
+        if (lien == "" || lien == null ) {
+            alert("Le stand sera bientôt disponible")
+            return;
+        }
+
+        window.open(lien, '_blank'); // Ouvre le lien dans un nouvel onglet
+    }
 
 
   const handleAddSponsors=(sessionId: number)=>{
@@ -498,12 +504,14 @@ function Session() {
                 <button className="btnMain2" onClick={() => handleNotconnected()}>S'inscrire à la session</button>                
                 <br />
                 <br />
-                {element.stand !== "" && element.stand !== null ?  (
-                  <button onClick={() => handleStand3D()} className="btnMain2">Stand 3D</button>
-                ):null}   
               </center>
-            )}  
-            <br />
+            )}
+                <div className="text-center mt-2">
+                {element.stand !== "" && element.stand !== null ?  (
+                    <button onClick={() => handleStand3D(element.stand_3d)} className="btnMain2">Stand 3D</button>
+                ):null}
+                </div>
+                <br />
             {isAdmin ?(
               <div>
                 <button onClick={() => handleSession(element.id)} className="btnMain2">

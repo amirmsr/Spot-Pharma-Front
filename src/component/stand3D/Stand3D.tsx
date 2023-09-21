@@ -63,7 +63,7 @@ export default function Stand3D(){
                                             <img style={{objectFit: 'contain',width: '100%',height: '100%',}} src="https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/viiv-healthcare-logo-vector.png" alt="" />
                                         </div>
                                         <br />
-                                        <button className='btnMain5' onClick={() => handleStand3D("", "")}>Accéder au stand</button>
+                                        <button className='btnMain5' onClick={() => handleStand3D("https://www.bcombrun.com/PDF_online/bcb_pdf/depot/ViiV_Stand.pdf", "2023-09-20T20:30:00+02:00")}>Accéder au stand</button>
                                     </div>
                                 </div>
                             </div>

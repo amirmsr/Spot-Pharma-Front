@@ -9,6 +9,7 @@ export type Sessions = {
     intervenantsDetails : Intervenant[];
     sponsorsDetails : Sponsor[];
     date_release:"";
+    stand_3d:"";
 }
   
 export type  IntervenantSession = {

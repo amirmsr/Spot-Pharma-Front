@@ -46,10 +46,12 @@ function AddReplay() {
             if (!response.ok) {
                 if (contentType && contentType.indexOf("application/json") !== -1) {
                     return response.json().then(data => {
+                        console.log(data, data.error)
                         throw new Error(data.error);
                     });
                 } else {
                     return response.text().then(text => {
+                        console.log(text)
                         throw new Error(text);
                     });
                 }
