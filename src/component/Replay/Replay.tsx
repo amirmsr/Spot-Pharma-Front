@@ -90,7 +90,7 @@ function Replay(){
             <div className="row">
               {elements && elements.length > 0 ? (
                 elements.map((element: Replay) => (
-                  <div key={element.id} className=" col-lg-6 col-xl-6 col-xxl-4 replaybloc">
+                  <div key={element.id} className="col-lg-6 col-xl-6 col-xxl-4 replaybloc">
                     <div className="intervenantbloc">
                       <p><b>{element.nom}</b></p>
                       <p>{element.description}</p>

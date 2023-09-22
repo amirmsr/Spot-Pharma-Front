@@ -1,6 +1,6 @@
 import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useMutation, useQuery } from "react-query";
 import { fetchUserData } from "../../CheckAuth";
 import {Sessions} from "../../types";
@@ -125,9 +125,17 @@ export default function UserHome(){
     });
 
 
-    const handleVideo = async (sessionVideo: any) => {
-        if (sessionVideo != "") {
-            // window.location.href= sessionVideo
+    const handleVideo = async (sessionVideo: any, sessionRelease: any) => {
+        if (sessionVideo == "" && sessionRelease == "") {
+            return;
+        }
+
+        const dateRelease = new Date(sessionRelease);
+        const dateActuelle = new Date();
+        const dateLimite = new Date(dateRelease.getTime() + 2 * 60 * 60 * 1000);
+        console.log(dateRelease, dateLimite)
+
+        if (dateActuelle >= dateRelease && dateActuelle <= dateLimite) {
             window.open(sessionVideo, '_blank');
         }
     };
@@ -181,8 +189,16 @@ export default function UserHome(){
               <p style={{fontSize:'1.3rem'}}>{element.description}</p>
               <p style={{color:'#23A082',fontSize:'1.3rem'}}>{element.jours}</p>
               <p style={{color:'#23A082',fontSize:'1.3rem'}}>{element.session_date}</p>
-              <br /><br />
-              <button className="btnMain2" onClick={() => handleVideo(element.video)} >
+              <br />
+              <div>
+                  <center>
+                      <p className="infoSession">
+                          L'accès au live sera disponible 5 minutes avant l'heure de la session
+                      </p>
+                  </center>
+              </div>
+              <br />
+              <button className="btnMain2" onClick={() => handleVideo(element.video, element.date_release)} >
                 Accédez au live <span><FontAwesomeIcon icon={faCirclePlay} style={{color:'#23A082'}} /></span>
               </button>
               <br /><br />
