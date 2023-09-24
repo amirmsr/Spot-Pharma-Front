@@ -11,10 +11,14 @@ export default function Footer(){
          <div className="container">
             <div className="row">
                 <div className="col">
-                    <img src="./facebook.png" width='10%' alt="" />
+                    <a href="https://www.facebook.com/Spot.Pharma" target="_blank">
+                        <img src="./facebook.png" width='10%' alt="" />
+                    </a>
                 </div>
                 <div className="col">
-                    <img src="./social.png" width='10%' alt="" />
+                    <a href="https://www.youtube.com/@spotpharmatv2792" target="_blank">
+                        <img src="./social.png" width='10%' alt="" />
+                    </a>
                 </div>
             </div>
          </div>
