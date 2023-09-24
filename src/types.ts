@@ -10,6 +10,7 @@ export type Sessions = {
     sponsorsDetails : Sponsor[];
     date_release:"";
     stand_3d:"";
+    replay:"";
 }
   
 export type  IntervenantSession = {
