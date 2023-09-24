@@ -271,6 +271,15 @@ function Session() {
       }
   };
 
+    const handleReplay = async (sessionVideo: any) => {
+        if (sessionVideo == "" || sessionVideo == null) {
+            alert("Le replay sera bientôt disponible")
+            return;
+        }
+
+        window.open("https://bcombrun.com/Spot-Pharma-Image/Replay/" + sessionVideo, '_blank');
+    };
+
   const handleNotconnected = () => {
     alert("Merci de créer votre compte pour vous inscrire à la session");
     navigate("/inscription")
@@ -490,22 +499,39 @@ function Session() {
                     </p>
                 </center>
             </div>
-            {isConnected ? (
-              <center>
-               {userSessionId.includes(element.id)?(
-                <button className="btnMain2" onClick={() => handleVideo(element.video, element.date_release)} > Accédez au live <span><FontAwesomeIcon icon={faCirclePlay} style={{color:'#23A082'}} /></span></button>
-               ):(
-                  <button className="btnMain2" onClick={() => handleInscription(element.id)}> S'inscrire à la session </button>
-               )}                 
-              </center>
-            ) : (
-              <center>                
-                <br />                    
-                <button className="btnMain2" onClick={() => handleNotconnected()}>S'inscrire à la session</button>                
-                <br />
-                <br />
-              </center>
-            )}
+                {new Date() > new Date(new Date(element.date_release).getTime() + 2 * 60 * 60 * 1000) ? (
+                    <center>
+                        {isConnected ? (
+                            <button className="btnMain2" onClick={() => handleReplay(element.replay)} >
+                                Voir le replay <span><FontAwesomeIcon icon={faCirclePlay} style={{ color: '#23A082' }} /></span>
+                            </button>
+                        ) : (
+                            <button className="btnMain2" onClick={() => handleNotconnected()}>
+                                Voir le replay <span><FontAwesomeIcon icon={faCirclePlay} style={{ color: '#23A082' }} /></span>
+                            </button>
+                        )}
+                    </center>
+                ) : (
+                    <div>
+                        {isConnected ? (
+                            <center>
+                                {userSessionId.includes(element.id)?(
+                                    <button className="btnMain2" onClick={() => handleVideo(element.video, element.date_release)} > Accédez au live <span><FontAwesomeIcon icon={faCirclePlay} style={{color:'#23A082'}} /></span></button>
+                                ):(
+                                    <button className="btnMain2" onClick={() => handleInscription(element.id)}> S'inscrire à la session </button>
+                                )}
+                            </center>
+                        ) : (
+                            <center>
+                                <br />
+                                <button className="btnMain2" onClick={() => handleNotconnected()}>S'inscrire à la session</button>
+                                <br />
+                                <br />
+                            </center>
+                        )}
+                    </div>
+                )}
+
                 <div className="text-center mt-2">
                 {element.stand !== "" && element.stand !== null ?  (
                     <button onClick={() => handleStand3D(element.stand_3d)} className="btnMain2">Stand 3D</button>

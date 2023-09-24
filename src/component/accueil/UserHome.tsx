@@ -163,6 +163,14 @@ export default function UserHome(){
   };
 
 
+ const handleReplay = async (sessionVideo: any) => {
+     if (sessionVideo == "" || sessionVideo == null) {
+         alert("Le replay sera bientôt disponible")
+         return;
+     }
+
+     window.open("https://bcombrun.com/Spot-Pharma-Image/Replay/" + sessionVideo, '_blank');
+ };
     
   return (
     <div className='homeMainDiv'>
@@ -198,9 +206,17 @@ export default function UserHome(){
                   </center>
               </div>
               <br />
-              <button className="btnMain2" onClick={() => handleVideo(element.video, element.date_release)} >
-                Accédez au live <span><FontAwesomeIcon icon={faCirclePlay} style={{color:'#23A082'}} /></span>
-              </button>
+                  {new Date() > new Date(new Date(element.date_release).getTime() + 2 * 60 * 60 * 1000) ? (
+                      <center>
+                          <button className="btnMain2" onClick={() => handleReplay(element.replay)} >
+                              Voir le replay <span><FontAwesomeIcon icon={faCirclePlay} style={{ color: '#23A082' }} /></span>
+                          </button>
+                      </center>
+                  ) : (
+                      <center>
+                          <button className="btnMain2" onClick={() => handleVideo(element.video, element.date_release)} > Accédez au live <span><FontAwesomeIcon icon={faCirclePlay} style={{color:'#23A082'}} /></span></button>
+                      </center>
+                  )}
               <br /><br />
               <button onClick={()=>handleDesinscription(element.id)} className="btnMain2">
                 Se désinscrire
