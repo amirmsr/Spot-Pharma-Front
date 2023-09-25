@@ -71,7 +71,7 @@ function Accueil(){
                             </div>
                             <br /><br /><br /><br />
                             <div className="col">
-                                <a href="https://www.bcombrun.com/PDF_online/bcb_pdf/depot/SPOT_VF.pdf">
+                                <a href="https://www.bcombrun.com/PDF_online/bcb_pdf/depot/Spot_VF3.pdf">
                                     <button className='btnMain'>Accéder au programme</button> 
                                 </a>
                             </div>
