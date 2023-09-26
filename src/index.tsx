@@ -31,6 +31,8 @@ import EditIntervenant from "./component/intervenants/EditIntervenant";
 import Utilisateurs from "./component/accueil/Utilisateurs/Utilisateurs";
 import Stand3D from "./component/stand3D/Stand3D";
 
+import GA4React from "ga-4-react";
+
 
 
 const router = createBrowserRouter([
@@ -133,6 +135,15 @@ const router = createBrowserRouter([
       ],
     },
   ]);
+
+try {
+  setTimeout(_ => {
+    const ga4react = new GA4React("G-0LT8YYSV84");
+    ga4react.initialize().catch(err => console.error(err));
+  }, 4000);
+} catch (err) {
+  console.error(err);
+}
   
   const queryClient = new QueryClient();
   
