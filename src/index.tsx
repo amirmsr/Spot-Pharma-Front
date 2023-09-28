@@ -138,7 +138,7 @@ const router = createBrowserRouter([
 
 try {
   setTimeout(_ => {
-    const ga4react = new GA4React("G-0LT8YYSV84");
+    const ga4react = new GA4React("G-QDC5B5BM71");
     ga4react.initialize().catch(err => console.error(err));
   }, 4000);
 } catch (err) {
