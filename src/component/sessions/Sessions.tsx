@@ -271,11 +271,21 @@ function Session() {
       }
   };
 
-    const handleReplay = async (sessionVideo: any) => {
+    const handleReplay = async (sessionVideo: any, sessionId: any) => {
         if (sessionVideo == "" || sessionVideo == null) {
             alert("Le replay sera bientôt disponible")
             return;
         }
+
+        const response = await fetch(
+            `${baseUrl}/click_replay/${sessionId}`,
+            {
+                headers: {
+                    token: `${token}`,
+                },
+            }
+        );
+        console.log(response);
 
         window.open("https://bcombrun.com/Spot-Pharma-Image/Replay/" + sessionVideo, '_blank');
     };
@@ -502,7 +512,7 @@ function Session() {
                 {new Date() > new Date(new Date(element.date_release).getTime() + 2 * 60 * 60 * 1000) ? (
                     <center>
                         {isConnected ? (
-                            <button className="btnMain2" onClick={() => handleReplay(element.replay)} >
+                            <button className="btnMain2" onClick={() => handleReplay(element.replay, element.id)} >
                                 Voir le replay <span><FontAwesomeIcon icon={faCirclePlay} style={{ color: '#23A082' }} /></span>
                             </button>
                         ) : (

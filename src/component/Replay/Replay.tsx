@@ -58,10 +58,22 @@ function Replay(){
         navigate("/inscription")
     };
 
-    const handleVideo = async (sessionVideo: any) => {
+    const handleVideo = async (sessionVideo: any, sessionId: any) => {
         if (sessionVideo == "") {
             return;
         }
+
+        const response = await fetch(
+            `${baseUrl}/click_replay/${sessionId}`,
+            {
+                method: 'PUT',
+                headers: {
+                    token: `${token}`,
+                },
+            }
+        );
+
+        console.log(response);
 
         window.open("https://bcombrun.com/Spot-Pharma-Image/Replay/" + sessionVideo, '_blank');
     };
@@ -252,7 +264,7 @@ function Replay(){
 
                                     {isConnected ? (
                                         <center>
-                                            <button className="btnMain2" onClick={() => handleVideo(element.replay)} >
+                                            <button className="btnMain2" onClick={() => handleVideo(element.replay, element.id)} >
                                                 Voir le replay <span><FontAwesomeIcon icon={faCirclePlay} style={{ color: '#23A082' }} /></span>
                                             </button>
                                         </center>
