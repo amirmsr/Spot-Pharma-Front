@@ -280,12 +280,13 @@ function Session() {
         const response = await fetch(
             `${baseUrl}/click_replay/${sessionId}`,
             {
+                method: 'PUT',
                 headers: {
                     token: `${token}`,
+                    'Content-Type': 'application/json',
                 },
             }
         );
-        console.log(response);
 
         window.open("https://bcombrun.com/Spot-Pharma-Image/Replay/" + sessionVideo, '_blank');
     };
