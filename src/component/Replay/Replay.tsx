@@ -59,7 +59,8 @@ function Replay(){
     };
 
     const handleVideo = async (sessionVideo: any, sessionId: any) => {
-        if (sessionVideo == "") {
+        if (sessionVideo == "" || sessionVideo == null) {
+            alert("Replay indisponible")
             return;
         }
 
@@ -216,72 +217,70 @@ function Replay(){
                 <div className="row justify-content-center">
                     {sessionFinal?.slice(0.3).map((element:Sessions)=>(
                         <div key={element.id} className="col-xl-4 col-lg-6 col-md-10">
-                            {element.replay == null || element.replay == "" ? null : (
-                                <div className="session">
-                                    <div></div>
-                                    <br />
-                                    <h3 style={{color:'#23A082'}}>{element.jours}</h3>
-                                    <p style={{color:'#23A082',fontSize:'1.3rem'}}>{element.session_date}</p>
-                                    <div style={{height:'200px'}}>
-                                        {element.sponsorsDetails.map((sponsors:Sponsor)=>(
-                                            <div>
-                                                <div style={{ height: '200px', width: '100%', justifyContent: 'center', alignItems: 'center' }}>
-                                                    <img
-                                                        style={{
-                                                            objectFit: 'contain',
-                                                            width: '100%',
-                                                            height: '100%',
-                                                        }}
-                                                        src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + sponsors.image}
-                                                        alt=""
-                                                    />
+                            <div className="session">
+                                <div></div>
+                                <br />
+                                <h3 style={{color:'#23A082'}}>{element.jours}</h3>
+                                <p style={{color:'#23A082',fontSize:'1.3rem'}}>{element.session_date}</p>
+                                <div style={{height:'200px'}}>
+                                    {element.sponsorsDetails.map((sponsors:Sponsor)=>(
+                                        <div>
+                                            <div style={{ height: '200px', width: '100%', justifyContent: 'center', alignItems: 'center' }}>
+                                                <img
+                                                    style={{
+                                                        objectFit: 'contain',
+                                                        width: '100%',
+                                                        height: '100%',
+                                                    }}
+                                                    src={"https://bcombrun.com/Spot-Pharma-Image/LogoSponsors/" + sponsors.image}
+                                                    alt=""
+                                                />
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+
+                                <p style={{fontSize:'1.5rem',color:'#23A082' }}>{element.type} :</p>
+                                <p style={{fontSize:'1.3rem', height:'100px'}}>{element.description}</p>
+                                <br />
+
+                                <div className="container" style={{ height:'300px'}}>
+                                    <div className="row">
+                                        {element.intervenantsDetails.map((interv:Intervenant)=>(
+                                            <div key={interv.id} className="col-6">
+                                                <div className="intervenants"  >
+                                                    <div className="invite_img">
+                                                        <div className="invite">
+                                                            <img  alt=""  src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + interv.image}/>
+                                                        </div>
+                                                    </div>
                                                 </div>
+                                                <p>{interv.nom}</p>
                                             </div>
                                         ))}
                                     </div>
-
-                                    <p style={{fontSize:'1.5rem',color:'#23A082' }}>{element.type} :</p>
-                                    <p style={{fontSize:'1.3rem', height:'100px'}}>{element.description}</p>
-                                    <br />
-
-                                    <div className="container" style={{ height:'300px'}}>
-                                        <div className="row">
-                                            {element.intervenantsDetails.map((interv:Intervenant)=>(
-                                                <div key={interv.id} className="col-6">
-                                                    <div className="intervenants"  >
-                                                        <div className="invite_img">
-                                                            <div className="invite">
-                                                                <img  alt=""  src={"https://bcombrun.com/Spot-Pharma-Image/Intervenant/" + interv.image}/>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <p>{interv.nom}</p>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </div>
-
-                                    {isConnected ? (
-                                        <center>
-                                            <button className="btnMain2" onClick={() => handleVideo(element.replay, element.id)} >
-                                                Voir le replay <span><FontAwesomeIcon icon={faCirclePlay} style={{ color: '#23A082' }} /></span>
-                                            </button>
-                                        </center>
-                                    ) : (
-                                        <center>
-                                            <button className="btnMain2" onClick={() => handleNotconnected()}>
-                                                Voir le replay <span><FontAwesomeIcon icon={faCirclePlay} style={{ color: '#23A082' }} /></span>
-                                            </button>
-                                        </center>
-                                    )}
-                                    <div className="text-center mt-2">
-                                        {element.stand !== "" && element.stand !== null ?  (
-                                            <button onClick={() => handleStand3D(element.stand_3d)} className="btnMain2">Stand 3D</button>
-                                        ):null}
-                                    </div>
-                                    <br />
                                 </div>
-                            )}
+
+                                {isConnected ? (
+                                    <center>
+                                        <button className="btnMain2" onClick={() => handleVideo(element.replay, element.id)} >
+                                            Voir le replay <span><FontAwesomeIcon icon={faCirclePlay} style={{ color: '#23A082' }} /></span>
+                                        </button>
+                                    </center>
+                                ) : (
+                                    <center>
+                                        <button className="btnMain2" onClick={() => handleNotconnected()}>
+                                            Voir le replay <span><FontAwesomeIcon icon={faCirclePlay} style={{ color: '#23A082' }} /></span>
+                                        </button>
+                                    </center>
+                                )}
+                                <div className="text-center mt-2">
+                                    {element.stand !== "" && element.stand !== null ?  (
+                                        <button onClick={() => handleStand3D(element.stand_3d)} className="btnMain2">Stand 3D</button>
+                                    ):null}
+                                </div>
+                                <br />
+                            </div>
                         </div>
                     ))}
                 </div>
