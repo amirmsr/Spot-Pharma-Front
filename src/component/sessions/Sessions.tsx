@@ -546,7 +546,7 @@ function Session() {
                 )}
 
                 <div className="text-center mt-2">
-                {element.stand !== "" && element.stand !== null ?  (
+                {element.stand_3d !== "" && element.stand_3d !== null ?  (
                     <button onClick={() => handleStand3D(element.stand_3d)} className="btnMain2">Stand 3D</button>
                 ):null}
                 </div>
