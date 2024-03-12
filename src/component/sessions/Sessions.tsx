@@ -527,7 +527,9 @@ function Session() {
                         {isConnected ? (
                             <center>
                                 {userSessionId.includes(element.id)?(
-                                    <button className="btnMain2" onClick={() => handleVideo(element.video, element.date_release)} > Accédez au live <span><FontAwesomeIcon icon={faCirclePlay} style={{color:'#23A082'}} /></span></button>
+                                    <button className="btnMain2" onClick={() => handleReplay(element.replay, element.id)} >
+                                        Voir le replay <span><FontAwesomeIcon icon={faCirclePlay} style={{ color: '#23A082' }} /></span>
+                                    </button>
                                 ):(
                                     <button className="btnMain2" onClick={() => handleInscription(element.id)}> S'inscrire à la session </button>
                                 )}
