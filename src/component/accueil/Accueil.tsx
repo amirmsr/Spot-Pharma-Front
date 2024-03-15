@@ -59,7 +59,7 @@ function Accueil(){
                 <div className='main_div_cont'>
                     <img  src="./logo.png" alt="" style={{width:"30%", height:"30%"}} /> 
                     <br></br><br></br>
-                    <h1>SPOT PHARMA 8 </h1>
+                    <h1>À venir SPOT PHARMA 8 </h1>
                     <p>26 Septembre au 10 Octobre</p>
                     <br></br><br></br>
                     <div className="container">
