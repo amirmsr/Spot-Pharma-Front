@@ -72,7 +72,7 @@ function Accueil(){
                             <br /><br /><br /><br />
                             <div className="col">
                                 <a href="https://www.bcombrun.com/PDF_online/bcb_pdf/depot/Programme_SPOT7_Vdef.pdf">
-                                    <button className='btnMain'>Accéder au programme</button> 
+                                    <button className='btnMain'>Accéder au pré-programme</button> 
                                 </a>
                             </div>
                         </div>
